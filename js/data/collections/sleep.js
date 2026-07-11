@@ -1,0 +1,136 @@
+window.UMMIBY_DUAA_COLLECTION = {
+  "id": "sleep",
+  "title": "Before Sleep",
+  "shortTitle": "Sleep",
+  "description": "A calm routine of remembrance before resting.",
+  "collectionType": "daily",
+  "trackingType": "daily",
+  "trackerEnabled": true,
+  "enabled": true,
+  "comingSoon": false,
+  "items": [
+    {
+      "id": "sleep-001",
+      "collectionId": "sleep",
+      "order": 1,
+      "suggestedTitle": "Lying Down in Allah’s Name",
+      "legacyLabel": "In Your name, my Lord, I lie down and rise.",
+      "summary": "A before-sleep reminder of dependence upon Allah.",
+      "repeat": "1x",
+      "cardText": {
+        "arabic": "بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبِي وَبِكَ أَرْفَعُهُ",
+        "transliteration": "Bismika Rabbi wada'tu janbi, wa bika arfa'uhu.",
+        "translation": "In Your name, my Lord, I lie down, and by You I rise."
+      },
+      "focusPhrases": [
+        {
+          "order": 1,
+          "arabic": "بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبِي",
+          "transliteration": "Bismika Rabbi wada'tu janbi, wa bika arfa'uhu.",
+          "translation": "In Your name, my Lord, I lie down, and by You I rise."
+        },
+        {
+          "order": 2,
+          "arabic": "وَبِكَ أَرْفَعُهُ",
+          "transliteration": "",
+          "translation": ""
+        }
+      ],
+      "virtues": "",
+      "source": {
+        "reference": "Sahih al-Bukhari 6320",
+        "grade": "Sahih",
+        "sourceReference": "",
+        "status": "needs-review"
+      },
+      "verification": {
+        "verified": false,
+        "arabicChecked": false,
+        "translationChecked": false,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": []
+    },
+    {
+      "id": "sleep-002",
+      "collectionId": "sleep",
+      "order": 2,
+      "suggestedTitle": "Protection from Punishment",
+      "legacyLabel": "O Allah, protect me from Your punishment on the Day You resurrect Your servants.",
+      "summary": "A short supplication before sleep.",
+      "repeat": "3x",
+      "cardText": {
+        "arabic": "اللَّهُمَّ قِنِي عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ",
+        "transliteration": "Allahumma qini 'adhabaka yawma tab'athu 'ibadak.",
+        "translation": "O Allah, protect me from Your punishment on the Day You resurrect Your servants."
+      },
+      "focusPhrases": [
+        {
+          "order": 1,
+          "arabic": "اللَّهُمَّ قِنِي عَذَابَكَ",
+          "transliteration": "Allahumma qini 'adhabaka yawma tab'athu 'ibadak.",
+          "translation": "O Allah, protect me from Your punishment on the Day You resurrect Your servants."
+        },
+        {
+          "order": 2,
+          "arabic": "يَوْمَ تَبْعَثُ عِبَادَكَ",
+          "transliteration": "",
+          "translation": ""
+        }
+      ],
+      "virtues": "",
+      "source": {
+        "reference": "Sunan Abi Dawud 5045",
+        "grade": "Hasan",
+        "sourceReference": "",
+        "status": "needs-review"
+      },
+      "verification": {
+        "verified": false,
+        "arabicChecked": false,
+        "translationChecked": false,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": []
+    },
+    {
+      "id": "sleep-003",
+      "collectionId": "sleep",
+      "order": 3,
+      "suggestedTitle": "Sleeping and Waking in Allah’s Name",
+      "legacyLabel": "In Your name, O Allah, I die and I live.",
+      "summary": "A concise remembrance before sleeping.",
+      "repeat": "1x",
+      "cardText": {
+        "arabic": "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا",
+        "transliteration": "Bismika Allahumma amutu wa ahya.",
+        "translation": "In Your name, O Allah, I die and I live."
+      },
+      "focusPhrases": [
+        {
+          "order": 1,
+          "arabic": "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا",
+          "transliteration": "Bismika Allahumma amutu wa ahya.",
+          "translation": "In Your name, O Allah, I die and I live."
+        }
+      ],
+      "virtues": "",
+      "source": {
+        "reference": "Sahih al-Bukhari 6324",
+        "grade": "Sahih",
+        "sourceReference": "",
+        "status": "needs-review"
+      },
+      "verification": {
+        "verified": false,
+        "arabicChecked": false,
+        "translationChecked": false,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": []
+    }
+  ]
+};

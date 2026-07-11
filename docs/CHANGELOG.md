@@ -2,6 +2,61 @@
 
 All notable changes to this project are documented here.
 
+## v0.5.3 — Split Duaa Collection Data
+
+Status: In Progress
+
+### Added
+
+- Separate data file for each Duaa collection
+- Lightweight collection registry
+- Dynamic collection loader
+- On-demand collection loading for the shared renderer
+- On-demand loading in the Focus Mode prototype
+
+### Changed
+
+- Removed the single monolithic `duaa-collections.js` data file
+- The shared collection page now loads only the requested collection
+- Editing Morning data no longer requires working inside the Evening, Sleep, Travel, Weather, Prayer, or Istikharah data
+
+### Notes
+
+Collection data now lives in:
+
+`js/data/collections/`
+
+Adding a new duaa to a collection file automatically adds it to the rendered collection when the page reloads.
+
+## v0.5.2 — Reusable Duaa Collection Renderer
+
+Status: In Progress
+
+### Added
+
+- One reusable collection page for all Duaa collections
+- Shared browser-ready data bundle for Morning, Evening, Before Sleep, Travel, Weather, Prayer, and Istikharah
+- Collection-specific themes, titles, descriptions, and Focus Mode links
+- Automatic daily tracking only for tracked collections
+- Non-tracked reference collection behavior
+- Generic Focus Mode routing for every collection
+- Working Find a Duaa collection directory
+- Redirects from legacy individual collection page URLs
+
+### Changed
+
+- Morning is no longer rendered by a special one-off page
+- Duaa Home and Daily Companion now link to the reusable collection renderer
+- Adding a new duaa to a collection’s data automatically adds a new card on reload
+
+### Notes
+
+The reusable URL pattern is:
+
+`duaa/collection.html?collection=morning`
+
+The same page is used for every collection.
+
 ## v0.5.1 — Morning Data Integration
 
 Status: In Progress

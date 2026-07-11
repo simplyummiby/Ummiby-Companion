@@ -2,21 +2,30 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Find a Duaa | Ummiby Companion</title>
 <link rel="stylesheet" href="../css/duaa-shell.css">
 <style>
 body{margin:0;background:#f7f9fc;color:#243746;font-family:system-ui,sans-serif}
-main{width:min(680px,calc(100% - 32px));margin:70px auto;padding:34px;border:1px solid #dce7f0;border-radius:22px;background:#fff;box-shadow:0 16px 42px rgba(31,55,70,.09)}
-h1{color:#17324a;font-family:Georgia,serif}
-a{color:#456f8d;font-weight:750;text-decoration:none}
+main{width:min(900px,calc(100% - 32px));margin:55px auto}
+h1{font-family:Georgia,serif;color:#17324a}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{padding:22px;border:1px solid #dce7f0;border-radius:18px;background:#fff}
+.card a{color:#456f8d;font-weight:750;text-decoration:none}
+@media(max-width:750px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <main>
+<p><a href="index.html">← Duaa Home</a></p>
 <h1>Find a Duaa</h1>
-<p>This page will display all non-tracked duaa collections.</p>
-<p><a href="index.html">← Return to Duaa Home</a></p>
+<p>Open a collection for the moment or need you have.</p>
+<div class="grid">
+<article class="card"><h2>Travel</h2><p>Duaas for setting out, journeying, and returning home.</p><a href="collection.html?collection=travel">Open Travel →</a></article>
+<article class="card"><h2>Weather</h2><p>Rain, wind, thunder, and weather-related remembrances.</p><a href="collection.html?collection=weather">Open Weather →</a></article>
+<article class="card"><h2>Prayer</h2><p>Duaas connected to salah and moments within prayer.</p><a href="collection.html?collection=prayer">Open Prayer →</a></article>
+<article class="card"><h2>Istikharah</h2><p>A guided collection planned for a later version.</p><a href="collection.html?collection=istikharah">Preview Istikharah →</a></article>
+</div>
 </main>
 </body>
 </html>

@@ -1,32 +1,38 @@
 # Roadmap
 
 ## v0.1.0 — Project Foundation
-- Repository
-- Initial documentation
+- Repository and documentation
 
 ## v0.2.0 — Shared Home
 - Root application Home
-- Quran and Duaa workspace introductions
 
 ## v0.3.0 — Qur’an Home
 - Qur’an dashboard
-- Journey progress and reminders
 
 ## v0.4.0 — Duaa Home
 - Duaa dashboard
-- Daily Companion overview and reminders
 
 ## v0.5.0 — Morning Collection
-- Full scrolling duaa cards
-- Arabic, transliteration, and English
-- Summaries and repetition counts
-- Daily checkmark progress
-- Focus Mode entry from any duaa
+- Scrolling recitation cards
+- Daily progress tracking
+
+## v0.5.1 — Morning Data Integration
+- All extracted Morning data
+- Data-driven rendering
+
+## v0.5.2 — Reusable Duaa Collection Renderer
+- One renderer for all collections
+- Shared collection data bundle
+- Tracked and non-tracked collection behavior
+
+## v0.5.3 — Split Duaa Collection Data
+- Separate collection files
+- Lightweight registry
+- On-demand collection loading
 
 ## Next: v0.6.0 — Duaa Focus Mode
 - Phrase-by-phrase presentation
 - Arabic, English, and transliteration panels
-- Benefits and authentic sources
-- Study resources
+- Benefits, sources, and study resources
 - Memorization tools
 - Return to collection position

@@ -27,3 +27,19 @@
 - Repetition guidance appears clearly on each card.
 - Focus Mode can be entered from any individual duaa and starts on that duaa.
 - Sources remain visible in a small, unobtrusive line for authenticity.
+
+## Shared Collection Renderer
+
+- All Duaa collections use one reusable collection page.
+- Collection identity comes from a URL query parameter.
+- Tracked or non-tracked behavior comes from collection metadata.
+- New duaas appear automatically when added to the collection data.
+- Legacy individual collection URLs redirect to the shared renderer.
+
+## Collection Data Files
+
+- Each Duaa collection has its own data file.
+- The application should not require editing one large combined Duaa data file.
+- A lightweight registry maps collection IDs to their files and basic metadata.
+- The collection renderer loads only the requested collection.
+- Adding or editing content should normally require changing only the relevant collection file.
