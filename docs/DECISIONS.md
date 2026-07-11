@@ -175,3 +175,7 @@ Monthly history calendars always reserve six Sunday-through-Saturday rows so swi
 - Bottom-of-page tracking messages must be derived from today’s actual record rather than hard-coded completion language.
 - Only Morning, Evening, and Before Sleep display a collection tracking status. Reference collections do not imply completion or daily tracking.
 - Long shared collection pages provide one accessible SVG back-to-top control so users can return to the collection header without excessive scrolling.
+
+## v0.6.2.3 — Reference Collections Must Not Render Tracking Status
+
+Untracked collections do not merely hide the bottom daily-status panel; the renderer removes that component from the page. An explicit CSS hidden-state safeguard is retained as a second layer of protection.

@@ -282,7 +282,7 @@ function renderCollection() {
   } else {
     progressPanel.hidden = true;
     resetProgressButton.hidden = true;
-    completionPanel.hidden = true;
+    completionPanel?.remove();
     introText.textContent = "Each card includes the complete duaa. Read through the collection freely without daily progress tracking.";
   }
 

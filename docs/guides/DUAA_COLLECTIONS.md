@@ -203,3 +203,7 @@ Tracked collections show a live status beneath the Duaa cards:
 - every Duaa in the collection checked today
 
 Reference collections do not show this status. All collection pages use the shared floating SVG back-to-top control after the user scrolls down the page. Do not add collection-specific copies of this control.
+
+## Reference Collection Status Safeguard (v0.6.2.3)
+
+For collections with `trackerEnabled: false`, the shared renderer removes the bottom daily-status component. Reference collections therefore show no daily completion summary. Morning, Evening, and Before Sleep continue to show live status based on today’s dated record.

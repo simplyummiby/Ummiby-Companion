@@ -27,6 +27,7 @@
 .duaa-card-footer{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:17px 25px;border-top:1px solid var(--line);background:#f7fafc}
 .source{margin:0;color:var(--muted);font-size:.76rem}.duaa-card-footer a{flex:0 0 auto;color:var(--collection-dark,var(--duaa-dark));font-size:.84rem;font-weight:800;text-decoration:none}
 .completion-panel{display:flex;align-items:center;gap:17px;margin-top:24px;padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#fff,var(--duaa-soft));color:var(--navy)}
+.completion-panel[hidden]{display:none!important}
 .completion-panel>span{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--duaa);color:#fff;font-size:1.3rem}.completion-panel h2{margin:0;font-family:Georgia,serif;color:var(--duaa-dark)}.completion-panel p{margin:4px 0 0;color:var(--muted)}
 .completion-panel[data-status="empty"]>span{background:#dbe7ef;color:var(--duaa-dark)}
 .completion-panel[data-status="complete"]{border-color:#b8d4e6;background:linear-gradient(145deg,#fff,#e8f4fb)}
@@ -102,7 +103,7 @@ body{background:var(--duaa-page)}
 .reflection-attribution{display:block;margin-top:10px;color:var(--muted);font-family:Inter,system-ui,sans-serif;font-size:.78rem;font-style:normal}.reflection-attribution a{display:inline-flex;align-items:center;gap:.3rem;color:var(--duaa-dark);font-weight:750;text-decoration:none}.reflection-attribution .ui-icon{width:.9em;height:.9em}
 
 
-/* v0.6.2.2 collection usability polish */
+/* v0.6.2.3 reference-collection status visibility fix */
 .back-to-top-button{position:fixed;right:24px;bottom:24px;z-index:70;display:grid;place-items:center;width:48px;height:48px;border:1px solid rgba(255,255,255,.65);border-radius:50%;background:var(--duaa);color:#fff;box-shadow:0 12px 28px rgba(31,69,96,.28);opacity:0;visibility:hidden;transform:translateY(10px);pointer-events:none;cursor:pointer;transition:opacity .18s ease,transform .18s ease,visibility .18s ease,background .18s ease}
 .back-to-top-button.is-visible{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
 .back-to-top-button:hover{background:var(--duaa-dark)}

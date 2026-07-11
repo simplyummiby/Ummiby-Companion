@@ -212,3 +212,7 @@ Duaa Home directly exposes Morning, Evening, and Before Sleep. A separate Daily 
 The shared Duaa collection renderer calculates the bottom status from the current local-date tracking record. The status is rendered only for tracked collections and distinguishes zero checked Duaas, partial recitation, and full collection completion. Reference collections never display tracking status.
 
 A single floating back-to-top control is part of the shared collection page rather than individual collection data. It uses the shared SVG icon system, appears after meaningful scrolling, supports keyboard focus, and scrolls smoothly to the document top.
+
+## Reference Collection Status Visibility (v0.6.2.3)
+
+The shared collection renderer removes the bottom tracking-status component when `trackerEnabled` is false. CSS also explicitly enforces `display: none` for hidden completion panels. This keeps reference collections free of daily-tracking UI even if component display rules change later.

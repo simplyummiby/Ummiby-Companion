@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.6.2.3 — Reference Collection Status Fix
+
+### Fixed
+
+- Prevented the bottom daily-tracking status from appearing on untracked reference collections.
+- The shared collection renderer now removes the status component entirely for reference collections.
+- Added an explicit hidden-state CSS safeguard so hidden completion panels cannot be displayed by component layout rules.
+
+### Notes
+
+- Morning, Evening, and Before Sleep retain their live current-day status.
+- Tracking storage, history, Duaa content, reading preferences, and back-to-top behavior are unchanged.
+
 ## v0.6.2.2 — Collection Usability Polish
 
 ### Changed

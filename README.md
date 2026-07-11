@@ -17,8 +17,8 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.6.2.2 — Collection Usability Polish
+v0.6.2.3 — Reference Collection Status Fix
 
 ## Current Release
 
-Version 0.6.2.2 makes the bottom collection status accurate for the current day and shows it only for tracked collections. Long Duaa collections also include an accessible floating SVG back-to-top control.
+Version 0.6.2.3 corrects the bottom-status visibility so it is rendered only for Morning, Evening, and Before Sleep. Reference collections no longer contain the tracking-status component. The accessible floating SVG back-to-top control remains available on long collection pages.
