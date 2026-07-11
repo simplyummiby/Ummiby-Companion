@@ -138,3 +138,9 @@ assets/collections/<collection-id>/icon.webp
 Shared fallbacks live in `assets/collections/fallback/`. Missing artwork must fall back gracefully rather than exposing a broken image.
 
 The collection banner and icon communicate collection identity; the reading page background, cards, buttons, progress controls, and settings retain the shared Duaa module visual system.
+
+## Shared Interface Icon System
+
+`js/app-shell.js` owns the small shared SVG icon library and hydrates elements marked with `data-ui-icon`. JavaScript-rendered components may use `window.UmmibyIcons.create(name)`. Functional icons must use this shared SVG system or another explicit SVG asset. Decorative collection artwork continues to load through the collection artwork registry.
+
+Collection hero images use a responsive constrained height rather than their raw aspect ratio so reading content remains visible sooner.

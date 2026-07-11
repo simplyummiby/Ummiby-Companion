@@ -127,3 +127,7 @@ Collection banners and circular artwork are referenced from the shared collectio
 Artwork files are decorative collection identity, not interface icons. They may use WebP, PNG, or SVG as appropriate. Buttons, navigation controls, status controls, and other interface icons continue to use SVG only.
 
 Every collection artwork record includes accessible alternative text and falls back to shared Duaa artwork if a file is absent or fails to load. Collection imagery may differ, but it does not change the shared Duaa module colors or functional controls.
+
+## SVG Interface Icons and Illustrated Artwork — v0.5.9.1
+
+Functional interface symbols use SVG throughout the application. This includes navigation, arrows, status marks, settings, close controls, progress symbols, search, and similar controls. Unicode symbols are not used as interface icons. Collection banners and circular collection artwork are illustrations, so they remain image assets such as WebP or PNG.

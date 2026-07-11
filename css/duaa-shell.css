@@ -26,7 +26,7 @@ button,input{font:inherit}
 .brand p{margin:0}.brand-name{font-size:1.05rem;font-weight:750}.brand-subtitle{color:#bfd0dc;font-size:.78rem}
 .main-nav{display:grid;gap:8px;margin-top:24px}
 .nav-link,.nav-group summary{display:flex;align-items:center;gap:11px;min-height:44px;padding:10px 12px;border-radius:12px;color:#dbe7ee;text-decoration:none;cursor:pointer;list-style:none}
-.nav-group summary{justify-content:space-between}.nav-group summary::-webkit-details-marker{display:none}.nav-group summary::after{content:"⌄";transition:transform .18s ease}.nav-group[open] summary::after{transform:rotate(180deg)}
+.nav-group summary{justify-content:space-between}.nav-group summary::-webkit-details-marker{display:none}.nav-group summary::after{content:"";width:16px;height:16px;background:currentColor;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m7 9 5 5 5-5' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .18s ease}.nav-group[open] summary::after{transform:rotate(180deg)}
 .nav-link:hover,.nav-group summary:hover{background:rgba(255,255,255,.11);color:#fff}
 .nav-submenu{display:grid;gap:4px;padding:6px 0 8px 35px}.nav-submenu a{padding:7px 10px;border-radius:9px;color:#bdd0dc;font-size:.88rem;text-decoration:none}.nav-submenu a:hover,.nav-submenu a.submenu-active{background:rgba(255,255,255,.1);color:#fff}
 .page{min-width:0}.topbar{min-height:66px;display:flex;align-items:center;justify-content:space-between;padding:0 34px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.86);backdrop-filter:blur(12px)}

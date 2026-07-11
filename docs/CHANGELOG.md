@@ -1,3 +1,10 @@
+# Version 0.5.9.1 — Collection Artwork Refinement
+
+- Reduced Duaa collection hero height responsively so artwork introduces the collection without pushing reading content too far down the page.
+- Centered artwork, titles, descriptions, and actions in the Duaa Home “Explore More Duaa Collections” cards.
+- Replaced remaining Unicode interface symbols with shared inline SVG icons across current application pages and JavaScript-rendered Duaa controls.
+- Preserved collection illustrations, banners, and circular artwork as image assets rather than treating them as UI icons.
+
 ## Version 0.5.9 — Duaa Collection Identity System
 
 - Added standardized artwork folders for Morning, Evening, Before Sleep, Travel, Weather, Prayer, and Istikharah.

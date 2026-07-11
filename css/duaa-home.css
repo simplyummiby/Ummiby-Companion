@@ -47,3 +47,12 @@ dialog{width:min(92vw,520px);border:0;border-radius:20px;padding:0;box-shadow:0 
 .daily-icon img,.collection-icon img{display:block;width:100%;height:100%;object-fit:cover}
 .daily-collection.morning,.daily-collection.evening,.daily-collection.sleep,.collection-card,.collection-card:nth-child(2),.collection-card:nth-child(3),.collection-card:nth-child(4){background:linear-gradient(145deg,#fff,var(--duaa-soft))}
 .morning .daily-icon,.morning h3,.evening .daily-icon,.evening h3,.sleep .daily-icon,.sleep h3{color:var(--duaa-dark)}
+
+/* v0.5.9.1 centered Explore More Collections cards */
+.collections-card .collection-card{align-items:center;text-align:center}
+.collections-card .collection-icon{margin-inline:auto}
+.collections-card .collection-card p{max-width:24ch}
+.collections-card .collection-card a,.collections-card .coming-soon-pill{margin-inline:auto}
+.round-icon .ui-icon{width:1.15em;height:1.15em}
+.completion-state.completed{display:inline-flex;align-items:center;justify-content:center;gap:.3rem}
+.completion-state.completed .ui-icon{width:1em;height:1em}

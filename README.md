@@ -19,8 +19,13 @@ Feature guides are located in:
 
 ## Current Version
 
-v0.5.9 — Duaa Collection Identity System
+v0.5.9.1 — Duaa Collection Identity System
 
 ## Current Release
 
-Version 0.5.9 introduces a data-driven collection identity system. Each Duaa collection now loads its banner and circular artwork from shared metadata while the reading interface remains consistently light blue with dark-blue accents.
+Version 0.5.9.1 introduces a data-driven collection identity system. Each Duaa collection now loads its banner and circular artwork from shared metadata while the reading interface remains consistently light blue with dark-blue accents.
+
+
+## Version 0.5.9.1
+
+Refines collection artwork presentation with shorter responsive hero images, centered Explore More Collections cards, and an app-wide SVG interface-icon audit. Illustrated banners and collection artwork remain image assets.

@@ -100,7 +100,8 @@ function buildSource(item) {
     link.target = "_blank";
     link.rel = "noopener noreferrer";
     link.setAttribute("aria-label", `${reference} (opens source in a new tab)`);
-    link.appendChild(createElement("span", "source-link-icon", "↗"));
+    const externalIcon = window.UmmibyIcons.create("external", { className: "source-link-icon" });
+    link.appendChild(externalIcon);
     wrapper.appendChild(link);
   } else {
     wrapper.appendChild(document.createTextNode(reference));
@@ -151,8 +152,7 @@ function buildCard(item, index) {
     checkButton.type = "button";
     checkButton.setAttribute("aria-label", `Mark ${item.suggestedTitle || `Duaa ${index + 1}`} complete`);
     checkButton.setAttribute("aria-pressed", "false");
-    const mark = createElement("span", "", "✓");
-    mark.setAttribute("aria-hidden", "true");
+    const mark = window.UmmibyIcons.create("check");
     checkButton.appendChild(mark);
     checkButton.addEventListener("click", () => toggleCompleted(card.dataset.duaaId));
     header.appendChild(checkButton);
@@ -172,7 +172,8 @@ function buildCard(item, index) {
   const footer = createElement("footer", "duaa-card-footer");
   footer.appendChild(buildSource(item));
 
-  const focusLink = createElement("a", "", "Study in Focus Mode →");
+  const focusLink = createElement("a", "", "Study in Focus Mode");
+  focusLink.append(" ", window.UmmibyIcons.create("arrow-right", { className: "inline-ui-icon" }));
   focusLink.href = `focus-mode.html?collection=${encodeURIComponent(collectionId)}&duaa=${index + 1}`;
   footer.appendChild(focusLink);
   card.appendChild(footer);

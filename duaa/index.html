@@ -12,7 +12,7 @@
 <div class="app-shell">
   <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
     <div class="brand">
-      <span class="brand-mark" aria-hidden="true">◈</span>
+      <span class="brand-mark" data-ui-icon="brand" aria-hidden="true"></span>
       <div>
         <p class="brand-name">Ummiby</p>
         <p class="brand-subtitle">Qur’an &amp; Duaa</p>
@@ -20,10 +20,10 @@
     </div>
 
     <nav class="main-nav">
-      <a class="nav-link" href="../index.html"><span aria-hidden="true">⌂</span> Home</a>
+      <a class="nav-link" href="../index.html"><span data-ui-icon="home" aria-hidden="true"></span> Home</a>
 
       <details class="nav-group">
-        <summary><span><span aria-hidden="true">▤</span> Qur’an</span></summary>
+        <summary><span><span data-ui-icon="book" aria-hidden="true"></span> Qur’an</span></summary>
         <div class="nav-submenu">
           <a href="../quran/index.html">Qur’an Home</a>
           <a href="../quran/reading-journey.html">Reading Journey</a>
@@ -34,7 +34,7 @@
       </details>
 
       <details class="nav-group" open>
-        <summary><span><span aria-hidden="true">✦</span> Duaa</span></summary>
+        <summary><span><span data-ui-icon="sparkle" aria-hidden="true"></span> Duaa</span></summary>
         <div class="nav-submenu">
           <a class="submenu-active" href="index.html" aria-current="page">Duaa Home</a>
           <a href="daily-companion.html">Daily Companion</a>
@@ -42,16 +42,16 @@
         </div>
       </details>
 
-      <a class="nav-link" href="../settings.html"><span aria-hidden="true">⚙</span> Settings</a>
+      <a class="nav-link" href="../settings.html"><span data-ui-icon="settings" aria-hidden="true"></span> Settings</a>
     </nav>
   </aside>
 
   <div class="page">
     <header class="topbar">
       <button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false">
-        <span class="sr-only">Open navigation</span>☰
+        <span class="sr-only">Open navigation</span><span data-ui-icon="menu" aria-hidden="true"></span>
       </button>
-      <a class="back-home" href="../index.html">← App Home</a>
+      <a class="back-home" href="../index.html"><span data-ui-icon="arrow-left" aria-hidden="true"></span> App Home</a>
     </header>
 
     <main class="duaa-home">
@@ -71,7 +71,7 @@
       <section class="top-grid">
         <article class="dashboard-card daily-card">
           <div class="section-heading">
-            <span class="round-icon" aria-hidden="true">◴</span>
+            <span class="round-icon" data-ui-icon="clock" aria-hidden="true"></span>
             <div>
               <h2>Your Daily Companion</h2>
               <p>Focus on three beautiful times each day.</p>
@@ -84,7 +84,7 @@
               <h3>Morning</h3>
               <p>Start your day with remembrance.</p>
               <a class="small-button" href="collection.html?collection=morning" data-collection="morning">View Morning Duaa</a>
-              <span class="completion-state completed">✓ Completed today</span>
+              <span class="completion-state completed"><span data-ui-icon="check" aria-hidden="true"></span> Completed today</span>
             </article>
 
             <article class="daily-collection evening">
@@ -104,12 +104,12 @@
             </article>
           </div>
 
-          <a class="wide-link" href="daily-companion.html">Open Daily Companion →</a>
+          <a class="wide-link" href="daily-companion.html">Open Daily Companion <span class="inline-ui-icon" data-ui-icon="arrow-right" aria-hidden="true"></span></a>
         </article>
 
         <article class="dashboard-card progress-card">
           <div class="section-heading compact">
-            <span class="round-icon" aria-hidden="true">◔</span>
+            <span class="round-icon" data-ui-icon="progress" aria-hidden="true"></span>
             <div>
               <h2>Your Progress</h2>
               <p>Across your tracked daily collections.</p>
@@ -138,13 +138,13 @@
             </div>
           </div>
 
-          <a class="wide-link" href="progress.html">View Detailed Progress →</a>
+          <a class="wide-link" href="progress.html">View Detailed Progress <span class="inline-ui-icon" data-ui-icon="arrow-right" aria-hidden="true"></span></a>
         </article>
       </section>
 
       <section class="dashboard-card collections-card">
         <div class="section-heading compact">
-          <span class="round-icon" aria-hidden="true">✦</span>
+          <span class="round-icon" data-ui-icon="sparkle" aria-hidden="true"></span>
           <div>
             <h2>Explore More Duaa Collections</h2>
             <p>Collections for different moments and needs.</p>
@@ -156,21 +156,21 @@
             <span class="collection-icon" data-collection-icon="travel"></span>
             <h3>Travel</h3>
             <p>Duaas for safe and blessed journeys.</p>
-            <a href="collection.html?collection=travel" data-collection="travel">Browse Collection →</a>
+            <a href="collection.html?collection=travel" data-collection="travel">Browse Collection <span class="inline-ui-icon" data-ui-icon="arrow-right" aria-hidden="true"></span></a>
           </article>
 
           <article class="collection-card">
             <span class="collection-icon" data-collection-icon="weather"></span>
             <h3>Weather</h3>
             <p>Duaas for rain, wind, and changing weather.</p>
-            <a href="collection.html?collection=weather" data-collection="weather">Browse Collection →</a>
+            <a href="collection.html?collection=weather" data-collection="weather">Browse Collection <span class="inline-ui-icon" data-ui-icon="arrow-right" aria-hidden="true"></span></a>
           </article>
 
           <article class="collection-card">
             <span class="collection-icon" data-collection-icon="prayer"></span>
             <h3>Prayer</h3>
             <p>Duaas connected to prayer and the masjid.</p>
-            <a href="collection.html?collection=prayer" data-collection="prayer">Browse Collection →</a>
+            <a href="collection.html?collection=prayer" data-collection="prayer">Browse Collection <span class="inline-ui-icon" data-ui-icon="arrow-right" aria-hidden="true"></span></a>
           </article>
 
           <article class="collection-card coming-soon">
@@ -181,13 +181,13 @@
           </article>
         </div>
 
-        <a class="wide-link centered" href="collections.html">View All Collections →</a>
+        <a class="wide-link centered" href="collections.html">View All Collections <span class="inline-ui-icon" data-ui-icon="arrow-right" aria-hidden="true"></span></a>
       </section>
 
       <section class="lower-grid">
         <article class="dashboard-card recent-card">
           <div class="section-heading compact">
-            <span class="round-icon" aria-hidden="true">◷</span>
+            <span class="round-icon" data-ui-icon="history" aria-hidden="true"></span>
             <div>
               <h2>Recently Viewed</h2>
             </div>
@@ -217,12 +217,12 @@
             </li>
           </ul>
 
-          <a class="text-link" href="recent.html">View All →</a>
+          <a class="text-link" href="recent.html">View All <span class="inline-ui-icon" data-ui-icon="arrow-right" aria-hidden="true"></span></a>
         </article>
 
         <article class="dashboard-card reminder-card">
           <div class="section-heading compact">
-            <span class="round-icon" aria-hidden="true">◴</span>
+            <span class="round-icon" data-ui-icon="clock" aria-hidden="true"></span>
             <div>
               <h2>Stay Consistent</h2>
               <p>Set a gentle reminder to return to your Daily Companion.</p>
@@ -256,7 +256,7 @@
         <p class="eyebrow">Gentle Reminder</p>
         <h2>Choose when to return</h2>
       </div>
-      <button class="icon-button" value="cancel" aria-label="Close">×</button>
+      <button class="icon-button" value="cancel" aria-label="Close"><span data-ui-icon="close" aria-hidden="true"></span></button>
     </div>
 
     <label>

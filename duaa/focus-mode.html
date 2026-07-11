@@ -15,7 +15,7 @@ body{background:var(--duaa-page)}.focus-page{width:min(860px,calc(100% - 30px));
 </head>
 <body>
 <main class="focus-page">
-<div class="focus-toolbar"><a class="back" id="returnLink" href="index.html">← Return to Collection</a><button class="reading-settings-link" type="button" data-duaa-settings-trigger data-duaa-settings-context="focus">Reading Settings</button></div>
+<div class="focus-toolbar"><a class="back" id="returnLink" href="index.html"><span data-ui-icon="arrow-left" aria-hidden="true"></span> Return to Collection</a><button class="reading-settings-link" type="button" data-duaa-settings-trigger data-duaa-settings-context="focus">Reading Settings</button></div>
 <section class="focus-card">
 <p>Duaa <span id="duaaNumber">1</span> of <span id="duaaTotal">0</span></p>
 <h1 id="duaaTitle">Focus Mode Prototype</h1>
@@ -24,8 +24,8 @@ This version confirms that Focus Mode can be entered from any collection and beg
 The complete phrase-by-phrase experience will be built in the next Focus Mode version.
 </div>
 <div class="focus-actions">
-<a id="previousLink" href="#">← Previous</a>
-<a id="nextLink" href="#">Next →</a>
+<a id="previousLink" href="#"><span data-ui-icon="arrow-left" aria-hidden="true"></span> Previous</a>
+<a id="nextLink" href="#">Next <span class="inline-ui-icon" data-ui-icon="arrow-right" aria-hidden="true"></span></a>
 </div>
 </section>
 </main>

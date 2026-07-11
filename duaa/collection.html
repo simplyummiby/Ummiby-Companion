@@ -16,7 +16,7 @@
 <div class="app-shell">
   <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
     <div class="brand">
-      <span class="brand-mark" aria-hidden="true">◈</span>
+      <span class="brand-mark" data-ui-icon="brand" aria-hidden="true"></span>
       <div>
         <p class="brand-name">Ummiby</p>
         <p class="brand-subtitle">Qur’an &amp; Duaa</p>
@@ -24,10 +24,10 @@
     </div>
 
     <nav class="main-nav">
-      <a class="nav-link" href="../index.html"><span aria-hidden="true">⌂</span> Home</a>
+      <a class="nav-link" href="../index.html"><span data-ui-icon="home" aria-hidden="true"></span> Home</a>
 
       <details class="nav-group">
-        <summary><span><span aria-hidden="true">▤</span> Qur’an</span></summary>
+        <summary><span><span data-ui-icon="book" aria-hidden="true"></span> Qur’an</span></summary>
         <div class="nav-submenu">
           <a href="../quran/index.html">Qur’an Home</a>
           <a href="../quran/reading-journey.html">Reading Journey</a>
@@ -38,7 +38,7 @@
       </details>
 
       <details class="nav-group" open>
-        <summary><span><span aria-hidden="true">✦</span> Duaa</span></summary>
+        <summary><span><span data-ui-icon="sparkle" aria-hidden="true"></span> Duaa</span></summary>
         <div class="nav-submenu">
           <a href="index.html">Duaa Home</a>
           <a class="submenu-active" href="daily-companion.html">Daily Companion</a>
@@ -46,16 +46,16 @@
         </div>
       </details>
 
-      <a class="nav-link" href="../settings.html"><span aria-hidden="true">⚙</span> Settings</a>
+      <a class="nav-link" href="../settings.html"><span data-ui-icon="settings" aria-hidden="true"></span> Settings</a>
     </nav>
   </aside>
 
   <div class="page">
     <header class="topbar">
       <button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false">
-        <span class="sr-only">Open navigation</span>☰
+        <span class="sr-only">Open navigation</span><span data-ui-icon="menu" aria-hidden="true"></span>
       </button>
-      <a class="back-home" href="index.html">← Duaa Home</a>
+      <a class="back-home" href="index.html"><span data-ui-icon="arrow-left" aria-hidden="true"></span> Duaa Home</a>
     </header>
 
     <main class="collection-page" id="collectionPage">
@@ -103,7 +103,7 @@
       <div class="duaa-list" id="duaaList" aria-live="polite"></div>
 
       <section class="completion-panel" id="completionPanel" hidden>
-        <span aria-hidden="true">✓</span>
+        <span data-ui-icon="check" aria-hidden="true"></span>
         <div>
           <h2 id="completionTitle">Collection complete</h2>
           <p>May Allah accept your remembrance.</p>
