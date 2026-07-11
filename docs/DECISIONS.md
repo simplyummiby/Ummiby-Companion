@@ -163,3 +163,8 @@ Morning, Evening, and Before Sleep are accessed directly from Duaa Home. The for
 - A day counts as active when at least one Duaa is checked.
 - Monthly history uses one calendar with collection tabs rather than three simultaneous calendars, keeping the view calm and mobile-friendly.
 - Monthly summaries show active days only. Exact daily Duaa counts remain visible within calendar dates and stored in history.
+
+
+## v0.6.2.1 — Stable Monthly History Layout
+
+Monthly history calendars always reserve six Sunday-through-Saturday rows so switching between months does not resize the history panel. Active-day count markers and their Duaa/Duaas labels are centered as one unit. History markers continue using the shared Duaa blue rather than collection-specific colors because the selected tab already identifies the collection.

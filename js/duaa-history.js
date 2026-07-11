@@ -68,15 +68,26 @@
       cell.appendChild(dateNumber);
 
       if (count > 0) {
+        const activity = document.createElement("span");
+        activity.className = "calendar-activity";
         const countBadge = document.createElement("span");
         countBadge.className = "calendar-count";
         countBadge.textContent = String(count);
         const countLabel = document.createElement("span");
         countLabel.className = "calendar-count-label";
         countLabel.textContent = count === 1 ? "Duaa" : "Duaas";
-        cell.append(countBadge, countLabel);
+        activity.append(countBadge, countLabel);
+        cell.appendChild(activity);
       }
       calendar.appendChild(cell);
+    }
+
+    const renderedCells = firstDayIndex + daysInMonth;
+    for (let index = renderedCells; index < 42; index += 1) {
+      const spacer = document.createElement("div");
+      spacer.className = "calendar-day outside";
+      spacer.setAttribute("aria-hidden", "true");
+      calendar.appendChild(spacer);
     }
 
     summary.textContent = `${labels[activeCollection]} · ${activeDays} active ${activeDays === 1 ? "day" : "days"}`;

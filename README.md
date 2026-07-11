@@ -17,8 +17,8 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.6.2 — Duaa History and Consistency
+v0.6.2.1 — Duaa History and Consistency
 
 ## Current Release
 
-Version 0.6.2 renames the Duaa Home summary to **Weekly Consistency** and adds a true monthly history calendar. Morning, Evening, and Before Sleep share one calendar view with collection tabs, Sunday-first weeks, exact daily checked-Duaa counts, and a monthly summary of active days only.
+Version 0.6.2.1 renames the Duaa Home summary to **Weekly Consistency** and adds a true monthly history calendar. Morning, Evening, and Before Sleep share one calendar view with collection tabs, Sunday-first weeks, exact daily checked-Duaa counts, and a monthly summary of active days only.

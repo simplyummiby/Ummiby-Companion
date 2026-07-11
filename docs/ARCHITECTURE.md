@@ -200,3 +200,8 @@ Duaa Home directly exposes Morning, Evening, and Before Sleep. A separate Daily 
 ## Monthly Duaa History
 
 `duaa/progress.html` is the monthly history view. It reads the existing dated records from `js/duaa-tracking.js` and renders one Sunday-first calendar through `js/duaa-history.js`. The Morning, Evening, and Before Sleep tabs filter the same calendar without duplicating pages or storage. History is derived from `ummibyDuaaDailyTracking`; no separate summary database is maintained.
+
+
+## Monthly History Layout Stability (v0.6.2.1)
+
+`js/duaa-history.js` always renders 42 calendar cells, including hidden outside-month placeholders. This keeps the history panel at a stable six-row height across months. `css/duaa-history.css` centers each active-day marker and its singular/plural label as one activity group. The shared shell reserves scrollbar space and anchors the sidebar to the viewport top so month changes do not shift navigation.

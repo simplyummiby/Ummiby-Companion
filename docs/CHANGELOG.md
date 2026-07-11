@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.6.2.1 — History Calendar Polish
+
+### Changed
+
+- Centered the active-day count circle and Duaa/Duaas label inside each calendar cell.
+- Reserved a consistent six-week calendar grid for every month.
+- Stabilized the page scrollbar gutter and sidebar positioning to prevent navigation movement when changing months.
+- Kept all history markers in the shared Duaa blue palette.
+
+### Notes
+
+- Tracking logic, dated records, and browser storage are unchanged.
+
 ## v0.6.2 — Duaa History and Consistency
 
 ### Added
