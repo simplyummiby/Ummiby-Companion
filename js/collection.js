@@ -176,7 +176,7 @@ function buildCard(item, index) {
 
   const cardText = item.cardText || {};
   addTextBlock(card, "Arabic", cardText.arabic, { className: "arabic-block", ariaLabel: "Arabic", arabic: true });
-  addTextBlock(card, "Transliteration", cardText.transliteration);
+  addTextBlock(card, "Transliteration", cardText.transliteration, { className: "transliteration-block" });
   addTextBlock(card, "English", cardText.translation, { className: "translation-block" });
 
   const footer = createElement("footer", "duaa-card-footer");

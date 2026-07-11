@@ -18,6 +18,12 @@
     }
   }
 
+  function writePreferences(preferences) {
+    localStorage.setItem(preferenceKey, JSON.stringify(preferences));
+    window.dispatchEvent(new CustomEvent("ummiby:preferences-changed", { detail: preferences }));
+    return preferences;
+  }
+
   function applyArabicTextSize(size) {
     const selected = allowedArabicSizes.includes(size) ? size : "medium";
     document.documentElement.dataset.arabicTextSize = selected;
@@ -25,13 +31,28 @@
     return selected;
   }
 
+  function applyReadingDisplay(preferences = readPreferences()) {
+    const showTransliteration = preferences.showTransliteration !== false;
+    const showTranslation = preferences.showTranslation !== false;
+    document.documentElement.dataset.showTransliteration = String(showTransliteration);
+    document.documentElement.dataset.showTranslation = String(showTranslation);
+    return { showTransliteration, showTranslation };
+  }
+
   function saveArabicTextSize(size) {
     const selected = applyArabicTextSize(size);
     const preferences = readPreferences();
     preferences.arabicTextSize = selected;
-    localStorage.setItem(preferenceKey, JSON.stringify(preferences));
-    window.dispatchEvent(new CustomEvent("ummiby:preferences-changed", { detail: preferences }));
+    writePreferences(preferences);
     return selected;
+  }
+
+  function saveReadingDisplay(name, value) {
+    if (!["showTransliteration", "showTranslation"].includes(name)) return applyReadingDisplay();
+    const preferences = readPreferences();
+    preferences[name] = Boolean(value);
+    writePreferences(preferences);
+    return applyReadingDisplay(preferences);
   }
 
   function createFooter() {
@@ -56,13 +77,16 @@
 
   const preferences = readPreferences();
   applyArabicTextSize(preferences.arabicTextSize);
+  applyReadingDisplay(preferences);
 
   window.UmmibyPreferences = {
     key: preferenceKey,
     allowedArabicSizes,
     read: readPreferences,
     applyArabicTextSize,
-    saveArabicTextSize
+    applyReadingDisplay,
+    saveArabicTextSize,
+    saveReadingDisplay
   };
 
   function initialize() {

@@ -52,3 +52,7 @@ dialog{width:min(92vw,480px);border:0;border-radius:20px;padding:0;box-shadow:0 
 .source-link:focus-visible{outline:3px solid var(--collection-soft,#eef5fb);outline-offset:4px;border-radius:4px}
 .source-link-icon{font-family:system-ui,sans-serif;font-size:.78em;text-decoration:none}
 @media(max-width:500px){.duaa-card .arabic{line-height:1.85}.duaa-card .text-block:not(.arabic-block) p:not(.block-label){font-size:1rem}}
+
+/* Reading display preferences */
+html[data-show-transliteration="false"] .duaa-card .transliteration-block{display:none}
+html[data-show-translation="false"] .duaa-card .translation-block{display:none}

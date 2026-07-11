@@ -2,7 +2,27 @@
 
 All notable changes to this project are documented here.
 
-## v0.5.7.1 — Reading Experience Refinement
+## v0.5.8 — Duaa Reading Preferences
+
+Status: Complete
+
+### Added
+
+- Persistent controls for showing or hiding Duaa transliteration
+- Persistent controls for showing or hiding English translation
+- Shared display-preference handling through the application preferences system
+
+### Changed
+
+- Duaa collection cards now honor the same reading preferences across tracked and reference collections
+- Arabic remains visible at all times while optional supporting text can be simplified
+- The roadmap now prioritizes reading comfort and daily tracking before memorization and the Ramadan Reading Journey
+
+### Notes
+
+Both display choices default to visible, preserving the existing reading experience for current users. Preferences are saved locally on the device and do not alter Duaa data or daily progress.
+
+## v0.5.8 — Reading Experience Refinement
 
 Status: Complete
 

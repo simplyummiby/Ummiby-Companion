@@ -65,16 +65,20 @@
 - Added optional linked source references through collection data
 - Documented source-link entry and verification rules
 
-## Next Candidate: v0.5.8
+## Completed in v0.5.8
 
-- Memorized Duaa status
-- Collection filters for All, Memorized, and Still Learning
-- Backup and restore support for long-term memorization state
+- Added persistent Show Transliteration and Show English Translation controls
+- Applied shared display preferences across tracked and reference Duaa collections
+- Preserved Arabic as the always-visible primary reading text
 
+## Next: v0.5.9 — Daily Tracking Refinement
 
-## Completed in v0.5.7.1
+- Confirm and document automatic daily progress rollover
+- Improve the manual reset placement and wording
+- Strengthen daily history and current-day tracking foundations
 
-- Restored the previous English and transliteration typography
-- Added a persistent Arabic-only text-size preference
-- Added shared application version configuration and page-wide version display
-- Added Settings/About build information
+## Later
+
+- Complete Duaa Focus Mode reading experience
+- Memorization system and memorized/unmemorized filtering
+- Ramadan Reading Journey

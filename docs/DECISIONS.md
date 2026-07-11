@@ -77,7 +77,7 @@
 - Open external source references in a new tab to preserve the user's place in the collection.
 
 
-## v0.5.7.1 Decisions
+## v0.5.8 Decisions
 
 ### Amiri is for Arabic Duaa text only
 English and transliteration use the established interface font with tighter spacing. This keeps supporting text easy to scan while allowing Arabic to remain visually distinct.
@@ -87,3 +87,11 @@ The Settings page offers four controlled Arabic text sizes. The setting does not
 
 ### Version information comes from one shared configuration
 Every page loads the shared application version and displays it in a subtle footer. Settings also includes an About section. Future releases and Codex prompts must update the shared version rather than hardcoding versions page by page.
+## Duaa Reading Display Preferences (v0.5.8)
+
+- Arabic Duaa text always remains visible.
+- Users may independently show or hide transliteration and English translation.
+- Display preferences are stored in the shared `ummibyPreferences` browser record rather than page-specific keys.
+- Both optional text layers default to visible so existing users retain the familiar experience.
+- Memorization and the Ramadan Reading Journey remain later priorities while reading comfort and daily tracking are refined.
+

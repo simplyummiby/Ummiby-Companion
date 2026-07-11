@@ -1,60 +1,58 @@
-# Update Instructions — Ummiby Companion v0.5.7.1
+# Update Instructions — Ummiby Companion v0.5.8
 
-This package updates Ummiby Companion from **v0.5.7** to **v0.5.7.1**.
+## Replaces
 
-## Recommended Manual Update
+Version 0.5.8
 
-Because this release adds shared JavaScript files and updates many HTML pages, the safest manual method is:
+## Installation
 
-1. Make a backup copy of your current project folder.
-2. Extract `ummiby-companion-v0.5.7.1-full.zip`.
-3. Copy all extracted files and folders into the existing project folder.
-4. Choose **Replace** when prompted.
-5. Do not delete browser storage; existing Duaa completion data remains compatible.
+1. Extract the v0.5.8 ZIP file.
+2. Copy all extracted files and folders into your local Ummiby Companion repository.
+3. Choose **Replace** when your computer asks about files with the same names.
+4. Open GitHub Desktop and review the changed files.
+5. Test locally, then commit and push.
 
 ## Files Added
 
-- `js/app-config.js`
-- `js/app-shell.js`
-- `js/settings.js`
+None.
 
-## Files Replaced or Modified
+## Files Replaced / Modified
 
 - `README.md`
 - `UPDATE_INSTRUCTIONS.md`
 - `settings.html`
-- every existing `.html` page, to load the shared version configuration and footer
 - `css/collection.css`
-- `docs/ARCHITECTURE.md`
+- `js/app-config.js`
+- `js/app-shell.js`
+- `js/collection.js`
+- `js/settings.js`
 - `docs/CHANGELOG.md`
-- `docs/DECISIONS.md`
 - `docs/ROADMAP.md`
+- `docs/DECISIONS.md`
+- `docs/ARCHITECTURE.md`
 - `docs/guides/DUAA_COLLECTIONS.md`
-- `docs/guides/PROJECT_STRUCTURE.md`
 
 ## Files Deleted
 
 None.
 
-## Browser Data
+## Browser Storage
 
-- Existing daily Duaa progress is not changed.
-- A new `ummibyPreferences` localStorage record is created after the user changes Arabic Text Size.
-- The default Arabic size is Medium when no preference has been saved.
+No existing progress is deleted or migrated. Two optional values may be added to the existing `ummibyPreferences` record:
+
+- `showTransliteration`
+- `showTranslation`
+
+When absent, both default to visible.
 
 ## Testing Checklist
 
-- Open Shared Home and confirm the footer shows Version 0.5.7.1.
-- Open Qur’an Home and confirm the same footer version.
-- Open Duaa Home and confirm the same footer version.
-- Open Settings and confirm the About section shows v0.5.7.1.
-- Change Arabic Text Size and confirm the preview changes.
-- Open a tracked Duaa collection and confirm only Arabic text changes size.
-- Confirm English and transliteration use the previous font and tighter line spacing.
-- Refresh the page and confirm the chosen Arabic size remains saved.
-- Open a reference collection and confirm the same Arabic preference applies.
-- Open Focus Mode and confirm existing navigation and return behavior still work.
-
-## Commit Message
-
-`feat(settings): refine Duaa typography and add shared version display`
+- Confirm every page footer shows Version 0.5.8.
+- Open Settings and verify Arabic size still works.
+- Turn transliteration off and confirm it disappears from tracked and reference collection cards.
+- Turn English translation off and confirm it disappears from tracked and reference collection cards.
+- Turn both back on and confirm the original card view returns.
+- Confirm Arabic always remains visible.
+- Refresh the browser and confirm preferences persist.
+- Confirm daily Duaa completion progress is unchanged.
+- Confirm Focus Mode navigation and return-to-card behavior still work.

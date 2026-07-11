@@ -19,4 +19,8 @@ Feature guides are located in:
 
 ## Current Version
 
-v0.5.7.1 — Reading Experience Refinement
+v0.5.8 — Reading Experience Refinement
+
+## Version 0.5.8
+
+Duaa reading preferences now allow users to independently show or hide transliteration and English translation while keeping Arabic visible.

@@ -101,9 +101,13 @@ Duaa collection typography is centralized in `css/collection.css`. Arabic conten
 Source links are data-driven. `js/collection.js` reads `source.sourceReference` and creates a safe external link only for valid HTTP or HTTPS URLs. Records without URLs continue to render as plain source text, so source-link adoption can happen gradually during verification.
 
 
-## Shared Application Configuration and Preferences (v0.5.7.1)
+## Shared Application Configuration and Preferences (v0.5.8)
 
 - `js/app-config.js` is the single source of truth for the application name and version.
 - `js/app-shell.js` applies shared preferences and inserts the version footer on every page.
 - Arabic Duaa text size is stored in the central `ummibyPreferences` localStorage record and applied through `--duaa-arabic-size`.
 - Pages must not hardcode independent version values. New pages should load the shared configuration and application shell.
+## Shared Reading Preferences
+
+`js/app-shell.js` owns Duaa reading preferences. It applies Arabic size and optional text visibility as data attributes and CSS variables on the document root. The reusable collection renderer labels transliteration and translation blocks consistently, allowing every collection to honor the same settings without collection-specific logic.
+
