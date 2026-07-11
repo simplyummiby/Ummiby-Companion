@@ -95,37 +95,18 @@ The full phrase-by-phrase study and memorization experience is planned for a lat
 
 Verification metadata is preserved for editorial review but does not hide entries in the current development build.
 
-## Collection Themes
+## Collection Visual Identity
 
-Each collection file includes a `theme` object.
+All Duaa collection pages use the shared Duaa module reading theme:
 
-Example:
+- light-blue page background
+- white cards
+- dark-blue headings and accents
+- blue buttons, links, progress indicators, and settings controls
 
-```javascript
-theme: {
-  accent: "#C58A17",
-  dark: "#8A5E0B",
-  soft: "#FFF4DC",
-  border: "#E8D9B8",
-  pageBackground: "#FFFDF8",
-  cardBackground: "#FFFFFF",
-  icon: "☀",
-  banner: ""
-}
-```
+Do not create a separate functional color palette for a collection. A collection may differ through its banner, decorative image, and written identity. The shared renderer intentionally ignores collection color fields for the reading interface.
 
-The shared collection page reads these values automatically.
-
-To change the Morning theme, edit only:
-
-`js/data/collections/morning.js`
-
-To change the Evening theme, edit only:
-
-`js/data/collections/evening.js`
-
-No HTML changes are required.
-
+When adding a future banner, store its path in the collection's decorative metadata and confirm that it does not change the shared Duaa controls or page surface.
 
 ## Sticky Progress and Completion Controls
 

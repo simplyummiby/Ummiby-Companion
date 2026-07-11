@@ -19,8 +19,13 @@ Feature guides are located in:
 
 ## Current Version
 
-v0.5.8.2 — Context-Specific Duaa Preferences
+v0.5.8.3 — Context-Specific Duaa Preferences
 
-## Version 0.5.8.2
+## Version 0.5.8.3
 
 Collection pages and Focus Mode now keep separate Duaa reading preferences. Collection settings use a full button with an SVG gear icon, while Focus Mode retains its text link for now.
+
+
+## Current Release
+
+Version 0.5.8.3 establishes one shared light-blue and dark-blue visual identity across Duaa collection pages and Focus Mode. Collection-specific variation is reserved for banners and decorative imagery.

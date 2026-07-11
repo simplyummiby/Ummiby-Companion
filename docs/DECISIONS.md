@@ -51,13 +51,13 @@
 - Obsolete redirect pages should not be retained in this new repository.
 - One-off files should be removed after a shared renderer replaces them.
 
-## Collection Themes
+## Duaa Module Visual Identity
 
-- Collection-specific themes belong in collection metadata.
-- The shared renderer must not hard-code collection identities.
-- A theme may define color tokens, icon, banner, and future artwork.
-- Shared layout and behavior remain consistent across collections.
-- Visual identity can differ without creating separate HTML pages.
+- Duaa collection pages and Focus Mode share one light-blue page background and dark-blue/blue interface palette.
+- Buttons, progress indicators, links, reading cards, settings controls, and other functional UI do not change color by collection.
+- Collection identity is expressed through its title, banner, and decorative imagery rather than recoloring the reading interface.
+- Collection data may retain decorative metadata for future banners, but the shared renderer does not apply collection color tokens to functional UI.
+- The Qur’an module will maintain its own separate visual identity.
 
 ## Collection Continuity
 
@@ -109,3 +109,7 @@ Every page loads the shared application version and displays it in a subtle foot
 - Collection preferences use `ummibyDuaaCollectionPreferences`; Focus Mode uses `ummibyDuaaFocusPreferences`.
 - Existing v0.5.8.1 Duaa preferences migrate into both contexts so the update does not unexpectedly change the reader's current setup.
 - Interface icons must use SVG assets or inline SVG. Unicode characters must not be introduced as interface icons. Pictures and decorative artwork remain separate from the icon system.
+
+## v0.5.8.3 — Module Identity Takes Priority
+
+The Duaa module's shared visual identity takes priority over collection-level color themes. Collection banners or artwork may vary, but the reading environment remains consistently light blue with dark blue accents. This makes every Duaa collection feel like part of one companion while preserving recognizable collection imagery.

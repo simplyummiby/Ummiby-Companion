@@ -1,3 +1,11 @@
+## Version 0.5.8.3 — Shared Duaa Visual Identity
+
+- Standardized Duaa collection and Focus Mode page backgrounds to the shared light-blue Duaa surface.
+- Standardized buttons, progress indicators, links, pills, borders, and reading accents to the dark-blue/blue Duaa palette.
+- Stopped collection color metadata from recoloring the shared reading interface.
+- Reserved collection-specific visual variation for banners and decorative imagery.
+- Replaced the collection hero's data-driven Unicode symbol with a shared inline SVG decoration.
+
 ## Version 0.5.8.2 — Context-Specific Duaa Preferences
 
 - Separated Duaa collection-page preferences from Focus Mode preferences.

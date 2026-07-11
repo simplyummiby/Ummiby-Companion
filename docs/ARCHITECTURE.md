@@ -63,24 +63,20 @@ duaa/
 
 Individual Morning, Evening, Sleep, Travel, Weather, and Prayer HTML pages are not required. Their content is selected through the reusable collection page query parameter.
 
-## Collection Theme Infrastructure
+## Duaa Module Visual Identity
 
-Each collection file owns its visual metadata:
+The Duaa reading environment uses shared module tokens from `css/duaa-shell.css`:
 
-```javascript
-theme: {
-  accent: "...",
-  dark: "...",
-  soft: "...",
-  border: "...",
-  pageBackground: "...",
-  cardBackground: "...",
-  icon: "...",
-  banner: "..."
-}
+```css
+--duaa-page
+--duaa
+--duaa-dark
+--duaa-soft
 ```
 
-The shared collection renderer applies these values through CSS custom properties. This allows one reusable page to support distinct Morning, Evening, Sleep, Travel, Weather, Prayer, and Istikharah identities.
+`duaa/collection.html` and `duaa/focus-mode.html` use the same light-blue page surface, white reading cards, and blue/dark-blue functional accents. `js/collection.js` no longer applies collection-specific color tokens to buttons, progress, links, cards, or page backgrounds.
+
+Collection data may still include banner or decorative metadata so a Morning, Evening, Sleep, Travel, Weather, Prayer, or Istikharah collection can have recognizable artwork. Decorative identity must not create a separate functional color system for each collection.
 
 
 ## Duaa Collection Navigation Continuity

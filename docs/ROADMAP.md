@@ -95,3 +95,10 @@
 - Separate Duaa collection and Focus Mode reading preferences.
 - Collection-page Reading Settings button with SVG gear icon.
 - App-wide SVG-only interface icon standard documented.
+
+
+## Completed in v0.5.8.3
+
+- Unified Duaa collection pages and Focus Mode under one light-blue/dark-blue visual identity.
+- Limited collection-specific variation to banners and decorative imagery.
+- Prevented collection theme colors from recoloring functional reading controls.

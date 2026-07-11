@@ -59,3 +59,20 @@ html[data-show-translation="false"] .duaa-card .translation-block{display:none}
 
 /* v0.5.8.2 contextual collection settings control */
 .reading-settings-button{gap:.55rem}.reading-settings-button .button-icon{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+
+/* v0.5.8.3 shared Duaa module visual identity */
+body{background:var(--duaa-page)}
+.collection-hero{border-color:var(--line);background:linear-gradient(145deg,#fff,var(--duaa-soft))}
+.collection-hero h1,.eyebrow,.card-number,.duaa-card-footer a{color:var(--duaa-dark)}
+.button.primary{background:var(--duaa);color:#fff}
+.button.secondary{border-color:var(--duaa);background:#fff;color:var(--duaa-dark)}
+.progress-track span{background:var(--duaa)}
+.repeat-pill{background:var(--duaa-soft);color:var(--duaa-dark)}
+.hero-icon{background:var(--duaa-soft);color:var(--duaa-dark);border-color:var(--line)}
+.hero-icon svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
+.source-link{color:var(--duaa-dark)}
+.source-link:hover{color:var(--duaa)}
+.source-link:focus-visible{outline-color:var(--duaa-soft)}
+.duaa-card.return-highlight{animation:return-card-highlight-duaa 1.8s ease-out}
+@keyframes return-card-highlight-duaa{0%{border-color:var(--duaa);box-shadow:0 0 0 5px var(--duaa-soft),var(--shadow)}100%{border-color:var(--line);box-shadow:var(--shadow)}}
