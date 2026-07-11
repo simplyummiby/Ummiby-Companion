@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-label="">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e5f1f8"/>
+      <stop offset="1" stop-color="#91b8d1"/>
+    </linearGradient>
+    <pattern id="pattern" width="58" height="58" patternUnits="userSpaceOnUse">
+      <path d="M29 4 54 29 29 54 4 29Z" fill="none" stroke="#fff" stroke-opacity=".2"/>
+      <path d="M29 13 45 29 29 45 13 29Z" fill="none" stroke="#fff" stroke-opacity=".16"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="360" fill="url(#bg)"/>
+  <rect width="900" height="360" fill="url(#pattern)"/>
+  <path d="M0 300 Q200 242 390 282 T760 270 T900 282 V360 H0Z" fill="#6595b4" opacity=".45"/>
+  <g transform="translate(450 180)">
+    <path d="M-95 90V-8Q-95-76 0-125Q95-76 95-8V90Z" fill="#fff" opacity=".88"/>
+    <path d="M-58 90V12Q-58-30 0-62Q58-30 58 12V90Z" fill="#7da8c3" opacity=".7"/>
+    <circle cx="0" cy="-90" r="10" fill="#7da8c3"/>
+    <path d="M-145 90H145" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity=".8"/>
+    <path d="M-120 -36h-42m282 0h42M-126 5h-58m310 0h58" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".68"/>
+  </g>
+</svg>

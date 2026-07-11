@@ -1,0 +1,524 @@
+:root {
+  --navy: #17324a;
+  --navy-soft: #25465f;
+  --ink: #243746;
+  --muted: #657785;
+  --page: #f6f8f7;
+  --surface: #ffffff;
+  --line: #dfe7e6;
+  --quran: #477b69;
+  --quran-dark: #315f51;
+  --quran-soft: #eaf4ef;
+  --duaa: #6f99b7;
+  --duaa-dark: #4e7d9d;
+  --duaa-soft: #edf5fa;
+  --shadow: 0 18px 50px rgba(31, 55, 70, 0.1);
+  --radius-lg: 26px;
+  --radius-md: 18px;
+  --sidebar-width: 250px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--page);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+summary,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  height: 100vh;
+  padding: 28px 20px;
+  background: var(--navy);
+  color: #f7fbfd;
+  overflow-y: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 10px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 22px;
+}
+
+.brand p {
+  margin: 0;
+}
+
+.brand-name {
+  font-size: 1.05rem;
+  font-weight: 750;
+}
+
+.brand-subtitle {
+  color: #bfd0dc;
+  font-size: 0.78rem;
+}
+
+.main-nav {
+  display: grid;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.nav-link,
+.nav-group summary {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 44px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: #dbe7ee;
+  text-decoration: none;
+  cursor: pointer;
+  list-style: none;
+}
+
+.nav-group summary {
+  justify-content: space-between;
+}
+
+.nav-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-group summary::after {
+  content: "⌄";
+  transition: transform 180ms ease;
+}
+
+.nav-group[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.nav-link:hover,
+.nav-group summary:hover,
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.11);
+  color: #ffffff;
+}
+
+.nav-submenu {
+  display: grid;
+  gap: 4px;
+  padding: 6px 0 8px 35px;
+}
+
+.nav-submenu a {
+  padding: 7px 10px;
+  border-radius: 9px;
+  color: #bdd0dc;
+  font-size: 0.88rem;
+  text-decoration: none;
+}
+
+.nav-submenu a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.page {
+  min-width: 0;
+}
+
+.topbar {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 36px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+}
+
+.topbar p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.menu-button {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: var(--navy);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+main {
+  width: min(1360px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 54px 0 72px;
+}
+
+.welcome {
+  max-width: 760px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--quran-dark);
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.welcome h1 {
+  margin: 0;
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.08;
+  font-weight: 650;
+}
+
+.welcome > p:last-child {
+  max-width: 650px;
+  margin: 18px auto 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.workspace-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+.workspace-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.workspace-image {
+  height: 225px;
+  overflow: hidden;
+}
+
+.workspace-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.workspace-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.workspace-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.workspace-icon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  font-size: 1.2rem;
+}
+
+.quran-card .workspace-icon {
+  background: var(--quran-soft);
+  color: var(--quran-dark);
+}
+
+.duaa-card .workspace-icon {
+  background: var(--duaa-soft);
+  color: var(--duaa-dark);
+}
+
+.workspace-label {
+  margin: 0 0 2px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.workspace-heading h2 {
+  margin: 0;
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.55rem, 2.5vw, 2.1rem);
+  line-height: 1.2;
+}
+
+.feature-list {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.feature {
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.quran-card .feature {
+  background: linear-gradient(145deg, #ffffff, var(--quran-soft));
+}
+
+.duaa-card .feature {
+  background: linear-gradient(145deg, #ffffff, var(--duaa-soft));
+}
+
+.feature h3 {
+  margin: 0 0 7px;
+  color: var(--navy);
+  font-size: 1rem;
+}
+
+.feature p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.reading-unit-details {
+  margin-top: 14px;
+  border-top: 1px solid rgba(49, 95, 81, 0.16);
+  padding-top: 12px;
+}
+
+.reading-unit-details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--quran-dark);
+  font-weight: 750;
+  cursor: pointer;
+  list-style: none;
+}
+
+.reading-unit-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.reading-unit-details summary::after {
+  content: "⌄";
+  margin-left: 12px;
+  transition: transform 180ms ease;
+}
+
+.reading-unit-details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.details-content {
+  padding-top: 12px;
+}
+
+.details-content p + p {
+  margin-top: 10px;
+}
+
+.daily-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.daily-pills span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(111, 153, 183, 0.13);
+  color: var(--duaa-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  margin-top: auto;
+  border-radius: 14px;
+  color: #ffffff;
+  font-weight: 750;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(23, 50, 74, 0.16);
+}
+
+.quran-button {
+  background: var(--quran);
+}
+
+.quran-button:hover {
+  background: var(--quran-dark);
+}
+
+.duaa-button {
+  background: var(--duaa);
+}
+
+.duaa-button:hover {
+  background: var(--duaa-dark);
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(15, 31, 43, 0.45);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 1050px) {
+  .workspace-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workspace-card {
+    max-width: 760px;
+    width: 100%;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: 0;
+    transform: translateX(-100%);
+    width: min(86vw, 290px);
+    transition: transform 200ms ease;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .topbar {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .menu-button {
+    display: inline-flex;
+  }
+
+  main {
+    width: min(100% - 30px, 680px);
+    padding-top: 38px;
+  }
+
+  .workspace-content {
+    padding: 24px 20px;
+  }
+
+  .workspace-image {
+    height: 190px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar p {
+    font-size: 0.78rem;
+  }
+
+  .welcome {
+    margin-bottom: 28px;
+  }
+
+  .welcome h1 {
+    font-size: 2.25rem;
+  }
+
+  .workspace-heading {
+    gap: 11px;
+  }
+
+  .feature {
+    padding: 16px;
+  }
+}

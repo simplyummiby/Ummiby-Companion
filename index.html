@@ -1,206 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A calm landing page for the Qur'an and Duaa companion." />
-  <title>Ummiby | Qur'an & Duaa</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A calm Quran and Duaa companion for reading, recitation, reflection, and study.">
+  <title>Ummiby Companion</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <div class="app-shell">
-    <aside class="sidebar" aria-label="Primary navigation">
-      <a class="brand" href="#" aria-label="Ummiby home">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 64 64" role="img">
-            <path d="M32 7 39 20 54 17 47 31 58 42 42 44 38 58 28 47 15 55 17 40 3 34 17 27 13 12 28 18Z" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/>
-            <circle cx="32" cy="32" r="9" fill="none" stroke="currentColor" stroke-width="2.8"/>
-          </svg>
-        </span>
-        <span>
-          <strong>Ummiby</strong>
-          <small>Qur'an & Duaa</small>
-        </span>
-      </a>
+    <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">◈</span>
+        <div>
+          <p class="brand-name">Ummiby</p>
+          <p class="brand-subtitle">Qur’an &amp; Duaa</p>
+        </div>
+      </div>
 
-      <nav class="nav-list">
-        <a class="nav-link active" href="#home" aria-current="page">
-          <span class="nav-icon">⌂</span><span>Home</span>
+      <nav class="main-nav">
+        <a class="nav-link active" href="index.html" aria-current="page">
+          <span aria-hidden="true">⌂</span>
+          Home
         </a>
 
-        <button class="nav-link nav-toggle" type="button" aria-expanded="false" aria-controls="quran-nav">
-          <span class="nav-label"><span class="nav-icon">▤</span><span>Qur'an</span></span>
-          <span class="chevron">⌄</span>
-        </button>
-        <div class="subnav" id="quran-nav" hidden>
-          <a href="#">Qur'an Home</a>
-          <a href="#">Reading Journey</a>
-          <a href="#">Ramadan Journey</a>
-          <a href="#">Read by Surah</a>
-          <a href="#">Go to an Ayah</a>
-        </div>
+        <details class="nav-group">
+          <summary>
+            <span><span aria-hidden="true">▤</span> Qur’an</span>
+          </summary>
+          <div class="nav-submenu">
+            <a href="quran/index.html">Qur’an Home</a>
+            <a href="quran/reading-journey.html">Reading Journey</a>
+            <a href="quran/ramadan-journey.html">Ramadan Journey</a>
+            <a href="quran/surahs.html">Read by Surah</a>
+            <a href="quran/go-to-ayah.html">Go to an Ayah</a>
+          </div>
+        </details>
 
-        <button class="nav-link nav-toggle" type="button" aria-expanded="false" aria-controls="duaa-nav">
-          <span class="nav-label"><span class="nav-icon">◌</span><span>Duaa</span></span>
-          <span class="chevron">⌄</span>
-        </button>
-        <div class="subnav" id="duaa-nav" hidden>
-          <a href="#">Duaa Home</a>
-          <a href="#">Morning Adhkar</a>
-          <a href="#">Evening Adhkar</a>
-          <a href="#">Before Sleep</a>
-          <a href="#">Find a Duaa</a>
-        </div>
+        <details class="nav-group">
+          <summary>
+            <span><span aria-hidden="true">✦</span> Duaa</span>
+          </summary>
+          <div class="nav-submenu">
+            <a href="duaa/index.html">Duaa Home</a>
+            <a href="duaa/daily-companion.html">Daily Companion</a>
+            <a href="duaa/collections.html">Find a Duaa</a>
+          </div>
+        </details>
 
-        <a class="nav-link" href="#settings"><span class="nav-icon">⚙</span><span>Settings</span></a>
+        <a class="nav-link" href="settings.html">
+          <span aria-hidden="true">⚙</span>
+          Settings
+        </a>
       </nav>
-
-      <div class="sidebar-quote">
-        <span class="leaf-line" aria-hidden="true"></span>
-        <p>Indeed, this Qur'an guides to that which is most upright.</p>
-        <small>Surah Al-Isra, 17:9</small>
-      </div>
     </aside>
 
-    <main class="main-content" id="home">
-      <header class="page-header">
-        <div>
-          <p class="eyebrow">Welcome</p>
-          <h1>Assalamu Alaikum</h1>
-          <p>Choose the companion you would like to open today.</p>
-        </div>
-        <div class="date-card" aria-label="Current date placeholder">
-          <strong>Home</strong>
-          <span>Version 0.1</span>
-        </div>
+    <div class="page">
+      <header class="topbar">
+        <button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false">
+          <span class="sr-only">Open navigation</span>
+          ☰
+        </button>
+        <p>One companion. Two dedicated spaces.</p>
       </header>
 
-      <section class="module-grid" aria-label="Companion modules">
-        <article class="module-card quran-card">
-          <div class="module-hero quran-hero" aria-hidden="true">
-            <div class="geometric-pattern"></div>
-            <svg class="hero-illustration book-illustration" viewBox="0 0 240 140">
-              <path d="M37 95 109 65 120 110 49 130Z" fill="#f6f0df" stroke="#345d3a" stroke-width="4"/>
-              <path d="m203 95-72-30-11 45 71 20Z" fill="#fffaf0" stroke="#345d3a" stroke-width="4"/>
-              <path d="M120 110V58" stroke="#345d3a" stroke-width="4"/>
-              <path d="M72 118 102 137M168 118l-30 19" stroke="#7b5b36" stroke-width="9" stroke-linecap="round"/>
-            </svg>
-          </div>
+      <main>
+        <section class="welcome">
+          <p class="eyebrow">Assalāmu ʿalaykum</p>
+          <h1>Read, recite, and return with purpose.</h1>
+          <p>
+            Explore the Qur’an through guided reading or open the duaas you need for daily remembrance.
+          </p>
+        </section>
 
-          <div class="module-body">
-            <div class="module-title-row">
-              <div class="module-icon green" aria-hidden="true">▤</div>
-              <div>
-                <h2>Qur'an</h2>
-                <p>Read the Qur'an in the way that best fits your goal.</p>
-              </div>
+        <section class="workspace-grid" aria-label="Choose a workspace">
+          <article class="workspace-card quran-card">
+            <div class="workspace-image">
+              <img src="assets/images/quran-panel.svg" alt="">
             </div>
 
-            <div class="feature-list">
-              <section class="feature-card featured">
-                <div class="feature-heading">
-                  <span class="feature-icon">🌿</span>
-                  <div>
-                    <h3>Reading Journey</h3>
-                    <p>Read through the entire Qur'an in approximately 294 thoughtfully organized Reading Units.</p>
-                  </div>
-                </div>
-                <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="reading-unit-answer">
-                  <span>What are Reading Units?</span>
-                  <span class="accordion-arrow">⌄</span>
-                </button>
-                <div class="accordion-panel" id="reading-unit-answer" hidden>
-                  <p><strong>Reading Units are carefully selected stopping points throughout the Qur'an.</strong> Each unit follows the original order of the Qur'an and ends at natural transitions in the discourse, allowing related passages to be read together.</p>
-                  <p>The Qur'anic text itself is never changed—every ayah remains exactly as it appears in the Mushaf.</p>
-                </div>
-              </section>
-
-              <section class="feature-card">
-                <div class="feature-heading">
-                  <span class="feature-icon">☾</span>
-                  <div>
-                    <h3>Ramadan Reading Journey</h3>
-                    <p>Complete the Qur'an during Ramadan through a dedicated 30-day journey, reading one Juz each day.</p>
-                  </div>
-                </div>
-              </section>
-
-              <section class="feature-card">
-                <div class="feature-heading">
-                  <span class="feature-icon">▤</span>
-                  <div>
-                    <h3>Read by Surah or Go to an Ayah</h3>
-                    <p>Choose a complete surah to read from beginning to end, or go directly to a specific ayah when you know where you want to read.</p>
-                  </div>
-                </div>
-              </section>
-            </div>
-
-            <a class="primary-button green-button" href="#quran-home">Open Qur'an Home <span>→</span></a>
-          </div>
-        </article>
-
-        <article class="module-card duaa-card">
-          <div class="module-hero duaa-hero" aria-hidden="true">
-            <div class="arch-pattern"></div>
-            <svg class="hero-illustration lantern-illustration" viewBox="0 0 180 160">
-              <path d="M74 18h32l12 20H62Z" fill="#173d68"/>
-              <path d="M58 42h64l-8 84H66Z" fill="#244f80" stroke="#173d68" stroke-width="4"/>
-              <path d="M76 53h28l4 56H72Z" fill="#f9d889" stroke="#173d68" stroke-width="4"/>
-              <path d="M86 8h8v12h-8zM54 128h72v12H54z" fill="#173d68"/>
-              <path d="M89 63c11 13 13 28 1 39-12-9-13-24-1-39Z" fill="#fff3c8"/>
-            </svg>
-          </div>
-
-          <div class="module-body">
-            <div class="module-title-row">
-              <div class="module-icon blue" aria-hidden="true">◌</div>
-              <div>
-                <h2>Duaa</h2>
-                <p>Build a consistent habit of remembering Allah through authentic duaas.</p>
-              </div>
-            </div>
-
-            <div class="duaa-section">
-              <div class="section-title-row">
-                <span class="section-icon">☀</span>
+            <div class="workspace-content">
+              <div class="workspace-heading">
+                <span class="workspace-icon" aria-hidden="true">▤</span>
                 <div>
+                  <p class="workspace-label">Qur’an</p>
+                  <h2>Read the Qur’an in the way that fits your goal.</h2>
+                </div>
+              </div>
+
+              <div class="feature-list">
+                <section class="feature">
+                  <h3>Reading Journey</h3>
+                  <p>
+                    Read through the entire Qur’an in approximately 294 thoughtfully organized Reading Units.
+                  </p>
+
+                  <details class="reading-unit-details">
+                    <summary>What are Reading Units?</summary>
+                    <div class="details-content">
+                      <p>
+                        Reading Units are carefully selected stopping points throughout the Qur’an.
+                        Each unit follows the original order of the Qur’an and ends at natural
+                        transitions in the discourse, allowing related passages to be read together.
+                      </p>
+                      <p>
+                        <strong>The Qur’anic text itself is never changed—every ayah remains exactly
+                        as it appears in the Mushaf.</strong>
+                      </p>
+                    </div>
+                  </details>
+                </section>
+
+                <section class="feature">
+                  <h3>Ramadan Reading Journey</h3>
+                  <p>
+                    Complete the Qur’an during Ramadan through a dedicated 30-day journey,
+                    reading one Juz each day.
+                  </p>
+                </section>
+
+                <section class="feature">
+                  <h3>Read by Surah or Go to an Ayah</h3>
+                  <p>
+                    Choose a complete surah to read from beginning to end, or go directly
+                    to a specific ayah when you already know where you want to read.
+                  </p>
+                </section>
+              </div>
+
+              <a class="primary-button quran-button" href="quran/index.html">
+                Open Qur’an Home
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="workspace-card duaa-card">
+            <div class="workspace-image">
+              <img src="assets/images/duaa-panel.svg" alt="">
+            </div>
+
+            <div class="workspace-content">
+              <div class="workspace-heading">
+                <span class="workspace-icon" aria-hidden="true">✦</span>
+                <div>
+                  <p class="workspace-label">Duaa</p>
+                  <h2>Make authentic duaas part of your day.</h2>
+                </div>
+              </div>
+
+              <div class="feature-list">
+                <section class="feature">
                   <h3>Daily Companion</h3>
-                  <p>Morning, Evening, and Before Sleep adhkar with gentle tracking to help you stay consistent.</p>
-                </div>
-              </div>
+                  <p>
+                    Build consistency with gentle progress tracking for the three collections
+                    you return to each day.
+                  </p>
 
-              <div class="tracker-grid">
-                <div class="tracker-card"><span>☀</span><strong>Morning Adhkar</strong><small>Begin your day with remembrance.</small></div>
-                <div class="tracker-card"><span>◒</span><strong>Evening Adhkar</strong><small>End your day with gratitude.</small></div>
-                <div class="tracker-card"><span>☾</span><strong>Before Sleep</strong><small>Protect your night with duaa.</small></div>
-              </div>
+                  <div class="daily-pills" aria-label="Tracked daily collections">
+                    <span>Morning</span>
+                    <span>Evening</span>
+                    <span>Before Sleep</span>
+                  </div>
+                </section>
 
-              <div class="gentle-note">Gentle progress tracking helps you continue where you left off—without pressure.</div>
-            </div>
-
-            <div class="duaa-section compact">
-              <div class="section-title-row">
-                <span class="section-icon">⌘</span>
-                <div>
+                <section class="feature">
                   <h3>Find a Duaa</h3>
-                  <p>Duaas for every part of life, carefully categorized so you can find what you need.</p>
-                </div>
-              </div>
-              <div class="chip-row" aria-label="Example duaa categories">
-                <span>Prayer</span><span>Travel</span><span>Weather</span><span>Food & Drink</span><span>And more</span>
-              </div>
-            </div>
+                  <p>
+                    Open authentic duaas organized by situation, including prayer, travel,
+                    weather, home, and other moments of daily life.
+                  </p>
+                </section>
 
-            <a class="primary-button blue-button" href="#duaa-home">Open Duaa Home <span>→</span></a>
-          </div>
-        </article>
-      </section>
-    </main>
+                <section class="feature">
+                  <h3>Recite or Go Deeper</h3>
+                  <p>
+                    Read complete duaas in simple collection cards, or enter Focus Mode from
+                    any duaa for reflection, study, and memorization.
+                  </p>
+                </section>
+              </div>
+
+              <a class="primary-button duaa-button" href="duaa/index.html">
+                Open Duaa Home
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
   </div>
-  <script src="app.js"></script>
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+  <script src="js/app.js"></script>
 </body>
 </html>
