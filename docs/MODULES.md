@@ -1,19 +1,34 @@
 # Modules
 
 ## Shared
-- Home
+
+- App Home
 - Settings
 
-## Quran
-- Home
+## Qur’an
+
+- Qur’an Home
 - Reading Journey
 - Ramadan Reading Journey
 - Read by Surah
-- Go to Ayah
+- Go to an Ayah
 - Reading Workspace
+- Reading Unit Index
+- Completed Journeys
+- Reading History
 
 ## Duaa
-- Home
+
+- Duaa Home
 - Daily Companion
+  - Morning
+  - Evening
+  - Before Sleep
 - Find a Duaa
+  - Travel
+  - Weather
+  - Prayer
+  - Istikharah
+- Duaa Progress
+- Recently Viewed
 - Focus Mode

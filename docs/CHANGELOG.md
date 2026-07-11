@@ -2,6 +2,28 @@
 
 All notable changes to this project are documented here.
 
+## v0.4.0 — Duaa Home
+
+Status: In Progress
+
+### Added
+
+- Separate Duaa Home dashboard
+- Daily Companion cards for Morning, Evening, and Before Sleep
+- Gentle progress overview for tracked collections
+- Collection shortcuts for Travel, Weather, Prayer, and Istikharah
+- Recently Viewed section
+- Configurable Daily Reminder prototype
+- Reminder pause and resume controls
+- Responsive desktop, tablet, and mobile layouts
+- Placeholder destination pages so dashboard navigation remains intact
+
+### Notes
+
+The root `index.html` remains the shared app Home. Duaa Home lives at `duaa/index.html`.
+
+Morning, Evening, and Before Sleep are the only tracked collections. Other collections remain available for reference without daily progress pressure.
+
 ## v0.3.0 — Qur’an Home
 
 Status: In Progress
