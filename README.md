@@ -1,16 +1,11 @@
-# Qur'an & Duaa Home — Version 0.1
+# Ummiby Companion
 
-This first build includes only the shared app Home page.
+A combined Qur’an and Duaa companion focused on authentic content, thoughtful reading experiences, and calm daily use.
 
-## Included
-- Simplified sidebar: Home, Qur'an, Duaa, Settings
-- Qur'an landing panel
-- Reading Journey section with a compact “What are Reading Units?” accordion
-- Ramadan Reading Journey
-- Read by Surah or Go to an Ayah
-- Duaa Daily Companion section with Morning, Evening, and Before Sleep trackers
-- Find a Duaa section
-- Responsive desktop, tablet, and phone layouts
+## Current pages
 
-## Run locally
-Open `index.html` in a browser.
+- `index.html` — shared app Home
+- `quran/index.html` — Qur’an Home dashboard
+- `duaa/index.html` — placeholder for the upcoming Duaa Home dashboard
+
+Project documentation is in the `docs` folder.

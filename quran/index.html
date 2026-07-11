@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qur’an Home | Ummiby Companion</title>
+  <link rel="stylesheet" href="../css/quran-shell.css">
+  <link rel="stylesheet" href="../css/quran-home.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="brand-mark">◈</span><div><p class="brand-name">Ummiby</p><p class="brand-subtitle">Qur’an & Duaa</p></div></div>
+    <nav class="main-nav">
+      <a class="nav-link" href="../index.html">⌂ Home</a>
+      <details class="nav-group" open><summary><span>▤ Qur’an</span></summary><div class="nav-submenu"><a class="submenu-active" href="index.html">Qur’an Home</a><a href="reading-journey.html">Reading Journey</a><a href="ramadan-journey.html">Ramadan Journey</a><a href="surahs.html">Read by Surah</a><a href="go-to-ayah.html">Go to an Ayah</a></div></details>
+      <details class="nav-group"><summary><span>✦ Duaa</span></summary><div class="nav-submenu"><a href="../duaa/index.html">Duaa Home</a><a href="../duaa/daily-companion.html">Daily Companion</a><a href="../duaa/collections.html">Find a Duaa</a></div></details>
+      <a class="nav-link" href="../settings.html">⚙ Settings</a>
+    </nav>
+  </aside>
+
+  <div class="page">
+    <header class="topbar"><button class="menu-button" id="menuButton">☰</button><a href="../index.html">← App Home</a></header>
+    <main class="quran-home">
+      <section class="page-heading">
+        <div><p class="eyebrow">Qur’an Workspace</p><h1>Qur’an Home</h1><p>Continue where you left off, or choose another way to read.</p></div>
+        <blockquote>“This is the Book about which there is no doubt.”<cite>Al-Baqarah 2:2</cite></blockquote>
+      </section>
+
+      <section class="dashboard-card continue-card">
+        <div class="section-heading"><span class="round-icon">▤</span><div><h2>Continue Your Reading Journey</h2><p>Pick up right where you left off.</p></div></div>
+        <div class="continue-layout">
+          <div class="unit-badge"><span>Current Reading Unit</span><strong>Unit 12</strong><em>In Progress</em></div>
+          <div class="continue-details"><h3>Surah Al-An‘ām</h3><p>Ayah 1–77</p><p class="last-position">Last read: Ayah 42</p><div class="progress-row"><div class="progress-track"><span style="width:58%"></span></div><strong>58%</strong></div><div class="resume-note">Continue from Ayah 42</div></div>
+          <div class="continue-actions"><a class="button primary" href="workspace.html">Continue Reading →</a><button class="button secondary" id="startOverButton">Start Over</button></div>
+        </div>
+      </section>
+
+      <section class="dashboard-card progress-card">
+        <div class="section-heading"><span class="round-icon">◔</span><div><h2>Your Reading Journey Progress</h2><p>A calm overview of your journey through the Qur’an.</p></div></div>
+        <div class="progress-summary"><div class="progress-circle"><span>35%</span><small>Overall Progress</small></div><dl class="stats-grid"><div><dt>Completed Units</dt><dd>103</dd><small>of 294</small></div><div><dt>Total Units</dt><dd>294</dd><small>Reading Units</small></div><div><dt>Pages Read</dt><dd>212</dd><small>of 604</small></div><div><dt>Current Surah</dt><dd>6</dd><small>Al-An‘ām</small></div></dl></div>
+        <div class="card-links"><a href="reading-units.html">View Reading Unit Index →</a><a href="completed-journeys.html">View Completed Journeys →</a></div>
+      </section>
+
+      <section class="reading-options">
+        <div class="section-title"><h2>Choose How You Would Like to Read</h2><p>Three meaningful ways to engage with the Qur’an.</p></div>
+        <div class="option-grid">
+          <article class="option-card"><span>◉</span><h3>Reading Journey</h3><p>Continue through approximately 294 carefully selected Reading Units.</p><a href="reading-journey.html">Continue Journey →</a></article>
+          <article class="option-card ramadan-option"><span>☾</span><h3>Ramadan Reading Journey</h3><p>A dedicated 30-day journey through one Juz each day during Ramadan.</p><a href="ramadan-journey.html">View Ramadan Journey →</a></article>
+          <article class="option-card"><span>⌕</span><h3>Read by Surah or Go to an Ayah</h3><p>Choose a complete surah or open a specific ayah directly.</p><a href="surahs.html">Explore the Qur’an →</a></article>
+        </div>
+      </section>
+
+      <section class="lower-grid">
+        <article class="dashboard-card recent-card"><div class="section-heading compact"><span class="round-icon">◷</span><div><h2>Recently Read</h2></div></div><ul><li><span><strong>Reading Unit 12</strong><small>Surah Al-An‘ām · Ayah 1–77</small></span><time>Today</time></li><li><span><strong>Reading Unit 11</strong><small>Surah Al-Mā’idah · Ayah 83–120</small></span><time>Yesterday</time></li><li><span><strong>Surah Al-Baqarah</strong><small>Ayah 253–257</small></span><time>2 days ago</time></li></ul><a class="text-link" href="history.html">View Reading History →</a></article>
+        <article class="dashboard-card reminder-card"><div class="section-heading compact"><span class="round-icon">◴</span><div><h2>Reading Reminder</h2><p>Your Reading Journey is here when you’re ready.</p></div></div><div id="reminderSummary" class="reminder-summary" hidden><strong id="reminderTime"></strong><span id="reminderDays"></span></div><button class="button primary" id="openReminderButton">Set Reading Reminder</button></article>
+      </section>
+
+      <section class="dashboard-card ramadan-progress" id="ramadanProgress" hidden><div class="section-heading"><span class="round-icon">☾</span><div><h2>Ramadan Reading Journey</h2><p>This full progress card appears only when a Ramadan Journey is active.</p></div></div><a class="button primary" href="ramadan-journey.html">Continue Ramadan Journey →</a></section>
+    </main>
+  </div>
+</div>
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+<dialog id="reminderDialog"><form method="dialog" id="reminderForm"><div class="dialog-heading"><div><p class="eyebrow">Gentle Reminder</p><h2>Choose when to return</h2></div><button value="cancel" class="icon-button">×</button></div><label>Reminder time<input type="time" id="reminderTimeInput" value="19:30" required></label><fieldset><legend>Days</legend><div class="day-grid"><label><input type="checkbox" value="Sun" checked>Sun</label><label><input type="checkbox" value="Mon" checked>Mon</label><label><input type="checkbox" value="Tue" checked>Tue</label><label><input type="checkbox" value="Wed" checked>Wed</label><label><input type="checkbox" value="Thu" checked>Thu</label><label><input type="checkbox" value="Fri" checked>Fri</label><label><input type="checkbox" value="Sat" checked>Sat</label></div></fieldset><p class="dialog-note">This prototype saves the preference locally. Device notifications can be added later.</p><div class="dialog-actions"><button class="button secondary" value="cancel">Cancel</button><button class="button primary" id="saveReminderButton" value="default">Save Reminder</button></div></form></dialog>
+<dialog id="startOverDialog"><form method="dialog"><h2>Start this Reading Unit over?</h2><p>Your current position in Reading Unit 12 will be reset to the beginning.</p><div class="dialog-actions"><button class="button secondary" value="cancel">Keep My Place</button><button class="button danger" value="confirm">Start Over</button></div></form></dialog>
+<script src="../js/quran-app.js"></script><script src="../js/quran-home.js"></script>
+</body>
+</html>
