@@ -41,9 +41,18 @@
 - Shared renderer theme support
 - Unique collection icons and palettes
 
-## Next: v0.6.0 — Duaa Focus Mode
+## v0.5.6 — Collection Continuity Improvements
+- Sticky tracked-collection progress panel
+- Clear inactive completion checkmarks
+- Return to the current Duaa after leaving Focus Mode
+
+## Next: v0.5.7 — Reading and Source Polish
+- Amiri typography review
+- Clickable source references
+- Source-link data support and verification guide updates
+
+## Later: v0.6.0 — Duaa Focus Mode
 - Phrase-by-phrase presentation
 - Arabic, English, and transliteration panels
 - Benefits, sources, and study resources
 - Memorization tools
-- Return to collection position

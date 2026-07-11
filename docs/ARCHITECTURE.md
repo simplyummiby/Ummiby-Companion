@@ -81,3 +81,14 @@ theme: {
 ```
 
 The shared collection renderer applies these values through CSS custom properties. This allows one reusable page to support distinct Morning, Evening, Sleep, Travel, Weather, Prayer, and Istikharah identities.
+
+
+## Duaa Collection Navigation Continuity
+
+Focus Mode includes the currently displayed Duaa number when linking back to the shared collection renderer:
+
+```text
+duaa/collection.html?collection=morning&returnTo=8#duaa-8
+```
+
+The collection renderer assigns stable anchors to rendered cards, scrolls to the requested card after rendering, and briefly highlights it. This navigation state is temporary and URL-based; it does not require localStorage or sessionStorage.

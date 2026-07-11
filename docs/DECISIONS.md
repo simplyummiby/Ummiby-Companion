@@ -58,3 +58,11 @@
 - A theme may define color tokens, icon, banner, and future artwork.
 - Shared layout and behavior remain consistent across collections.
 - Visual identity can differ without creating separate HTML pages.
+
+## Collection Continuity
+
+- The progress panel remains visible while scrolling tracked collections.
+- Incomplete completion controls display a quiet gray checkmark so their purpose is clear.
+- Focus Mode return navigation follows the Duaa currently displayed in Focus Mode.
+- Return position is carried through the URL rather than saved permanently.
+- The collection renderer scrolls to and briefly highlights the returned card.

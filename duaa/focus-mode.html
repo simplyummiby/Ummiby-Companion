@@ -42,7 +42,7 @@ window.UmmibyCollectionLoader.load(collectionId)
     document.getElementById("duaaTitle").textContent =
       item?.suggestedTitle || item?.legacyLabel || "Focus Mode Prototype";
     document.getElementById("returnLink").href =
-      `collection.html?collection=${encodeURIComponent(collectionId)}`;
+      `collection.html?collection=${encodeURIComponent(collectionId)}&returnTo=${current}#duaa-${current}`;
     document.getElementById("previousLink").href =
       `focus-mode.html?collection=${encodeURIComponent(collectionId)}&duaa=${Math.max(1, current - 1)}`;
     document.getElementById("nextLink").href =

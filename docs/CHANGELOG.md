@@ -2,6 +2,26 @@
 
 All notable changes to this project are documented here.
 
+## v0.5.6 — Collection Continuity Improvements
+
+Status: Complete
+
+### Added
+
+- Sticky progress panel on tracked Duaa collection pages
+- Soft gray checkmarks in incomplete completion circles
+- Return-to-position behavior when leaving Focus Mode
+- Brief visual highlight on the Duaa card returned to from Focus Mode
+
+### Changed
+
+- Focus Mode now returns to the Duaa currently being viewed rather than the top of the collection
+- Collection cards include stable page anchors for direct return navigation
+
+### Notes
+
+This release improves continuity during daily use without changing collection data or adding new pages. Return position is carried in the navigation URL, so no permanent browser storage is required.
+
 ## v0.5.5 — Collection Theme Infrastructure
 
 Status: In Progress

@@ -6,19 +6,19 @@
 .hero-actions{display:grid;gap:10px;min-width:190px}
 .button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 14px;border:1px solid transparent;border-radius:11px;text-decoration:none;font-weight:750;cursor:pointer}
 .button.primary{background:var(--collection-accent,var(--duaa));color:#fff}.button.secondary{border-color:var(--collection-accent,var(--duaa));background:#fff;color:var(--collection-dark,var(--duaa-dark))}.button.danger{background:#9c4a45;color:#fff}
-.progress-panel{display:grid;grid-template-columns:auto minmax(180px,1fr) auto;gap:20px;align-items:center;margin-bottom:30px;padding:18px 22px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 9px 28px rgba(31,55,70,.06)}
+.progress-panel{position:sticky;top:16px;z-index:30;display:grid;grid-template-columns:auto minmax(180px,1fr) auto;gap:20px;align-items:center;margin-bottom:30px;padding:18px 22px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 9px 28px rgba(31,55,70,.06)}
 .progress-panel p{margin:0;color:var(--muted);font-size:.86rem}.progress-label{font-size:.74rem!important;font-weight:800;letter-spacing:.05em;text-transform:uppercase}.progress-panel strong{display:block;color:var(--navy);font-size:1.05rem}
 .progress-track{height:10px;border-radius:999px;background:#eceeea;overflow:hidden}.progress-track span{display:block;height:100%;border-radius:inherit;background:var(--collection-accent,var(--duaa));transition:width .25s ease}
 .collection-intro{margin:0 0 18px;padding:0 4px}.collection-intro h2{margin:0;color:var(--navy);font-family:Georgia,serif;font-size:1.45rem}.collection-intro p{margin:6px 0 0;color:var(--muted)}
 .duaa-list{display:grid;gap:22px}
-.duaa-card{overflow:hidden;border:1px solid var(--line);border-radius:23px;background:var(--collection-card-background,#fff);box-shadow:var(--shadow);transition:border-color .18s ease}
+.duaa-card{scroll-margin-top:130px;overflow:hidden;border:1px solid var(--line);border-radius:23px;background:var(--collection-card-background,#fff);box-shadow:var(--shadow);transition:border-color .18s ease}
 .duaa-card.completed{border-color:#8db398}.duaa-card.completed .duaa-card-header{background:linear-gradient(145deg,#f7fbf7,#edf6ef)}
 .duaa-card-header{display:flex;justify-content:space-between;gap:22px;padding:24px 25px 18px;background:linear-gradient(145deg,#fff,#fbfcfe)}
 .card-number{margin:0 0 5px;color:var(--collection-dark,var(--duaa-dark));font-size:.74rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
 .duaa-card h2{margin:0;color:var(--navy);font-family:Georgia,"Times New Roman",serif;font-size:1.5rem;line-height:1.25}
 .summary{max-width:690px;margin:8px 0 0;color:var(--muted)}
-.check-button{display:grid;flex:0 0 auto;place-items:center;width:48px;height:48px;border:2px solid #b9c9d4;border-radius:50%;background:#fff;color:transparent;font-size:1.2rem;cursor:pointer;transition:.18s ease}
-.check-button:hover{border-color:#6b9a78}.check-button[aria-pressed="true"]{border-color:#5e966c;background:#5e966c;color:#fff;box-shadow:0 8px 18px rgba(64,120,77,.2)}
+.check-button{display:grid;flex:0 0 auto;place-items:center;width:48px;height:48px;border:2px solid #b9c9d4;border-radius:50%;background:#fff;color:#a8b3bb;font-size:1.2rem;cursor:pointer;transition:.18s ease}
+.check-button:hover{border-color:#6b9a78;color:#7d8a92}.check-button[aria-pressed="true"]{border-color:#5e966c;background:#5e966c;color:#fff;box-shadow:0 8px 18px rgba(64,120,77,.2)}
 .repeat-row{padding:0 25px 15px}.repeat-pill{display:inline-flex;padding:5px 10px;border-radius:999px;background:var(--collection-soft,#eef5fb);color:var(--collection-dark,var(--duaa-dark));font-size:.75rem;font-weight:750}
 .text-block{padding:20px 25px;border-top:1px solid var(--line)}.text-block p{margin:0}.block-label{margin-bottom:8px!important;color:var(--muted);font-size:.72rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
 .arabic-block{background:#fbfdff}.arabic{color:#142c42;font-family:"Amiri","Noto Naskh Arabic","Traditional Arabic",serif;font-size:clamp(1.7rem,3.4vw,2.35rem);line-height:2;text-align:right;white-space:pre-line}
@@ -36,3 +36,7 @@ dialog{width:min(92vw,480px);border:0;border-radius:20px;padding:0;box-shadow:0 
 .hero-icon{display:grid;place-items:center;flex:0 0 auto;width:54px;height:54px;border-radius:18px;background:var(--collection-soft,#eef5fb);color:var(--collection-dark,#456f8d);font-size:1.75rem;border:1px solid var(--collection-border,#dce7f0)}
 .collection-page .duaa-card{background:var(--collection-card-background,#fff)}
 @media(max-width:500px){.hero-heading-wrap{gap:12px}.hero-icon{width:46px;height:46px;border-radius:15px;font-size:1.45rem}}
+
+.duaa-card.return-highlight{animation:return-card-highlight 1.8s ease-out}
+@keyframes return-card-highlight{0%{border-color:var(--collection-accent,var(--duaa));box-shadow:0 0 0 5px var(--collection-soft,#eef5fb),var(--shadow)}100%{border-color:var(--line);box-shadow:var(--shadow)}}
+@media(max-width:780px){.progress-panel{top:10px}.duaa-card{scroll-margin-top:190px}}

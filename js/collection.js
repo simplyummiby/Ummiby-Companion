@@ -1,5 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 const collectionId = params.get("collection") || "morning";
+const returnToDuaa = Math.max(0, Number(params.get("returnTo")) || 0);
 let collection = null;
 
 const page = document.getElementById("collectionPage");
@@ -116,6 +117,7 @@ function isTracked() {
 function buildCard(item, index) {
   const card = createElement("article", "duaa-card");
   card.dataset.duaaId = item.id || `${collectionId}-${index + 1}`;
+  card.id = `duaa-${index + 1}`;
 
   const header = createElement("header", "duaa-card-header");
   const headingWrap = createElement("div");
@@ -195,6 +197,19 @@ function renderProgress() {
   else progressMessage.textContent = "Collection complete for today.";
 }
 
+function restoreCollectionPosition() {
+  if (!returnToDuaa) return;
+
+  const card = document.getElementById(`duaa-${returnToDuaa}`);
+  if (!card) return;
+
+  requestAnimationFrame(() => {
+    card.scrollIntoView({ behavior: "smooth", block: "start" });
+    card.classList.add("return-highlight");
+    window.setTimeout(() => card.classList.remove("return-highlight"), 1800);
+  });
+}
+
 function renderCollection() {
   applyTheme();
 
@@ -227,6 +242,7 @@ function renderCollection() {
 
   list.replaceChildren(...collection.items.map(buildCard));
   renderProgress();
+  restoreCollectionPosition();
 }
 
 resetProgressButton?.addEventListener("click", () => resetDialog.showModal());

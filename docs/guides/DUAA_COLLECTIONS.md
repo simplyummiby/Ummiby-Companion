@@ -87,6 +87,8 @@ Non-tracked:
 
 Focus Mode can be entered from any individual duaa and begins on the selected entry.
 
+When the user leaves Focus Mode, the return link includes the Duaa currently being viewed. The shared collection page scrolls back to that card and briefly highlights it.
+
 The full phrase-by-phrase study and memorization experience is planned for a later version.
 
 ## Verification Metadata
@@ -123,3 +125,8 @@ To change the Evening theme, edit only:
 `js/data/collections/evening.js`
 
 No HTML changes are required.
+
+
+## Sticky Progress and Completion Controls
+
+For tracked collections, the progress panel remains visible while the user scrolls through the cards. Incomplete completion circles include a soft gray checkmark to make the action clear. Completed circles retain the green background and white checkmark.
