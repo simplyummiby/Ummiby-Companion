@@ -32,3 +32,8 @@
 - Duaa Progress
 - Recently Viewed
 - Focus Mode
+
+
+### Duaa Collection Identity
+
+The Duaa module includes a shared artwork layer for collection banners and circular collection artwork. Morning, Evening, Before Sleep, Travel, Weather, Prayer, and Istikharah currently have dedicated artwork. Resources and Backup & Restore banners are staged for their future pages.

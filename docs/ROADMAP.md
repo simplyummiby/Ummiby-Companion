@@ -71,7 +71,14 @@
 - Applied shared display preferences across tracked and reference Duaa collections
 - Preserved Arabic as the always-visible primary reading text
 
-## Next: v0.5.9 — Daily Tracking Refinement
+## Completed in v0.5.9 — Collection Identity System
+
+- Standardized collection artwork folders and filenames
+- Added registry-driven banners and circular artwork
+- Added shared fallback artwork
+- Applied collection identity to collection pages and Duaa discovery cards
+
+## Next: v0.6.0 — Daily Tracking Refinement
 
 - Confirm and document automatic daily progress rollover
 - Improve the manual reset placement and wording

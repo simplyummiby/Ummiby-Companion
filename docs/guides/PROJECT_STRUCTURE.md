@@ -34,3 +34,21 @@ Every new HTML page should load `app-config.js` followed by `app-shell.js` so th
 ## Icon Standard
 
 Use SVG for interface icons throughout Ummiby Companion. Do not add Unicode symbols as buttons, menu icons, status icons, or navigation icons. Pictures, banners, and decorative collection artwork are separate visual assets and are not governed by the interface-icon rule.
+
+
+## Collection Artwork
+
+```text
+assets/collections/
+├── fallback/
+│   ├── banner.svg
+│   └── icon.svg
+├── morning/
+│   ├── banner.webp
+│   └── icon.webp
+└── <other-collection-id>/
+    ├── banner.webp
+    └── icon.webp
+```
+
+Artwork paths are registered in `js/data/collection-registry.js` and rendered by `js/collection-artwork.js`.

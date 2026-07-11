@@ -1,3 +1,14 @@
+## Version 0.5.9 — Duaa Collection Identity System
+
+- Added standardized artwork folders for Morning, Evening, Before Sleep, Travel, Weather, Prayer, and Istikharah.
+- Added the supplied Resources and Backup & Restore banners for future utility-page use.
+- Added shared fallback banner and icon artwork so missing assets never create broken images.
+- Moved collection artwork paths and accessible descriptions into the collection registry.
+- Removed obsolete Unicode collection-icon fields from the individual collection theme records.
+- Updated the reusable collection renderer to load collection banners and circular artwork automatically.
+- Updated Duaa Home, Daily Companion, and Find a Duaa cards to use the same registry-driven artwork.
+- Preserved the shared light-blue/dark-blue Duaa reading interface beneath every collection identity.
+
 ## Version 0.5.8.4 — Completed Duaa Card Refinement
 
 - Changed completed Duaa card accents from green to the shared Duaa blue palette.

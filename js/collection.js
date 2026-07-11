@@ -245,10 +245,12 @@ function renderCollection() {
   title.textContent = collection.title || "Duaa Collection";
   description.textContent = collection.description || "Read through this collection at your own pace.";
   eyebrow.textContent = isTracked() ? "Daily Companion" : "Duaa Collection";
+  const registryEntry = window.UmmibyCollectionArtwork?.entryFor(collectionId)
+    || (window.UMMIBY_DUAA_COLLECTION_REGISTRY || {})[collectionId];
   const heroIcon = document.getElementById("collectionHeroIcon");
-  if (heroIcon) {
-    heroIcon.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg>';
-  }
+  const heroBanner = document.getElementById("collectionHeroBanner");
+  window.UmmibyCollectionArtwork?.hydrateImage(heroIcon, registryEntry, "icon");
+  window.UmmibyCollectionArtwork?.hydrateImage(heroBanner, registryEntry, "banner");
   focusStartLink.href = `focus-mode.html?collection=${encodeURIComponent(collectionId)}&duaa=1`;
   completionTitle.textContent = `${collection.shortTitle || collection.title || "Collection"} complete`;
 

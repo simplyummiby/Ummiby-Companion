@@ -104,13 +104,26 @@ All Duaa collection pages use the shared Duaa module reading theme:
 - dark-blue headings and accents
 - blue buttons, links, progress indicators, and settings controls
 
-Do not create a separate functional color palette for a collection. A collection may differ through its banner, decorative image, and written identity. The shared renderer intentionally ignores collection color fields for the reading interface.
+Collection identity is supplied by a banner and circular artwork registered in `js/data/collection-registry.js`. The shared renderer loads these automatically. Do not create collection-specific HTML or use artwork colors to recolor functional UI.
 
-When adding a future banner, store its path in the collection's decorative metadata and confirm that it does not change the shared Duaa controls or page surface.
+### Artwork folders
+
+```text
+assets/collections/<collection-id>/banner.webp
+assets/collections/<collection-id>/icon.webp
+```
+
+Recommended source artwork:
+
+- Banner: wide landscape composition, approximately 2:1 to 2.5:1; at least 1600 pixels wide
+- Icon artwork: square, at least 512 × 512 pixels; important content centered for circular cropping
+- WebP is preferred for photographic or painted artwork
+
+Every registry entry should include `banner`, `icon`, `bannerAlt`, and `iconAlt`. Shared fallback artwork is used when an asset is unavailable.
 
 ## Sticky Progress and Completion Controls
 
-For tracked collections, the progress panel remains visible while the user scrolls through the cards. Incomplete completion circles include a soft gray checkmark to make the action clear. Completed circles retain the green background and white checkmark.
+For tracked collections, the progress panel remains visible while the user scrolls through the cards. Incomplete completion circles include a soft gray checkmark to make the action clear. Completed circles use the shared Duaa blue background and white checkmark.
 
 
 ## Reading Typography
@@ -118,7 +131,7 @@ For tracked collections, the progress panel remains visible while the user scrol
 Collection pages load two related reading fonts:
 
 - `Amiri Quran` for complete Arabic Duaa text
-- `Amiri` for transliteration and English reading text
+- the standard application interface font for transliteration and English reading text
 
 Interface controls, labels, navigation, and progress text retain the existing application font so the reading content remains visually distinct from controls. Serif fallbacks remain in place if the web fonts are unavailable.
 
@@ -150,7 +163,7 @@ The renderer also accepts a legacy `url` property, but new and updated records s
 
 Arabic Duaa text uses Amiri Quran with Amiri and system Arabic serif fallbacks. English and transliteration use the regular application interface font.
 
-The user may choose Small, Medium, Large, or Extra Large Arabic text in Settings. The choice is stored on the current device and applied to all shared Duaa collection cards. Future Focus Mode Arabic content must use the same `--duaa-arabic-size` variable.
+The user may choose Small, Medium, Large, or Extra Large Arabic text from the contextual Duaa Reading Settings modal. The choice is stored on the current device and applied to all shared Duaa collection cards. Future Focus Mode Arabic content must use the same `--duaa-arabic-size` variable.
 ## Reading Preferences
 
 Collection cards support shared display preferences from Settings:

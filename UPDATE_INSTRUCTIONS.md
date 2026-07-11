@@ -1,43 +1,69 @@
-# Update Instructions — Ummiby Companion v0.5.8.4
+# Update Instructions — Ummiby Companion v0.5.9
 
-This package replaces v0.5.8.3.
+This update replaces **v0.5.8.4** with **v0.5.9**.
 
-## Install
+## Recommended GitHub Desktop workflow
 
-1. Extract `ummiby-companion-v0.5.8.4-full.zip`.
-2. Copy the extracted files into your local Ummiby Companion repository.
-3. Choose **Replace** when prompted.
-4. Review the changes in GitHub Desktop, commit, and push.
+1. Extract `ummiby-companion-v0.5.9-full.zip` into a temporary folder.
+2. Copy everything from the extracted folder into your local Ummiby Companion repository.
+3. Choose **Replace the files in the destination** when prompted.
+4. Open GitHub Desktop and review the changed and newly added files.
+5. Test locally, then commit and push.
 
-## Files Added
+## Files and folders added
 
-None.
+- `assets/collections/` and all collection artwork beneath it
+- `js/collection-artwork.js`
 
-## Files Replaced
+## Files replaced
 
 - `README.md`
 - `UPDATE_INSTRUCTIONS.md`
 - `css/collection.css`
+- `css/duaa-home.css`
+- `duaa/collection.html`
+- `duaa/collections.html`
+- `duaa/daily-companion.html`
+- `duaa/index.html`
 - `js/app-config.js`
+- `js/collection.js`
+- `js/data/collection-registry.js`
+- `js/data/collections/morning.js`
+- `js/data/collections/evening.js`
+- `js/data/collections/sleep.js`
+- `js/data/collections/travel.js`
+- `js/data/collections/weather.js`
+- `js/data/collections/prayer.js`
+- `js/data/collections/istikharah.js`
 - `docs/ARCHITECTURE.md`
 - `docs/CHANGELOG.md`
 - `docs/DECISIONS.md`
+- `docs/MODULES.md`
 - `docs/ROADMAP.md`
+- `docs/guides/DUAA_COLLECTIONS.md`
+- `docs/guides/PROJECT_STRUCTURE.md`
 
-## Files Deleted
+## Files deleted
 
 None.
 
-## Browser Storage
+## Browser storage
 
-No browser-storage keys, daily completion records, or Duaa reading preferences are changed.
+No browser-storage keys or saved Duaa progress are changed. Collection and Focus Mode reading preferences remain compatible.
 
-## Test
+## Testing checklist
 
-- Open a tracked Duaa collection and mark a Duaa complete.
-- Confirm the completed card uses a blue accent rather than green.
-- Confirm the blue completed background extends from the top of the card through the repetition pill row and stops at the horizontal divider.
-- Confirm the completed check control is blue with a white checkmark.
-- Confirm an incomplete card remains white with its quiet gray check control.
-- Refresh the page and confirm completion state is still preserved for the current day.
-- Confirm the footer shows Version 0.5.8.4.
+- Confirm the footer shows Version 0.5.9.
+- Open Morning, Evening, Before Sleep, Travel, Weather, Prayer, and Istikharah collection pages.
+- Confirm each collection displays its own banner and circular artwork.
+- Confirm the reading cards and controls remain in the shared light-blue/dark-blue Duaa theme.
+- Open Duaa Home and confirm the collection cards display artwork rather than Unicode collection symbols.
+- Open Daily Companion and Find a Duaa and confirm artwork loads without broken images.
+- Confirm tracked completion, Reading Settings, and Focus Mode still work.
+- Temporarily rename one artwork file and confirm the shared fallback appears instead of a broken image.
+
+## Commit message
+
+```text
+feat(duaa): add data-driven collection identity artwork
+```

@@ -118,3 +118,12 @@ The Duaa module's shared visual identity takes priority over collection-level co
 ## v0.5.8.4 — Completed States Use the Duaa Palette
 
 Completed Duaa cards use the shared Duaa blue palette rather than a separate green success color. The completed background spans the complete card header area, including the repetition row, and ends at the horizontal divider before the reading text. This keeps completion clear while preserving the Duaa module's cohesive visual identity.
+
+
+## v0.5.9 — Collection Artwork Is Metadata, Not Page Markup
+
+Collection banners and circular artwork are referenced from the shared collection registry. The reusable renderer and Duaa discovery views read those paths rather than hardcoding collection-specific images into separate pages.
+
+Artwork files are decorative collection identity, not interface icons. They may use WebP, PNG, or SVG as appropriate. Buttons, navigation controls, status controls, and other interface icons continue to use SVG only.
+
+Every collection artwork record includes accessible alternative text and falls back to shared Duaa artwork if a file is absent or fails to load. Collection imagery may differ, but it does not change the shared Duaa module colors or functional controls.

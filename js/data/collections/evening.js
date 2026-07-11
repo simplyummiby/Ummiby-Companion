@@ -985,8 +985,6 @@ window.UMMIBY_DUAA_COLLECTION = {
     "soft": "#F2EDFB",
     "border": "#D9CEEE",
     "pageBackground": "#FAF8FE",
-    "cardBackground": "#FFFFFF",
-    "icon": "◒",
-    "banner": ""
+    "cardBackground": "#FFFFFF"
   }
 };

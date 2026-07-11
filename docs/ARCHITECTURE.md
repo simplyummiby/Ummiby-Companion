@@ -122,3 +122,19 @@ The shared Duaa reading-settings component accepts a reading context. Collection
 ## Interface Icon Standard
 
 Application controls and navigation use SVG icons. Do not use Unicode characters as icons. SVG icons may be inline or stored as reusable assets, depending on the surrounding architecture. Decorative pictures and collection artwork are not treated as interface icons.
+
+
+## Duaa Collection Identity System (v0.5.9)
+
+Collection identity is data-driven. `js/data/collection-registry.js` stores each collection's banner path, circular artwork path, and accessible descriptions. `js/collection-artwork.js` is the shared artwork hydrator used by collection and discovery views.
+
+Artwork lives under:
+
+```text
+assets/collections/<collection-id>/banner.webp
+assets/collections/<collection-id>/icon.webp
+```
+
+Shared fallbacks live in `assets/collections/fallback/`. Missing artwork must fall back gracefully rather than exposing a broken image.
+
+The collection banner and icon communicate collection identity; the reading page background, cards, buttons, progress controls, and settings retain the shared Duaa module visual system.

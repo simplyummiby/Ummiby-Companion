@@ -7,10 +7,11 @@ window.UMMIBY_DUAA_COLLECTION_REGISTRY = {
     "trackerEnabled": true,
     "comingSoon": false,
     "dataFile": "../js/data/collections/morning.js",
-    "icon": "☀",
-    "themePreview": {
-      "accent": "#C58A17",
-      "soft": "#FFF4DC"
+    "artwork": {
+      "banner": "../assets/collections/morning/banner.webp",
+      "icon": "../assets/collections/morning/icon.webp",
+      "bannerAlt": "A peaceful sunrise over a mountain lake",
+      "iconAlt": "Morning sunrise collection artwork"
     }
   },
   "evening": {
@@ -21,10 +22,11 @@ window.UMMIBY_DUAA_COLLECTION_REGISTRY = {
     "trackerEnabled": true,
     "comingSoon": false,
     "dataFile": "../js/data/collections/evening.js",
-    "icon": "◒",
-    "themePreview": {
-      "accent": "#7157A8",
-      "soft": "#F2EDFB"
+    "artwork": {
+      "banner": "../assets/collections/evening/banner.webp",
+      "icon": "../assets/collections/evening/icon.webp",
+      "bannerAlt": "A vivid evening sunset over a mountain lake",
+      "iconAlt": "Evening sunset collection artwork"
     }
   },
   "sleep": {
@@ -35,10 +37,11 @@ window.UMMIBY_DUAA_COLLECTION_REGISTRY = {
     "trackerEnabled": true,
     "comingSoon": false,
     "dataFile": "../js/data/collections/sleep.js",
-    "icon": "☾",
-    "themePreview": {
-      "accent": "#5C8FBA",
-      "soft": "#EDF5FB"
+    "artwork": {
+      "banner": "../assets/collections/sleep/banner.webp",
+      "icon": "../assets/collections/sleep/icon.webp",
+      "bannerAlt": "A moonlit lake beneath a deep blue night sky",
+      "iconAlt": "Moonlit before-sleep collection artwork"
     }
   },
   "travel": {
@@ -49,10 +52,11 @@ window.UMMIBY_DUAA_COLLECTION_REGISTRY = {
     "trackerEnabled": false,
     "comingSoon": false,
     "dataFile": "../js/data/collections/travel.js",
-    "icon": "✈",
-    "themePreview": {
-      "accent": "#4C8A95",
-      "soft": "#EAF6F7"
+    "artwork": {
+      "banner": "../assets/collections/travel/banner.webp",
+      "icon": "../assets/collections/travel/icon.webp",
+      "bannerAlt": "A winding road beside a mountain lake",
+      "iconAlt": "Travel journey collection artwork"
     }
   },
   "weather": {
@@ -63,10 +67,11 @@ window.UMMIBY_DUAA_COLLECTION_REGISTRY = {
     "trackerEnabled": false,
     "comingSoon": false,
     "dataFile": "../js/data/collections/weather.js",
-    "icon": "☁",
-    "themePreview": {
-      "accent": "#5D95AC",
-      "soft": "#EDF7F9"
+    "artwork": {
+      "banner": "../assets/collections/weather/banner.webp",
+      "icon": "../assets/collections/weather/icon.webp",
+      "bannerAlt": "Rain falling over a mountain lake at sunrise",
+      "iconAlt": "Rainy weather collection artwork"
     }
   },
   "prayer": {
@@ -77,10 +82,11 @@ window.UMMIBY_DUAA_COLLECTION_REGISTRY = {
     "trackerEnabled": false,
     "comingSoon": false,
     "dataFile": "../js/data/collections/prayer.js",
-    "icon": "⌂",
-    "themePreview": {
-      "accent": "#638E69",
-      "soft": "#EEF7EF"
+    "artwork": {
+      "banner": "../assets/collections/prayer/banner.webp",
+      "icon": "../assets/collections/prayer/icon.webp",
+      "bannerAlt": "A mosque and prayer setting in warm evening light",
+      "iconAlt": "Prayer collection artwork"
     }
   },
   "istikharah": {
@@ -91,10 +97,11 @@ window.UMMIBY_DUAA_COLLECTION_REGISTRY = {
     "trackerEnabled": false,
     "comingSoon": true,
     "dataFile": "../js/data/collections/istikharah.js",
-    "icon": "◇",
-    "themePreview": {
-      "accent": "#A27D36",
-      "soft": "#FAF3E5"
+    "artwork": {
+      "banner": "../assets/collections/istikharah/banner.webp",
+      "icon": "../assets/collections/istikharah/icon.webp",
+      "bannerAlt": "A peaceful setting for reflecting on Istikharah",
+      "iconAlt": "Istikharah collection artwork"
     }
   }
 };

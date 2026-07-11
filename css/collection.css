@@ -78,3 +78,13 @@ body{background:var(--duaa-page)}
 .duaa-card.return-highlight{animation:return-card-highlight-duaa 1.8s ease-out}
 @keyframes return-card-highlight-duaa{0%{border-color:var(--duaa);box-shadow:0 0 0 5px var(--duaa-soft),var(--shadow)}100%{border-color:var(--line);box-shadow:var(--shadow)}}
 
+
+/* v0.5.9 collection identity artwork */
+.collection-hero{display:block;padding:0;overflow:hidden}
+.collection-hero-art{width:100%;aspect-ratio:2.55/1;background:var(--duaa-soft);overflow:hidden}
+.collection-hero-art img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.collection-hero-content{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;padding:26px 30px 30px}
+.hero-icon{overflow:hidden;padding:0;background:#fff}
+.hero-icon img{display:block;width:100%;height:100%;object-fit:cover}
+@media(max-width:780px){.collection-hero-content{display:block;padding:22px}.collection-hero-art{aspect-ratio:2.1/1}}
+@media(max-width:500px){.collection-hero-art{aspect-ratio:1.7/1}.collection-hero-content{padding:19px}}

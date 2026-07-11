@@ -19,8 +19,8 @@ Feature guides are located in:
 
 ## Current Version
 
-v0.5.8.4 — Completed Duaa Card Refinement
+v0.5.9 — Duaa Collection Identity System
 
 ## Current Release
 
-Version 0.5.8.4 expresses completed Duaa cards through the shared blue Duaa palette. The completed header now extends through the repetition row to the horizontal divider, keeping the card visually balanced while preserving the existing completion behavior.
+Version 0.5.9 introduces a data-driven collection identity system. Each Duaa collection now loads its banner and circular artwork from shared metadata while the reading interface remains consistently light blue with dark-blue accents.

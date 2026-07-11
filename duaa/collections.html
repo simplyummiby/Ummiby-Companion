@@ -10,7 +10,7 @@ body{margin:0;background:#f7f9fc;color:#243746;font-family:system-ui,sans-serif}
 main{width:min(900px,calc(100% - 32px));margin:55px auto}
 h1{font-family:Georgia,serif;color:#17324a}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.card{padding:22px;border:1px solid #dce7f0;border-radius:18px;background:#fff}
+.card{overflow:hidden;padding:0;border:1px solid #dce7f0;border-radius:18px;background:#fff}.card-art{aspect-ratio:1.45/1;overflow:hidden}.card-art img{width:100%;height:100%;object-fit:cover;display:block}.card-copy{padding:18px}.collection-mini-icon{display:block;width:58px;height:58px;margin-top:-47px;margin-bottom:10px;border:4px solid #fff;border-radius:50%;overflow:hidden;background:#fff;position:relative}.collection-mini-icon img{width:100%;height:100%;object-fit:cover;display:block}
 .card a{color:#456f8d;font-weight:750;text-decoration:none}
 @media(max-width:750px){.grid{grid-template-columns:1fr}}
 </style>
@@ -21,13 +21,15 @@ h1{font-family:Georgia,serif;color:#17324a}
 <h1>Find a Duaa</h1>
 <p>Open a collection for the moment or need you have.</p>
 <div class="grid">
-<article class="card"><h2>Travel</h2><p>Duaas for setting out, journeying, and returning home.</p><a href="collection.html?collection=travel">Open Travel →</a></article>
-<article class="card"><h2>Weather</h2><p>Rain, wind, thunder, and weather-related remembrances.</p><a href="collection.html?collection=weather">Open Weather →</a></article>
-<article class="card"><h2>Prayer</h2><p>Duaas connected to salah and moments within prayer.</p><a href="collection.html?collection=prayer">Open Prayer →</a></article>
-<article class="card"><h2>Istikharah</h2><p>A guided collection planned for a later version.</p><a href="collection.html?collection=istikharah">Preview Istikharah →</a></article>
+<article class="card"><div class="card-art" data-collection-banner="travel" data-decorative="true"></div><div class="card-copy"><span class="collection-mini-icon" data-collection-icon="travel"></span><h2>Travel</h2><p>Duaas for setting out, journeying, and returning home.</p><a href="collection.html?collection=travel">Open Travel →</a></div></article>
+<article class="card"><div class="card-art" data-collection-banner="weather" data-decorative="true"></div><div class="card-copy"><span class="collection-mini-icon" data-collection-icon="weather"></span><h2>Weather</h2><p>Rain, wind, thunder, and weather-related remembrances.</p><a href="collection.html?collection=weather">Open Weather →</a></div></article>
+<article class="card"><div class="card-art" data-collection-banner="prayer" data-decorative="true"></div><div class="card-copy"><span class="collection-mini-icon" data-collection-icon="prayer"></span><h2>Prayer</h2><p>Duaas connected to salah and moments within prayer.</p><a href="collection.html?collection=prayer">Open Prayer →</a></div></article>
+<article class="card"><div class="card-art" data-collection-banner="istikharah" data-decorative="true"></div><div class="card-copy"><span class="collection-mini-icon" data-collection-icon="istikharah"></span><h2>Istikharah</h2><p>A guided collection planned for a later version.</p><a href="collection.html?collection=istikharah">Preview Istikharah →</a></div></article>
 </div>
 </main>
 <script src="../js/app-config.js"></script>
 <script src="../js/app-shell.js"></script>
+<script src="../js/data/collection-registry.js"></script>
+<script src="../js/collection-artwork.js"></script>
 </body>
 </html>
