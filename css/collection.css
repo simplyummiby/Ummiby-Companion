@@ -26,8 +26,10 @@
 .text-block:not(.arabic-block) p:last-child{white-space:pre-line}.translation-block{background:#fafcfe}
 .duaa-card-footer{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:17px 25px;border-top:1px solid var(--line);background:#f7fafc}
 .source{margin:0;color:var(--muted);font-size:.76rem}.duaa-card-footer a{flex:0 0 auto;color:var(--collection-dark,var(--duaa-dark));font-size:.84rem;font-weight:800;text-decoration:none}
-.completion-panel{display:flex;align-items:center;gap:17px;margin-top:24px;padding:22px;border:1px solid #b8d3bf;border-radius:18px;background:#eff8f1;color:#356644}
-.completion-panel>span{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#5e966c;color:#fff;font-size:1.3rem}.completion-panel h2{margin:0;font-family:Georgia,serif}.completion-panel p{margin:4px 0 0}
+.completion-panel{display:flex;align-items:center;gap:17px;margin-top:24px;padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#fff,var(--duaa-soft));color:var(--navy)}
+.completion-panel>span{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--duaa);color:#fff;font-size:1.3rem}.completion-panel h2{margin:0;font-family:Georgia,serif;color:var(--duaa-dark)}.completion-panel p{margin:4px 0 0;color:var(--muted)}
+.completion-panel[data-status="empty"]>span{background:#dbe7ef;color:var(--duaa-dark)}
+.completion-panel[data-status="complete"]{border-color:#b8d4e6;background:linear-gradient(145deg,#fff,#e8f4fb)}
 .prototype-note{margin-top:24px;padding:17px 19px;border:1px dashed #b8c8d5;border-radius:15px;background:#f6f9fc;color:var(--muted);font-size:.82rem}.data-error{padding:18px;border:1px solid #d9a5a1;border-radius:14px;background:#fff4f3;color:#7d3733}
 dialog{width:min(92vw,480px);border:0;border-radius:20px;padding:0;box-shadow:0 28px 80px rgba(22,42,32,.25)}dialog::backdrop{background:rgba(19,38,29,.45)}dialog form{padding:25px}dialog h2{margin:0;color:var(--navy);font-family:Georgia,serif}dialog p{color:var(--muted)}.dialog-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:22px}
 @media(max-width:780px){.collection-page{width:min(100% - 28px,680px);padding-top:30px}.collection-hero{display:block;padding:24px}.hero-actions{grid-template-columns:1fr 1fr;margin-top:22px;min-width:0}.progress-panel{grid-template-columns:1fr}.duaa-card-footer{align-items:flex-start;flex-direction:column}.duaa-card-footer a{flex:auto}.arabic{font-size:var(--duaa-arabic-size,2rem)}}
@@ -98,3 +100,12 @@ body{background:var(--duaa-page)}
 .reflection-label{margin:0 0 9px;color:var(--duaa-dark);font-size:.74rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
 .reflection-quote{max-width:none;margin:0;padding:0;border:0;background:transparent;color:var(--navy);font-family:Georgia,"Times New Roman",serif;font-size:1.05rem;line-height:1.6}
 .reflection-attribution{display:block;margin-top:10px;color:var(--muted);font-family:Inter,system-ui,sans-serif;font-size:.78rem;font-style:normal}.reflection-attribution a{display:inline-flex;align-items:center;gap:.3rem;color:var(--duaa-dark);font-weight:750;text-decoration:none}.reflection-attribution .ui-icon{width:.9em;height:.9em}
+
+
+/* v0.6.2.2 collection usability polish */
+.back-to-top-button{position:fixed;right:24px;bottom:24px;z-index:70;display:grid;place-items:center;width:48px;height:48px;border:1px solid rgba(255,255,255,.65);border-radius:50%;background:var(--duaa);color:#fff;box-shadow:0 12px 28px rgba(31,69,96,.28);opacity:0;visibility:hidden;transform:translateY(10px);pointer-events:none;cursor:pointer;transition:opacity .18s ease,transform .18s ease,visibility .18s ease,background .18s ease}
+.back-to-top-button.is-visible{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
+.back-to-top-button:hover{background:var(--duaa-dark)}
+.back-to-top-button:focus-visible{outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px rgba(69,111,141,.3),0 12px 28px rgba(31,69,96,.28)}
+.back-to-top-button .ui-icon{width:22px;height:22px;stroke-width:2.2}
+@media(max-width:780px){.back-to-top-button{right:16px;bottom:18px;width:46px;height:46px}}

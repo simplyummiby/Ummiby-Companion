@@ -99,6 +99,7 @@
     menu: '<path d="M4 7h16M4 12h16M4 17h16"/>',
     'arrow-left': '<path d="m14 6-6 6 6 6"/><path d="M8 12h12"/>',
     'arrow-right': '<path d="m10 6 6 6-6 6"/><path d="M4 12h12"/>',
+    'arrow-up': '<path d="m6 14 6-6 6 6"/><path d="M12 20V8"/>',
     clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
     progress: '<path d="M12 3a9 9 0 1 0 9 9h-9V3Z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15V3.5Z"/>',
     history: '<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/>',

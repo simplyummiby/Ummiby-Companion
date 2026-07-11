@@ -192,3 +192,14 @@ Tracked collections use `js/duaa-tracking.js`. Completion is stored under the us
 The manual action is **Reset Today’s Progress**. It clears only the current collection for the current date. It does not alter previous days or other collections.
 
 Existing v0.5.x progress keys are migrated once into `ummibyDuaaDailyTracking`. Collection content and item IDs must remain stable because those IDs are what the history records store.
+
+
+## Bottom Status and Back to Top (v0.6.2.2)
+
+Tracked collections show a live status beneath the Duaa cards:
+
+- no Duaas checked today
+- some Duaas checked, with the exact count and weekly-consistency confirmation
+- every Duaa in the collection checked today
+
+Reference collections do not show this status. All collection pages use the shared floating SVG back-to-top control after the user scrolls down the page. Do not add collection-specific copies of this control.

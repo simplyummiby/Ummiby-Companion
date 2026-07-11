@@ -17,8 +17,8 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.6.2.1 — Duaa History and Consistency
+v0.6.2.2 — Collection Usability Polish
 
 ## Current Release
 
-Version 0.6.2.1 renames the Duaa Home summary to **Weekly Consistency** and adds a true monthly history calendar. Morning, Evening, and Before Sleep share one calendar view with collection tabs, Sunday-first weeks, exact daily checked-Duaa counts, and a monthly summary of active days only.
+Version 0.6.2.2 makes the bottom collection status accurate for the current day and shows it only for tracked collections. Long Duaa collections also include an accessible floating SVG back-to-top control.

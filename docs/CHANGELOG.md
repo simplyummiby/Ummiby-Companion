@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.6.2.2 — Collection Usability Polish
+
+### Changed
+
+- Replaced the hard-coded collection-complete message with a live current-day status for Morning, Evening, and Before Sleep.
+- The bottom status now distinguishes no activity, partial recitation, and full collection completion.
+- Removed the bottom tracking status from all untracked reference collections.
+- Added an accessible floating SVG back-to-top control to shared Duaa collection pages.
+
+### Notes
+
+- Daily tracking storage and history data are unchanged.
+- The back-to-top control appears only after scrolling and uses smooth scrolling.
+
 ## v0.6.2.1 — History Calendar Polish
 
 ### Changed

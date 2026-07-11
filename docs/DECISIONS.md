@@ -168,3 +168,10 @@ Morning, Evening, and Before Sleep are accessed directly from Duaa Home. The for
 ## v0.6.2.1 — Stable Monthly History Layout
 
 Monthly history calendars always reserve six Sunday-through-Saturday rows so switching between months does not resize the history panel. Active-day count markers and their Duaa/Duaas labels are centered as one unit. History markers continue using the shared Duaa blue rather than collection-specific colors because the selected tab already identifies the collection.
+
+
+## v0.6.2.2 — Collection Status Must Reflect Real Tracking State
+
+- Bottom-of-page tracking messages must be derived from today’s actual record rather than hard-coded completion language.
+- Only Morning, Evening, and Before Sleep display a collection tracking status. Reference collections do not imply completion or daily tracking.
+- Long shared collection pages provide one accessible SVG back-to-top control so users can return to the collection header without excessive scrolling.

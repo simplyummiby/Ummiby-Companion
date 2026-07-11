@@ -17,6 +17,8 @@ const progressBar = document.getElementById("progressBar");
 const progressMessage = document.getElementById("progressMessage");
 const completionPanel = document.getElementById("completionPanel");
 const completionTitle = document.getElementById("completionTitle");
+const completionMessage = document.getElementById("completionMessage");
+const backToTopButton = document.getElementById("backToTopButton");
 const introText = document.getElementById("collectionIntroText");
 const resetDialog = document.getElementById("resetDialog");
 const confirmResetButton = document.getElementById("confirmResetButton");
@@ -191,11 +193,24 @@ function renderProgress() {
   totalCount.textContent = total;
   completedCount.textContent = count;
   progressBar.style.width = `${percent}%`;
-  completionPanel.hidden = total === 0 || count !== total;
+  completionPanel.hidden = total === 0;
 
-  if (count === 0) progressMessage.textContent = "Begin wherever you are ready.";
-  else if (count < total) progressMessage.textContent = "Continue gently when you are ready.";
-  else progressMessage.textContent = "Collection complete for today.";
+  if (count === 0) {
+    progressMessage.textContent = "Begin wherever you are ready.";
+    completionTitle.textContent = "No Duaas checked yet today";
+    completionMessage.textContent = "Check a Duaa after reciting it to begin today’s record.";
+    completionPanel.dataset.status = "empty";
+  } else if (count < total) {
+    progressMessage.textContent = "Continue gently when you are ready.";
+    completionTitle.textContent = `${count} of ${total} Duaas recited today`;
+    completionMessage.textContent = "Today counts toward your weekly consistency.";
+    completionPanel.dataset.status = "active";
+  } else {
+    progressMessage.textContent = "Collection complete for today.";
+    completionTitle.textContent = `All ${total} Duaas recited today`;
+    completionMessage.textContent = "May Allah accept your remembrance.";
+    completionPanel.dataset.status = "complete";
+  }
 }
 
 function restoreCollectionPosition() {
@@ -258,7 +273,6 @@ function renderCollection() {
   window.UmmibyCollectionArtwork?.hydrateImage(heroIcon, registryEntry, "icon");
   window.UmmibyCollectionArtwork?.hydrateImage(heroBanner, registryEntry, "banner");
   focusStartLink.href = `focus-mode.html?collection=${encodeURIComponent(collectionId)}&duaa=1`;
-  completionTitle.textContent = `${collection.shortTitle || collection.title || "Collection"} complete`;
   renderReflection();
 
   if (isTracked()) {
@@ -268,6 +282,7 @@ function renderCollection() {
   } else {
     progressPanel.hidden = true;
     resetProgressButton.hidden = true;
+    completionPanel.hidden = true;
     introText.textContent = "Each card includes the complete duaa. Read through the collection freely without daily progress tracking.";
   }
 
@@ -299,6 +314,17 @@ document.addEventListener("visibilitychange", () => {
   if (!document.hidden) refreshForLocalDateChange();
 });
 window.setInterval(refreshForLocalDateChange, 60000);
+
+function updateBackToTopVisibility() {
+  if (!backToTopButton) return;
+  backToTopButton.classList.toggle("is-visible", window.scrollY > 520);
+}
+
+backToTopButton?.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+window.addEventListener("scroll", updateBackToTopVisibility, { passive: true });
+updateBackToTopVisibility();
 
 window.UmmibyCollectionLoader.load(collectionId)
   .then((loadedCollection) => {
