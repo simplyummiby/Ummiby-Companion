@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.6.1.2 — Duaa Home Navigation and Layout Refinement
+
+- Removed the standalone Daily Companion page and its navigation links.
+- Kept direct access to Morning, Evening, and Before Sleep on Duaa Home.
+- Moved the “Every Duaa counts” guidance and linked Sahih al-Bukhari 6464 reminder into the Daily Companion section as simple text.
+- Removed the redundant sentence beneath the Weekly Progress heading.
+- Left Sunday-through-Saturday labels inside each weekly tracker unchanged.
+- Preserved all tracking logic, dated history, and browser storage.
+
 ## v0.6.1 — Gentle Weekly Progress
 
 - Replaced the Duaa Home daily percentage summary with Sunday-through-Saturday weekly progress for Morning, Evening, and Before Sleep.

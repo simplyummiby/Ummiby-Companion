@@ -66,3 +66,13 @@ dialog{width:min(92vw,520px);border:0;border-radius:20px;padding:0;box-shadow:0 
 .weekly-progress-list{display:grid;gap:14px}.weekly-collection-row{padding:14px;border:1px solid var(--line);border-radius:15px;background:#fff}.weekly-row-heading{display:flex;justify-content:space-between;gap:14px;align-items:baseline;margin-bottom:11px}.weekly-row-heading h3{margin:0;color:var(--navy);font-family:Georgia,serif;font-size:1rem}.weekly-row-heading span{color:var(--muted);font-size:.76rem;font-weight:700}
 .weekly-days{display:grid;grid-template-columns:repeat(7,minmax(25px,1fr));gap:6px}.weekly-day{display:grid;justify-items:center;gap:5px}.weekly-day-label{color:var(--muted);font-size:.67rem;font-weight:800}.weekly-day-marker{display:grid;place-items:center;width:27px;height:27px;border:1.5px solid #c8d6e0;border-radius:50%;background:#fff;color:#fff}.weekly-day-marker .ui-icon{width:15px;height:15px;stroke-width:2.5}.weekly-day.active .weekly-day-marker{border-color:var(--duaa);background:var(--duaa)}.weekly-day.today .weekly-day-label{color:var(--duaa-dark)}.weekly-day.today .weekly-day-marker{box-shadow:0 0 0 3px var(--duaa-soft)}.weekly-day.future{opacity:.42}.weekly-progress-list.detailed{gap:18px}.weekly-progress-list.detailed .weekly-collection-row{padding:18px}.weekly-progress-list.detailed .weekly-day-marker{width:34px;height:34px}
 @media(max-width:480px){.weekly-row-heading{align-items:flex-start;flex-direction:column;gap:3px}.weekly-days{gap:3px}.weekly-day-marker{width:25px;height:25px}}
+
+.weekly-guidance{background:var(--duaa-soft);border-radius:14px;padding:12px 16px;margin:10px 0 14px}.weekly-guidance .weekly-philosophy{background:none;padding:0;margin:0 0 8px}.weekly-guidance .consistency-hadith{margin:0;padding:0;border:0;background:none;font-size:.88rem}.weekly-progress-list{gap:8px}.weekly-collection-row{padding:10px}
+
+
+/* v0.6.1.2 Daily Companion philosophy and compact Weekly Progress */
+.daily-philosophy{margin-top:18px;padding-top:15px;border-top:1px solid var(--line);color:var(--muted);font-size:.86rem;line-height:1.5;text-align:center}
+.daily-philosophy p{margin:0}.daily-philosophy .daily-hadith{margin-top:7px;font-family:Georgia,"Times New Roman",serif;color:var(--navy)}
+.daily-philosophy a{display:inline-flex;align-items:center;gap:.25rem;color:var(--duaa-dark);font-family:Inter,sans-serif;font-size:.78rem;font-weight:750;text-decoration:none;white-space:nowrap}
+.daily-philosophy a .ui-icon{width:.85em;height:.85em}
+.weekly-progress-card .section-heading.compact{margin-bottom:12px}

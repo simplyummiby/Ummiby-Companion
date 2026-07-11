@@ -31,7 +31,7 @@
 - Begin each day with a fresh visible checklist without deleting prior days
 - Preserve daily history internally for future summaries
 - Migrate existing v0.5.x completion state safely
-- Make Duaa Home and Daily Companion show real current-day status
+- Make Duaa Home show real current-day status
 - Rename manual reset to “Reset Today’s Progress”
 - Remove unfinished Recently Viewed and Duaa Reminder prototypes from view
 
@@ -55,3 +55,8 @@
 - Ramadan Reading Journey
 - Revisit reminders only when the app can support them honestly and reliably
 - Revisit Recently Viewed only when a purposeful interaction model is defined
+
+
+## v0.6.1.2 — Duaa Home refinement
+
+Status: Complete. Removed the redundant Daily Companion page, moved tracking philosophy text into the Daily Companion section, and simplified Weekly Progress heading copy.

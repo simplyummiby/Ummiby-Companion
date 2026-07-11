@@ -27,3 +27,8 @@ Only these collections use daily progress tracking:
 Duaa Home loads their actual collection totals and reads completion from the central dated tracking store. Statuses therefore reflect the user’s current local day rather than sample values.
 
 Reference collections remain available without completion pressure.
+
+
+## Daily Companion navigation
+
+Morning, Evening, and Before Sleep are opened directly from Duaa Home. There is no separate Daily Companion page.

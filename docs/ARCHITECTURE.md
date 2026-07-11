@@ -7,7 +7,6 @@ Home
   - Read by Surah
   - Go to Ayah
 - Duaa Home
-  - Daily Companion
   - Find a Duaa
 - Settings
 
@@ -55,7 +54,6 @@ duaa/
 ├── index.html
 ├── collection.html
 ├── collections.html
-├── daily-companion.html
 ├── focus-mode.html
 └── progress.html
 ```
@@ -178,7 +176,7 @@ Its conceptual structure is:
 
 The date key is calculated from the user’s local calendar date. Collection pages never erase a previous day when the date changes. They simply begin reading and writing the new date’s record.
 
-`js/duaa-tracking-summary.js` provides current-day summaries to Duaa Home, Daily Companion, and `duaa/progress.html`. It loads the tracked collection data to calculate accurate totals rather than storing duplicated item counts.
+`js/duaa-tracking-summary.js` provides current-day summaries to Duaa Home and `duaa/progress.html`. It loads the tracked collection data to calculate accurate totals rather than storing duplicated item counts.
 
 Legacy keys in the form `ummibyDuaaProgress:<collection>` are migrated once. Valid legacy dates are preserved, and the old key is removed only after its completed IDs are merged into the new store.
 
@@ -192,3 +190,8 @@ Reference collections do not call the tracking service and do not create dated r
 `js/duaa-tracking-summary.js` renders both the exact current-day counts on collection cards and the gentle weekly markers on Duaa Home and the weekly progress page.
 
 Optional collection reflections live in collection metadata and are rendered by the shared `collection.html` renderer. This avoids collection-specific HTML pages.
+
+
+## Duaa Home as the Daily Companion entry point (v0.6.1.2)
+
+Duaa Home directly exposes Morning, Evening, and Before Sleep. A separate Daily Companion page is intentionally not maintained because it duplicated navigation without adding a distinct workflow.

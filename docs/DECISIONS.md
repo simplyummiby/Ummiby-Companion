@@ -150,3 +150,8 @@ For Morning, Evening, and Before Sleep, a day is counted in weekly progress when
 The Duaa Home states this plainly: “Every Duaa counts. Checking at least one Duaa marks the day as complete.” The interface may pair this with an authentic reminder about consistent deeds, while avoiding streak-pressure or failure language.
 
 Collection-specific reflections may be stored as data and rendered by the shared collection page. They must include clear attribution and a source link when available.
+
+
+## v0.6.1.2 — Daily Companion remains a Duaa Home section
+
+Morning, Evening, and Before Sleep are accessed directly from Duaa Home. The former standalone Daily Companion page was removed because it added an unnecessary intermediary step and duplicated the same collection links.

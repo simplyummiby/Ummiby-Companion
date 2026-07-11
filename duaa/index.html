@@ -1,181 +1,154 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Duaa Home dashboard for daily adhkar, gentle current-day progress, and reference collections.">
-  <title>Duaa Home | Ummiby Companion</title>
-  <link rel="stylesheet" href="../css/duaa-shell.css">
-  <link rel="stylesheet" href="../css/duaa-home.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Duaa Home dashboard for daily adhkar, gentle current-day progress, and reference collections." name="description"/>
+<title>Duaa Home | Ummiby Companion</title>
+<link href="../css/duaa-shell.css" rel="stylesheet"/>
+<link href="../css/duaa-home.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="app-shell">
-  <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
-    <div class="brand">
-      <span class="brand-mark" data-ui-icon="brand" aria-hidden="true"></span>
-      <div>
-        <p class="brand-name">Ummiby</p>
-        <p class="brand-subtitle">Qur’an &amp; Duaa</p>
-      </div>
-    </div>
+<aside aria-label="Primary navigation" class="sidebar" id="sidebar">
+<div class="brand">
+<span aria-hidden="true" class="brand-mark" data-ui-icon="brand"></span>
+<div>
+<p class="brand-name">Ummiby</p>
+<p class="brand-subtitle">Qur’an &amp; Duaa</p>
+</div>
+</div>
+<nav class="main-nav">
+<a class="nav-link" href="../index.html"><span aria-hidden="true" data-ui-icon="home"></span> Home</a>
+<details class="nav-group">
+<summary><span><span aria-hidden="true" data-ui-icon="book"></span> Qur’an</span></summary>
+<div class="nav-submenu">
+<a href="../quran/index.html">Qur’an Home</a>
+<a href="../quran/reading-journey.html">Reading Journey</a>
+<a href="../quran/ramadan-journey.html">Ramadan Journey</a>
+<a href="../quran/surahs.html">Read by Surah</a>
+<a href="../quran/go-to-ayah.html">Go to an Ayah</a>
+</div>
+</details>
+<details class="nav-group" open="">
+<summary><span><span aria-hidden="true" data-ui-icon="sparkle"></span> Duaa</span></summary>
+<div class="nav-submenu">
+<a aria-current="page" class="submenu-active" href="index.html">Duaa Home</a>
 
-    <nav class="main-nav">
-      <a class="nav-link" href="../index.html"><span data-ui-icon="home" aria-hidden="true"></span> Home</a>
-
-      <details class="nav-group">
-        <summary><span><span data-ui-icon="book" aria-hidden="true"></span> Qur’an</span></summary>
-        <div class="nav-submenu">
-          <a href="../quran/index.html">Qur’an Home</a>
-          <a href="../quran/reading-journey.html">Reading Journey</a>
-          <a href="../quran/ramadan-journey.html">Ramadan Journey</a>
-          <a href="../quran/surahs.html">Read by Surah</a>
-          <a href="../quran/go-to-ayah.html">Go to an Ayah</a>
-        </div>
-      </details>
-
-      <details class="nav-group" open>
-        <summary><span><span data-ui-icon="sparkle" aria-hidden="true"></span> Duaa</span></summary>
-        <div class="nav-submenu">
-          <a class="submenu-active" href="index.html" aria-current="page">Duaa Home</a>
-          <a href="daily-companion.html">Daily Companion</a>
-          <a href="collections.html">Find a Duaa</a>
-        </div>
-      </details>
-
-      <a class="nav-link" href="../settings.html"><span data-ui-icon="settings" aria-hidden="true"></span> Settings</a>
-    </nav>
-  </aside>
-
-  <div class="page">
-    <header class="topbar">
-      <button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false">
-        <span class="sr-only">Open navigation</span><span data-ui-icon="menu" aria-hidden="true"></span>
-      </button>
-      <a class="back-home" href="../index.html"><span data-ui-icon="arrow-left" aria-hidden="true"></span> App Home</a>
-    </header>
-
-    <main class="duaa-home">
-      <section class="page-heading">
-        <div>
-          <p class="eyebrow">Duaa Workspace</p>
-          <h1>Duaa Home</h1>
-          <p>Make duaa a part of your day.</p>
-        </div>
-
-        <blockquote>
+<a href="collections.html">Find a Duaa</a>
+</div>
+</details>
+<a class="nav-link" href="../settings.html"><span aria-hidden="true" data-ui-icon="settings"></span> Settings</a>
+</nav>
+</aside>
+<div class="page">
+<header class="topbar">
+<button aria-controls="sidebar" aria-expanded="false" class="menu-button" id="menuButton" type="button">
+<span class="sr-only">Open navigation</span><span aria-hidden="true" data-ui-icon="menu"></span>
+</button>
+<a class="back-home" href="../index.html"><span aria-hidden="true" data-ui-icon="arrow-left"></span> App Home</a>
+</header>
+<main class="duaa-home">
+<section class="page-heading">
+<div>
+<p class="eyebrow">Duaa Workspace</p>
+<h1>Duaa Home</h1>
+<p>Make duaa a part of your day.</p>
+</div>
+<blockquote>
           “And your Lord says, ‘Call upon Me; I will respond to you.’”
           <cite>Ghāfir 40:60</cite>
-        </blockquote>
-      </section>
-
-      <section class="top-grid">
-        <article class="dashboard-card daily-card">
-          <div class="section-heading">
-            <span class="round-icon" data-ui-icon="clock" aria-hidden="true"></span>
-            <div>
-              <h2>Your Daily Companion</h2>
-              <p>Focus on three beautiful times each day.</p>
-            </div>
-          </div>
-
-          <div class="daily-grid">
-            <article class="daily-collection morning">
-              <span class="daily-icon" data-collection-icon="morning"></span>
-              <h3>Morning</h3>
-              <p>Start your day with remembrance.</p>
-              <a class="small-button" href="collection.html?collection=morning" data-collection="morning">View Morning Duaa</a>
-              <span class="completion-state" data-tracking-status="morning">Loading today’s progress…</span>
-            </article>
-
-            <article class="daily-collection evening">
-              <span class="daily-icon" data-collection-icon="evening"></span>
-              <h3>Evening</h3>
-              <p>End your day with remembrance.</p>
-              <a class="small-button" href="collection.html?collection=evening" data-collection="evening">View Evening Duaa</a>
-              <span class="completion-state" data-tracking-status="evening">Loading today’s progress…</span>
-            </article>
-
-            <article class="daily-collection sleep">
-              <span class="daily-icon" data-collection-icon="sleep"></span>
-              <h3>Before Sleep</h3>
-              <p>Close your day with protection.</p>
-              <a class="small-button" href="collection.html?collection=sleep" data-collection="sleep">View Sleep Duaa</a>
-              <span class="completion-state" data-tracking-status="sleep">Loading today’s progress…</span>
-            </article>
-          </div>
-
-          <a class="wide-link" href="daily-companion.html">Open Daily Companion <span class="inline-ui-icon" data-ui-icon="arrow-right" aria-hidden="true"></span></a>
-        </article>
-
-        <article class="dashboard-card progress-card weekly-progress-card">
-          <div class="section-heading compact">
-            <span class="round-icon" data-ui-icon="progress" aria-hidden="true"></span>
-            <div>
-              <h2>Weekly Progress</h2>
-              <p>Sunday through Saturday for each Daily Companion collection.</p>
-            </div>
-          </div>
-
-          <p class="weekly-philosophy"><strong>Every Duaa counts.</strong> Checking at least one Duaa marks the day as complete.</p>
-          <blockquote class="consistency-hadith">
-            “The most beloved deed to Allah is the most regular and constant even if it were little.”
-            <cite><a href="https://sunnah.com/bukhari:6464" target="_blank" rel="noopener noreferrer">Sahih al-Bukhari 6464 <span data-ui-icon="external" aria-hidden="true"></span></a></cite>
-          </blockquote>
-
-          <div class="weekly-progress-list" data-weekly-progress aria-live="polite"></div>
-
-          <a class="wide-link" href="progress.html">View Weekly Progress <span class="inline-ui-icon" data-ui-icon="arrow-right" aria-hidden="true"></span></a>
-        </article>
-      </section>
-
-      <section class="dashboard-card collections-card">
-        <div class="section-heading compact">
-          <span class="round-icon" data-ui-icon="sparkle" aria-hidden="true"></span>
-          <div>
-            <h2>Explore More Duaa Collections</h2>
-            <p>Collections for different moments and needs.</p>
-          </div>
-        </div>
-
-        <div class="collection-grid">
-          <article class="collection-card">
-            <span class="collection-icon" data-collection-icon="travel"></span>
-            <h3>Travel</h3>
-            <p>Duaas for safe and blessed journeys.</p>
-            <a href="collection.html?collection=travel" data-collection="travel">Browse Collection <span class="inline-ui-icon" data-ui-icon="arrow-right" aria-hidden="true"></span></a>
-          </article>
-
-          <article class="collection-card">
-            <span class="collection-icon" data-collection-icon="weather"></span>
-            <h3>Weather</h3>
-            <p>Duaas for rain, wind, and changing weather.</p>
-            <a href="collection.html?collection=weather" data-collection="weather">Browse Collection <span class="inline-ui-icon" data-ui-icon="arrow-right" aria-hidden="true"></span></a>
-          </article>
-
-          <article class="collection-card">
-            <span class="collection-icon" data-collection-icon="prayer"></span>
-            <h3>Prayer</h3>
-            <p>Duaas connected to prayer and the masjid.</p>
-            <a href="collection.html?collection=prayer" data-collection="prayer">Browse Collection <span class="inline-ui-icon" data-ui-icon="arrow-right" aria-hidden="true"></span></a>
-          </article>
-
-          <article class="collection-card coming-soon">
-            <span class="collection-icon" data-collection-icon="istikharah"></span>
-            <h3>Istikharah</h3>
-            <p>Duaa and guidance for seeking Allah’s direction.</p>
-            <span class="coming-soon-pill">Coming Soon</span>
-          </article>
-        </div>
-
-        <a class="wide-link centered" href="collections.html">View All Collections <span class="inline-ui-icon" data-ui-icon="arrow-right" aria-hidden="true"></span></a>
-      </section>
-
-    </main>
-  </div>
+</blockquote>
+</section>
+<section class="top-grid">
+<article class="dashboard-card daily-card">
+<div class="section-heading">
+<span aria-hidden="true" class="round-icon" data-ui-icon="clock"></span>
+<div>
+<h2>Your Daily Companion</h2>
+<p>Focus on three beautiful times each day.</p>
 </div>
+</div>
+<div class="daily-grid">
+<article class="daily-collection morning">
+<span class="daily-icon" data-collection-icon="morning"></span>
+<h3>Morning</h3>
+<p>Start your day with remembrance.</p>
+<a class="small-button" data-collection="morning" href="collection.html?collection=morning">View Morning Duaa</a>
+<span class="completion-state" data-tracking-status="morning">Loading today’s progress…</span>
+</article>
+<article class="daily-collection evening">
+<span class="daily-icon" data-collection-icon="evening"></span>
+<h3>Evening</h3>
+<p>End your day with remembrance.</p>
+<a class="small-button" data-collection="evening" href="collection.html?collection=evening">View Evening Duaa</a>
+<span class="completion-state" data-tracking-status="evening">Loading today’s progress…</span>
+</article>
+<article class="daily-collection sleep">
+<span class="daily-icon" data-collection-icon="sleep"></span>
+<h3>Before Sleep</h3>
+<p>Close your day with protection.</p>
+<a class="small-button" data-collection="sleep" href="collection.html?collection=sleep">View Sleep Duaa</a>
+<span class="completion-state" data-tracking-status="sleep">Loading today’s progress…</span>
+</article>
+</div>
+<div class="daily-philosophy">
+<p><strong>Every Duaa counts.</strong> Checking at least one Duaa marks the day as complete.</p>
+<p class="daily-hadith">“The most beloved deed to Allah is the most regular and constant even if it were little.” <a href="https://sunnah.com/bukhari:6464" rel="noopener noreferrer" target="_blank">Sahih al-Bukhari 6464 <span aria-hidden="true" data-ui-icon="external"></span></a></p>
+</div>
+</article>
+<article class="dashboard-card progress-card weekly-progress-card">
+<div class="section-heading compact">
+<span aria-hidden="true" class="round-icon" data-ui-icon="progress"></span>
+<div>
+<h2>Weekly Progress</h2>
 
-<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
-
+</div>
+</div><div aria-live="polite" class="weekly-progress-list" data-weekly-progress=""></div>
+<a class="wide-link" href="progress.html">View Weekly Progress <span aria-hidden="true" class="inline-ui-icon" data-ui-icon="arrow-right"></span></a>
+</article>
+</section>
+<section class="dashboard-card collections-card">
+<div class="section-heading compact">
+<span aria-hidden="true" class="round-icon" data-ui-icon="sparkle"></span>
+<div>
+<h2>Explore More Duaa Collections</h2>
+<p>Collections for different moments and needs.</p>
+</div>
+</div>
+<div class="collection-grid">
+<article class="collection-card">
+<span class="collection-icon" data-collection-icon="travel"></span>
+<h3>Travel</h3>
+<p>Duaas for safe and blessed journeys.</p>
+<a data-collection="travel" href="collection.html?collection=travel">Browse Collection <span aria-hidden="true" class="inline-ui-icon" data-ui-icon="arrow-right"></span></a>
+</article>
+<article class="collection-card">
+<span class="collection-icon" data-collection-icon="weather"></span>
+<h3>Weather</h3>
+<p>Duaas for rain, wind, and changing weather.</p>
+<a data-collection="weather" href="collection.html?collection=weather">Browse Collection <span aria-hidden="true" class="inline-ui-icon" data-ui-icon="arrow-right"></span></a>
+</article>
+<article class="collection-card">
+<span class="collection-icon" data-collection-icon="prayer"></span>
+<h3>Prayer</h3>
+<p>Duaas connected to prayer and the masjid.</p>
+<a data-collection="prayer" href="collection.html?collection=prayer">Browse Collection <span aria-hidden="true" class="inline-ui-icon" data-ui-icon="arrow-right"></span></a>
+</article>
+<article class="collection-card coming-soon">
+<span class="collection-icon" data-collection-icon="istikharah"></span>
+<h3>Istikharah</h3>
+<p>Duaa and guidance for seeking Allah’s direction.</p>
+<span class="coming-soon-pill">Coming Soon</span>
+</article>
+</div>
+<a class="wide-link centered" href="collections.html">View All Collections <span aria-hidden="true" class="inline-ui-icon" data-ui-icon="arrow-right"></span></a>
+</section>
+</main>
+</div>
+</div>
+<div class="sidebar-backdrop" hidden="" id="sidebarBackdrop"></div>
 <script src="../js/app-config.js"></script>
 <script src="../js/app-shell.js"></script>
 <script src="../js/duaa-app.js"></script>
