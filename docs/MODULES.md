@@ -30,10 +30,13 @@
   - Prayer
   - Istikharah
 - Duaa Progress
-- Recently Viewed
 - Focus Mode
 
 
 ### Duaa Collection Identity
 
 The Duaa module includes a shared artwork layer for collection banners and circular collection artwork. Morning, Evening, Before Sleep, Travel, Weather, Prayer, and Istikharah currently have dedicated artwork. Resources and Backup & Restore banners are staged for their future pages.
+
+## v0.6.0 Duaa Tracking Foundation
+
+The Daily Companion tracks Morning, Evening, and Before Sleep by local date. Duaa Home, Daily Companion, collection pages, and Today’s Progress share the same central tracking service. Reference collections remain untracked. Recently Viewed and Duaa reminders are not current visible modules.

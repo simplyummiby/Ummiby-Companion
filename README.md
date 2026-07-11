@@ -7,7 +7,8 @@ A combined Qur’an and Duaa companion focused on authentic content, thoughtful 
 - Shared Home
 - Qur’an Home and reading experiences
 - Duaa Home, Daily Companion, and reference collections
-- Shared settings
+- Shared app-wide Settings/About
+- Contextual module reading settings
 
 ## Documentation
 
@@ -19,13 +20,8 @@ Feature guides are located in:
 
 ## Current Version
 
-v0.5.9.1 — Duaa Collection Identity System
+v0.6.0 — Daily Duaa Tracking Foundation
 
 ## Current Release
 
-Version 0.5.9.1 introduces a data-driven collection identity system. Each Duaa collection now loads its banner and circular artwork from shared metadata while the reading interface remains consistently light blue with dark-blue accents.
-
-
-## Version 0.5.9.1
-
-Refines collection artwork presentation with shorter responsive hero images, centered Explore More Collections cards, and an app-wide SVG interface-icon audit. Illustrated banners and collection artwork remain image assets.
+Version 0.6.0 gives Morning, Evening, and Before Sleep true local-date-based daily tracking. Each local calendar day begins with a fresh checklist while earlier days remain stored for future gentle history. Existing v0.5.x progress is migrated safely. The unfinished Recently Viewed and Duaa Reminder prototypes have been removed from the visible application.

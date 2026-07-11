@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Duaa Home dashboard for daily adhkar, gentle progress tracking, collections, and reminders.">
+  <meta name="description" content="Duaa Home dashboard for daily adhkar, gentle current-day progress, and reference collections.">
   <title>Duaa Home | Ummiby Companion</title>
   <link rel="stylesheet" href="../css/duaa-shell.css">
   <link rel="stylesheet" href="../css/duaa-home.css">
@@ -84,7 +84,7 @@
               <h3>Morning</h3>
               <p>Start your day with remembrance.</p>
               <a class="small-button" href="collection.html?collection=morning" data-collection="morning">View Morning Duaa</a>
-              <span class="completion-state completed"><span data-ui-icon="check" aria-hidden="true"></span> Completed today</span>
+              <span class="completion-state" data-tracking-status="morning">Loading today’s progress…</span>
             </article>
 
             <article class="daily-collection evening">
@@ -92,7 +92,7 @@
               <h3>Evening</h3>
               <p>End your day with remembrance.</p>
               <a class="small-button" href="collection.html?collection=evening" data-collection="evening">View Evening Duaa</a>
-              <span class="completion-state">3 of 8 completed</span>
+              <span class="completion-state" data-tracking-status="evening">Loading today’s progress…</span>
             </article>
 
             <article class="daily-collection sleep">
@@ -100,7 +100,7 @@
               <h3>Before Sleep</h3>
               <p>Close your day with protection.</p>
               <a class="small-button" href="collection.html?collection=sleep" data-collection="sleep">View Sleep Duaa</a>
-              <span class="completion-state">Not started</span>
+              <span class="completion-state" data-tracking-status="sleep">Loading today’s progress…</span>
             </article>
           </div>
 
@@ -112,28 +112,28 @@
             <span class="round-icon" data-ui-icon="progress" aria-hidden="true"></span>
             <div>
               <h2>Your Progress</h2>
-              <p>Across your tracked daily collections.</p>
+              <p>Today across your tracked daily collections.</p>
             </div>
           </div>
 
           <div class="progress-layout">
-            <div class="progress-circle" aria-label="78 percent overall progress">
-              <span>78%</span>
+            <div class="progress-circle" data-tracking-progress-circle aria-label="Today’s overall Duaa progress">
+              <span data-tracking-overall-percent>0%</span>
               <small>Overall</small>
             </div>
 
             <div class="progress-list">
               <div>
                 <span>Morning</span>
-                <strong>84%</strong>
+                <strong data-tracking-percent="morning">0%</strong>
               </div>
               <div>
                 <span>Evening</span>
-                <strong>72%</strong>
+                <strong data-tracking-percent="evening">0%</strong>
               </div>
               <div>
                 <span>Before Sleep</span>
-                <strong>79%</strong>
+                <strong data-tracking-percent="sleep">0%</strong>
               </div>
             </div>
           </div>
@@ -184,115 +184,19 @@
         <a class="wide-link centered" href="collections.html">View All Collections <span class="inline-ui-icon" data-ui-icon="arrow-right" aria-hidden="true"></span></a>
       </section>
 
-      <section class="lower-grid">
-        <article class="dashboard-card recent-card">
-          <div class="section-heading compact">
-            <span class="round-icon" data-ui-icon="history" aria-hidden="true"></span>
-            <div>
-              <h2>Recently Viewed</h2>
-            </div>
-          </div>
-
-          <ul class="recent-list">
-            <li>
-              <span>
-                <strong>Protection from Harm</strong>
-                <small>Before Sleep · Duaa 12 of 45</small>
-              </span>
-              <time>Today</time>
-            </li>
-            <li>
-              <span>
-                <strong>Duaa When It Rains</strong>
-                <small>Weather · Duaa 4 of 18</small>
-              </span>
-              <time>Yesterday</time>
-            </li>
-            <li>
-              <span>
-                <strong>Duaa for Travel</strong>
-                <small>Travel · Duaa 2 of 15</small>
-              </span>
-              <time>2 days ago</time>
-            </li>
-          </ul>
-
-          <a class="text-link" href="recent.html">View All <span class="inline-ui-icon" data-ui-icon="arrow-right" aria-hidden="true"></span></a>
-        </article>
-
-        <article class="dashboard-card reminder-card">
-          <div class="section-heading compact">
-            <span class="round-icon" data-ui-icon="clock" aria-hidden="true"></span>
-            <div>
-              <h2>Stay Consistent</h2>
-              <p>Set a gentle reminder to return to your Daily Companion.</p>
-            </div>
-          </div>
-
-          <div id="reminderSummary" class="reminder-summary" hidden>
-            <div>
-              <strong id="reminderTime"></strong>
-              <span id="reminderDays"></span>
-            </div>
-            <div class="reminder-actions">
-              <button class="button secondary" id="editReminderButton" type="button">Edit</button>
-              <button class="button primary" id="pauseReminderButton" type="button">Pause</button>
-            </div>
-          </div>
-
-          <button class="button primary" id="openReminderButton" type="button">Set Daily Reminder</button>
-        </article>
-      </section>
     </main>
   </div>
 </div>
 
 <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
 
-<dialog id="reminderDialog">
-  <form method="dialog" id="reminderForm">
-    <div class="dialog-heading">
-      <div>
-        <p class="eyebrow">Gentle Reminder</p>
-        <h2>Choose when to return</h2>
-      </div>
-      <button class="icon-button" value="cancel" aria-label="Close"><span data-ui-icon="close" aria-hidden="true"></span></button>
-    </div>
-
-    <label>
-      Reminder time
-      <input type="time" id="reminderTimeInput" value="19:30" required>
-    </label>
-
-    <fieldset>
-      <legend>Days</legend>
-      <div class="day-grid">
-        <label><input type="checkbox" value="Sun" checked>Sun</label>
-        <label><input type="checkbox" value="Mon" checked>Mon</label>
-        <label><input type="checkbox" value="Tue" checked>Tue</label>
-        <label><input type="checkbox" value="Wed" checked>Wed</label>
-        <label><input type="checkbox" value="Thu" checked>Thu</label>
-        <label><input type="checkbox" value="Fri" checked>Fri</label>
-        <label><input type="checkbox" value="Sat" checked>Sat</label>
-      </div>
-    </fieldset>
-
-    <p class="dialog-note">
-      This prototype stores your reminder preference locally. Device notifications can be added later.
-    </p>
-
-    <div class="dialog-actions">
-      <button class="button secondary" value="cancel">Cancel</button>
-      <button class="button primary" id="saveReminderButton" value="default">Save Reminder</button>
-    </div>
-  </form>
-</dialog>
-
+<script src="../js/app-config.js"></script>
+<script src="../js/app-shell.js"></script>
 <script src="../js/duaa-app.js"></script>
 <script src="../js/data/collection-registry.js"></script>
 <script src="../js/collection-artwork.js"></script>
-<script src="../js/duaa-home.js"></script>
-<script src="../js/app-config.js"></script>
-<script src="../js/app-shell.js"></script>
+<script src="../js/data/collection-loader.js"></script>
+<script src="../js/duaa-tracking.js"></script>
+<script src="../js/duaa-tracking-summary.js"></script>
 </body>
 </html>

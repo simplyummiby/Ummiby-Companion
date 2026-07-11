@@ -184,3 +184,11 @@ Every collection page and Focus Mode includes a **Reading Settings** link. It op
 ## Collection and Focus Mode Settings
 
 Collection pages and Focus Mode use the same Duaa Reading Settings modal design, but each context stores its own Arabic size and visibility choices. The collection page opens settings from a full secondary button with an SVG gear icon. Focus Mode keeps a text link until its interface receives a dedicated design pass.
+
+## Date-Based Daily Tracking (v0.6.0)
+
+Tracked collections use `js/duaa-tracking.js`. Completion is stored under the user’s local calendar date, so a new day begins with a fresh checklist without deleting earlier records.
+
+The manual action is **Reset Today’s Progress**. It clears only the current collection for the current date. It does not alter previous days or other collections.
+
+Existing v0.5.x progress keys are migrated once into `ummibyDuaaDailyTracking`. Collection content and item IDs must remain stable because those IDs are what the history records store.

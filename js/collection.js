@@ -33,29 +33,12 @@ function applyTheme() {
   document.body.style.background = "var(--duaa-page)";
 }
 
-function todayKey() {
-  const now = new Date();
-  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+function readCompleted() {
+  return window.UmmibyDuaaTracking?.getCompleted(collectionId) || [];
 }
 
-function storageKey() {
-  return `ummibyDuaaProgress:${collectionId}`;
-}
-
-function readState() {
-  try {
-    const stored = JSON.parse(localStorage.getItem(storageKey()) || "{}");
-    if (stored.date !== todayKey() || !Array.isArray(stored.completed)) {
-      return { date: todayKey(), completed: [] };
-    }
-    return stored;
-  } catch {
-    return { date: todayKey(), completed: [] };
-  }
-}
-
-function saveState(state) {
-  localStorage.setItem(storageKey(), JSON.stringify(state));
+function saveCompleted(completed) {
+  return window.UmmibyDuaaTracking?.setCompleted(collectionId, completed) || [];
 }
 
 function createElement(tag, className, text) {
@@ -183,11 +166,7 @@ function buildCard(item, index) {
 
 function toggleCompleted(id) {
   if (!isTracked()) return;
-  const state = readState();
-  const completed = new Set(state.completed);
-  if (completed.has(id)) completed.delete(id);
-  else completed.add(id);
-  saveState({ date: todayKey(), completed: [...completed] });
+  window.UmmibyDuaaTracking?.toggle(collectionId, id);
   renderProgress();
 }
 
@@ -195,7 +174,7 @@ function renderProgress() {
   if (!isTracked()) return;
 
   const cards = [...document.querySelectorAll(".duaa-card")];
-  const completed = new Set(readState().completed);
+  const completed = new Set(readCompleted());
 
   cards.forEach((card) => {
     const checked = completed.has(card.dataset.duaaId);
@@ -258,7 +237,7 @@ function renderCollection() {
   if (isTracked()) {
     progressPanel.hidden = false;
     resetProgressButton.hidden = false;
-    introText.textContent = "Each card includes the complete duaa. Tap the checkmark when you finish reciting it. Your progress is saved on this device for today.";
+    introText.textContent = "Each card includes the complete duaa. Tap the checkmark when you finish reciting it. Today’s progress begins fresh automatically each local day while earlier days remain saved for future history.";
   } else {
     progressPanel.hidden = true;
     resetProgressButton.hidden = true;
@@ -273,9 +252,26 @@ function renderCollection() {
 resetProgressButton?.addEventListener("click", () => resetDialog.showModal());
 
 confirmResetButton?.addEventListener("click", () => {
-  localStorage.removeItem(storageKey());
+  window.UmmibyDuaaTracking?.resetToday(collectionId);
   renderProgress();
 });
+
+
+let renderedTrackingDate = window.UmmibyDuaaTracking?.localDateKey() || "";
+
+function refreshForLocalDateChange() {
+  if (!isTracked() || !window.UmmibyDuaaTracking) return;
+  const currentDate = window.UmmibyDuaaTracking.localDateKey();
+  if (currentDate === renderedTrackingDate) return;
+  renderedTrackingDate = currentDate;
+  renderProgress();
+}
+
+window.addEventListener("focus", refreshForLocalDateChange);
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) refreshForLocalDateChange();
+});
+window.setInterval(refreshForLocalDateChange, 60000);
 
 window.UmmibyCollectionLoader.load(collectionId)
   .then((loadedCollection) => {

@@ -1,3 +1,35 @@
+# Changelog
+
+## v0.6.0 — Daily Duaa Tracking Foundation
+
+### Added
+
+- Shared `js/duaa-tracking.js` service with local-date-based daily records.
+- Preserved daily history for Morning, Evening, and Before Sleep.
+- One-time migration from legacy `ummibyDuaaProgress:<collection>` records.
+- Shared live tracking summaries for Duaa Home, Daily Companion, and Today’s Progress.
+- Local-date refresh checks when a tracked page regains focus, becomes visible, or remains open across a date change.
+
+### Changed
+
+- Morning, Evening, and Before Sleep now read and write today’s dated record instead of overwriting one undated current state.
+- A new local day naturally displays a fresh checklist while earlier records remain saved.
+- The manual control is now labeled **Reset Today’s Progress** and clears only today’s record for the current collection.
+- Duaa Home progress figures now reflect real current-day completion instead of sample values.
+- `duaa/progress.html` now shows real current-day details and explains that weekly history is forthcoming.
+
+### Removed
+
+- Static Recently Viewed dashboard section.
+- Placeholder `duaa/recent.html` page.
+- Duaa reminder prototype, modal, and reminder-only script behavior.
+- Obsolete `js/duaa-home.js` reminder script.
+
+### Compatibility
+
+- Existing Duaa content, artwork, reading preferences, and Focus Mode navigation remain unchanged.
+- Legacy completion records are migrated once and removed only after they are incorporated into the dated history store.
+
 # Version 0.5.9.1 — Collection Artwork Refinement
 
 - Reduced Duaa collection hero height responsively so artwork introduces the collection without pushing reading content too far down the page.

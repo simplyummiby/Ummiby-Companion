@@ -3,22 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Duaa Progress | Ummiby Companion</title>
+<meta name="description" content="Current-day Duaa tracking details for Morning, Evening, and Before Sleep.">
+<title>Today’s Duaa Progress | Ummiby Companion</title>
 <link rel="stylesheet" href="../css/duaa-shell.css">
 <style>
-body{margin:0;background:#f7f9fc;color:#243746;font-family:system-ui,sans-serif}
-main{width:min(680px,calc(100% - 32px));margin:70px auto;padding:34px;border:1px solid #dce7f0;border-radius:22px;background:#fff;box-shadow:0 16px 42px rgba(31,55,70,.09)}
-h1{color:#17324a;font-family:Georgia,serif}
-a{color:#456f8d;font-weight:750;text-decoration:none}
+body{margin:0;background:var(--duaa-page);color:#243746;font-family:system-ui,sans-serif}
+main{width:min(760px,calc(100% - 32px));margin:58px auto 80px}
+.back-link{display:inline-flex;align-items:center;gap:7px;color:var(--duaa-dark);font-weight:750;text-decoration:none}
+.heading{margin:30px 0}.heading h1{margin:0;color:var(--duaa-dark);font-family:Georgia,serif;font-size:clamp(2.2rem,5vw,3.6rem)}.heading p{color:var(--muted)}
+.summary{padding:24px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:var(--shadow)}
+.overall{display:flex;justify-content:space-between;gap:20px;align-items:center;padding-bottom:20px;border-bottom:1px solid var(--line)}.overall strong{color:var(--duaa-dark);font-family:Georgia,serif;font-size:2rem}.overall span{color:var(--muted)}
+.tracking-list{display:grid;gap:12px;margin-top:18px}.tracking-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:16px;border-radius:14px;background:var(--duaa-soft)}.tracking-row h2{margin:0;color:var(--duaa-dark);font-family:Georgia,serif;font-size:1.15rem}.tracking-row p{margin:4px 0 0;color:var(--muted);font-size:.85rem}.tracking-row a{color:var(--duaa-dark);font-weight:750;text-decoration:none}
+.foundation-note{margin-top:18px;padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff;color:var(--muted)}
+@media(max-width:560px){.overall{align-items:flex-start;flex-direction:column}.tracking-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <main>
-<h1>Duaa Progress</h1>
-<p>This page will show gentle progress history for Morning, Evening, and Before Sleep.</p>
-<p><a href="index.html"><span data-ui-icon="arrow-left" aria-hidden="true"></span> Return to Duaa Home</a></p>
+  <a class="back-link" href="index.html"><span data-ui-icon="arrow-left" aria-hidden="true"></span> Duaa Home</a>
+  <header class="heading">
+    <p class="eyebrow">Daily Companion</p>
+    <h1>Today’s Progress</h1>
+    <p data-tracking-date></p>
+  </header>
+
+  <section class="summary" aria-labelledby="progressSummaryHeading">
+    <div class="overall">
+      <div>
+        <h2 id="progressSummaryHeading">Across today’s tracked collections</h2>
+        <span data-tracking-overall-count>0 of 0</span>
+      </div>
+      <strong data-tracking-overall-percent>0%</strong>
+    </div>
+
+    <div class="tracking-list">
+      <article class="tracking-row">
+        <div><h2>Morning</h2><p data-tracking-status="morning">Loading today’s progress…</p></div>
+        <a href="collection.html?collection=morning">Open <span data-ui-icon="arrow-right" aria-hidden="true"></span></a>
+      </article>
+      <article class="tracking-row">
+        <div><h2>Evening</h2><p data-tracking-status="evening">Loading today’s progress…</p></div>
+        <a href="collection.html?collection=evening">Open <span data-ui-icon="arrow-right" aria-hidden="true"></span></a>
+      </article>
+      <article class="tracking-row">
+        <div><h2>Before Sleep</h2><p data-tracking-status="sleep">Loading today’s progress…</p></div>
+        <a href="collection.html?collection=sleep">Open <span data-ui-icon="arrow-right" aria-hidden="true"></span></a>
+      </article>
+    </div>
+  </section>
+
+  <p class="foundation-note">Earlier days are now preserved safely on this device. A gentle weekly history view will be added in a later tracking release.</p>
 </main>
 <script src="../js/app-config.js"></script>
 <script src="../js/app-shell.js"></script>
+<script src="../js/data/collection-registry.js"></script>
+<script src="../js/data/collection-loader.js"></script>
+<script src="../js/duaa-tracking.js"></script>
+<script src="../js/duaa-tracking-summary.js"></script>
 </body>
 </html>

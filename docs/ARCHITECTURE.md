@@ -57,8 +57,7 @@ duaa/
 ├── collections.html
 ├── daily-companion.html
 ├── focus-mode.html
-├── progress.html
-└── recent.html
+└── progress.html
 ```
 
 Individual Morning, Evening, Sleep, Travel, Weather, and Prayer HTML pages are not required. Their content is selected through the reusable collection page query parameter.
@@ -144,3 +143,43 @@ The collection banner and icon communicate collection identity; the reading page
 `js/app-shell.js` owns the small shared SVG icon library and hydrates elements marked with `data-ui-icon`. JavaScript-rendered components may use `window.UmmibyIcons.create(name)`. Functional icons must use this shared SVG system or another explicit SVG asset. Decorative collection artwork continues to load through the collection artwork registry.
 
 Collection hero images use a responsive constrained height rather than their raw aspect ratio so reading content remains visible sooner.
+
+## Date-Based Duaa Tracking (v0.6.0)
+
+Daily tracking is centralized in:
+
+```text
+js/duaa-tracking.js
+```
+
+The service owns one versioned localStorage record:
+
+```text
+ummibyDuaaDailyTracking
+```
+
+Its conceptual structure is:
+
+```javascript
+{
+  schemaVersion: 1,
+  days: {
+    "2026-07-11": {
+      morning: { completed: ["morning-001"], updatedAt: "..." },
+      evening: { completed: [], updatedAt: "..." },
+      sleep: { completed: [], updatedAt: "..." }
+    }
+  },
+  migrations: {
+    legacyProgressV1: true
+  }
+}
+```
+
+The date key is calculated from the user’s local calendar date. Collection pages never erase a previous day when the date changes. They simply begin reading and writing the new date’s record.
+
+`js/duaa-tracking-summary.js` provides current-day summaries to Duaa Home, Daily Companion, and `duaa/progress.html`. It loads the tracked collection data to calculate accurate totals rather than storing duplicated item counts.
+
+Legacy keys in the form `ummibyDuaaProgress:<collection>` are migrated once. Valid legacy dates are preserved, and the old key is removed only after its completed IDs are merged into the new store.
+
+Reference collections do not call the tracking service and do not create dated records.

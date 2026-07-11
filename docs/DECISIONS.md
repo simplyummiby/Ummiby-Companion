@@ -15,7 +15,7 @@
 - Non-tracked collections are available for reference without completion pressure.
 - Collection pages will support straightforward recitation using full duaa cards.
 - Focus Mode can be entered from any individual duaa for reflection, study, and memorization.
-- Duaa reminders should use gentle wording and support pause/resume.
+- Duaa reminders are deferred and must not appear as a working feature until reliable reminder behavior is available.
 
 ## Morning Collection Pattern
 
@@ -131,3 +131,13 @@ Every collection artwork record includes accessible alternative text and falls b
 ## SVG Interface Icons and Illustrated Artwork — v0.5.9.1
 
 Functional interface symbols use SVG throughout the application. This includes navigation, arrows, status marks, settings, close controls, progress symbols, search, and similar controls. Unicode symbols are not used as interface icons. Collection banners and circular collection artwork are illustrations, so they remain image assets such as WebP or PNG.
+
+## v0.6.0 — Daily Tracking Decisions
+
+- Daily Duaa progress is keyed by the user’s local calendar date rather than UTC.
+- A date change does not destructively reset history. The app begins reading a new dated record and keeps prior days for later summaries.
+- Only Morning, Evening, and Before Sleep create daily tracking records. Reference collections remain untracked.
+- “Reset Today’s Progress” clears only the current collection’s record for the current local date.
+- Existing v0.5.x tracked progress is migrated into the dated tracking store once, then the legacy keys are removed.
+- Recently Viewed and Duaa reminders should not remain visible as prototypes. They may return later only with clearly defined, working behavior.
+- Reminder interfaces must not imply dependable device notifications until the application has the technical infrastructure to deliver them reliably.

@@ -1,52 +1,94 @@
-# Update Instructions — Ummiby Companion v0.5.9.1
+# Update Instructions — Ummiby Companion v0.6.0
 
 ## Replaces
 
-Version 0.5.9
+v0.5.9.1
 
-## Installation
+## Install
 
-1. Extract the v0.5.9.1 ZIP.
-2. Copy all extracted files and folders into the local Ummiby Companion repository.
-3. Choose **Replace** when prompted.
-4. Review the changes in GitHub Desktop, commit, and push.
+1. Extract `ummiby-companion-v0.6.0-full.zip`.
+2. Copy all extracted files and folders into your local Ummiby Companion repository.
+3. Choose **Replace** for existing files.
+4. Delete the two obsolete files listed below.
+5. Open GitHub Desktop and confirm that the expected additions, modifications, and deletions appear.
+6. Test locally, commit, and push.
 
-## Files added
+## Files Added
 
-None.
+```text
+js/duaa-tracking.js
+js/duaa-tracking-summary.js
+```
 
-## Files replaced
+## Files Replaced / Modified
 
-- `README.md`
-- `UPDATE_INSTRUCTIONS.md`
-- `js/app-config.js`
-- `js/app-shell.js`
-- `js/collection.js`
-- `css/collection.css`
-- `css/duaa-home.css`
-- `css/duaa-shell.css`
-- `css/styles.css`
-- Current HTML pages containing interface icons
-- `docs/CHANGELOG.md`
-- `docs/DECISIONS.md`
-- `docs/ARCHITECTURE.md`
-- `docs/DESIGN_PHILOSOPHY.md`
+```text
+README.md
+UPDATE_INSTRUCTIONS.md
+css/duaa-home.css
+docs/ARCHITECTURE.md
+docs/CHANGELOG.md
+docs/DATA_MIGRATION.md
+docs/DECISIONS.md
+docs/MODULES.md
+docs/ROADMAP.md
+docs/guides/DUAA_COLLECTIONS.md
+docs/guides/DUAA_HOME.md
+duaa/collection.html
+duaa/daily-companion.html
+duaa/index.html
+duaa/progress.html
+js/app-config.js
+js/collection.js
+```
 
-## Files deleted
+## Files to Delete
 
-None.
+```text
+duaa/recent.html
+js/duaa-home.js
+```
 
-## Browser storage
+Copying files over the existing folder will not remove these obsolete files automatically. Delete them manually so GitHub Desktop records them as deletions.
 
-No browser-storage keys or saved Duaa progress/preferences are changed.
+## Browser Storage Changes
 
-## Test checklist
+v0.6.0 introduces the versioned storage key:
 
-- Confirm the footer shows Version 0.5.9.1.
-- Confirm navigation, menu, back, settings, close, arrows, checks, and status symbols render as SVG icons.
-- Open Morning, Evening, Sleep, and a reference collection and confirm the hero is shorter but still fills its frame.
-- Confirm artwork crops cleanly on desktop, tablet, and phone widths.
-- Confirm Explore More Duaa Collections cards are centered.
-- Confirm Daily Companion cards retain their existing layout.
-- Complete and uncomplete a Duaa and confirm the SVG check control works.
-- Open a linked source and confirm the SVG external-link icon displays.
+```text
+ummibyDuaaDailyTracking
+```
+
+On first load, existing Morning, Evening, and Before Sleep progress from these legacy keys is migrated safely:
+
+```text
+ummibyDuaaProgress:morning
+ummibyDuaaProgress:evening
+ummibyDuaaProgress:sleep
+```
+
+Earlier dated records are preserved. The legacy keys are removed after successful migration.
+
+The old Duaa reminder preference, if one exists, is left untouched in browser storage but is no longer read or shown. Duaa reading preferences, artwork, content, and Focus Mode settings are not changed.
+
+## Testing Checklist
+
+- Confirm every page footer shows **v0.6.0**.
+- Open Morning, check one or more Duaas, refresh, and confirm today’s checks remain.
+- Confirm Duaa Home shows the real Morning count rather than sample progress.
+- Repeat with Evening and Before Sleep.
+- Open Daily Companion and confirm each card shows today’s actual status.
+- Open Today’s Progress and confirm its totals match the three collection pages.
+- Use **Reset Today’s Progress** in one collection and confirm only that collection’s current-day checks clear.
+- Confirm other tracked collections remain unchanged.
+- Confirm Travel, Weather, Prayer, and Istikharah do not show daily completion controls.
+- Confirm Recently Viewed and Duaa Reminder sections no longer appear on Duaa Home.
+- Confirm no link points to `duaa/recent.html`.
+- Confirm collection artwork, Reading Settings, Focus Mode, and return-to-card behavior still work.
+- For a rollover test, temporarily change the computer date in a test browser/profile or seed a prior-date record, then confirm the current local date begins with a fresh checklist while the prior record remains in `ummibyDuaaDailyTracking`.
+
+## Commit Message
+
+```text
+feat(duaa): add date-based daily tracking
+```

@@ -1,118 +1,51 @@
 # Roadmap
 
-## v0.1.0 — Project Foundation
-- Repository and documentation
+## Completed Foundation
 
-## v0.2.0 — Shared Home
-- Root application Home
+### v0.1.0–v0.4.0
+- Project documentation and repository foundation
+- Shared Home
+- Qur’an Home
+- Duaa Home
 
-## v0.3.0 — Qur’an Home
-- Qur’an dashboard
+### v0.5.0–v0.5.4
+- Morning collection prototype and data integration
+- Reusable collection renderer
+- Split collection data and on-demand loading
+- Repository cleanup and guide consolidation
 
-## v0.4.0 — Duaa Home
-- Duaa dashboard
+### v0.5.5–v0.5.9.1
+- Collection theme and visual identity infrastructure
+- Collection continuity and Focus Mode return behavior
+- Amiri Arabic typography and source links
+- Contextual Duaa reading preferences
+- Separate Collection and Focus Mode preferences
+- Shared SVG interface-icon standard
+- Unified Duaa module visual identity
+- Data-driven collection banners and artwork
+- Responsive artwork refinement
 
-## v0.5.0 — Morning Collection
-- Scrolling recitation cards
-- Daily progress tracking
+## v0.6.0 — Daily Duaa Tracking Foundation
 
-## v0.5.1 — Morning Data Integration
-- All extracted Morning data
-- Data-driven rendering
+- Store Morning, Evening, and Before Sleep progress by local calendar date
+- Begin each day with a fresh visible checklist without deleting prior days
+- Preserve daily history internally for future summaries
+- Migrate existing v0.5.x completion state safely
+- Make Duaa Home and Daily Companion show real current-day status
+- Rename manual reset to “Reset Today’s Progress”
+- Remove unfinished Recently Viewed and Duaa Reminder prototypes from view
 
-## v0.5.2 — Reusable Duaa Collection Renderer
-- One renderer for all collections
-- Shared collection data bundle
-- Tracked and non-tracked collection behavior
+## Next — Gentle Tracking Display
 
-## v0.5.3 — Split Duaa Collection Data
-- Separate collection files
-- Lightweight registry
-- On-demand collection loading
-
-## v0.5.4 — Project File Cleanup
-- Remove obsolete collection redirect pages
-- Remove unused Morning-only renderer files
-- Consolidate feature documentation
-- Keep the repository root clean
-
-## v0.5.5 — Collection Theme Infrastructure
-- Collection-specific theme metadata
-- Shared renderer theme support
-- Unique collection icons and palettes
-
-## v0.5.6 — Collection Continuity Improvements
-- Sticky tracked-collection progress panel
-- Clear inactive completion checkmarks
-- Return to the current Duaa after leaving Focus Mode
-
-## Next: v0.5.7 — Reading and Source Polish
-- Amiri typography review
-- Clickable source references
-- Source-link data support and verification guide updates
-
-## Later: v0.6.0 — Duaa Focus Mode
-- Phrase-by-phrase presentation
-- Arabic, English, and transliteration panels
-- Benefits, sources, and study resources
-- Memorization tools
-
-
-## Completed in v0.5.7
-
-- Applied Amiri Quran to Arabic Duaa text
-- Applied Amiri to transliteration and English reading text
-- Added optional linked source references through collection data
-- Documented source-link entry and verification rules
-
-## Completed in v0.5.8
-
-- Added persistent Show Transliteration and Show English Translation controls
-- Applied shared display preferences across tracked and reference Duaa collections
-- Preserved Arabic as the always-visible primary reading text
-
-## Completed in v0.5.9 — Collection Identity System
-
-- Standardized collection artwork folders and filenames
-- Added registry-driven banners and circular artwork
-- Added shared fallback artwork
-- Applied collection identity to collection pages and Duaa discovery cards
-
-## Next: v0.6.0 — Daily Tracking Refinement
-
-- Confirm and document automatic daily progress rollover
-- Improve the manual reset placement and wording
-- Strengthen daily history and current-day tracking foundations
+- Design a calm weekly view using the dated history now being collected
+- Show collection-level days engaged/completed without streak pressure
+- Review how partial completion should appear in weekly summaries
+- Add clear history-retention and backup behavior
 
 ## Later
 
 - Complete Duaa Focus Mode reading experience
 - Memorization system and memorized/unmemorized filtering
 - Ramadan Reading Journey
-
-
-### Completed in v0.5.8.1
-
-- Contextual Duaa Reading Settings modal on collection pages and Focus Mode.
-- Separate Duaa preference namespace in preparation for independent Qur’an reading settings.
-- App-wide Settings page simplified.
-
-## Completed in v0.5.8.2
-
-- Separate Duaa collection and Focus Mode reading preferences.
-- Collection-page Reading Settings button with SVG gear icon.
-- App-wide SVG-only interface icon standard documented.
-
-
-## Completed in v0.5.8.3
-
-- Unified Duaa collection pages and Focus Mode under one light-blue/dark-blue visual identity.
-- Limited collection-specific variation to banners and decorative imagery.
-- Prevented collection theme colors from recoloring functional reading controls.
-
-
-## Completed in v0.5.8.4
-
-- Replaced green completed-card accents with the shared Duaa blue palette.
-- Extended the completed header background through the repetition row to the horizontal divider.
-- Preserved existing completion logic and storage.
+- Revisit reminders only when the app can support them honestly and reliably
+- Revisit Recently Viewed only when a purposeful interaction model is defined
