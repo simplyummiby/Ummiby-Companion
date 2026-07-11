@@ -2,6 +2,27 @@
 
 All notable changes to this project are documented here.
 
+## v0.5.7 — Reading Typography and Source Links
+
+Status: Complete
+
+### Added
+
+- Amiri Quran typography for Arabic Duaa text
+- Amiri typography for transliteration and English reading text
+- Clickable source references when a verified `sourceReference` URL is present
+- External-link accessibility text and safe new-tab behavior for source links
+
+### Changed
+
+- Source rendering now supports linked and unlinked references through the same reusable collection renderer
+- Existing source records remain valid without requiring a URL
+- Focus Mode headings now use Amiri for visual continuity with the collection experience
+
+### Notes
+
+This release adds the architecture for linked sources without inserting unverified URLs. Source links appear only after a real `http` or `https` address is added to a Duaa record. The fonts are loaded through Google Fonts and retain serif fallbacks when the external font service is unavailable.
+
 ## v0.5.6 — Collection Continuity Improvements
 
 Status: Complete

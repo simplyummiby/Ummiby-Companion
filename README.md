@@ -19,4 +19,4 @@ Feature guides are located in:
 
 ## Current Version
 
-v0.5.6 — Collection Continuity Improvements
+v0.5.7 — Reading Typography and Source Links

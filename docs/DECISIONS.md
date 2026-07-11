@@ -66,3 +66,12 @@
 - Focus Mode return navigation follows the Duaa currently displayed in Focus Mode.
 - Return position is carried through the URL rather than saved permanently.
 - The collection renderer scrolls to and briefly highlights the returned card.
+
+
+## v0.5.7 — Reading Fonts and Source URLs
+
+- Use Amiri Quran specifically for Arabic Duaa text.
+- Use Amiri for transliteration and English reading passages, while retaining the existing interface font for controls and navigation.
+- Reuse the existing `source.sourceReference` field for verified source URLs instead of introducing another required property.
+- Keep source URLs optional so unverified entries never receive placeholder or guessed links.
+- Open external source references in a new tab to preserve the user's place in the collection.

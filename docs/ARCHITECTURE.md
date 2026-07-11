@@ -92,3 +92,10 @@ duaa/collection.html?collection=morning&returnTo=8#duaa-8
 ```
 
 The collection renderer assigns stable anchors to rendered cards, scrolls to the requested card after rendering, and briefly highlights it. This navigation state is temporary and URL-based; it does not require localStorage or sessionStorage.
+
+
+## Duaa Reading Typography and Sources (v0.5.7)
+
+Duaa collection typography is centralized in `css/collection.css`. Arabic content uses Amiri Quran, while transliteration and English reading text use Amiri. Interface typography remains separate.
+
+Source links are data-driven. `js/collection.js` reads `source.sourceReference` and creates a safe external link only for valid HTTP or HTTPS URLs. Records without URLs continue to render as plain source text, so source-link adoption can happen gradually during verification.

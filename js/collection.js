@@ -85,12 +85,42 @@ function repeatText(value) {
   return `Recite ${cleaned}`;
 }
 
-function sourceText(item) {
+function sourceUrl(item) {
   const source = item.source || {};
-  const pieces = [];
-  if (source.reference) pieces.push(source.reference);
-  if (source.grade && source.grade !== "N/A") pieces.push(`Grade: ${source.grade}`);
-  return pieces.length ? pieces.join(" · ") : "Source review pending";
+  const candidate = String(source.sourceReference || source.url || "").trim();
+  if (!candidate) return "";
+
+  try {
+    const url = new URL(candidate, window.location.href);
+    return ["http:", "https:"].includes(url.protocol) ? url.href : "";
+  } catch {
+    return "";
+  }
+}
+
+function buildSource(item) {
+  const source = item.source || {};
+  const wrapper = createElement("p", "source");
+  const reference = source.reference || "Source review pending";
+  const url = sourceUrl(item);
+
+  if (url) {
+    const link = createElement("a", "source-link", reference);
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.setAttribute("aria-label", `${reference} (opens source in a new tab)`);
+    link.appendChild(createElement("span", "source-link-icon", "↗"));
+    wrapper.appendChild(link);
+  } else {
+    wrapper.appendChild(document.createTextNode(reference));
+  }
+
+  if (source.grade && source.grade !== "N/A") {
+    wrapper.appendChild(document.createTextNode(` · Grade: ${source.grade}`));
+  }
+
+  return wrapper;
 }
 
 function addTextBlock(card, label, text, options = {}) {
@@ -150,7 +180,7 @@ function buildCard(item, index) {
   addTextBlock(card, "English", cardText.translation, { className: "translation-block" });
 
   const footer = createElement("footer", "duaa-card-footer");
-  footer.appendChild(createElement("p", "source", sourceText(item)));
+  footer.appendChild(buildSource(item));
 
   const focusLink = createElement("a", "", "Study in Focus Mode →");
   focusLink.href = `focus-mode.html?collection=${encodeURIComponent(collectionId)}&duaa=${index + 1}`;

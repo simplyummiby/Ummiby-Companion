@@ -40,3 +40,15 @@ dialog{width:min(92vw,480px);border:0;border-radius:20px;padding:0;box-shadow:0 
 .duaa-card.return-highlight{animation:return-card-highlight 1.8s ease-out}
 @keyframes return-card-highlight{0%{border-color:var(--collection-accent,var(--duaa));box-shadow:0 0 0 5px var(--collection-soft,#eef5fb),var(--shadow)}100%{border-color:var(--line);box-shadow:var(--shadow)}}
 @media(max-width:780px){.progress-panel{top:10px}.duaa-card{scroll-margin-top:190px}}
+
+
+/* v0.5.7 reading typography and linked sources */
+.duaa-card .arabic{font-family:"Amiri Quran","Amiri","Traditional Arabic",serif;font-size:clamp(1.75rem,3.2vw,2.35rem);line-height:2.05;font-weight:400;text-rendering:optimizeLegibility}
+.duaa-card .text-block:not(.arabic-block) p:not(.block-label){font-family:"Amiri",Georgia,serif;font-size:1.16rem;line-height:1.8}
+.duaa-card .translation-block p:not(.block-label){font-size:1.2rem}
+.duaa-card-footer .source{margin:0;color:var(--muted);font-size:.94rem;line-height:1.55}
+.source-link{display:inline-flex;align-items:baseline;gap:.3rem;color:var(--collection-dark,var(--duaa));font-weight:750;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.source-link:hover{color:var(--collection-accent,var(--duaa));text-decoration-thickness:2px}
+.source-link:focus-visible{outline:3px solid var(--collection-soft,#eef5fb);outline-offset:4px;border-radius:4px}
+.source-link-icon{font-family:system-ui,sans-serif;font-size:.78em;text-decoration:none}
+@media(max-width:500px){.duaa-card .arabic{font-size:1.72rem;line-height:1.95}.duaa-card .text-block:not(.arabic-block) p:not(.block-label){font-size:1.08rem}}

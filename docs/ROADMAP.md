@@ -56,3 +56,17 @@
 - Arabic, English, and transliteration panels
 - Benefits, sources, and study resources
 - Memorization tools
+
+
+## Completed in v0.5.7
+
+- Applied Amiri Quran to Arabic Duaa text
+- Applied Amiri to transliteration and English reading text
+- Added optional linked source references through collection data
+- Documented source-link entry and verification rules
+
+## Next Candidate: v0.5.8
+
+- Memorized Duaa status
+- Collection filters for All, Memorized, and Still Learning
+- Backup and restore support for long-term memorization state

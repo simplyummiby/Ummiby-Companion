@@ -1,77 +1,51 @@
-# Update Instructions
+# Ummiby Companion v0.5.7 Update Instructions
 
-Version: v0.5.6 — Collection Continuity Improvements
+## Version
 
-## Recommended Method
+Update from **v0.5.6** to **v0.5.7 — Reading Typography and Source Links**.
 
-Because this release does not delete any project files, you may safely copy the extracted v0.5.6 files over the existing v0.5.5 repository and choose **Replace the files in the destination** when prompted.
+## Recommended Manual Update
 
-1. Commit your current v0.5.5 work in GitHub Desktop.
-2. Extract the v0.5.6 ZIP to a temporary folder.
-3. Copy everything from the extracted folder into the repository.
-4. Choose **Replace the files in the destination** when Windows prompts.
-5. Review the changes in GitHub Desktop.
-6. Complete the tests below.
-7. Commit the update.
+Because this package contains the complete project, extract it and copy its contents over the existing repository. Choose **Replace** when prompted.
 
-## Files to Delete
-
-None.
-
-## New Files
+## Files Added
 
 None.
 
 ## Files Replaced
 
-```text
-README.md
-UPDATE_INSTRUCTIONS.md
-css/collection.css
-duaa/focus-mode.html
-js/collection.js
-docs/ARCHITECTURE.md
-docs/CHANGELOG.md
-docs/DECISIONS.md
-docs/ROADMAP.md
-docs/guides/DUAA_COLLECTIONS.md
-```
+- `README.md`
+- `UPDATE_INSTRUCTIONS.md`
+- `duaa/collection.html`
+- `duaa/focus-mode.html`
+- `css/collection.css`
+- `js/collection.js`
+- `docs/CHANGELOG.md`
+- `docs/ROADMAP.md`
+- `docs/DECISIONS.md`
+- `docs/ARCHITECTURE.md`
+- `docs/guides/DUAA_COLLECTIONS.md`
 
-## What to Test
+## Files Deleted
 
-### Sticky Progress Panel
+None.
 
-1. Open `duaa/collection.html?collection=morning`.
-2. Scroll through the collection.
-3. Confirm the progress panel remains visible near the top of the viewport.
-4. Repeat on a phone-sized browser window and confirm it remains compact and does not cover the card being read.
+## Important Data Note
 
-### Completion Circles
+No collection data files are changed in this release. Existing Duaa records continue to work unchanged. To make a source clickable later, add a verified URL to that entry's existing `source.sourceReference` field.
 
-1. Confirm incomplete circles display a soft gray checkmark.
-2. Select a Duaa.
-3. Confirm the completed state still uses a green circle with a white checkmark.
-4. Select it again and confirm it returns to the incomplete gray state.
+## Test Checklist
 
-### Focus Mode Return Position
-
-1. Open Morning or Evening collection.
-2. Enter Focus Mode from a Duaa in the middle of the collection.
-3. Use Previous or Next to move to another Duaa.
-4. Select **Return to Collection**.
-5. Confirm the collection scrolls to the Duaa last viewed in Focus Mode.
-6. Confirm that card briefly highlights and then returns to its normal appearance.
-
-### Reference Collections
-
-Open Travel, Weather, or Prayer and confirm:
-
-- no daily progress panel appears
-- no completion circles appear
-- Focus Mode return positioning still works
+1. Open Morning, Evening, Before Sleep, and at least one reference collection.
+2. Confirm Arabic Duaa text uses the Amiri Quran style and remains readable on desktop and mobile widths.
+3. Confirm transliteration and English text use the Amiri reading style.
+4. Confirm ordinary source references remain visible when `sourceReference` is blank.
+5. Temporarily add a trusted HTTP or HTTPS URL to one local test entry's `sourceReference` field and confirm the source becomes clickable and opens in a new tab. Remove the temporary URL afterward if it was only for testing.
+6. Confirm completion tracking, sticky progress, and Focus Mode return behavior from v0.5.6 still work.
+7. Confirm the browser console contains no errors.
 
 ## Commit Message
 
 ```text
-Improve Duaa collection progress and Focus Mode continuity
+Improve Duaa typography and source references
 ```
