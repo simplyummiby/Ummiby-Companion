@@ -1,51 +1,60 @@
-# Ummiby Companion v0.5.7 Update Instructions
+# Update Instructions — Ummiby Companion v0.5.7.1
 
-## Version
-
-Update from **v0.5.6** to **v0.5.7 — Reading Typography and Source Links**.
+This package updates Ummiby Companion from **v0.5.7** to **v0.5.7.1**.
 
 ## Recommended Manual Update
 
-Because this package contains the complete project, extract it and copy its contents over the existing repository. Choose **Replace** when prompted.
+Because this release adds shared JavaScript files and updates many HTML pages, the safest manual method is:
+
+1. Make a backup copy of your current project folder.
+2. Extract `ummiby-companion-v0.5.7.1-full.zip`.
+3. Copy all extracted files and folders into the existing project folder.
+4. Choose **Replace** when prompted.
+5. Do not delete browser storage; existing Duaa completion data remains compatible.
 
 ## Files Added
 
-None.
+- `js/app-config.js`
+- `js/app-shell.js`
+- `js/settings.js`
 
-## Files Replaced
+## Files Replaced or Modified
 
 - `README.md`
 - `UPDATE_INSTRUCTIONS.md`
-- `duaa/collection.html`
-- `duaa/focus-mode.html`
+- `settings.html`
+- every existing `.html` page, to load the shared version configuration and footer
 - `css/collection.css`
-- `js/collection.js`
-- `docs/CHANGELOG.md`
-- `docs/ROADMAP.md`
-- `docs/DECISIONS.md`
 - `docs/ARCHITECTURE.md`
+- `docs/CHANGELOG.md`
+- `docs/DECISIONS.md`
+- `docs/ROADMAP.md`
 - `docs/guides/DUAA_COLLECTIONS.md`
+- `docs/guides/PROJECT_STRUCTURE.md`
 
 ## Files Deleted
 
 None.
 
-## Important Data Note
+## Browser Data
 
-No collection data files are changed in this release. Existing Duaa records continue to work unchanged. To make a source clickable later, add a verified URL to that entry's existing `source.sourceReference` field.
+- Existing daily Duaa progress is not changed.
+- A new `ummibyPreferences` localStorage record is created after the user changes Arabic Text Size.
+- The default Arabic size is Medium when no preference has been saved.
 
-## Test Checklist
+## Testing Checklist
 
-1. Open Morning, Evening, Before Sleep, and at least one reference collection.
-2. Confirm Arabic Duaa text uses the Amiri Quran style and remains readable on desktop and mobile widths.
-3. Confirm transliteration and English text use the Amiri reading style.
-4. Confirm ordinary source references remain visible when `sourceReference` is blank.
-5. Temporarily add a trusted HTTP or HTTPS URL to one local test entry's `sourceReference` field and confirm the source becomes clickable and opens in a new tab. Remove the temporary URL afterward if it was only for testing.
-6. Confirm completion tracking, sticky progress, and Focus Mode return behavior from v0.5.6 still work.
-7. Confirm the browser console contains no errors.
+- Open Shared Home and confirm the footer shows Version 0.5.7.1.
+- Open Qur’an Home and confirm the same footer version.
+- Open Duaa Home and confirm the same footer version.
+- Open Settings and confirm the About section shows v0.5.7.1.
+- Change Arabic Text Size and confirm the preview changes.
+- Open a tracked Duaa collection and confirm only Arabic text changes size.
+- Confirm English and transliteration use the previous font and tighter line spacing.
+- Refresh the page and confirm the chosen Arabic size remains saved.
+- Open a reference collection and confirm the same Arabic preference applies.
+- Open Focus Mode and confirm existing navigation and return behavior still work.
 
 ## Commit Message
 
-```text
-Improve Duaa typography and source references
-```
+`feat(settings): refine Duaa typography and add shared version display`

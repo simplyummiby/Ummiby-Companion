@@ -29,7 +29,7 @@
 .completion-panel>span{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#5e966c;color:#fff;font-size:1.3rem}.completion-panel h2{margin:0;font-family:Georgia,serif}.completion-panel p{margin:4px 0 0}
 .prototype-note{margin-top:24px;padding:17px 19px;border:1px dashed #b8c8d5;border-radius:15px;background:#f6f9fc;color:var(--muted);font-size:.82rem}.data-error{padding:18px;border:1px solid #d9a5a1;border-radius:14px;background:#fff4f3;color:#7d3733}
 dialog{width:min(92vw,480px);border:0;border-radius:20px;padding:0;box-shadow:0 28px 80px rgba(22,42,32,.25)}dialog::backdrop{background:rgba(19,38,29,.45)}dialog form{padding:25px}dialog h2{margin:0;color:var(--navy);font-family:Georgia,serif}dialog p{color:var(--muted)}.dialog-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:22px}
-@media(max-width:780px){.collection-page{width:min(100% - 28px,680px);padding-top:30px}.collection-hero{display:block;padding:24px}.hero-actions{grid-template-columns:1fr 1fr;margin-top:22px;min-width:0}.progress-panel{grid-template-columns:1fr}.duaa-card-footer{align-items:flex-start;flex-direction:column}.duaa-card-footer a{flex:auto}.arabic{font-size:1.8rem}}
+@media(max-width:780px){.collection-page{width:min(100% - 28px,680px);padding-top:30px}.collection-hero{display:block;padding:24px}.hero-actions{grid-template-columns:1fr 1fr;margin-top:22px;min-width:0}.progress-panel{grid-template-columns:1fr}.duaa-card-footer{align-items:flex-start;flex-direction:column}.duaa-card-footer a{flex:auto}.arabic{font-size:var(--duaa-arabic-size,2rem)}}
 @media(max-width:500px){.hero-actions{grid-template-columns:1fr}.duaa-card-header{padding:20px 18px 15px}.repeat-row,.text-block,.duaa-card-footer{padding-left:18px;padding-right:18px}.check-button{width:43px;height:43px}.duaa-card h2{font-size:1.3rem}}
 
 .hero-heading-wrap{display:flex;align-items:flex-start;gap:16px}
@@ -43,12 +43,12 @@ dialog{width:min(92vw,480px);border:0;border-radius:20px;padding:0;box-shadow:0 
 
 
 /* v0.5.7 reading typography and linked sources */
-.duaa-card .arabic{font-family:"Amiri Quran","Amiri","Traditional Arabic",serif;font-size:clamp(1.75rem,3.2vw,2.35rem);line-height:2.05;font-weight:400;text-rendering:optimizeLegibility}
-.duaa-card .text-block:not(.arabic-block) p:not(.block-label){font-family:"Amiri",Georgia,serif;font-size:1.16rem;line-height:1.8}
-.duaa-card .translation-block p:not(.block-label){font-size:1.2rem}
+.duaa-card .arabic{font-family:"Amiri Quran","Amiri","Traditional Arabic",serif;font-size:var(--duaa-arabic-size,2rem);line-height:1.9;font-weight:400;text-rendering:optimizeLegibility}
+.duaa-card .text-block:not(.arabic-block) p:not(.block-label){font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:1rem;line-height:1.58}
+.duaa-card .translation-block p:not(.block-label){font-size:1rem}
 .duaa-card-footer .source{margin:0;color:var(--muted);font-size:.94rem;line-height:1.55}
 .source-link{display:inline-flex;align-items:baseline;gap:.3rem;color:var(--collection-dark,var(--duaa));font-weight:750;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 .source-link:hover{color:var(--collection-accent,var(--duaa));text-decoration-thickness:2px}
 .source-link:focus-visible{outline:3px solid var(--collection-soft,#eef5fb);outline-offset:4px;border-radius:4px}
 .source-link-icon{font-family:system-ui,sans-serif;font-size:.78em;text-decoration:none}
-@media(max-width:500px){.duaa-card .arabic{font-size:1.72rem;line-height:1.95}.duaa-card .text-block:not(.arabic-block) p:not(.block-label){font-size:1.08rem}}
+@media(max-width:500px){.duaa-card .arabic{line-height:1.85}.duaa-card .text-block:not(.arabic-block) p:not(.block-label){font-size:1rem}}

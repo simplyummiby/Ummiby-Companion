@@ -99,3 +99,11 @@ The collection renderer assigns stable anchors to rendered cards, scrolls to the
 Duaa collection typography is centralized in `css/collection.css`. Arabic content uses Amiri Quran, while transliteration and English reading text use Amiri. Interface typography remains separate.
 
 Source links are data-driven. `js/collection.js` reads `source.sourceReference` and creates a safe external link only for valid HTTP or HTTPS URLs. Records without URLs continue to render as plain source text, so source-link adoption can happen gradually during verification.
+
+
+## Shared Application Configuration and Preferences (v0.5.7.1)
+
+- `js/app-config.js` is the single source of truth for the application name and version.
+- `js/app-shell.js` applies shared preferences and inserts the version footer on every page.
+- Arabic Duaa text size is stored in the central `ummibyPreferences` localStorage record and applied through `--duaa-arabic-size`.
+- Pages must not hardcode independent version values. New pages should load the shared configuration and application shell.

@@ -2,6 +2,28 @@
 
 All notable changes to this project are documented here.
 
+## v0.5.7.1 — Reading Experience Refinement
+
+Status: Complete
+
+### Added
+
+- Arabic Text Size preference in Settings with Small, Medium, Large, and Extra Large choices
+- Shared application configuration containing the current app name and version
+- Shared version footer on every HTML page
+- About section in Settings showing the current application version
+
+### Changed
+
+- Amiri typography is now reserved for Arabic Duaa text
+- English and transliteration returned to the previous interface font and tighter line spacing
+- Arabic text size is applied consistently through a shared CSS variable and saved locally on the device
+- Future pages can receive the version footer through the shared application shell instead of hardcoded page text
+
+### Notes
+
+The Arabic text-size preference affects Arabic Duaa text only. It does not change English, transliteration, navigation, buttons, or other interface text. Existing progress data is unaffected.
+
 ## v0.5.7 — Reading Typography and Source Links
 
 Status: Complete

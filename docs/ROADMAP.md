@@ -70,3 +70,11 @@
 - Memorized Duaa status
 - Collection filters for All, Memorized, and Still Learning
 - Backup and restore support for long-term memorization state
+
+
+## Completed in v0.5.7.1
+
+- Restored the previous English and transliteration typography
+- Added a persistent Arabic-only text-size preference
+- Added shared application version configuration and page-wide version display
+- Added Settings/About build information

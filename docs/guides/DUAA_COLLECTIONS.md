@@ -163,3 +163,10 @@ Rules:
 - Do not place descriptive labels such as `link pending` in the URL field.
 
 The renderer also accepts a legacy `url` property, but new and updated records should use `sourceReference` consistently.
+
+
+## Reading Typography and Arabic Text Size (v0.5.7.1)
+
+Arabic Duaa text uses Amiri Quran with Amiri and system Arabic serif fallbacks. English and transliteration use the regular application interface font.
+
+The user may choose Small, Medium, Large, or Extra Large Arabic text in Settings. The choice is stored on the current device and applied to all shared Duaa collection cards. Future Focus Mode Arabic content must use the same `--duaa-arabic-size` variable.

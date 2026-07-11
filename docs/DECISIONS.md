@@ -75,3 +75,15 @@
 - Reuse the existing `source.sourceReference` field for verified source URLs instead of introducing another required property.
 - Keep source URLs optional so unverified entries never receive placeholder or guessed links.
 - Open external source references in a new tab to preserve the user's place in the collection.
+
+
+## v0.5.7.1 Decisions
+
+### Amiri is for Arabic Duaa text only
+English and transliteration use the established interface font with tighter spacing. This keeps supporting text easy to scan while allowing Arabic to remain visually distinct.
+
+### Arabic size is the only user-controlled reading preference at this stage
+The Settings page offers four controlled Arabic text sizes. The setting does not alter English, transliteration, or interface typography.
+
+### Version information comes from one shared configuration
+Every page loads the shared application version and displays it in a subtle footer. Settings also includes an About section. Future releases and Codex prompts must update the shared version rather than hardcoding versions page by page.
