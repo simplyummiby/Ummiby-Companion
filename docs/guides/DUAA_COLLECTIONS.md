@@ -181,3 +181,8 @@ Collection cards support shared display preferences from Settings:
 
 New collection renderers should use the shared block classes (`arabic-block`, `transliteration-block`, and `translation-block`) so these preferences continue to work automatically.
 
+
+
+## Duaa Reading Settings
+
+Every collection page and Focus Mode includes a **Reading Settings** link. It opens the same shared modal without leaving the current reading position. The modal controls Arabic text size, transliteration visibility, and English translation visibility. Arabic remains visible. Preferences are stored in `ummibyDuaaPreferences` and apply only to the Duaa module.

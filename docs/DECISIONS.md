@@ -91,7 +91,14 @@ Every page loads the shared application version and displays it in a subtle foot
 
 - Arabic Duaa text always remains visible.
 - Users may independently show or hide transliteration and English translation.
-- Display preferences are stored in the shared `ummibyPreferences` browser record rather than page-specific keys.
+- Display preferences are stored in the Duaa-specific `ummibyDuaaPreferences` browser record rather than page-specific keys.
 - Both optional text layers default to visible so existing users retain the familiar experience.
 - Memorization and the Ramadan Reading Journey remain later priorities while reading comfort and daily tracking are refined.
 
+
+
+## Duaa reading settings remain inside the Duaa experience
+
+**Decision:** Duaa reading preferences open from collection pages and Focus Mode through one shared modal. They do not live as editable controls on the app-wide Settings page. Qur’an preferences will be separate.
+
+**Why:** Readers can adjust the current experience without navigating away, and module-specific preferences cannot be confused with application-wide settings.

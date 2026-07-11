@@ -105,9 +105,14 @@ Source links are data-driven. `js/collection.js` reads `source.sourceReference` 
 
 - `js/app-config.js` is the single source of truth for the application name and version.
 - `js/app-shell.js` applies shared preferences and inserts the version footer on every page.
-- Arabic Duaa text size is stored in the central `ummibyPreferences` localStorage record and applied through `--duaa-arabic-size`.
+- Arabic Duaa text size is stored in the Duaa-specific `ummibyDuaaPreferences` localStorage record and applied through `--duaa-arabic-size`.
 - Pages must not hardcode independent version values. New pages should load the shared configuration and application shell.
 ## Shared Reading Preferences
 
 `js/app-shell.js` owns Duaa reading preferences. It applies Arabic size and optional text visibility as data attributes and CSS variables on the document root. The reusable collection renderer labels transliteration and translation blocks consistently, allowing every collection to honor the same settings without collection-specific logic.
 
+
+
+## Contextual module preferences (v0.5.8.1)
+
+Duaa reading preferences are owned by the Duaa module and are edited through one shared modal used by collection pages and Focus Mode. The main Settings page is reserved for app-wide settings and About information. Qur’an preferences must use a separate storage namespace and interface.

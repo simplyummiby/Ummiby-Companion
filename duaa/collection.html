@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Amiri+Quran&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/duaa-shell.css">
   <link rel="stylesheet" href="../css/collection.css">
+  <link rel="stylesheet" href="../css/duaa-reading-settings.css">
 </head>
 <body>
 <div class="app-shell">
@@ -71,6 +72,7 @@
         <div class="hero-actions">
           <a class="button primary" id="focusStartLink" href="focus-mode.html">Begin in Focus Mode</a>
           <button class="button secondary" id="resetProgressButton" type="button" hidden>Reset Today</button>
+          <button class="reading-settings-link" type="button" data-duaa-settings-trigger>Reading Settings</button>
         </div>
       </section>
 
@@ -125,11 +127,12 @@
   </form>
 </dialog>
 
+<script src="../js/app-config.js"></script>
+<script src="../js/app-shell.js"></script>
 <script src="../js/duaa-app.js"></script>
 <script src="../js/data/collection-registry.js"></script>
 <script src="../js/data/collection-loader.js"></script>
 <script src="../js/collection.js"></script>
-<script src="../js/app-config.js"></script>
-<script src="../js/app-shell.js"></script>
+<script src="../js/duaa-reading-settings.js"></script>
 </body>
 </html>

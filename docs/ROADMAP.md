@@ -82,3 +82,10 @@
 - Complete Duaa Focus Mode reading experience
 - Memorization system and memorized/unmemorized filtering
 - Ramadan Reading Journey
+
+
+### Completed in v0.5.8.1
+
+- Contextual Duaa Reading Settings modal on collection pages and Focus Mode.
+- Separate Duaa preference namespace in preparation for independent Qur’an reading settings.
+- App-wide Settings page simplified.

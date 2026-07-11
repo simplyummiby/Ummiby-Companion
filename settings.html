@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Settings | Ummiby Companion</title>
 <link rel="stylesheet" href="css/styles.css">
 <style>
-.settings-page{width:min(760px,calc(100% - 30px));margin:0 auto;padding:48px 0 30px}.settings-page .welcome{margin-bottom:28px}.settings-card{padding:26px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--surface);box-shadow:var(--shadow)}.settings-card+ .settings-card{margin-top:20px}.settings-card h2{margin:0 0 6px;color:var(--navy);font-family:Georgia,"Times New Roman",serif}.settings-card>p{margin:0 0 22px;color:var(--muted)}.size-options{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.size-option{position:relative}.size-option input{position:absolute;opacity:0;pointer-events:none}.size-option label{display:grid;place-items:center;min-height:70px;padding:10px;border:1px solid var(--line);border-radius:14px;background:#fbfcfc;color:var(--ink);font-weight:750;cursor:pointer;transition:150ms ease}.size-option input:checked+label{border-color:var(--duaa);background:var(--duaa-soft);box-shadow:0 0 0 2px rgba(111,153,183,.14)}.size-option input:focus-visible+label{outline:3px solid rgba(111,153,183,.3);outline-offset:2px}.arabic-preview{margin:22px 0 0;padding:20px;border-radius:16px;background:#f8fbfd;color:#17324a;font-family:"Amiri Quran","Amiri","Traditional Arabic",serif;font-size:var(--duaa-arabic-size,2rem);line-height:1.85;text-align:right}.preference-status{min-height:1.4em;margin:12px 0 0!important;color:var(--quran-dark)!important;font-size:.9rem;font-weight:700}.display-options{display:grid;gap:12px;margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}.display-option{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:#fbfcfc}.display-option-text{display:grid;gap:3px}.display-option-text strong{color:var(--ink)}.display-option-text span{color:var(--muted);font-size:.9rem}.switch{position:relative;flex:0 0 auto;width:50px;height:28px}.switch input{position:absolute;opacity:0}.switch-track{position:absolute;inset:0;border-radius:999px;background:#cfd8de;cursor:pointer;transition:150ms ease}.switch-track::after{content:"";position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.2);transition:150ms ease}.switch input:checked+.switch-track{background:var(--duaa)}.switch input:checked+.switch-track::after{transform:translateX(22px)}.switch input:focus-visible+.switch-track{outline:3px solid rgba(111,153,183,.3);outline-offset:2px}.about-grid{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:18px 0 0}.about-grid dt{color:var(--muted);font-weight:700}.about-grid dd{margin:0;color:var(--ink);font-weight:750}.back-link{display:inline-block;margin-top:24px;color:var(--navy);font-weight:750;text-decoration:none}@media(max-width:620px){.settings-page{padding-top:32px}.size-options{grid-template-columns:1fr 1fr}.settings-card{padding:21px}}
+.settings-page{width:min(780px,calc(100% - 34px));margin:0 auto;padding:48px 0 72px}.welcome{padding:28px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow)}.welcome h1{margin:0;color:var(--navy);font-family:Georgia,"Times New Roman",serif}.welcome p:last-child{margin:8px 0 0;color:var(--muted)}.settings-card{margin-top:20px;padding:25px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:var(--shadow)}.settings-card h2{margin:0 0 6px;color:var(--navy);font-family:Georgia,"Times New Roman",serif}.settings-card>p{margin:0;color:var(--muted)}.about-grid{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:18px 0 0}.about-grid dt{color:var(--muted);font-weight:700}.about-grid dd{margin:0;color:var(--ink);font-weight:750}.back-link{display:inline-block;margin-top:24px;color:var(--navy);font-weight:750;text-decoration:none}@media(max-width:620px){.settings-page{padding-top:32px}.settings-card{padding:21px}}
 </style>
 </head>
 <body>
@@ -14,49 +14,23 @@
 <section class="welcome">
 <p class="eyebrow">Settings</p>
 <h1>Settings</h1>
-<p>Choose how Duaa text appears while you read.</p>
+<p>Application-wide information and settings belong here. Reading preferences stay within the module where you are reading.</p>
 </section>
-
-<section class="settings-card" aria-labelledby="readingPreferencesTitle">
-<h2 id="readingPreferencesTitle">Reading Preferences</h2>
-<p>This setting changes Arabic Duaa text only. English, transliteration, buttons, and other interface text remain unchanged.</p>
-<fieldset style="border:0;padding:0;margin:0">
-<legend class="sr-only">Arabic text size</legend>
-<div class="size-options">
-<div class="size-option"><input type="radio" name="arabicTextSize" id="arabicSmall" value="small"><label for="arabicSmall">Small</label></div>
-<div class="size-option"><input type="radio" name="arabicTextSize" id="arabicMedium" value="medium"><label for="arabicMedium">Medium</label></div>
-<div class="size-option"><input type="radio" name="arabicTextSize" id="arabicLarge" value="large"><label for="arabicLarge">Large</label></div>
-<div class="size-option"><input type="radio" name="arabicTextSize" id="arabicExtraLarge" value="extra-large"><label for="arabicExtraLarge">Extra Large</label></div>
-</div>
-</fieldset>
-<p class="arabic-preview" id="arabicSizePreview" lang="ar" dir="rtl">اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ</p>
-<div class="display-options" aria-labelledby="displayPreferencesTitle">
-<h3 id="displayPreferencesTitle" style="margin:0;color:var(--navy);font-family:Georgia,"Times New Roman",serif">Text Display</h3>
-<label class="display-option" for="showTransliteration">
-<span class="display-option-text"><strong>Show transliteration</strong><span>Turn off to read without the Latin-letter pronunciation guide.</span></span>
-<span class="switch"><input type="checkbox" id="showTransliteration"><span class="switch-track" aria-hidden="true"></span></span>
-</label>
-<label class="display-option" for="showTranslation">
-<span class="display-option-text"><strong>Show English translation</strong><span>Turn off to create a more Arabic-focused card view.</span></span>
-<span class="switch"><input type="checkbox" id="showTranslation"><span class="switch-track" aria-hidden="true"></span></span>
-</label>
-</div>
-<p class="preference-status" id="preferenceStatus" role="status" aria-live="polite"></p>
+<section class="settings-card" aria-labelledby="moduleSettingsTitle">
+<h2 id="moduleSettingsTitle">Reading Preferences</h2>
+<p>Duaa reading preferences are available from <strong>Reading Settings</strong> on every Duaa collection page and in Focus Mode. Qur’an reading preferences will remain separate when they are introduced.</p>
 </section>
-
 <section class="settings-card" aria-labelledby="aboutTitle">
 <h2 id="aboutTitle">About</h2>
 <p>Build information for checking that the current version is loaded.</p>
 <dl class="about-grid">
 <dt>Application</dt><dd>Ummiby Companion</dd>
-<dt>Version</dt><dd>v<span data-app-version>0.5.8</span></dd>
+<dt>Version</dt><dd>v<span data-app-version>0.5.8.1</span></dd>
 </dl>
 </section>
-
 <a class="back-link" href="index.html">← Return Home</a>
 </main>
 <script src="js/app-config.js"></script>
 <script src="js/app-shell.js"></script>
-<script src="js/settings.js"></script>
 </body>
 </html>

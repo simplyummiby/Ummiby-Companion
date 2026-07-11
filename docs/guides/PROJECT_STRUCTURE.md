@@ -26,6 +26,7 @@ Feature notes and implementation guidance belong in `docs/guides/`.
 
 - `js/app-config.js` — application name and current version
 - `js/app-shell.js` — shared version footer and global preference application
-- `js/settings.js` — Settings page controls for Arabic text size
+- `js/duaa-reading-settings.js` — shared contextual Duaa Reading Settings modal used by collection pages and Focus Mode
+- `css/duaa-reading-settings.css` — shared styles for the contextual Duaa settings modal
 
 Every new HTML page should load `app-config.js` followed by `app-shell.js` so the version display remains automatic and consistent.

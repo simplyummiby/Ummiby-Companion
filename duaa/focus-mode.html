@@ -8,13 +8,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Amiri+Quran&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/duaa-shell.css">
+<link rel="stylesheet" href="../css/duaa-reading-settings.css">
 <style>
-body{background:#edf5fb}.focus-page{width:min(860px,calc(100% - 30px));margin:0 auto;padding:34px 0 70px}.focus-card{padding:30px;border:1px solid #dce7f0;border-radius:24px;background:#fff;box-shadow:0 18px 52px rgba(31,55,70,.11)}h1{margin:0;color:#17324a;font-family:Georgia,"Times New Roman",serif}.focus-arabic{font-family:"Amiri Quran","Amiri","Traditional Arabic",serif;font-size:var(--duaa-arabic-size,2rem);line-height:1.9;text-align:right}.notice{margin:22px 0;padding:18px;border-radius:15px;background:#eef5fb;color:#456f8d}.focus-actions{display:flex;justify-content:space-between;gap:10px;margin-top:24px}.focus-actions a{padding:10px 14px;border-radius:11px;background:#6f99b7;color:#fff;font-weight:750;text-decoration:none}.back{display:inline-block;margin-bottom:20px;color:#456f8d;font-weight:750;text-decoration:none}
+body{background:#edf5fb}.focus-page{width:min(860px,calc(100% - 30px));margin:0 auto;padding:34px 0 70px}.focus-card{padding:30px;border:1px solid #dce7f0;border-radius:24px;background:#fff;box-shadow:0 18px 52px rgba(31,55,70,.11)}h1{margin:0;color:#17324a;font-family:Georgia,"Times New Roman",serif}.focus-arabic{font-family:"Amiri Quran","Amiri","Traditional Arabic",serif;font-size:var(--duaa-arabic-size,2rem);line-height:1.9;text-align:right}.notice{margin:22px 0;padding:18px;border-radius:15px;background:#eef5fb;color:#456f8d}.focus-actions{display:flex;justify-content:space-between;gap:10px;margin-top:24px}.focus-actions a{padding:10px 14px;border-radius:11px;background:#6f99b7;color:#fff;font-weight:750;text-decoration:none}.focus-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px}.back{display:inline-block;color:#456f8d;font-weight:750;text-decoration:none}
 </style>
 </head>
 <body>
 <main class="focus-page">
-<a class="back" id="returnLink" href="index.html">← Return to Collection</a>
+<div class="focus-toolbar"><a class="back" id="returnLink" href="index.html">← Return to Collection</a><button class="reading-settings-link" type="button" data-duaa-settings-trigger>Reading Settings</button></div>
 <section class="focus-card">
 <p>Duaa <span id="duaaNumber">1</span> of <span id="duaaTotal">0</span></p>
 <h1 id="duaaTitle">Focus Mode Prototype</h1>
@@ -28,6 +29,8 @@ The complete phrase-by-phrase experience will be built in the next Focus Mode ve
 </div>
 </section>
 </main>
+<script src="../js/app-config.js"></script>
+<script src="../js/app-shell.js"></script>
 <script src="../js/data/collection-registry.js"></script>
 <script src="../js/data/collection-loader.js"></script>
 <script>
@@ -56,7 +59,6 @@ window.UmmibyCollectionLoader.load(collectionId)
     document.getElementById("duaaTitle").textContent = "Collection could not be loaded";
   });
 </script>
-<script src="../js/app-config.js"></script>
-<script src="../js/app-shell.js"></script>
+<script src="../js/duaa-reading-settings.js"></script>
 </body>
 </html>

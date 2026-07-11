@@ -1,6 +1,7 @@
 (() => {
   const config = window.UmmibyAppConfig || { name: "Ummiby Companion", version: "Unknown" };
-  const preferenceKey = "ummibyPreferences";
+  const duaaPreferenceKey = "ummibyDuaaPreferences";
+  const legacyPreferenceKey = "ummibyPreferences";
   const allowedArabicSizes = ["small", "medium", "large", "extra-large"];
   const arabicSizeValues = {
     small: "1.65rem",
@@ -9,18 +10,32 @@
     "extra-large": "2.75rem"
   };
 
-  function readPreferences() {
+  function parseStored(key) {
     try {
-      const stored = JSON.parse(localStorage.getItem(preferenceKey) || "{}");
+      const stored = JSON.parse(localStorage.getItem(key) || "{}");
       return stored && typeof stored === "object" ? stored : {};
     } catch {
       return {};
     }
   }
 
+  function migrateLegacyDuaaPreferences() {
+    if (localStorage.getItem(duaaPreferenceKey) !== null) return;
+    const legacy = parseStored(legacyPreferenceKey);
+    const migrated = {};
+    if (allowedArabicSizes.includes(legacy.arabicTextSize)) migrated.arabicTextSize = legacy.arabicTextSize;
+    if (typeof legacy.showTransliteration === "boolean") migrated.showTransliteration = legacy.showTransliteration;
+    if (typeof legacy.showTranslation === "boolean") migrated.showTranslation = legacy.showTranslation;
+    if (Object.keys(migrated).length) localStorage.setItem(duaaPreferenceKey, JSON.stringify(migrated));
+  }
+
+  function readPreferences() {
+    return parseStored(duaaPreferenceKey);
+  }
+
   function writePreferences(preferences) {
-    localStorage.setItem(preferenceKey, JSON.stringify(preferences));
-    window.dispatchEvent(new CustomEvent("ummiby:preferences-changed", { detail: preferences }));
+    localStorage.setItem(duaaPreferenceKey, JSON.stringify(preferences));
+    window.dispatchEvent(new CustomEvent("ummiby:duaa-preferences-changed", { detail: preferences }));
     return preferences;
   }
 
@@ -75,12 +90,13 @@
     document.head.appendChild(style);
   }
 
+  migrateLegacyDuaaPreferences();
   const preferences = readPreferences();
   applyArabicTextSize(preferences.arabicTextSize);
   applyReadingDisplay(preferences);
 
-  window.UmmibyPreferences = {
-    key: preferenceKey,
+  window.UmmibyDuaaPreferences = {
+    key: duaaPreferenceKey,
     allowedArabicSizes,
     read: readPreferences,
     applyArabicTextSize,
@@ -97,9 +113,6 @@
     });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initialize, { once: true });
-  } else {
-    initialize();
-  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initialize, { once: true });
+  else initialize();
 })();

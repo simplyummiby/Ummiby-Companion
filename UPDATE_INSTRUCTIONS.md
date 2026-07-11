@@ -1,58 +1,50 @@
-# Update Instructions — Ummiby Companion v0.5.8
+# Update Instructions — Ummiby Companion v0.5.8.1
 
-## Replaces
+This package upgrades **v0.5.8** to **v0.5.8.1**.
 
-Version 0.5.8
+## Install
 
-## Installation
+1. Extract the v0.5.8.1 ZIP.
+2. Copy all extracted files and folders into the local repository folder.
+3. Choose **Replace** for existing files.
+4. Delete `js/settings.js` from the repository if it remains after copying. It is obsolete in this version.
+5. Review the changes in GitHub Desktop, commit, and push.
 
-1. Extract the v0.5.8 ZIP file.
-2. Copy all extracted files and folders into your local Ummiby Companion repository.
-3. Choose **Replace** when your computer asks about files with the same names.
-4. Open GitHub Desktop and review the changed files.
-5. Test locally, then commit and push.
+## Files added
 
-## Files Added
+- `css/duaa-reading-settings.css`
+- `js/duaa-reading-settings.js`
 
-None.
-
-## Files Replaced / Modified
+## Files replaced
 
 - `README.md`
-- `UPDATE_INSTRUCTIONS.md`
 - `settings.html`
-- `css/collection.css`
+- `duaa/collection.html`
+- `duaa/focus-mode.html`
 - `js/app-config.js`
 - `js/app-shell.js`
-- `js/collection.js`
-- `js/settings.js`
 - `docs/CHANGELOG.md`
 - `docs/ROADMAP.md`
 - `docs/DECISIONS.md`
 - `docs/ARCHITECTURE.md`
 - `docs/guides/DUAA_COLLECTIONS.md`
+- `docs/guides/PROJECT_STRUCTURE.md`
+- `UPDATE_INSTRUCTIONS.md`
 
-## Files Deleted
+## Files deleted
 
-None.
+- `js/settings.js`
 
-## Browser Storage
+## Browser storage
 
-No existing progress is deleted or migrated. Two optional values may be added to the existing `ummibyPreferences` record:
+Existing Duaa reading choices are preserved. On first load, v0.5.8.1 copies Arabic size and text-display choices from the old `ummibyPreferences` record into the new Duaa-specific `ummibyDuaaPreferences` record. Daily progress is unchanged.
 
-- `showTransliteration`
-- `showTranslation`
+## Test
 
-When absent, both default to visible.
-
-## Testing Checklist
-
-- Confirm every page footer shows Version 0.5.8.
-- Open Settings and verify Arabic size still works.
-- Turn transliteration off and confirm it disappears from tracked and reference collection cards.
-- Turn English translation off and confirm it disappears from tracked and reference collection cards.
-- Turn both back on and confirm the original card view returns.
-- Confirm Arabic always remains visible.
-- Refresh the browser and confirm preferences persist.
-- Confirm daily Duaa completion progress is unchanged.
-- Confirm Focus Mode navigation and return-to-card behavior still work.
+- Open a tracked collection and select **Reading Settings**.
+- Change Arabic size and confirm the visible cards update immediately.
+- Hide and show transliteration and English independently.
+- Open Focus Mode and confirm the same settings and saved choices appear.
+- Confirm returning from Focus Mode still returns to the correct Duaa.
+- Open `settings.html` and confirm it shows app-wide information, not editable Duaa controls.
+- Confirm the footer and About section show Version 0.5.8.1.

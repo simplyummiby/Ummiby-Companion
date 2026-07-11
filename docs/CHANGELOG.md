@@ -1,5 +1,15 @@
 # Changelog
 
+
+## Version 0.5.8.1 — Contextual Duaa Reading Settings
+
+- Moved Duaa reading preferences out of the app-wide Settings page and into the Duaa reading experience.
+- Added a shared **Reading Settings** modal to every Duaa collection page and Focus Mode.
+- Kept Arabic text size, transliteration visibility, and English translation visibility synchronized across Duaa views.
+- Established a separate `ummibyDuaaPreferences` browser record so future Qur’an preferences can remain independent.
+- Added one-time migration from the former general preferences record so existing choices are preserved.
+- Returned the main Settings page to app-wide information and About/version details.
+
 All notable changes to this project are documented here.
 
 ## v0.5.8 — Duaa Reading Preferences
