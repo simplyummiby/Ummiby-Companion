@@ -1,3 +1,10 @@
+## v0.6.3.1 — Full Backup Priority
+
+- Made **Back Up All Data** the prominent recommended action on Backup & Restore.
+- Moved Duaa-only and Qur’an-only exports into a quieter **Advanced Backup Options** section.
+- Kept one shared restore flow with automatic backup-scope detection.
+- Preserved the existing backup schema, validation, filenames, and replace-only restore behavior.
+
 
 ## v0.6.3 — Backup & Restore
 

@@ -72,5 +72,6 @@ Status: Complete. Renamed the weekly dashboard summary to Weekly Consistency and
 - App-wide Backup & Restore page
 - Duaa-only, Qur’an-only, and full JSON exports
 - Validated scoped restore with replace-only semantics
+- Full-app backup prioritized as the recommended default in v0.6.3.1
 
 Future data work may add cloud synchronization, automatic backups, and account-aware device transfer after the manual system has been proven reliable.

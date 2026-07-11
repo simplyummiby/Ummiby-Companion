@@ -29,11 +29,27 @@
         </section>
 
         <section class="backup-section" aria-labelledby="exportTitle">
-          <div class="backup-section-heading"><h2 id="exportTitle">Back Up Your Data</h2><p>Choose the part of Ummiby Companion you want to save.</p></div>
-          <div class="backup-grid">
-            <article class="backup-card"><span class="backup-card-icon" data-ui-icon="sparkle" aria-hidden="true"></span><h3>Duaa Data</h3><p>Daily tracking history and Duaa reading preferences. Qur’an data is not included.</p><button class="backup-button" type="button" data-export-scope="duaa"><span data-ui-icon="download" aria-hidden="true"></span> Export Duaa Backup</button></article>
-            <article class="backup-card"><span class="backup-card-icon" data-ui-icon="book" aria-hidden="true"></span><h3>Qur’an Data</h3><p>Qur’an journey, workspace, reminder, and Ramadan data currently stored on this device. Duaa data is not included.</p><button class="backup-button" type="button" data-export-scope="quran"><span data-ui-icon="download" aria-hidden="true"></span> Export Qur’an Backup</button></article>
-            <article class="backup-card"><span class="backup-card-icon" data-ui-icon="database" aria-hidden="true"></span><h3>All App Data</h3><p>Creates one backup containing both Duaa and Qur’an data, plus recognized app-wide data.</p><button class="backup-button" type="button" data-export-scope="all"><span data-ui-icon="download" aria-hidden="true"></span> Export Full Backup</button></article>
+          <div class="backup-section-heading"><h2 id="exportTitle">Back Up Your Data</h2><p>Save one complete copy of your Ummiby Companion progress.</p></div>
+
+          <article class="backup-card backup-card-primary">
+            <span class="backup-card-icon backup-card-icon-primary" data-ui-icon="database" aria-hidden="true"></span>
+            <div class="backup-card-copy">
+              <p class="backup-card-eyebrow">Recommended</p>
+              <h3>Back Up All Data</h3>
+              <p>Protect your complete Ummiby Companion progress, including recognized Qur’an, Duaa, and app-wide data.</p>
+            </div>
+            <button class="backup-button backup-button-primary" type="button" data-export-scope="all"><span data-ui-icon="download" aria-hidden="true"></span> Back Up All Data</button>
+          </article>
+
+          <div class="advanced-backup-options" aria-labelledby="advancedBackupTitle">
+            <div class="advanced-backup-heading">
+              <h3 id="advancedBackupTitle">Advanced Backup Options</h3>
+              <p>Use a module-only backup when you need to save or move just one part of the app.</p>
+            </div>
+            <div class="backup-grid backup-grid-secondary">
+              <article class="backup-card"><span class="backup-card-icon" data-ui-icon="sparkle" aria-hidden="true"></span><h3>Duaa Data Only</h3><p>Daily tracking history and Duaa reading preferences. Qur’an data is not included.</p><button class="secondary-backup-button" type="button" data-export-scope="duaa"><span data-ui-icon="download" aria-hidden="true"></span> Back Up Duaa Data</button></article>
+              <article class="backup-card"><span class="backup-card-icon" data-ui-icon="book" aria-hidden="true"></span><h3>Qur’an Data Only</h3><p>Qur’an journey, workspace, reminder, and Ramadan data currently stored on this device. Duaa data is not included.</p><button class="secondary-backup-button" type="button" data-export-scope="quran"><span data-ui-icon="download" aria-hidden="true"></span> Back Up Qur’an Data</button></article>
+            </div>
           </div>
         </section>
 

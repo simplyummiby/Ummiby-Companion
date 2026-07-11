@@ -1,5 +1,11 @@
 # Backup & Restore Guide
 
+## Recommended backup
+
+**Back Up All Data** is the primary recommended action. It creates one complete Ummiby Companion backup containing recognized Qur’an, Duaa, and app-wide data.
+
+Module-only exports remain available under **Advanced Backup Options** for cases where the user intentionally needs only Duaa or only Qur’an data.
+
 ## Export scopes
 
 - **Duaa Data** includes dated Duaa tracking and Duaa collection/Focus Mode preferences.
