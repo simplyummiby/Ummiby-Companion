@@ -225,5 +225,3 @@ The shared collection renderer removes the bottom tracking-status component when
 Backups declare `backupFormat`, `schemaVersion`, `appVersion`, `createdAt`, `scope`, and module data. Restore validates the entire envelope before changing storage. The first implementation uses replace-only semantics by included section: restoring Duaa data replaces recognized Duaa keys but leaves Qur’an keys untouched, and vice versa. Full backups replace all recognized sections.
 
 Functional interface icons use the shared SVG icon registry. The hero illustration remains artwork and its title/copy are real HTML, so the image can be replaced later without embedding page text in the asset.
-
-The Backup & Restore interface presents full-app export as the primary workflow. Duaa-only and Qur’an-only exports call the same export service with narrower scopes and are grouped under Advanced Backup Options; restore remains a single scope-detecting workflow.

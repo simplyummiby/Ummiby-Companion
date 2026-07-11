@@ -1,9 +1,22 @@
-## v0.6.3.1 — Full Backup Priority
+## v0.6.4 — Qur’an Reading Journeys Home
 
-- Made **Back Up All Data** the prominent recommended action on Backup & Restore.
-- Moved Duaa-only and Qur’an-only exports into a quieter **Advanced Backup Options** section.
-- Kept one shared restore flow with automatic backup-scope detection.
-- Preserved the existing backup schema, validation, filenames, and replace-only restore behavior.
+### Added
+
+- New green Qur’an Home dashboard organized around tracked Reading Journeys and untracked reading.
+- Current Reading Journey banner and modal with the reassurance that every journey’s place is always saved.
+- Reading Units, Ramadan Journey, and Classic Reading as independent tracked journeys.
+- Journey-specific Sunday-through-Saturday weekly consistency tabs.
+- Compact progress cards showing all tracked journeys.
+- Read Without a Journey section for Surah browsing, Ayah lookup, and Quran search.
+- Qur’an-specific sidebar navigation with persistent Backup & Restore, Settings, and a single Duaa module switch.
+- Initial Journey Index and Classic Reading destination pages.
+
+### Removed from Qur’an Home
+
+- Recently Read panel.
+- Reading Reminder prototype.
+- Large single-journey progress overview.
+- Old Choose How You Would Like to Read section.
 
 
 ## v0.6.3 — Backup & Restore

@@ -6,27 +6,28 @@
 
 ## Purpose
 
-The Qur’an Home is the dashboard and launch point for Qur’an reading.
+The Qur’an Home is the dashboard and launch point for tracked Reading Journeys and untracked reading.
 
-## Current Sections
+## Reading Journeys
 
-- Continue Your Reading Journey
-- Current Reading Unit and resume position
-- Reading Journey progress
-- Reading Unit Index
-- Completed Journeys
-- Reading Journey
-- Ramadan Reading Journey
-- Read by Surah or Go to an Ayah
-- Recently Read
-- Reading reminder prototype
+- **Reading Units** — balanced reading portions for steady progress
+- **Ramadan Journey** — one juz’ each day during Ramadan
+- **Classic Reading** — continuous cover-to-cover reading with the reader’s place saved
 
-## Ramadan Behavior
+The Current Reading Journey banner opens a journey-switching modal. Switching does not erase another journey’s saved place. The active journey controls the Continue Reading card, while every tracked journey remains visible in Journey Progress.
 
-The small Ramadan option remains available year-round.
+## Journey Consistency
 
-A full Ramadan progress panel appears only when a Ramadan Journey is active.
+The weekly panel displays Sunday through Saturday for the current week. Tabs switch the panel between Reading Units, Ramadan, and Classic Reading. Monthly history remains a separate destination.
 
-## Reminder Behavior
+## Read Without a Journey
 
-Reminder preferences are currently stored locally. Actual device notifications are a future feature.
+- Browse by Surah
+- Jump to an Ayah
+- Search the Qur’an
+
+These reading paths do not affect tracked journey progress.
+
+## Navigation
+
+The Qur’an sidebar shows Qur’an-specific destinations. Backup & Restore and Settings remain available as app-wide utilities, while Duaa is represented by one module-switch link rather than its full internal menu.

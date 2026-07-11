@@ -186,5 +186,3 @@ Untracked collections do not merely hide the bottom daily-status panel; the rend
 Ummiby Companion provides reliable manual JSON export/import before introducing accounts or cloud synchronization. Users may export Duaa only, Qur’an only, or all recognized app data. Imports are replace-only within the backup scope, never an ambiguous merge. The app validates and summarizes a backup before requesting confirmation.
 
 Backup & Restore is app-wide and appears in the primary menu. Hero titles and explanatory copy must remain accessible HTML rather than text embedded in artwork.
-
-The interface prioritizes a full-app backup as the safest default. Module-only exports remain available as advanced options and do not compete visually with the recommended full backup action.
