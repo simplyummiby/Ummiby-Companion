@@ -1,0 +1,87 @@
+{
+  "id": "travel",
+  "title": "Travel Duʿās",
+  "shortTitle": "Travel",
+  "description": "Supplications for setting out, journeying, and returning home.",
+  "collectionType": "reference",
+  "trackingType": "none",
+  "trackerEnabled": false,
+  "enabled": true,
+  "comingSoon": false,
+  "items": [
+    {
+      "id": "travel-001",
+      "collectionId": "travel",
+      "order": 1,
+      "suggestedTitle": "Duaa for Travel",
+      "legacyLabel": "Duʿā for travel",
+      "summary": "A comprehensive supplication for setting out on a journey.",
+      "repeat": "1x",
+      "cardText": {
+        "arabic": "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَى رَبِّنَا لَمُنقَلِبُونَ",
+        "transliteration": "Subhana alladhi sakhkhara lana hadha wa ma kunna lahu muqrinin, wa inna ila Rabbina lamunqalibun.",
+        "translation": "Glory is to Him who has subjected this to us, and we could never have it by our efforts; surely to our Lord we are returning."
+      },
+      "focusPhrases": [
+        {
+          "order": 1,
+          "arabic": "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَى رَبِّنَا لَمُنقَلِبُونَ",
+          "transliteration": "Subhana alladhi sakhkhara lana hadha wa ma kunna lahu muqrinin, wa inna ila Rabbina lamunqalibun.",
+          "translation": "Glory is to Him who has subjected this to us, and we could never have it by our efforts; surely to our Lord we are returning."
+        }
+      ],
+      "virtues": "",
+      "source": {
+        "reference": "Sahih Muslim 1342",
+        "grade": "",
+        "sourceReference": "",
+        "status": "needs-review"
+      },
+      "verification": {
+        "verified": false,
+        "arabicChecked": false,
+        "translationChecked": false,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": []
+    },
+    {
+      "id": "travel-002",
+      "collectionId": "travel",
+      "order": 2,
+      "suggestedTitle": "Returning from Travel",
+      "legacyLabel": "Returning from travel",
+      "summary": "A short remembrance when returning from a journey.",
+      "repeat": "1x",
+      "cardText": {
+        "arabic": "آيِبُونَ تَائِبُونَ عَابِدُونَ لِرَبِّنَا حَامِدُونَ",
+        "transliteration": "Ayibuna, ta'ibuna, 'abiduna, li-Rabbina hamidun.",
+        "translation": "Returning, repenting, worshipping, and praising our Lord."
+      },
+      "focusPhrases": [
+        {
+          "order": 1,
+          "arabic": "آيِبُونَ تَائِبُونَ عَابِدُونَ لِرَبِّنَا حَامِدُونَ",
+          "transliteration": "Ayibuna, ta'ibuna, 'abiduna, li-Rabbina hamidun.",
+          "translation": "Returning, repenting, worshipping, and praising our Lord."
+        }
+      ],
+      "virtues": "",
+      "source": {
+        "reference": "Sahih al-Bukhari 1797; Sahih Muslim 1344",
+        "grade": "",
+        "sourceReference": "",
+        "status": "needs-review"
+      },
+      "verification": {
+        "verified": false,
+        "arabicChecked": false,
+        "translationChecked": false,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": []
+    }
+  ]
+}

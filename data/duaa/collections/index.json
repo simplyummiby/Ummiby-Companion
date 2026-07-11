@@ -1,0 +1,44 @@
+[
+  {
+    "collection": "morning",
+    "items": 16,
+    "tracked": true,
+    "comingSoon": false
+  },
+  {
+    "collection": "evening",
+    "items": 15,
+    "tracked": true,
+    "comingSoon": false
+  },
+  {
+    "collection": "sleep",
+    "items": 3,
+    "tracked": true,
+    "comingSoon": false
+  },
+  {
+    "collection": "travel",
+    "items": 2,
+    "tracked": false,
+    "comingSoon": false
+  },
+  {
+    "collection": "weather",
+    "items": 5,
+    "tracked": false,
+    "comingSoon": false
+  },
+  {
+    "collection": "prayer",
+    "items": 2,
+    "tracked": false,
+    "comingSoon": false
+  },
+  {
+    "collection": "istikharah",
+    "items": 1,
+    "tracked": false,
+    "comingSoon": true
+  }
+]

@@ -2,6 +2,30 @@
 
 All notable changes to this project are documented here.
 
+## v0.5.1 — Morning Data Integration
+
+Status: In Progress
+
+### Added
+
+- All 16 extracted Morning entries to the test collection
+- Browser-ready Morning data module
+- Dynamic generation of collection cards from structured data
+- Complete card-form Arabic, transliteration, and English text
+- Dynamic titles, summaries, repetition guidance, sources, and grades
+- Dynamic progress totals based on the loaded data
+- Focus Mode links for every Morning entry
+
+### Changed
+
+- Replaced four hard-coded sample cards with data-driven rendering
+- Verification flags no longer affect development visibility
+- Focus Mode prototype now recognizes all Morning entries
+
+### Notes
+
+The structured source data remains marked for editorial review where applicable. All entries are intentionally visible in this development build for testing.
+
 ## v0.5.0 — Morning Collection
 
 Status: In Progress

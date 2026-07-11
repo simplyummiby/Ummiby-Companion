@@ -31,3 +31,5 @@
 dialog{width:min(92vw,480px);border:0;border-radius:20px;padding:0;box-shadow:0 28px 80px rgba(22,42,32,.25)}dialog::backdrop{background:rgba(19,38,29,.45)}dialog form{padding:25px}dialog h2{margin:0;color:var(--navy);font-family:Georgia,serif}dialog p{color:var(--muted)}.dialog-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:22px}
 @media(max-width:780px){.collection-page{width:min(100% - 28px,680px);padding-top:30px}.collection-hero{display:block;padding:24px}.hero-actions{grid-template-columns:1fr 1fr;margin-top:22px;min-width:0}.progress-panel{grid-template-columns:1fr}.duaa-card-footer{align-items:flex-start;flex-direction:column}.duaa-card-footer a{flex:auto}.arabic{font-size:1.8rem}}
 @media(max-width:500px){.hero-actions{grid-template-columns:1fr}.duaa-card-header{padding:20px 18px 15px}.repeat-row,.text-block,.duaa-card-footer{padding-left:18px;padding-right:18px}.check-button{width:43px;height:43px}.duaa-card h2{font-size:1.3rem}}
+
+.data-error{padding:18px;border:1px solid #d9a5a1;border-radius:14px;background:#fff4f3;color:#7d3733}

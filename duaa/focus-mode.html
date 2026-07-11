@@ -11,13 +11,13 @@ body{background:#edf5fb}.focus-page{width:min(860px,calc(100% - 30px));margin:0 
 </head>
 <body>
 <main class="focus-page">
-<a class="back" id="returnLink" href="morning.html">← Return to Morning Adhkar</a>
+<a class="back" href="morning.html">← Return to Morning Adhkar</a>
 <section class="focus-card">
-<p>Duaa <span id="duaaNumber">1</span> of 4</p>
-<h1>Focus Mode Prototype</h1>
+<p>Duaa <span id="duaaNumber">1</span> of <span id="duaaTotal">0</span></p>
+<h1 id="duaaTitle">Focus Mode Prototype</h1>
 <div class="notice">
 This version confirms that Focus Mode can be entered from any individual duaa and begins on that duaa.
-The full phrase-by-phrase Arabic, English, transliteration, benefits, sources, resources, and memorization tools will be built in v0.6.0.
+The full phrase-by-phrase experience will be built in the next Focus Mode version.
 </div>
 <div class="focus-actions">
 <a id="previousLink" href="#">← Previous</a>
@@ -25,12 +25,17 @@ The full phrase-by-phrase Arabic, English, transliteration, benefits, sources, r
 </div>
 </section>
 </main>
+<script src="../js/data/morning-data.js"></script>
 <script>
+const items=window.UMMIBY_MORNING_COLLECTION?.items || [];
 const params=new URLSearchParams(location.search);
-let current=Math.min(4,Math.max(1,Number(params.get("duaa"))||1));
+let current=Math.min(items.length || 1,Math.max(1,Number(params.get("duaa"))||1));
+const item=items[current-1];
 document.getElementById("duaaNumber").textContent=current;
+document.getElementById("duaaTotal").textContent=items.length;
+document.getElementById("duaaTitle").textContent=item?.suggestedTitle || "Focus Mode Prototype";
 document.getElementById("previousLink").href=`focus-mode.html?collection=morning&duaa=${Math.max(1,current-1)}`;
-document.getElementById("nextLink").href=`focus-mode.html?collection=morning&duaa=${Math.min(4,current+1)}`;
+document.getElementById("nextLink").href=`focus-mode.html?collection=morning&duaa=${Math.min(items.length || 1,current+1)}`;
 </script>
 </body>
 </html>
