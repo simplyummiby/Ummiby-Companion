@@ -30,7 +30,18 @@
 - Lightweight registry
 - On-demand collection loading
 
-## Next: v0.6.0 — Duaa Focus Mode
+## v0.5.4 — Project File Cleanup
+- Remove obsolete collection redirect pages
+- Remove unused Morning-only renderer files
+- Consolidate feature documentation
+- Keep the repository root clean
+
+## Next: v0.5.5 — Collection Theme Infrastructure
+- Move collection colors into collection metadata
+- Support collection-specific banners and icons
+- Apply themes through the shared renderer
+
+## Later: v0.6.0 — Duaa Focus Mode
 - Phrase-by-phrase presentation
 - Arabic, English, and transliteration panels
 - Benefits, sources, and study resources

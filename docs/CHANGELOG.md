@@ -2,6 +2,34 @@
 
 All notable changes to this project are documented here.
 
+## v0.5.4 — Project File Cleanup
+
+Status: In Progress
+
+### Changed
+
+- Consolidated feature notes under `docs/guides/`
+- Renamed feature documentation to clear guide names
+- Kept only the main `README.md` in the project root
+- Updated project documentation to reflect the reusable collection architecture
+
+### Removed
+
+- Obsolete Duaa redirect pages for Morning, Evening, Before Sleep, Travel, Weather, and Prayer
+- Obsolete Morning-only stylesheet
+- Obsolete Morning-only JavaScript renderer
+- Redundant root-level feature README files
+
+### Verified
+
+- Current Duaa navigation points directly to the reusable collection page
+- Remaining local HTML links resolve to existing project files
+- The shared collection renderer remains the active collection experience
+
+### Notes
+
+This version changes file organization only. The visible design and intended application behavior remain unchanged.
+
 ## v0.5.3 — Split Duaa Collection Data
 
 Status: In Progress

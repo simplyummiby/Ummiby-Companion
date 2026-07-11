@@ -47,3 +47,18 @@ js/data/
 ```
 
 The registry contains lightweight metadata. The loader injects only the requested collection file. The shared collection renderer remains responsible for creating the user interface.
+
+## Current Duaa Page Structure
+
+```text
+duaa/
+├── index.html
+├── collection.html
+├── collections.html
+├── daily-companion.html
+├── focus-mode.html
+├── progress.html
+└── recent.html
+```
+
+Individual Morning, Evening, Sleep, Travel, Weather, and Prayer HTML pages are not required. Their content is selected through the reusable collection page query parameter.

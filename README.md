@@ -2,10 +2,21 @@
 
 A combined Qur’an and Duaa companion focused on authentic content, thoughtful reading experiences, and calm daily use.
 
-## Current pages
+## Main Areas
 
-- `index.html` — shared app Home
-- `quran/index.html` — Qur’an Home dashboard
-- `duaa/index.html` — placeholder for the upcoming Duaa Home dashboard
+- Shared Home
+- Qur’an Home and reading experiences
+- Duaa Home, Daily Companion, and reference collections
+- Shared settings
 
-Project documentation is in the `docs` folder.
+## Documentation
+
+Project documentation is located in `docs/`.
+
+Feature guides are located in:
+
+`docs/guides/`
+
+## Current Version
+
+v0.5.4 — Project File Cleanup

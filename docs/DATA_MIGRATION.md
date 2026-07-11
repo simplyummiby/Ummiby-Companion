@@ -29,6 +29,6 @@ The complete verified Morning collection should later be migrated from the previ
 
 Status: Integrated for testing
 
-All 16 extracted Morning records are now rendered dynamically on `duaa/morning.html`.
+All 16 extracted Morning records are now rendered dynamically through `duaa/collection.html?collection=morning`.
 
 The development interface intentionally ignores verification status for visibility. Editorial metadata remains preserved for later review.
