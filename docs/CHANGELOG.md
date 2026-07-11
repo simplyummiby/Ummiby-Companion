@@ -2,6 +2,32 @@
 
 All notable changes to this project are documented here.
 
+## v0.5.0 — Morning Collection
+
+Status: In Progress
+
+### Added
+
+- Usable Morning Adhkar collection prototype
+- Four authenticated morning adhkar with complete Arabic, transliteration, and English
+- Meaningful summary for each duaa
+- Repetition guidance
+- Daily checkmark tracking stored locally
+- Automatic daily progress reset by date
+- Collection progress bar and completion message
+- Reset Today confirmation
+- Focus Mode entry from every individual duaa
+- Focus Mode starting-position prototype
+- Updated Daily Companion page
+
+### Notes
+
+The Morning collection page is designed primarily for straightforward daily recitation.
+
+Focus Mode is optional and can be entered from any duaa for deeper reflection, study, and memorization.
+
+This prototype includes four authenticated entries so the user experience can be tested immediately. The full verified Morning collection will be migrated later from the previous Duaa repository.
+
 ## v0.4.0 — Duaa Home
 
 Status: In Progress

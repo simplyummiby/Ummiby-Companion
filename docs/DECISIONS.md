@@ -16,3 +16,14 @@
 - Collection pages will support straightforward recitation using full duaa cards.
 - Focus Mode can be entered from any individual duaa for reflection, study, and memorization.
 - Duaa reminders should use gentle wording and support pause/resume.
+
+## Morning Collection Pattern
+
+- The collection page is the primary daily recitation experience.
+- Every duaa card displays the complete Arabic, transliteration, and English translation.
+- Cards use meaningful summaries rather than truncated duaa excerpts.
+- Morning, Evening, and Before Sleep cards include completion checkmarks.
+- Progress is daily and gently resets by date.
+- Repetition guidance appears clearly on each card.
+- Focus Mode can be entered from any individual duaa and starts on that duaa.
+- Sources remain visible in a small, unobtrusive line for authenticity.

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Focus Mode | Ummiby Companion</title>
+<link rel="stylesheet" href="../css/duaa-shell.css">
+<style>
+body{background:#edf5fb}.focus-page{width:min(860px,calc(100% - 30px));margin:0 auto;padding:34px 0 70px}.focus-card{padding:30px;border:1px solid #dce7f0;border-radius:24px;background:#fff;box-shadow:0 18px 52px rgba(31,55,70,.11)}h1{margin:0;color:#17324a;font-family:Georgia,serif}.notice{margin:22px 0;padding:18px;border-radius:15px;background:#eef5fb;color:#456f8d}.focus-actions{display:flex;justify-content:space-between;gap:10px;margin-top:24px}.focus-actions a{padding:10px 14px;border-radius:11px;background:#6f99b7;color:#fff;font-weight:750;text-decoration:none}.back{display:inline-block;margin-bottom:20px;color:#456f8d;font-weight:750;text-decoration:none}
+</style>
+</head>
+<body>
+<main class="focus-page">
+<a class="back" id="returnLink" href="morning.html">← Return to Morning Adhkar</a>
+<section class="focus-card">
+<p>Duaa <span id="duaaNumber">1</span> of 4</p>
+<h1>Focus Mode Prototype</h1>
+<div class="notice">
+This version confirms that Focus Mode can be entered from any individual duaa and begins on that duaa.
+The full phrase-by-phrase Arabic, English, transliteration, benefits, sources, resources, and memorization tools will be built in v0.6.0.
+</div>
+<div class="focus-actions">
+<a id="previousLink" href="#">← Previous</a>
+<a id="nextLink" href="#">Next →</a>
+</div>
+</section>
+</main>
+<script>
+const params=new URLSearchParams(location.search);
+let current=Math.min(4,Math.max(1,Number(params.get("duaa"))||1));
+document.getElementById("duaaNumber").textContent=current;
+document.getElementById("previousLink").href=`focus-mode.html?collection=morning&duaa=${Math.max(1,current-1)}`;
+document.getElementById("nextLink").href=`focus-mode.html?collection=morning&duaa=${Math.min(4,current+1)}`;
+</script>
+</body>
+</html>
