@@ -12,13 +12,14 @@
 .collection-intro{margin:0 0 18px;padding:0 4px}.collection-intro h2{margin:0;color:var(--navy);font-family:Georgia,serif;font-size:1.45rem}.collection-intro p{margin:6px 0 0;color:var(--muted)}
 .duaa-list{display:grid;gap:22px}
 .duaa-card{scroll-margin-top:130px;overflow:hidden;border:1px solid var(--line);border-radius:23px;background:var(--collection-card-background,#fff);box-shadow:var(--shadow);transition:border-color .18s ease}
-.duaa-card.completed{border-color:#8db398}.duaa-card.completed .duaa-card-header{background:linear-gradient(145deg,#f7fbf7,#edf6ef)}
+/* v0.5.8.4 completed Duaa card treatment */
+.duaa-card.completed{border-color:var(--duaa)}.duaa-card.completed .duaa-card-header,.duaa-card.completed .repeat-row{background:linear-gradient(145deg,var(--duaa-pale),var(--duaa-soft))}
 .duaa-card-header{display:flex;justify-content:space-between;gap:22px;padding:24px 25px 18px;background:linear-gradient(145deg,#fff,#fbfcfe)}
 .card-number{margin:0 0 5px;color:var(--collection-dark,var(--duaa-dark));font-size:.74rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
 .duaa-card h2{margin:0;color:var(--navy);font-family:Georgia,"Times New Roman",serif;font-size:1.5rem;line-height:1.25}
 .summary{max-width:690px;margin:8px 0 0;color:var(--muted)}
 .check-button{display:grid;flex:0 0 auto;place-items:center;width:48px;height:48px;border:2px solid #b9c9d4;border-radius:50%;background:#fff;color:#a8b3bb;font-size:1.2rem;cursor:pointer;transition:.18s ease}
-.check-button:hover{border-color:#6b9a78;color:#7d8a92}.check-button[aria-pressed="true"]{border-color:#5e966c;background:#5e966c;color:#fff;box-shadow:0 8px 18px rgba(64,120,77,.2)}
+.check-button:hover{border-color:var(--duaa);color:var(--duaa-dark)}.check-button[aria-pressed="true"]{border-color:var(--duaa);background:var(--duaa);color:#fff;box-shadow:0 8px 18px rgba(69,111,141,.22)}
 .repeat-row{padding:0 25px 15px}.repeat-pill{display:inline-flex;padding:5px 10px;border-radius:999px;background:var(--collection-soft,#eef5fb);color:var(--collection-dark,var(--duaa-dark));font-size:.75rem;font-weight:750}
 .text-block{padding:20px 25px;border-top:1px solid var(--line)}.text-block p{margin:0}.block-label{margin-bottom:8px!important;color:var(--muted);font-size:.72rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
 .arabic-block{background:#fbfdff}.arabic{color:#142c42;font-family:"Amiri","Noto Naskh Arabic","Traditional Arabic",serif;font-size:clamp(1.7rem,3.4vw,2.35rem);line-height:2;text-align:right;white-space:pre-line}
@@ -76,3 +77,4 @@ body{background:var(--duaa-page)}
 .source-link:focus-visible{outline-color:var(--duaa-soft)}
 .duaa-card.return-highlight{animation:return-card-highlight-duaa 1.8s ease-out}
 @keyframes return-card-highlight-duaa{0%{border-color:var(--duaa);box-shadow:0 0 0 5px var(--duaa-soft),var(--shadow)}100%{border-color:var(--line);box-shadow:var(--shadow)}}
+

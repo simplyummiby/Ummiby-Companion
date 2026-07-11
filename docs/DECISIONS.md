@@ -113,3 +113,8 @@ Every page loads the shared application version and displays it in a subtle foot
 ## v0.5.8.3 — Module Identity Takes Priority
 
 The Duaa module's shared visual identity takes priority over collection-level color themes. Collection banners or artwork may vary, but the reading environment remains consistently light blue with dark blue accents. This makes every Duaa collection feel like part of one companion while preserving recognizable collection imagery.
+
+
+## v0.5.8.4 — Completed States Use the Duaa Palette
+
+Completed Duaa cards use the shared Duaa blue palette rather than a separate green success color. The completed background spans the complete card header area, including the repetition row, and ends at the horizontal divider before the reading text. This keeps completion clear while preserving the Duaa module's cohesive visual identity.

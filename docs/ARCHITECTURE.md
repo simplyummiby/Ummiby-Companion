@@ -78,6 +78,8 @@ The Duaa reading environment uses shared module tokens from `css/duaa-shell.css`
 
 Collection data may still include banner or decorative metadata so a Morning, Evening, Sleep, Travel, Weather, Prayer, or Istikharah collection can have recognizable artwork. Decorative identity must not create a separate functional color system for each collection.
 
+Completed Duaa cards also use the module blue palette. Their completed background covers the title/summary header and repetition row as one visual region, ending at the divider before the reading text.
+
 
 ## Duaa Collection Navigation Continuity
 

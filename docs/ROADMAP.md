@@ -102,3 +102,10 @@
 - Unified Duaa collection pages and Focus Mode under one light-blue/dark-blue visual identity.
 - Limited collection-specific variation to banners and decorative imagery.
 - Prevented collection theme colors from recoloring functional reading controls.
+
+
+## Completed in v0.5.8.4
+
+- Replaced green completed-card accents with the shared Duaa blue palette.
+- Extended the completed header background through the repetition row to the horizontal divider.
+- Preserved existing completion logic and storage.

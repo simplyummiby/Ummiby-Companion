@@ -1,3 +1,10 @@
+## Version 0.5.8.4 — Completed Duaa Card Refinement
+
+- Changed completed Duaa card accents from green to the shared Duaa blue palette.
+- Extended the completed header treatment through the repetition row to the horizontal divider.
+- Changed the completed check control to a blue circle with a white SVG checkmark.
+- Preserved all completion logic, progress storage, and uncompleted-card behavior.
+
 ## Version 0.5.8.3 — Shared Duaa Visual Identity
 
 - Standardized Duaa collection and Focus Mode page backgrounds to the shared light-blue Duaa surface.
