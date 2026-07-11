@@ -35,12 +35,18 @@
 - Rename manual reset to “Reset Today’s Progress”
 - Remove unfinished Recently Viewed and Duaa Reminder prototypes from view
 
-## Next — Gentle Tracking Display
+## v0.6.1 — Gentle Weekly Progress
 
-- Design a calm weekly view using the dated history now being collected
-- Show collection-level days engaged/completed without streak pressure
-- Review how partial completion should appear in weekly summaries
+- Show Sunday-through-Saturday progress for each tracked collection
+- Count a day when at least one Duaa is checked
+- Preserve exact daily recitation counts for future history
+- Add consistency-centered guidance and authentic source links
+
+## Next — Tracking Review and History
+
+- Review the weekly display through real use
 - Add clear history-retention and backup behavior
+- Consider a gentle monthly view without pressure language
 
 ## Later
 

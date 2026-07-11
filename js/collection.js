@@ -20,6 +20,7 @@ const completionTitle = document.getElementById("completionTitle");
 const introText = document.getElementById("collectionIntroText");
 const resetDialog = document.getElementById("resetDialog");
 const confirmResetButton = document.getElementById("confirmResetButton");
+const collectionReflection = document.getElementById("collectionReflection");
 
 function applyTheme() {
   // Duaa reading views use one shared module identity. Collection data may
@@ -210,6 +211,31 @@ function restoreCollectionPosition() {
   });
 }
 
+function renderReflection() {
+  if (!collectionReflection || !collection?.reflection?.quote) return;
+  const reflection = collection.reflection;
+  collectionReflection.replaceChildren();
+
+  const label = createElement("p", "reflection-label", reflection.label || "Reflection");
+  const quote = createElement("blockquote", "reflection-quote", reflection.quote);
+  const cite = createElement("cite", "reflection-attribution");
+
+  if (reflection.sourceUrl) {
+    const link = createElement("a", "", reflection.attribution || "Source");
+    link.href = reflection.sourceUrl;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.append(" ", window.UmmibyIcons.create("external", { className: "inline-ui-icon" }));
+    cite.appendChild(link);
+  } else {
+    cite.textContent = reflection.attribution || "";
+  }
+
+  quote.appendChild(cite);
+  collectionReflection.append(label, quote);
+  collectionReflection.hidden = false;
+}
+
 function renderCollection() {
   applyTheme();
 
@@ -233,6 +259,7 @@ function renderCollection() {
   window.UmmibyCollectionArtwork?.hydrateImage(heroBanner, registryEntry, "banner");
   focusStartLink.href = `focus-mode.html?collection=${encodeURIComponent(collectionId)}&duaa=1`;
   completionTitle.textContent = `${collection.shortTitle || collection.title || "Collection"} complete`;
+  renderReflection();
 
   if (isTracked()) {
     progressPanel.hidden = false;

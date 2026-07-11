@@ -3,6 +3,12 @@ window.UMMIBY_DUAA_COLLECTION = {
   "title": "Morning Adhkār",
   "shortTitle": "Morning",
   "description": "Begin the day with remembrance, protection, and praise.",
+  "reflection": {
+    "label": "Morning Reflection",
+    "quote": "This is my breakfast. If I do not take my breakfast, I would not have strength to work that day.",
+    "attribution": "Shaykh al-Islam Ibn Taymiyyah, as related by Ibn al-Qayyim and explained by Shaykh Salih al-Fawzan",
+    "sourceUrl": "https://thewayofsalafiyyah.com/2015/06/14/his-nourishment-was-the-remembrance-of-allah-a-reminder-by-shaykh-fawzan/"
+  },
   "collectionType": "daily",
   "trackingType": "daily",
   "trackerEnabled": true,

@@ -1,94 +1,59 @@
-# Update Instructions — Ummiby Companion v0.6.0
+# Update Instructions — Ummiby Companion v0.6.1
 
 ## Replaces
 
-v0.5.9.1
+v0.6.0
 
-## Install
+## Installation
 
-1. Extract `ummiby-companion-v0.6.0-full.zip`.
-2. Copy all extracted files and folders into your local Ummiby Companion repository.
+1. Extract the v0.6.1 ZIP.
+2. Copy all extracted files into the local Ummiby Companion repository folder.
 3. Choose **Replace** for existing files.
-4. Delete the two obsolete files listed below.
-5. Open GitHub Desktop and confirm that the expected additions, modifications, and deletions appear.
-6. Test locally, commit, and push.
+4. No files need to be deleted for this release.
+5. Review the changes in GitHub Desktop, commit, and push.
 
-## Files Added
+## Files added
 
-```text
-js/duaa-tracking.js
-js/duaa-tracking-summary.js
-```
+None.
 
-## Files Replaced / Modified
+## Files replaced
 
-```text
-README.md
-UPDATE_INSTRUCTIONS.md
-css/duaa-home.css
-docs/ARCHITECTURE.md
-docs/CHANGELOG.md
-docs/DATA_MIGRATION.md
-docs/DECISIONS.md
-docs/MODULES.md
-docs/ROADMAP.md
-docs/guides/DUAA_COLLECTIONS.md
-docs/guides/DUAA_HOME.md
-duaa/collection.html
-duaa/daily-companion.html
-duaa/index.html
-duaa/progress.html
-js/app-config.js
-js/collection.js
-```
+- `README.md`
+- `UPDATE_INSTRUCTIONS.md`
+- `css/collection.css`
+- `css/duaa-home.css`
+- `docs/ARCHITECTURE.md`
+- `docs/CHANGELOG.md`
+- `docs/DECISIONS.md`
+- `docs/ROADMAP.md`
+- `docs/VISION.md`
+- `duaa/collection.html`
+- `duaa/index.html`
+- `duaa/progress.html`
+- `js/app-config.js`
+- `js/collection.js`
+- `js/duaa-tracking.js`
+- `js/duaa-tracking-summary.js`
+- `js/data/collections/morning.js`
 
-## Files to Delete
+## Files deleted
 
-```text
-duaa/recent.html
-js/duaa-home.js
-```
+None.
 
-Copying files over the existing folder will not remove these obsolete files automatically. Delete them manually so GitHub Desktop records them as deletions.
+## Browser storage
 
-## Browser Storage Changes
+No storage migration is required. Existing dated Duaa history remains compatible. Weekly progress is calculated from the records already stored under `ummibyDuaaDailyTracking`.
 
-v0.6.0 introduces the versioned storage key:
+## Testing checklist
 
-```text
-ummibyDuaaDailyTracking
-```
-
-On first load, existing Morning, Evening, and Before Sleep progress from these legacy keys is migrated safely:
-
-```text
-ummibyDuaaProgress:morning
-ummibyDuaaProgress:evening
-ummibyDuaaProgress:sleep
-```
-
-Earlier dated records are preserved. The legacy keys are removed after successful migration.
-
-The old Duaa reminder preference, if one exists, is left untouched in browser storage but is no longer read or shown. Duaa reading preferences, artwork, content, and Focus Mode settings are not changed.
-
-## Testing Checklist
-
-- Confirm every page footer shows **v0.6.0**.
-- Open Morning, check one or more Duaas, refresh, and confirm today’s checks remain.
-- Confirm Duaa Home shows the real Morning count rather than sample progress.
-- Repeat with Evening and Before Sleep.
-- Open Daily Companion and confirm each card shows today’s actual status.
-- Open Today’s Progress and confirm its totals match the three collection pages.
-- Use **Reset Today’s Progress** in one collection and confirm only that collection’s current-day checks clear.
-- Confirm other tracked collections remain unchanged.
-- Confirm Travel, Weather, Prayer, and Istikharah do not show daily completion controls.
-- Confirm Recently Viewed and Duaa Reminder sections no longer appear on Duaa Home.
-- Confirm no link points to `duaa/recent.html`.
-- Confirm collection artwork, Reading Settings, Focus Mode, and return-to-card behavior still work.
-- For a rollover test, temporarily change the computer date in a test browser/profile or seed a prior-date record, then confirm the current local date begins with a fresh checklist while the prior record remains in `ummibyDuaaDailyTracking`.
-
-## Commit Message
-
-```text
-feat(duaa): add date-based daily tracking
-```
+- Confirm the footer shows version 0.6.1.
+- On Duaa Home, confirm daily cards still show exact counts such as “1 of 15 recited today.”
+- Confirm Weekly Progress runs Sunday through Saturday.
+- Check one Morning Duaa and confirm today receives a Morning weekly marker.
+- Confirm checking one Duaa is enough to mark the day, without requiring full collection completion.
+- Confirm Evening and Before Sleep track independently.
+- Confirm future days appear muted and unmarked.
+- Open Weekly Progress and confirm it matches Duaa Home.
+- Open Morning and confirm the Morning Reflection appears with a working source link.
+- Confirm other collections do not show the Morning-only reflection.
+- Confirm existing collection, Focus Mode, artwork, and reading preference behavior remains intact.

@@ -183,3 +183,12 @@ The date key is calculated from the user’s local calendar date. Collection pag
 Legacy keys in the form `ummibyDuaaProgress:<collection>` are migrated once. Valid legacy dates are preserved, and the old key is removed only after its completed IDs are merged into the new store.
 
 Reference collections do not call the tracking service and do not create dated records.
+
+
+## Weekly Duaa tracking summary (v0.6.1)
+
+`js/duaa-tracking.js` continues to preserve exact completed Duaa identifiers under local-date records. Its weekly summary derives a Sunday-through-Saturday view from those dated records. A day is active when the collection record contains at least one completed Duaa. No separate streak database is created.
+
+`js/duaa-tracking-summary.js` renders both the exact current-day counts on collection cards and the gentle weekly markers on Duaa Home and the weekly progress page.
+
+Optional collection reflections live in collection metadata and are rendered by the shared `collection.html` renderer. This avoids collection-specific HTML pages.

@@ -141,3 +141,12 @@ Functional interface symbols use SVG throughout the application. This includes n
 - Existing v0.5.x tracked progress is migrated into the dated tracking store once, then the legacy keys are removed.
 - Recently Viewed and Duaa reminders should not remain visible as prototypes. They may return later only with clearly defined, working behavior.
 - Reminder interfaces must not imply dependable device notifications until the application has the technical infrastructure to deliver them reliably.
+
+
+## v0.6.1 — Tracking success means participation, not full collection completion
+
+For Morning, Evening, and Before Sleep, a day is counted in weekly progress when the user checks at least one Duaa in that collection. The exact number checked remains stored for historical detail, but the weekly marker is intentionally based on consistent participation rather than completing every Duaa. Weeks run Sunday through Saturday.
+
+The Duaa Home states this plainly: “Every Duaa counts. Checking at least one Duaa marks the day as complete.” The interface may pair this with an authentic reminder about consistent deeds, while avoiding streak-pressure or failure language.
+
+Collection-specific reflections may be stored as data and rendered by the shared collection page. They must include clear attribution and a source link when available.

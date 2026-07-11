@@ -137,6 +137,44 @@
     };
   }
 
+  function dateFromKey(key) {
+    const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(key || ""));
+    if (!match) return null;
+    return new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+  }
+
+  function addDays(date, amount) {
+    const next = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    next.setDate(next.getDate() + amount);
+    return next;
+  }
+
+  function sundayFor(date = new Date()) {
+    const local = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    return addDays(local, -local.getDay());
+  }
+
+  function weekSummary(collectionId, referenceDate = new Date()) {
+    if (!TRACKED_COLLECTIONS.includes(collectionId)) return [];
+    const store = migrateLegacyProgress();
+    const start = sundayFor(referenceDate);
+    const todayKey = localDateKey(referenceDate);
+
+    return Array.from({ length: 7 }, (_, index) => {
+      const date = addDays(start, index);
+      const dateKey = localDateKey(date);
+      const completed = uniqueStrings(store.days[dateKey]?.[collectionId]?.completed);
+      return {
+        date: dateKey,
+        dayIndex: index,
+        completedCount: completed.length,
+        active: completed.length > 0,
+        isToday: dateKey === todayKey,
+        isFuture: date > new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate())
+      };
+    });
+  }
+
   window.UmmibyDuaaTracking = Object.freeze({
     storageKey: STORAGE_KEY,
     trackedCollections: TRACKED_COLLECTIONS,
@@ -147,6 +185,7 @@
     toggle,
     resetToday,
     summary,
+    weekSummary,
     readHistory: () => migrateLegacyProgress().days
   });
 

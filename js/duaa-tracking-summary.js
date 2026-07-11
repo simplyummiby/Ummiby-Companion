@@ -6,18 +6,19 @@
   if (!tracker || !loader) return;
 
   const ids = [...tracker.trackedCollections];
+  const labels = { morning: "Morning", evening: "Evening", sleep: "Before Sleep" };
+  const dayLetters = ["S", "M", "T", "W", "T", "F", "S"];
 
   function statusText(summary) {
-    if (summary.isComplete) return "Completed today";
-    if (summary.count === 0) return "Not started today";
-    return `${summary.count} of ${summary.total} completed today`;
+    if (summary.count === 0) return `0 of ${summary.total} recited today`;
+    return `${summary.count} of ${summary.total} recited today`;
   }
 
-  function updateStatus(collectionId, summary) {
+  function updateDailyStatus(collectionId, summary) {
     document.querySelectorAll(`[data-tracking-status="${collectionId}"]`).forEach((element) => {
-      element.classList.toggle("completed", summary.isComplete);
+      element.classList.toggle("completed", summary.count > 0);
       element.replaceChildren();
-      if (summary.isComplete && window.UmmibyIcons) {
+      if (summary.count > 0 && window.UmmibyIcons) {
         element.appendChild(window.UmmibyIcons.create("check", { className: "inline-ui-icon" }));
         element.append(" ");
       }
@@ -27,39 +28,67 @@
     document.querySelectorAll(`[data-tracking-count="${collectionId}"]`).forEach((element) => {
       element.textContent = `${summary.count} of ${summary.total}`;
     });
+  }
 
-    document.querySelectorAll(`[data-tracking-percent="${collectionId}"]`).forEach((element) => {
-      element.textContent = `${summary.percent}%`;
+  function buildWeekRow(collectionId) {
+    const week = tracker.weekSummary(collectionId);
+    const activeDays = week.filter((day) => day.active).length;
+    const article = document.createElement("article");
+    article.className = "weekly-collection-row";
+
+    const heading = document.createElement("div");
+    heading.className = "weekly-row-heading";
+    const title = document.createElement("h3");
+    title.textContent = labels[collectionId] || collectionId;
+    const count = document.createElement("span");
+    count.textContent = `${activeDays} ${activeDays === 1 ? "day" : "days"} this week`;
+    heading.append(title, count);
+
+    const days = document.createElement("div");
+    days.className = "weekly-days";
+    days.setAttribute("aria-label", `${labels[collectionId]}: ${activeDays} active days this week`);
+
+    week.forEach((day, index) => {
+      const dayItem = document.createElement("div");
+      dayItem.className = "weekly-day";
+      if (day.active) dayItem.classList.add("active");
+      if (day.isToday) dayItem.classList.add("today");
+      if (day.isFuture) dayItem.classList.add("future");
+
+      const letter = document.createElement("span");
+      letter.className = "weekly-day-label";
+      letter.textContent = dayLetters[index];
+      const marker = document.createElement("span");
+      marker.className = "weekly-day-marker";
+      marker.setAttribute("aria-label", `${day.date}: ${day.active ? `${day.completedCount} Duaa${day.completedCount === 1 ? "" : "s"} checked` : day.isFuture ? "future day" : "no Duaa checked"}`);
+      if (day.active && window.UmmibyIcons) marker.appendChild(window.UmmibyIcons.create("check"));
+      dayItem.append(letter, marker);
+      days.appendChild(dayItem);
+    });
+
+    article.append(heading, days);
+    return article;
+  }
+
+  function renderWeeklyProgress() {
+    document.querySelectorAll("[data-weekly-progress]").forEach((container) => {
+      container.replaceChildren();
+      ids.forEach((collectionId) => container.appendChild(buildWeekRow(collectionId)));
     });
   }
 
   async function loadSummaries() {
-    const summaries = [];
     for (const collectionId of ids) {
       try {
         const collection = await loader.load(collectionId);
         const summary = tracker.summary(collectionId, collection.items?.length || 0);
-        summaries.push(summary);
-        updateStatus(collectionId, summary);
+        updateDailyStatus(collectionId, summary);
       } catch (error) {
         console.error(`Unable to load tracking summary for ${collectionId}`, error);
       }
     }
 
-    const total = summaries.reduce((sum, item) => sum + item.total, 0);
-    const count = summaries.reduce((sum, item) => sum + item.count, 0);
-    const percent = total ? Math.round((count / total) * 100) : 0;
-
-    document.querySelectorAll("[data-tracking-overall-percent]").forEach((element) => {
-      element.textContent = `${percent}%`;
-    });
-    document.querySelectorAll("[data-tracking-overall-count]").forEach((element) => {
-      element.textContent = `${count} of ${total}`;
-    });
-    document.querySelectorAll("[data-tracking-progress-circle]").forEach((element) => {
-      element.style.setProperty("--tracking-progress", `${percent * 3.6}deg`);
-      element.setAttribute("aria-label", `${percent} percent of today's tracked Duaas completed`);
-    });
+    renderWeeklyProgress();
     document.querySelectorAll("[data-tracking-date]").forEach((element) => {
       element.textContent = new Intl.DateTimeFormat([], { weekday: "long", month: "long", day: "numeric" }).format(new Date());
     });

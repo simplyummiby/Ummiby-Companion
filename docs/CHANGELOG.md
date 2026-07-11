@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.6.1 — Gentle Weekly Progress
+
+- Replaced the Duaa Home daily percentage summary with Sunday-through-Saturday weekly progress for Morning, Evening, and Before Sleep.
+- Defined a successful tracked day as checking at least one Duaa in that collection.
+- Kept exact per-day Duaa counts in history while using participation for weekly markers.
+- Added the message: “Every Duaa counts. Checking at least one Duaa marks the day as complete.”
+- Added the consistency hadith from Sahih al-Bukhari 6464 with a linked source.
+- Added a Morning-only reflection featuring Ibn Taymiyyah’s description of his morning remembrance as his breakfast, linked to the supplied source.
+- Kept daily collection cards showing the exact number recited today.
+
 ## v0.6.0 — Daily Duaa Tracking Foundation
 
 ### Added

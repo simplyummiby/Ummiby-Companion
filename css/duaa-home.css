@@ -56,3 +56,13 @@ dialog{width:min(92vw,520px);border:0;border-radius:20px;padding:0;box-shadow:0 
 .round-icon .ui-icon{width:1.15em;height:1.15em}
 .completion-state.completed{display:inline-flex;align-items:center;justify-content:center;gap:.3rem}
 .completion-state.completed .ui-icon{width:1em;height:1em}
+
+
+/* v0.6.1 gentle weekly progress */
+.weekly-progress-card{min-width:0}
+.weekly-philosophy{margin:0;padding:13px 15px;border-radius:13px;background:var(--duaa-soft);color:var(--duaa-dark);font-size:.88rem;line-height:1.5}
+.consistency-hadith{max-width:none;margin:14px 0 18px;padding:14px 16px;font-size:.92rem;line-height:1.5}
+.consistency-hadith cite{margin-top:6px}.consistency-hadith a{display:inline-flex;align-items:center;gap:.3rem;color:var(--duaa-dark);font-weight:750;text-decoration:none}.consistency-hadith .ui-icon{width:.9em;height:.9em}
+.weekly-progress-list{display:grid;gap:14px}.weekly-collection-row{padding:14px;border:1px solid var(--line);border-radius:15px;background:#fff}.weekly-row-heading{display:flex;justify-content:space-between;gap:14px;align-items:baseline;margin-bottom:11px}.weekly-row-heading h3{margin:0;color:var(--navy);font-family:Georgia,serif;font-size:1rem}.weekly-row-heading span{color:var(--muted);font-size:.76rem;font-weight:700}
+.weekly-days{display:grid;grid-template-columns:repeat(7,minmax(25px,1fr));gap:6px}.weekly-day{display:grid;justify-items:center;gap:5px}.weekly-day-label{color:var(--muted);font-size:.67rem;font-weight:800}.weekly-day-marker{display:grid;place-items:center;width:27px;height:27px;border:1.5px solid #c8d6e0;border-radius:50%;background:#fff;color:#fff}.weekly-day-marker .ui-icon{width:15px;height:15px;stroke-width:2.5}.weekly-day.active .weekly-day-marker{border-color:var(--duaa);background:var(--duaa)}.weekly-day.today .weekly-day-label{color:var(--duaa-dark)}.weekly-day.today .weekly-day-marker{box-shadow:0 0 0 3px var(--duaa-soft)}.weekly-day.future{opacity:.42}.weekly-progress-list.detailed{gap:18px}.weekly-progress-list.detailed .weekly-collection-row{padding:18px}.weekly-progress-list.detailed .weekly-day-marker{width:34px;height:34px}
+@media(max-width:480px){.weekly-row-heading{align-items:flex-start;flex-direction:column;gap:3px}.weekly-days{gap:3px}.weekly-day-marker{width:25px;height:25px}}
