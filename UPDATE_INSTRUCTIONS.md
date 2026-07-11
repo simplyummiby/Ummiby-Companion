@@ -1,47 +1,50 @@
-# Update Instructions — Ummiby Companion v0.6.2.3
+# Update Instructions — Ummiby Companion v0.6.3
 
-This release replaces v0.6.2.2.
+This package updates v0.6.2.3 to v0.6.3.
 
 ## Install
 
-1. Extract the v0.6.2.3 ZIP.
-2. Copy all extracted files and folders into your local Ummiby Companion repository.
-3. Choose **Replace** when prompted.
-4. Review the changes in GitHub Desktop before committing.
+1. Extract the v0.6.3 ZIP.
+2. Copy all extracted files and folders into the local Ummiby Companion repository.
+3. Choose **Replace** for existing files.
+4. Review the changes in GitHub Desktop, commit, and push.
 
 ## Files added
 
-None.
+- `backup-restore.html`
+- `css/backup-restore.css`
+- `js/backup-restore.js`
+- `docs/guides/BACKUP_RESTORE.md`
 
 ## Files replaced
 
-- `README.md`
-- `UPDATE_INSTRUCTIONS.md`
-- `css/collection.css`
+- All HTML pages containing the shared primary menu
+- `settings.html`
 - `js/app-config.js`
-- `js/collection.js`
-- `docs/ARCHITECTURE.md`
+- `js/app-shell.js`
+- `README.md`
 - `docs/CHANGELOG.md`
+- `docs/ROADMAP.md`
 - `docs/DECISIONS.md`
-- `docs/guides/DUAA_COLLECTIONS.md`
+- `docs/ARCHITECTURE.md`
+- `docs/MODULES.md`
+- `UPDATE_INSTRUCTIONS.md`
 
 ## Files deleted
 
 None.
 
-## Browser storage
+## Browser data
 
-No migration is required. Existing dated tracking records, monthly history, and Duaa reading preferences remain compatible.
+Installing this version does not migrate or clear existing browser data. Export and restore actions occur only when initiated by the user. Restoring a backup replaces only the sections declared by that backup.
 
 ## Test checklist
 
-- Confirm every page footer shows version 0.6.2.3.
-- Open Morning, Evening, and Before Sleep and confirm the live bottom status still appears.
-- Open Travel, Weather, Prayer, and Istikharah and confirm no bottom tracking-status box appears.
-- Confirm reference collections still display their content and back-to-top control normally.
-- Confirm checking a tracked Duaa still updates the bottom status and today’s progress.
-- Confirm existing weekly consistency and monthly history data remain unchanged.
-
-## Commit message
-
-`fix(duaa): hide tracking status on reference collections`
+- Confirm Backup & Restore appears in the menu from shared Home, Qur’an, and Duaa pages.
+- Export a Duaa backup and confirm the filename and JSON metadata.
+- Export a Qur’an backup and a full backup.
+- Select a valid backup and confirm the metadata summary appears before import.
+- Cancel the restore and confirm no data changes.
+- Try an invalid JSON file and confirm the app reports that no data changed.
+- Restore a Duaa backup and confirm Qur’an data is untouched.
+- Confirm the page displays Version 0.6.3.

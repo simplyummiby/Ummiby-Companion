@@ -52,3 +52,8 @@ Daily Companion is a section of Duaa Home, not a separate page. Its Morning, Eve
 - View History opens a monthly calendar rather than repeating the weekly summary.
 - One calendar is filtered by Morning, Evening, or Before Sleep.
 - The monthly summary reports active days only.
+
+
+## Shared Utility: Backup & Restore
+
+An app-wide utility available from the primary menu. It exports or restores recognized Duaa and Qur’an local data independently or together. It is not owned by either reading module.

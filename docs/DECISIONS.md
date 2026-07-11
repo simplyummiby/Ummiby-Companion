@@ -179,3 +179,10 @@ Monthly history calendars always reserve six Sunday-through-Saturday rows so swi
 ## v0.6.2.3 — Reference Collections Must Not Render Tracking Status
 
 Untracked collections do not merely hide the bottom daily-status panel; the renderer removes that component from the page. An explicit CSS hidden-state safeguard is retained as a second layer of protection.
+
+
+## Scoped manual backups before cloud sync
+
+Ummiby Companion provides reliable manual JSON export/import before introducing accounts or cloud synchronization. Users may export Duaa only, Qur’an only, or all recognized app data. Imports are replace-only within the backup scope, never an ambiguous merge. The app validates and summarizes a backup before requesting confirmation.
+
+Backup & Restore is app-wide and appears in the primary menu. Hero titles and explanatory copy must remain accessible HTML rather than text embedded in artwork.

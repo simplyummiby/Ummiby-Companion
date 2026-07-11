@@ -1,3 +1,13 @@
+
+## v0.6.3 — Backup & Restore
+
+- Added an app-wide Backup & Restore destination to the main menu.
+- Added scoped JSON exports for Duaa data, Qur’an data, and all recognized app data.
+- Added validated import with metadata preview and explicit confirmation.
+- Restore operations replace only the sections included in the selected backup.
+- Added versioned backup metadata and stable filenames.
+- Added a temporary Backup & Restore hero image while keeping all page title text in accessible HTML.
+
 # Changelog
 
 ## v0.6.2.3 — Reference Collection Status Fix

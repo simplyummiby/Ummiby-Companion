@@ -17,8 +17,8 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.6.2.3 — Reference Collection Status Fix
+v0.6.3 — Backup & Restore
 
 ## Current Release
 
-Version 0.6.2.3 corrects the bottom-status visibility so it is rendered only for Morning, Evening, and Before Sleep. Reference collections no longer contain the tracking-status component. The accessible floating SVG back-to-top control remains available on long collection pages.
+Version 0.6.3 adds an app-wide Backup & Restore page with scoped Duaa, Qur’an, and full-app JSON exports. Validated imports replace only the data sections included in the backup, leaving other module data untouched.

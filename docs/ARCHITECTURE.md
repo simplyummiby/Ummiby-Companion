@@ -216,3 +216,12 @@ A single floating back-to-top control is part of the shared collection page rath
 ## Reference Collection Status Visibility (v0.6.2.3)
 
 The shared collection renderer removes the bottom tracking-status component when `trackerEnabled` is false. CSS also explicitly enforces `display: none` for hidden completion panels. This keeps reference collections free of daily-tracking UI even if component display rules change later.
+
+
+## Backup and Restore Architecture (v0.6.3)
+
+`backup-restore.html` is an app-wide utility rather than a Qur’an- or Duaa-only page. `js/backup-restore.js` classifies recognized localStorage keys by module, exports exact stored string values, and wraps them in a versioned Ummiby backup envelope.
+
+Backups declare `backupFormat`, `schemaVersion`, `appVersion`, `createdAt`, `scope`, and module data. Restore validates the entire envelope before changing storage. The first implementation uses replace-only semantics by included section: restoring Duaa data replaces recognized Duaa keys but leaves Qur’an keys untouched, and vice versa. Full backups replace all recognized sections.
+
+Functional interface icons use the shared SVG icon registry. The hero illustration remains artwork and its title/copy are real HTML, so the image can be replaced later without embedding page text in the asset.

@@ -65,3 +65,12 @@ Status: Complete. Removed the redundant Daily Companion page, moved tracking phi
 ## v0.6.2 — Duaa History and Consistency
 
 Status: Complete. Renamed the weekly dashboard summary to Weekly Consistency and replaced the duplicated weekly detail page with a monthly, collection-filtered history calendar. Monthly summaries report active days only.
+
+
+## Completed in v0.6.3
+
+- App-wide Backup & Restore page
+- Duaa-only, Qur’an-only, and full JSON exports
+- Validated scoped restore with replace-only semantics
+
+Future data work may add cloud synchronization, automatic backups, and account-aware device transfer after the manual system has been proven reliable.
