@@ -20,22 +20,26 @@ const introText = document.getElementById("collectionIntroText");
 const resetDialog = document.getElementById("resetDialog");
 const confirmResetButton = document.getElementById("confirmResetButton");
 
-const themes = {
-  morning: { accent: "#b77800", dark: "#8d620d", soft: "#fff4dc", border: "#eadfc2" },
-  evening: { accent: "#7150a2", dark: "#5b3d8a", soft: "#f3eefb", border: "#ddd0ef" },
-  sleep: { accent: "#4b82b5", dark: "#396b98", soft: "#edf5fb", border: "#cedfed" },
-  travel: { accent: "#4e879f", dark: "#386d83", soft: "#edf7fa", border: "#cfe2e9" },
-  weather: { accent: "#5b91a8", dark: "#40758b", soft: "#eef8f8", border: "#cde4e4" },
-  prayer: { accent: "#5f8c66", dark: "#47704e", soft: "#eff7ef", border: "#d2e5d5" },
-  istikharah: { accent: "#a07b35", dark: "#7f6027", soft: "#fbf5e9", border: "#e8dcc2" }
-};
-
 function applyTheme() {
-  const theme = themes[collectionId] || themes.morning;
+  const theme = collection?.theme || {
+    accent: "#6F99B7",
+    dark: "#456F8D",
+    soft: "#EEF5FB",
+    border: "#DCE7F0",
+    pageBackground: "#F7F9FC",
+    cardBackground: "#FFFFFF",
+    icon: "✦",
+    banner: ""
+  };
+
   page.style.setProperty("--collection-accent", theme.accent);
   page.style.setProperty("--collection-dark", theme.dark);
   page.style.setProperty("--collection-soft", theme.soft);
   page.style.setProperty("--collection-border", theme.border);
+  page.style.setProperty("--collection-page-background", theme.pageBackground);
+  page.style.setProperty("--collection-card-background", theme.cardBackground);
+
+  document.body.style.background = theme.pageBackground || "#F7F9FC";
 }
 
 function todayKey() {
@@ -206,6 +210,8 @@ function renderCollection() {
   title.textContent = collection.title || "Duaa Collection";
   description.textContent = collection.description || "Read through this collection at your own pace.";
   eyebrow.textContent = isTracked() ? "Daily Companion" : "Duaa Collection";
+  const heroIcon = document.getElementById("collectionHeroIcon");
+  if (heroIcon) heroIcon.textContent = collection.theme?.icon || "✦";
   focusStartLink.href = `focus-mode.html?collection=${encodeURIComponent(collectionId)}&duaa=1`;
   completionTitle.textContent = `${collection.shortTitle || collection.title || "Collection"} complete`;
 

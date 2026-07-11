@@ -132,5 +132,15 @@ window.UMMIBY_DUAA_COLLECTION = {
       "resources": [],
       "explore": []
     }
-  ]
+  ],
+  "theme": {
+    "accent": "#5C8FBA",
+    "dark": "#3F6F98",
+    "soft": "#EDF5FB",
+    "border": "#CEDFEB",
+    "pageBackground": "#F7FAFD",
+    "cardBackground": "#FFFFFF",
+    "icon": "☾",
+    "banner": ""
+  }
 };

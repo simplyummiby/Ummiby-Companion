@@ -62,3 +62,22 @@ duaa/
 ```
 
 Individual Morning, Evening, Sleep, Travel, Weather, and Prayer HTML pages are not required. Their content is selected through the reusable collection page query parameter.
+
+## Collection Theme Infrastructure
+
+Each collection file owns its visual metadata:
+
+```javascript
+theme: {
+  accent: "...",
+  dark: "...",
+  soft: "...",
+  border: "...",
+  pageBackground: "...",
+  cardBackground: "...",
+  icon: "...",
+  banner: "..."
+}
+```
+
+The shared collection renderer applies these values through CSS custom properties. This allows one reusable page to support distinct Morning, Evening, Sleep, Travel, Weather, Prayer, and Istikharah identities.

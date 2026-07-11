@@ -50,3 +50,11 @@
 - Feature-specific guides belong in `docs/guides/`.
 - Obsolete redirect pages should not be retained in this new repository.
 - One-off files should be removed after a shared renderer replaces them.
+
+## Collection Themes
+
+- Collection-specific themes belong in collection metadata.
+- The shared renderer must not hard-code collection identities.
+- A theme may define color tokens, icon, banner, and future artwork.
+- Shared layout and behavior remain consistent across collections.
+- Visual identity can differ without creating separate HTML pages.

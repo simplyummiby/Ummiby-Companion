@@ -978,5 +978,15 @@ window.UMMIBY_DUAA_COLLECTION = {
       "resources": [],
       "explore": []
     }
-  ]
+  ],
+  "theme": {
+    "accent": "#7157A8",
+    "dark": "#533B84",
+    "soft": "#F2EDFB",
+    "border": "#D9CEEE",
+    "pageBackground": "#FAF8FE",
+    "cardBackground": "#FFFFFF",
+    "icon": "◒",
+    "banner": ""
+  }
 };

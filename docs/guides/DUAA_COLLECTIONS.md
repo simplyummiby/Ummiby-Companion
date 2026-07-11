@@ -92,3 +92,34 @@ The full phrase-by-phrase study and memorization experience is planned for a lat
 ## Verification Metadata
 
 Verification metadata is preserved for editorial review but does not hide entries in the current development build.
+
+## Collection Themes
+
+Each collection file includes a `theme` object.
+
+Example:
+
+```javascript
+theme: {
+  accent: "#C58A17",
+  dark: "#8A5E0B",
+  soft: "#FFF4DC",
+  border: "#E8D9B8",
+  pageBackground: "#FFFDF8",
+  cardBackground: "#FFFFFF",
+  icon: "☀",
+  banner: ""
+}
+```
+
+The shared collection page reads these values automatically.
+
+To change the Morning theme, edit only:
+
+`js/data/collections/morning.js`
+
+To change the Evening theme, edit only:
+
+`js/data/collections/evening.js`
+
+No HTML changes are required.

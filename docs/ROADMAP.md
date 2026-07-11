@@ -36,12 +36,12 @@
 - Consolidate feature documentation
 - Keep the repository root clean
 
-## Next: v0.5.5 — Collection Theme Infrastructure
-- Move collection colors into collection metadata
-- Support collection-specific banners and icons
-- Apply themes through the shared renderer
+## v0.5.5 — Collection Theme Infrastructure
+- Collection-specific theme metadata
+- Shared renderer theme support
+- Unique collection icons and palettes
 
-## Later: v0.6.0 — Duaa Focus Mode
+## Next: v0.6.0 — Duaa Focus Mode
 - Phrase-by-phrase presentation
 - Arabic, English, and transliteration panels
 - Benefits, sources, and study resources

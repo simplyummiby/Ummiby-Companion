@@ -19,4 +19,4 @@ Feature guides are located in:
 
 ## Current Version
 
-v0.5.4 — Project File Cleanup
+v0.5.5 — Collection Theme Infrastructure

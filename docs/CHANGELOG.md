@@ -2,6 +2,29 @@
 
 All notable changes to this project are documented here.
 
+## v0.5.5 — Collection Theme Infrastructure
+
+Status: In Progress
+
+### Added
+
+- Theme metadata inside every Duaa collection file
+- Collection-specific accent, dark, soft, border, page background, and card background values
+- Collection-specific icons
+- Shared renderer support for collection-provided theme values
+- Theme preview metadata in the collection registry
+- Update instructions for manual repository replacement
+
+### Changed
+
+- Removed collection-specific colors from the shared renderer JavaScript
+- The shared collection page now reads its visual identity directly from the loaded collection
+- Morning, Evening, Before Sleep, Travel, Weather, Prayer, and Istikharah can now have distinct themes without separate HTML pages
+
+### Notes
+
+This version creates the infrastructure for unique collection identities. It does not yet add final banners or polished artwork.
+
 ## v0.5.4 — Project File Cleanup
 
 Status: In Progress
