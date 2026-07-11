@@ -1,5 +1,28 @@
 # Changelog
 
+## v0.6.2 — Duaa History and Consistency
+
+### Added
+
+- Monthly Duaa history calendar for Morning, Evening, and Before Sleep
+- Collection tabs within one shared calendar
+- Previous and next month navigation
+- Exact checked-Duaa counts inside active calendar dates
+- Monthly active-day summary without total-Duaa statistics
+
+### Changed
+
+- Renamed “Weekly Progress” to “Weekly Consistency” on Duaa Home
+- Renamed the weekly-panel link to “View History”
+- Unified the guidance and hadith font family in Daily Companion
+- Kept the source link visually distinct from the guidance and hadith text
+
+### Notes
+
+- Existing date-based tracking storage remains unchanged.
+- A day is active when at least one Duaa is checked in that collection.
+- Calendar weeks run Sunday through Saturday.
+
 ## v0.6.1.2 — Duaa Home Navigation and Layout Refinement
 
 - Removed the standalone Daily Companion page and its navigation links.

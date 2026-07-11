@@ -6,22 +6,19 @@ A combined Qur’an and Duaa companion focused on authentic content, thoughtful 
 
 - Shared Home
 - Qur’an Home and reading experiences
-- Duaa Home, Daily Companion, and reference collections
+- Duaa Home, tracked Daily Companion collections, and reference collections
 - Shared app-wide Settings/About
 - Contextual module reading settings
 
 ## Documentation
 
 Project documentation is located in `docs/`.
-
-Feature guides are located in:
-
-`docs/guides/`
+Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.6.1.2 — Duaa Home Refinement
+v0.6.2 — Duaa History and Consistency
 
 ## Current Release
 
-Version 0.6.1.2 keeps Morning, Evening, and Before Sleep true local-date-based daily tracking. Each local calendar day begins with a fresh checklist while earlier days remain stored for future gentle history. Existing v0.5.x progress is migrated safely. The unfinished Recently Viewed and Duaa Reminder prototypes have been removed from the visible application.
+Version 0.6.2 renames the Duaa Home summary to **Weekly Consistency** and adds a true monthly history calendar. Morning, Evening, and Before Sleep share one calendar view with collection tabs, Sunday-first weeks, exact daily checked-Duaa counts, and a monthly summary of active days only.

@@ -76,3 +76,10 @@ dialog{width:min(92vw,520px);border:0;border-radius:20px;padding:0;box-shadow:0 
 .daily-philosophy a{display:inline-flex;align-items:center;gap:.25rem;color:var(--duaa-dark);font-family:Inter,sans-serif;font-size:.78rem;font-weight:750;text-decoration:none;white-space:nowrap}
 .daily-philosophy a .ui-icon{width:.85em;height:.85em}
 .weekly-progress-card .section-heading.compact{margin-bottom:12px}
+
+
+/* v0.6.2 consistency wording and unified Daily Companion typography */
+.daily-philosophy{font-family:Georgia,"Times New Roman",serif}
+.daily-philosophy .daily-guidance{color:var(--duaa-dark)}
+.daily-philosophy .daily-hadith{font-family:inherit;color:var(--navy)}
+.daily-philosophy a{font-family:Inter,system-ui,sans-serif}

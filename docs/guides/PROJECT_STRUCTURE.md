@@ -52,3 +52,10 @@ assets/collections/
 ```
 
 Artwork paths are registered in `js/data/collection-registry.js` and rendered by `js/collection-artwork.js`.
+
+
+### Duaa history files
+
+- `duaa/progress.html` — monthly Duaa history page
+- `css/duaa-history.css` — monthly calendar layout and responsive styles
+- `js/duaa-history.js` — collection tabs, month navigation, active-day summaries, and calendar rendering

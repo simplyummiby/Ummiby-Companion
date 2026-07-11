@@ -195,3 +195,8 @@ Optional collection reflections live in collection metadata and are rendered by 
 ## Duaa Home as the Daily Companion entry point (v0.6.1.2)
 
 Duaa Home directly exposes Morning, Evening, and Before Sleep. A separate Daily Companion page is intentionally not maintained because it duplicated navigation without adding a distinct workflow.
+
+
+## Monthly Duaa History
+
+`duaa/progress.html` is the monthly history view. It reads the existing dated records from `js/duaa-tracking.js` and renders one Sunday-first calendar through `js/duaa-history.js`. The Morning, Evening, and Before Sleep tabs filter the same calendar without duplicating pages or storage. History is derived from `ummibyDuaaDailyTracking`; no separate summary database is maintained.

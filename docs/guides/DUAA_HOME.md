@@ -32,3 +32,8 @@ Reference collections remain available without completion pressure.
 ## Daily Companion navigation
 
 Morning, Evening, and Before Sleep are opened directly from Duaa Home. There is no separate Daily Companion page.
+
+
+## Weekly Consistency and History
+
+Duaa Home shows Sunday-through-Saturday consistency for Morning, Evening, and Before Sleep. Checking at least one Duaa marks the day active. The **View History** link opens a monthly calendar where the user can switch collections and review exact daily checked-Duaa counts. The monthly summary intentionally reports only active days.

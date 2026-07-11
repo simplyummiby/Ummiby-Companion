@@ -3,47 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Gentle weekly Duaa tracking for Morning, Evening, and Before Sleep.">
-<title>Weekly Duaa Progress | Ummiby Companion</title>
+<meta name="description" content="Monthly Duaa history for Morning, Evening, and Before Sleep.">
+<title>Duaa History | Ummiby Companion</title>
 <link rel="stylesheet" href="../css/duaa-shell.css">
-<link rel="stylesheet" href="../css/duaa-home.css">
-<style>
-body{margin:0;background:var(--duaa-page);color:#243746;font-family:system-ui,sans-serif}
-main{width:min(820px,calc(100% - 32px));margin:58px auto 80px}
-.back-link{display:inline-flex;align-items:center;gap:7px;color:var(--duaa-dark);font-weight:750;text-decoration:none}
-.heading{margin:30px 0}.heading h1{margin:0;color:var(--duaa-dark);font-family:Georgia,serif;font-size:clamp(2.2rem,5vw,3.6rem)}.heading p{color:var(--muted)}
-.weekly-summary-page{padding:26px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:var(--shadow)}
-.weekly-summary-page .weekly-philosophy{margin-top:0}
-.weekly-summary-page .consistency-hadith{max-width:none;margin:18px 0 24px}
-.history-note{margin-top:18px;padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff;color:var(--muted)}
-</style>
+<link rel="stylesheet" href="../css/duaa-history.css">
 </head>
 <body>
-<main>
-  <a class="back-link" href="index.html"><span data-ui-icon="arrow-left" aria-hidden="true"></span> Duaa Home</a>
-  <header class="heading">
+<div class="app-shell">
+<aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+  <div class="brand"><span class="brand-mark" data-ui-icon="brand" aria-hidden="true"></span><div><p class="brand-name">Ummiby</p><p class="brand-subtitle">Qur’an &amp; Duaa</p></div></div>
+  <nav class="main-nav">
+    <a class="nav-link" href="../index.html"><span data-ui-icon="home" aria-hidden="true"></span> Home</a>
+    <details class="nav-group"><summary><span><span data-ui-icon="book" aria-hidden="true"></span> Qur’an</span></summary><div class="nav-submenu"><a href="../quran/index.html">Qur’an Home</a><a href="../quran/reading-journey.html">Reading Journey</a><a href="../quran/ramadan-journey.html">Ramadan Journey</a><a href="../quran/surahs.html">Read by Surah</a><a href="../quran/go-to-ayah.html">Go to an Ayah</a></div></details>
+    <details class="nav-group" open><summary><span><span data-ui-icon="sparkle" aria-hidden="true"></span> Duaa</span></summary><div class="nav-submenu"><a href="index.html">Duaa Home</a><a href="collections.html">Find a Duaa</a></div></details>
+    <a class="nav-link" href="../settings.html"><span data-ui-icon="settings" aria-hidden="true"></span> Settings</a>
+  </nav>
+</aside>
+<div class="page">
+<header class="topbar">
+  <button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false"><span class="sr-only">Open navigation</span><span data-ui-icon="menu" aria-hidden="true"></span></button>
+  <a class="back-home" href="index.html"><span data-ui-icon="arrow-left" aria-hidden="true"></span> Duaa Home</a>
+</header>
+<main class="duaa-history">
+  <header class="history-heading">
     <p class="eyebrow">Daily Companion</p>
-    <h1>Weekly Progress</h1>
-    <p>Sunday through Saturday</p>
+    <h1>Duaa History</h1>
+    <p>Review your active days by collection and month.</p>
   </header>
 
-  <section class="weekly-summary-page" aria-labelledby="weeklyProgressHeading">
-    <h2 id="weeklyProgressHeading" class="sr-only">This week’s tracked Duaa collections</h2>
-    <p class="weekly-philosophy"><strong>Every Duaa counts.</strong> Checking at least one Duaa marks the day as complete.</p>
-    <blockquote class="consistency-hadith">
-      “The most beloved deed to Allah is the most regular and constant even if it were little.”
-      <cite><a href="https://sunnah.com/bukhari:6464" target="_blank" rel="noopener noreferrer">Sahih al-Bukhari 6464 <span data-ui-icon="external" aria-hidden="true"></span></a></cite>
-    </blockquote>
-    <div class="weekly-progress-list detailed" data-weekly-progress aria-live="polite"></div>
-  </section>
+  <section class="history-panel" aria-label="Monthly Duaa history">
+    <div class="history-tabs" role="tablist" aria-label="Choose a tracked collection">
+      <button class="history-tab" type="button" role="tab" aria-selected="true" data-history-collection="morning">Morning</button>
+      <button class="history-tab" type="button" role="tab" aria-selected="false" data-history-collection="evening">Evening</button>
+      <button class="history-tab" type="button" role="tab" aria-selected="false" data-history-collection="sleep">Before Sleep</button>
+    </div>
 
-  <p class="history-note">The app still preserves the exact number of Duaas checked for each date. Weekly progress counts a day when at least one Duaa was checked in that collection.</p>
+    <div class="history-month-bar">
+      <button class="history-month-button" type="button" data-history-previous aria-label="Previous month"><span data-ui-icon="arrow-left" aria-hidden="true"></span></button>
+      <h2 class="history-month-title" data-history-month-title></h2>
+      <button class="history-month-button" type="button" data-history-next aria-label="Next month"><span data-ui-icon="arrow-right" aria-hidden="true"></span></button>
+    </div>
+    <p class="history-summary" data-history-summary aria-live="polite"></p>
+
+    <div class="calendar-weekdays" aria-hidden="true"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div>
+    <div class="history-calendar" data-history-calendar aria-live="polite"></div>
+  </section>
 </main>
+</div>
+</div>
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
 <script src="../js/app-config.js"></script>
 <script src="../js/app-shell.js"></script>
-<script src="../js/data/collection-registry.js"></script>
-<script src="../js/data/collection-loader.js"></script>
+<script src="../js/duaa-app.js"></script>
 <script src="../js/duaa-tracking.js"></script>
-<script src="../js/duaa-tracking-summary.js"></script>
+<script src="../js/duaa-history.js"></script>
 </body>
 </html>

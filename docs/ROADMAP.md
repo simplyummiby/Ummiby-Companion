@@ -60,3 +60,8 @@
 ## v0.6.1.2 — Duaa Home refinement
 
 Status: Complete. Removed the redundant Daily Companion page, moved tracking philosophy text into the Daily Companion section, and simplified Weekly Progress heading copy.
+
+
+## v0.6.2 — Duaa History and Consistency
+
+Status: Complete. Renamed the weekly dashboard summary to Weekly Consistency and replaced the duplicated weekly detail page with a monthly, collection-filtered history calendar. Monthly summaries report active days only.

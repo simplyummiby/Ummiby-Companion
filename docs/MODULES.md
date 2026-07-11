@@ -44,3 +44,11 @@ The Daily Companion tracks Morning, Evening, and Before Sleep by local date. Dua
 ### Daily Companion section
 
 Daily Companion is a section of Duaa Home, not a separate page. Its Morning, Evening, and Before Sleep cards link directly to their reusable collection views.
+
+
+## Duaa History
+
+- Weekly Consistency remains visible on Duaa Home.
+- View History opens a monthly calendar rather than repeating the weekly summary.
+- One calendar is filtered by Morning, Evening, or Before Sleep.
+- The monthly summary reports active days only.

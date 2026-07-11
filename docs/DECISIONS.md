@@ -155,3 +155,11 @@ Collection-specific reflections may be stored as data and rendered by the shared
 ## v0.6.1.2 — Daily Companion remains a Duaa Home section
 
 Morning, Evening, and Before Sleep are accessed directly from Duaa Home. The former standalone Daily Companion page was removed because it added an unnecessary intermediary step and duplicated the same collection links.
+
+
+## v0.6.2 — Consistency and History Language
+
+- Use **Weekly Consistency** rather than Weekly Progress because the tracked goal is steady participation, not completing an entire collection.
+- A day counts as active when at least one Duaa is checked.
+- Monthly history uses one calendar with collection tabs rather than three simultaneous calendars, keeping the view calm and mobile-friendly.
+- Monthly summaries show active days only. Exact daily Duaa counts remain visible within calendar dates and stored in history.
