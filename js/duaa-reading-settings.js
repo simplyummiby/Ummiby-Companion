@@ -3,14 +3,17 @@
   const triggers = document.querySelectorAll("[data-duaa-settings-trigger]");
   if (!preferences || !triggers.length) return;
 
+  let activeContext = "collection";
   const dialog = document.createElement("dialog");
   dialog.className = "duaa-settings-dialog";
   dialog.setAttribute("aria-labelledby", "duaaSettingsTitle");
   dialog.innerHTML = `
     <form method="dialog" class="duaa-settings-form">
       <div class="duaa-settings-header">
-        <div><h2 id="duaaSettingsTitle">Duaa Reading Settings</h2><p>Adjust this Duaa reading experience without leaving your place.</p></div>
-        <button class="duaa-settings-close" value="close" aria-label="Close reading settings">×</button>
+        <div><h2 id="duaaSettingsTitle">Duaa Reading Settings</h2><p id="duaaSettingsContextNote">Adjust this reading experience without leaving your place.</p></div>
+        <button class="duaa-settings-close" value="close" aria-label="Close reading settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
       </div>
       <fieldset style="border:0;padding:0;margin:0">
         <legend class="sr-only">Arabic text size</legend>
@@ -41,15 +44,19 @@
   const transliteration = dialog.querySelector("#duaaShowTransliteration");
   const translation = dialog.querySelector("#duaaShowTranslation");
   const status = dialog.querySelector(".duaa-settings-status");
+  const contextNote = dialog.querySelector("#duaaSettingsContextNote");
 
   function syncControls() {
-    const current = preferences.read();
+    const current = preferences.read(activeContext);
     const size = preferences.applyArabicTextSize(current.arabicTextSize);
     const selected = dialog.querySelector(`input[name="duaaArabicTextSize"][value="${size}"]`);
     if (selected) selected.checked = true;
     const display = preferences.applyReadingDisplay(current);
     transliteration.checked = display.showTransliteration;
     translation.checked = display.showTranslation;
+    contextNote.textContent = activeContext === "focus"
+      ? "These choices apply only to Focus Mode."
+      : "These choices apply only to Duaa collection pages.";
   }
 
   function announce(message) {
@@ -59,20 +66,22 @@
   }
 
   triggers.forEach((trigger) => trigger.addEventListener("click", () => {
+    activeContext = trigger.dataset.duaaSettingsContext || "collection";
+    preferences.applyContext(activeContext);
     syncControls();
     dialog.showModal();
   }));
 
   sizes.forEach((control) => control.addEventListener("change", () => {
-    preferences.saveArabicTextSize(control.value);
+    preferences.saveArabicTextSize(activeContext, control.value);
     announce("Arabic text size saved.");
   }));
   transliteration.addEventListener("change", () => {
-    preferences.saveReadingDisplay("showTransliteration", transliteration.checked);
+    preferences.saveReadingDisplay(activeContext, "showTransliteration", transliteration.checked);
     announce(transliteration.checked ? "Transliteration shown." : "Transliteration hidden.");
   });
   translation.addEventListener("change", () => {
-    preferences.saveReadingDisplay("showTranslation", translation.checked);
+    preferences.saveReadingDisplay(activeContext, "showTranslation", translation.checked);
     announce(translation.checked ? "English translation shown." : "English translation hidden.");
   });
   dialog.addEventListener("click", (event) => {

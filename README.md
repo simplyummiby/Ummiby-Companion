@@ -19,8 +19,8 @@ Feature guides are located in:
 
 ## Current Version
 
-v0.5.8.1 — Reading Experience Refinement
+v0.5.8.2 — Context-Specific Duaa Preferences
 
-## Version 0.5.8.1
+## Version 0.5.8.2
 
-Duaa reading preferences now allow users to independently show or hide transliteration and English translation while keeping Arabic visible.
+Collection pages and Focus Mode now keep separate Duaa reading preferences. Collection settings use a full button with an SVG gear icon, while Focus Mode retains its text link for now.

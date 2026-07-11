@@ -1,3 +1,11 @@
+## Version 0.5.8.2 — Context-Specific Duaa Preferences
+
+- Separated Duaa collection-page preferences from Focus Mode preferences.
+- Migrated the v0.5.8.1 Duaa preferences into both reading contexts on first load.
+- Replaced the collection-page settings text link with a matching secondary button and SVG gear icon.
+- Kept the Focus Mode settings control as a text link until the Focus Mode interface is developed further.
+- Added the project-wide rule that interface icons use SVG rather than Unicode symbols.
+
 # Changelog
 
 

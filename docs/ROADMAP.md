@@ -89,3 +89,9 @@
 - Contextual Duaa Reading Settings modal on collection pages and Focus Mode.
 - Separate Duaa preference namespace in preparation for independent Qur’an reading settings.
 - App-wide Settings page simplified.
+
+## Completed in v0.5.8.2
+
+- Separate Duaa collection and Focus Mode reading preferences.
+- Collection-page Reading Settings button with SVG gear icon.
+- App-wide SVG-only interface icon standard documented.

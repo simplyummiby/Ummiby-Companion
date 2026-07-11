@@ -56,3 +56,6 @@ dialog{width:min(92vw,480px);border:0;border-radius:20px;padding:0;box-shadow:0 
 /* Reading display preferences */
 html[data-show-transliteration="false"] .duaa-card .transliteration-block{display:none}
 html[data-show-translation="false"] .duaa-card .translation-block{display:none}
+
+/* v0.5.8.2 contextual collection settings control */
+.reading-settings-button{gap:.55rem}.reading-settings-button .button-icon{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}

@@ -1,6 +1,8 @@
 (() => {
   const config = window.UmmibyAppConfig || { name: "Ummiby Companion", version: "Unknown" };
-  const duaaPreferenceKey = "ummibyDuaaPreferences";
+  const duaaCollectionPreferenceKey = "ummibyDuaaCollectionPreferences";
+  const duaaFocusPreferenceKey = "ummibyDuaaFocusPreferences";
+  const previousDuaaPreferenceKey = "ummibyDuaaPreferences";
   const legacyPreferenceKey = "ummibyPreferences";
   const allowedArabicSizes = ["small", "medium", "large", "extra-large"];
   const arabicSizeValues = {
@@ -19,23 +21,32 @@
     }
   }
 
+  function keyForContext(context) {
+    return context === "focus" ? duaaFocusPreferenceKey : duaaCollectionPreferenceKey;
+  }
+
   function migrateLegacyDuaaPreferences() {
-    if (localStorage.getItem(duaaPreferenceKey) !== null) return;
-    const legacy = parseStored(legacyPreferenceKey);
+    const previous = parseStored(previousDuaaPreferenceKey);
+    const older = parseStored(legacyPreferenceKey);
+    const source = Object.keys(previous).length ? previous : older;
     const migrated = {};
-    if (allowedArabicSizes.includes(legacy.arabicTextSize)) migrated.arabicTextSize = legacy.arabicTextSize;
-    if (typeof legacy.showTransliteration === "boolean") migrated.showTransliteration = legacy.showTransliteration;
-    if (typeof legacy.showTranslation === "boolean") migrated.showTranslation = legacy.showTranslation;
-    if (Object.keys(migrated).length) localStorage.setItem(duaaPreferenceKey, JSON.stringify(migrated));
+    if (allowedArabicSizes.includes(source.arabicTextSize)) migrated.arabicTextSize = source.arabicTextSize;
+    if (typeof source.showTransliteration === "boolean") migrated.showTransliteration = source.showTransliteration;
+    if (typeof source.showTranslation === "boolean") migrated.showTranslation = source.showTranslation;
+    [duaaCollectionPreferenceKey, duaaFocusPreferenceKey].forEach((key) => {
+      if (localStorage.getItem(key) === null && Object.keys(migrated).length) {
+        localStorage.setItem(key, JSON.stringify(migrated));
+      }
+    });
   }
 
-  function readPreferences() {
-    return parseStored(duaaPreferenceKey);
+  function readPreferences(context = "collection") {
+    return parseStored(keyForContext(context));
   }
 
-  function writePreferences(preferences) {
-    localStorage.setItem(duaaPreferenceKey, JSON.stringify(preferences));
-    window.dispatchEvent(new CustomEvent("ummiby:duaa-preferences-changed", { detail: preferences }));
+  function writePreferences(context, preferences) {
+    localStorage.setItem(keyForContext(context), JSON.stringify(preferences));
+    window.dispatchEvent(new CustomEvent("ummiby:duaa-preferences-changed", { detail: { context, preferences } }));
     return preferences;
   }
 
@@ -46,7 +57,7 @@
     return selected;
   }
 
-  function applyReadingDisplay(preferences = readPreferences()) {
+  function applyReadingDisplay(preferences = {}) {
     const showTransliteration = preferences.showTransliteration !== false;
     const showTranslation = preferences.showTranslation !== false;
     document.documentElement.dataset.showTransliteration = String(showTransliteration);
@@ -54,19 +65,27 @@
     return { showTransliteration, showTranslation };
   }
 
-  function saveArabicTextSize(size) {
+  function applyContext(context = "collection") {
+    const preferences = readPreferences(context);
+    applyArabicTextSize(preferences.arabicTextSize);
+    applyReadingDisplay(preferences);
+    document.documentElement.dataset.duaaReadingContext = context;
+    return preferences;
+  }
+
+  function saveArabicTextSize(context, size) {
     const selected = applyArabicTextSize(size);
-    const preferences = readPreferences();
+    const preferences = readPreferences(context);
     preferences.arabicTextSize = selected;
-    writePreferences(preferences);
+    writePreferences(context, preferences);
     return selected;
   }
 
-  function saveReadingDisplay(name, value) {
-    if (!["showTransliteration", "showTranslation"].includes(name)) return applyReadingDisplay();
-    const preferences = readPreferences();
+  function saveReadingDisplay(context, name, value) {
+    if (!["showTransliteration", "showTranslation"].includes(name)) return applyReadingDisplay(readPreferences(context));
+    const preferences = readPreferences(context);
     preferences[name] = Boolean(value);
-    writePreferences(preferences);
+    writePreferences(context, preferences);
     return applyReadingDisplay(preferences);
   }
 
@@ -91,14 +110,14 @@
   }
 
   migrateLegacyDuaaPreferences();
-  const preferences = readPreferences();
-  applyArabicTextSize(preferences.arabicTextSize);
-  applyReadingDisplay(preferences);
+  const pageContext = document.documentElement.dataset.duaaReadingContext || "collection";
+  applyContext(pageContext);
 
   window.UmmibyDuaaPreferences = {
-    key: duaaPreferenceKey,
+    keys: { collection: duaaCollectionPreferenceKey, focus: duaaFocusPreferenceKey },
     allowedArabicSizes,
     read: readPreferences,
+    applyContext,
     applyArabicTextSize,
     applyReadingDisplay,
     saveArabicTextSize,

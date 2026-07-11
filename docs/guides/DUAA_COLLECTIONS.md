@@ -186,3 +186,7 @@ New collection renderers should use the shared block classes (`arabic-block`, `t
 ## Duaa Reading Settings
 
 Every collection page and Focus Mode includes a **Reading Settings** link. It opens the same shared modal without leaving the current reading position. The modal controls Arabic text size, transliteration visibility, and English translation visibility. Arabic remains visible. Preferences are stored in `ummibyDuaaPreferences` and apply only to the Duaa module.
+
+## Collection and Focus Mode Settings
+
+Collection pages and Focus Mode use the same Duaa Reading Settings modal design, but each context stores its own Arabic size and visibility choices. The collection page opens settings from a full secondary button with an SVG gear icon. Focus Mode keeps a text link until its interface receives a dedicated design pass.

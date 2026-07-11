@@ -116,3 +116,11 @@ Source links are data-driven. `js/collection.js` reads `source.sourceReference` 
 ## Contextual module preferences (v0.5.8.1)
 
 Duaa reading preferences are owned by the Duaa module and are edited through one shared modal used by collection pages and Focus Mode. The main Settings page is reserved for app-wide settings and About information. Qur’an preferences must use a separate storage namespace and interface.
+
+## Context-Specific Duaa Reading Preferences
+
+The shared Duaa reading-settings component accepts a reading context. Collection pages and Focus Mode reuse the same modal implementation and controls while reading from and writing to separate local-storage records. This preserves reuse without forcing both reading experiences to share identical display choices.
+
+## Interface Icon Standard
+
+Application controls and navigation use SVG icons. Do not use Unicode characters as icons. SVG icons may be inline or stored as reusable assets, depending on the surrounding architecture. Decorative pictures and collection artwork are not treated as interface icons.

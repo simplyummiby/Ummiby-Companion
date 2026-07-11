@@ -102,3 +102,10 @@ Every page loads the shared application version and displays it in a subtle foot
 **Decision:** Duaa reading preferences open from collection pages and Focus Mode through one shared modal. They do not live as editable controls on the app-wide Settings page. Qur’an preferences will be separate.
 
 **Why:** Readers can adjust the current experience without navigating away, and module-specific preferences cannot be confused with application-wide settings.
+
+## v0.5.8.2 — Context-Specific Duaa Preferences and SVG Icons
+
+- Collection pages and Focus Mode use the same modal design and shared settings component, but save independent preference values.
+- Collection preferences use `ummibyDuaaCollectionPreferences`; Focus Mode uses `ummibyDuaaFocusPreferences`.
+- Existing v0.5.8.1 Duaa preferences migrate into both contexts so the update does not unexpectedly change the reader's current setup.
+- Interface icons must use SVG assets or inline SVG. Unicode characters must not be introduced as interface icons. Pictures and decorative artwork remain separate from the icon system.

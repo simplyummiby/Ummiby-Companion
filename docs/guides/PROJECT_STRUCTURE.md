@@ -30,3 +30,7 @@ Feature notes and implementation guidance belong in `docs/guides/`.
 - `css/duaa-reading-settings.css` — shared styles for the contextual Duaa settings modal
 
 Every new HTML page should load `app-config.js` followed by `app-shell.js` so the version display remains automatic and consistent.
+
+## Icon Standard
+
+Use SVG for interface icons throughout Ummiby Companion. Do not add Unicode symbols as buttons, menu icons, status icons, or navigation icons. Pictures, banners, and decorative collection artwork are separate visual assets and are not governed by the interface-icon rule.
