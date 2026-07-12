@@ -12,6 +12,9 @@
   --duaa: #6f99b7;
   --duaa-dark: #4e7d9d;
   --duaa-soft: #edf5fa;
+  --ramadan: #76558f;
+  --ramadan-dark: #563a70;
+  --ramadan-soft: #f3edf7;
   --shadow: 0 18px 50px rgba(31, 55, 70, 0.1);
   --radius-lg: 26px;
   --radius-md: 18px;
@@ -174,7 +177,8 @@ img {
   min-height: 68px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  gap: 18px;
   padding: 0 36px;
   border-bottom: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.82);

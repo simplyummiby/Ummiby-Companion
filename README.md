@@ -17,8 +17,8 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.6.8 — Unified Site Navigation
+v0.6.9 — Navigation & Information Architecture
 
 ## Current Release
 
-Version 0.6.8 gives the full companion one consistent, module-aware navigation system while preserving Qur’an, Duaa, and Ramadan-specific context.
+Version 0.6.9 adds app-wide breadcrumbs, simplifies the site-wide module menu, removes redundant header links, and establishes green, blue, and purple module theme variables.

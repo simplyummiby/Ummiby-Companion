@@ -156,8 +156,13 @@
       .nav-group summary::after{content:"";width:16px;height:16px;background:currentColor;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m7 9 5 5 5-5' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .18s ease;flex:0 0 auto}
       .nav-group[open] summary::after{transform:rotate(180deg)}
       .nav-link.active{background:rgba(255,255,255,.16);color:#fff;font-weight:750}
-      .topbar-location{display:flex;align-items:center;gap:.65rem;color:var(--muted,#657785);font-size:.88rem}.topbar-location span{font-weight:750;color:var(--ink,#243746)}.topbar-location a,.app-home-link{display:inline-flex;align-items:center;gap:.35rem;text-decoration:none;color:var(--muted,#657785);font-size:.88rem}.app-home-link:hover,.topbar-location a:hover{color:var(--navy,#17324a)}
-      @media(max-width:620px){.topbar-location a{display:none}.topbar-location{margin-right:auto}.app-home-link{font-size:.82rem}}
+      .topbar{justify-content:flex-start;gap:18px}
+      .module-nav-block{display:grid;gap:2px}.module-nav-block .module-submenu{padding-top:2px;padding-bottom:6px}.module-home-link.active{background:rgba(255,255,255,.16);color:#fff;font-weight:750}
+      .breadcrumbs{display:flex;align-items:center;flex-wrap:wrap;gap:.45rem;color:var(--muted,#657785);font-size:.88rem;line-height:1.4}.breadcrumbs a{color:var(--muted,#657785);text-decoration:none;font-weight:650}.breadcrumbs a:hover{color:var(--module-primary,var(--navy,#17324a));text-decoration:underline;text-underline-offset:3px}.breadcrumb-current{color:var(--ink,#243746);font-weight:750}.breadcrumb-separator{color:#9aa8b2}.app-home-topbar{min-height:52px}
+      html[data-app-module="quran"]{--module-primary:var(--quran,#477b69);--module-primary-dark:var(--quran-dark,#315f51);--module-soft:var(--quran-soft,#eaf4ef)}
+      html[data-app-module="duaa"]{--module-primary:var(--duaa,#6f99b7);--module-primary-dark:var(--duaa-dark,#4e7d9d);--module-soft:var(--duaa-soft,#edf5fa)}
+      html[data-app-module="ramadan"]{--module-primary:var(--ramadan,#76558f);--module-primary-dark:var(--ramadan-dark,#563a70);--module-soft:var(--ramadan-soft,#f3edf7)}
+      @media(max-width:620px){.breadcrumbs{font-size:.8rem;gap:.32rem}.app-home-topbar{min-height:58px}}
     `;
     document.head.appendChild(style);
   }
@@ -217,6 +222,58 @@
     return `<a href="${href}"${active ? ' class="submenu-active" aria-current="page"' : ""}>${label}</a>`;
   }
 
+  const routeLabels = Object.freeze({
+    "backup-restore.html": "Backup & Restore",
+    "settings.html": "Settings",
+    "quran/index.html": "Qur’an Home",
+    "quran/reading-units.html": "Reading Units",
+    "quran/reading-journey.html": "Reading Journey",
+    "quran/reading-journeys.html": "Journey Index",
+    "quran/classic-reading.html": "Classic Reading",
+    "quran/workspace.html": "Reading Workspace",
+    "quran/completed-journeys.html": "Completed Journeys",
+    "quran/history.html": "Reading History",
+    "quran/surahs.html": "Browse by Surah",
+    "quran/surah-reader.html": "Qur’an Reader",
+    "quran/go-to-ayah.html": "Jump to an Ayah",
+    "quran/ramadan-journey.html": "Ramadan Central",
+    "quran/ramadan-days.html": "Browse All Days",
+    "quran/ramadan-reader.html": "Ramadan Reading",
+    "duaa/index.html": "Duaa Home",
+    "duaa/collections.html": "Find a Duaa",
+    "duaa/collection.html": "Duaa Collection",
+    "duaa/focus-mode.html": "Focus Mode",
+    "duaa/progress.html": "Duaa Progress"
+  });
+
+  function relativeRoute() {
+    const path = window.location.pathname.replace(/\\/g, "/");
+    const parts = path.split("/").filter(Boolean);
+    const quranIndex = parts.lastIndexOf("quran");
+    const duaaIndex = parts.lastIndexOf("duaa");
+    if (quranIndex >= 0) return parts.slice(quranIndex).join("/");
+    if (duaaIndex >= 0) return parts.slice(duaaIndex).join("/");
+    return parts[parts.length - 1] || "index.html";
+  }
+
+  function currentPageLabel() {
+    const route = relativeRoute();
+    if (routeLabels[route]) return routeLabels[route];
+    const title = (document.title || "").split("|")[0].trim();
+    return title || "Current Page";
+  }
+
+  function renderModuleSection({ active, homeHref, homeLabel, icon, links = [] }) {
+    if (!active || !links.length) return navItem(homeHref, homeLabel, icon);
+    return `
+      <div class="module-nav-block active-module">
+        ${navItem(homeHref, homeLabel, icon, "module-home-link")}
+        <div class="nav-submenu module-submenu">
+          ${links.map(({ href, label }) => submenuItem(href, label)).join("")}
+        </div>
+      </div>`;
+  }
+
   function renderSharedNavigation() {
     ensureAppShell();
     const sidebar = document.querySelector(".sidebar");
@@ -228,6 +285,18 @@
     const ramadanOpen = ctx.module === "ramadan";
     const subtitle = ramadanOpen ? "Ramadan Central" : quranOpen ? "Qur’an Companion" : duaaOpen ? "Duaa Companion" : "Qur’an & Duaa";
 
+    const quranLinks = [
+      { href: navHref(p, "quran/reading-units.html"), label: "Reading Units" },
+      { href: navHref(p, "quran/classic-reading.html"), label: "Classic Reading" },
+      { href: navHref(p, "quran/reading-journeys.html"), label: "Journey Index" },
+      { href: navHref(p, "quran/surahs.html"), label: "Browse by Surah" },
+      { href: navHref(p, "quran/go-to-ayah.html"), label: "Jump to an Ayah" }
+    ];
+    const duaaLinks = [
+      { href: navHref(p, "duaa/collections.html"), label: "Find a Duaa" },
+      { href: navHref(p, "duaa/progress.html"), label: "Duaa Progress" }
+    ];
+
     sidebar.innerHTML = `
       <div class="brand">
         <span class="brand-mark" data-ui-icon="${ramadanOpen ? "moon" : "brand"}" aria-hidden="true"></span>
@@ -235,48 +304,60 @@
       </div>
       <nav class="main-nav" aria-label="App navigation">
         ${navItem(navHref(p, "index.html"), "App Home", "home")}
-        <details class="nav-group"${quranOpen ? " open" : ""}>
-          <summary><span><span data-ui-icon="book" aria-hidden="true"></span> Qur’an</span></summary>
-          <div class="nav-submenu">
-            ${submenuItem(navHref(p, "quran/index.html"), "Qur’an Home")}
-            ${submenuItem(navHref(p, "quran/reading-units.html"), "Reading Units")}
-            ${submenuItem(navHref(p, "quran/classic-reading.html"), "Classic Reading")}
-            ${submenuItem(navHref(p, "quran/reading-journeys.html"), "Journey Index")}
-            ${submenuItem(navHref(p, "quran/surahs.html"), "Browse by Surah")}
-            ${submenuItem(navHref(p, "quran/go-to-ayah.html"), "Jump to an Ayah")}
-          </div>
-        </details>
-        <details class="nav-group"${duaaOpen ? " open" : ""}>
-          <summary><span><span data-ui-icon="sparkle" aria-hidden="true"></span> Duaa</span></summary>
-          <div class="nav-submenu">
-            ${submenuItem(navHref(p, "duaa/index.html"), "Duaa Home")}
-            ${submenuItem(navHref(p, "duaa/collections.html"), "Find a Duaa")}
-            ${submenuItem(navHref(p, "duaa/progress.html"), "Duaa Progress")}
-          </div>
-        </details>
-        <details class="nav-group"${ramadanOpen ? " open" : ""}>
-          <summary><span><span data-ui-icon="moon" aria-hidden="true"></span> Ramadan</span></summary>
-          <div class="nav-submenu">
-            ${submenuItem(navHref(p, "quran/ramadan-journey.html"), "Ramadan Central")}
-            ${submenuItem(navHref(p, "quran/ramadan-days.html"), "Browse All Days")}
-          </div>
-        </details>
+        ${renderModuleSection({ active: quranOpen, homeHref: navHref(p, "quran/index.html"), homeLabel: "Qur’an Home", icon: "book", links: quranLinks })}
+        ${renderModuleSection({ active: duaaOpen, homeHref: navHref(p, "duaa/index.html"), homeLabel: "Duaa Home", icon: "sparkle", links: duaaLinks })}
+        ${navItem(navHref(p, "quran/ramadan-journey.html"), "Ramadan Central", "moon")}
         ${navItem(navHref(p, "backup-restore.html"), "Backup & Restore", "database")}
         ${navItem(navHref(p, "settings.html"), "Settings", "settings")}
       </nav>`;
+  }
+
+  function breadcrumbItem(href, label, current = false) {
+    if (current) return `<span class="breadcrumb-current" aria-current="page">${label}</span>`;
+    return `<a href="${href}">${label}</a>`;
+  }
+
+  function createBreadcrumb(ctx) {
+    const route = relativeRoute();
+    if (route === "index.html" && ctx.module === "app") return "";
+    const p = ctx.prefix;
+    const items = [breadcrumbItem(navHref(p, "index.html"), "App Home")];
+
+    if (ctx.module === "quran") {
+      if (route === "quran/index.html") items.push(breadcrumbItem("", "Qur’an Home", true));
+      else {
+        items.push(breadcrumbItem(navHref(p, "quran/index.html"), "Qur’an Home"));
+        items.push(breadcrumbItem("", currentPageLabel(), true));
+      }
+    } else if (ctx.module === "duaa") {
+      if (route === "duaa/index.html") items.push(breadcrumbItem("", "Duaa Home", true));
+      else {
+        items.push(breadcrumbItem(navHref(p, "duaa/index.html"), "Duaa Home"));
+        items.push(breadcrumbItem("", currentPageLabel(), true));
+      }
+    } else if (ctx.module === "ramadan") {
+      if (route === "quran/ramadan-journey.html") items.push(breadcrumbItem("", "Ramadan Central", true));
+      else {
+        items.push(breadcrumbItem(navHref(p, "quran/ramadan-journey.html"), "Ramadan Central"));
+        items.push(breadcrumbItem("", currentPageLabel(), true));
+      }
+    } else {
+      items.push(breadcrumbItem("", currentPageLabel(), true));
+    }
+
+    return `<nav class="breadcrumbs" aria-label="Breadcrumb">${items.join('<span class="breadcrumb-separator" aria-hidden="true">›</span>')}</nav>`;
   }
 
   function normalizeTopbar() {
     const topbar = document.querySelector(".topbar");
     if (!topbar) return;
     const ctx = getNavigationContext();
-    const moduleLabel = ctx.module === "ramadan" ? "Ramadan Central" : ctx.module === "quran" ? "Qur’an Companion" : ctx.module === "duaa" ? "Duaa Companion" : "Ummiby Companion";
-    const moduleHref = ctx.module === "ramadan" ? "quran/ramadan-journey.html" : ctx.module === "quran" ? "quran/index.html" : ctx.module === "duaa" ? "duaa/index.html" : "index.html";
-    const prefix = ctx.prefix;
+    document.documentElement.dataset.appModule = ctx.module;
+    const breadcrumb = createBreadcrumb(ctx);
+    topbar.classList.toggle("app-home-topbar", !breadcrumb);
     topbar.innerHTML = `
       <button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false"><span class="sr-only">Open navigation</span><span data-ui-icon="menu" aria-hidden="true"></span></button>
-      <div class="topbar-location"><span>${moduleLabel}</span>${ctx.module !== "app" ? `<a href="${navHref(prefix, moduleHref)}">Open module</a>` : ""}</div>
-      <a class="app-home-link" href="${navHref(prefix, "index.html")}"><span data-ui-icon="home" aria-hidden="true"></span> App Home</a>`;
+      ${breadcrumb}`;
   }
 
   function wireSharedMenu() {

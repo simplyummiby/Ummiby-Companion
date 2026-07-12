@@ -228,3 +228,46 @@ The shared collection renderer removes the bottom tracking-status component when
 Backups declare `backupFormat`, `schemaVersion`, `appVersion`, `createdAt`, `scope`, and module data. Restore validates the entire envelope before changing storage. The first implementation uses replace-only semantics by included section: restoring Duaa data replaces recognized Duaa keys but leaves Qur’an keys untouched, and vice versa. Full backups replace all recognized sections.
 
 Functional interface icons use the shared SVG icon registry. The hero illustration remains artwork and its title/copy are real HTML, so the image can be replaced later without embedding page text in the asset.
+
+
+## Navigation and Information Architecture (v0.6.9)
+
+The application uses `js/app-shell.js` as the single source for site-wide navigation and breadcrumbs.
+
+### Primary destinations
+
+Every sidebar includes these stable destinations in this order:
+
+1. App Home
+2. Qur’an Home
+3. Duaa Home
+4. Ramadan Central
+5. Backup & Restore
+6. Settings
+
+Qur’an and Duaa expose their internal links only while the visitor is inside that module. Ramadan Central remains a single direct destination until its feature set grows enough to justify internal sidebar links.
+
+### Breadcrumbs
+
+Every page except the root App Home displays a breadcrumb in the shared top bar. The first item is App Home, followed by the full module-home name when applicable, and then the current page. Ancestor items are links; the current page is non-interactive and marked with `aria-current="page"`.
+
+Do not add separate **Open module** or upper-right **App Home** links. Breadcrumbs are the standard return path to both App Home and the current module home.
+
+### Official module-home names
+
+Use these exact labels in the sidebar, breadcrumbs, page titles, and documentation:
+
+- App Home
+- Qur’an Home
+- Duaa Home
+- Ramadan Central
+
+### Module themes
+
+`app-shell.js` sets `data-app-module` on the document root. Shared components can use:
+
+- `--module-primary`
+- `--module-primary-dark`
+- `--module-soft`
+
+The current mappings are Qur’an green, Duaa blue, and Ramadan purple. New shared UI should use the module variables rather than hardcoding a module-specific accent.

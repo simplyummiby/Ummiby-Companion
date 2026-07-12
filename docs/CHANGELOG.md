@@ -1,3 +1,20 @@
+# v0.6.9 — Navigation & Information Architecture
+
+Status: Complete
+
+### Changed
+
+- Removed every **Open module** link from the shared page header.
+- Removed the redundant upper-right **App Home** link, including from App Home itself.
+- Added breadcrumbs to every page except App Home.
+- Kept the full module-home names in breadcrumbs: **Qur’an Home**, **Duaa Home**, and **Ramadan Central**.
+- Made breadcrumb ancestors clickable while leaving the current page as plain text.
+- Simplified the site-wide sidebar to always show App Home, Qur’an Home, Duaa Home, Ramadan Central, Backup & Restore, and Settings.
+- Expanded internal navigation only for the active Qur’an or Duaa module.
+- Kept Ramadan Central as one direct sidebar destination with no submenu.
+- Added shared module theme variables: Qur’an green, Duaa blue, and Ramadan purple.
+- Standardized the shared top bar around breadcrumbs and the mobile menu control.
+
 # v0.6.8 — Unified Site Navigation
 
 Status: Complete
