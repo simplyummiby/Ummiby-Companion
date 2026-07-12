@@ -17,8 +17,8 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.6.5.2 — Qur’an Reader Navigation Polish
+v0.6.6.1 — Classic Reading Progress Polish
 
 ## Current Release
 
-Version 0.6.5.2 adds the missing Qur’an Home back arrow, a floating green Back to Top control in the shared Quran reader, and consistent green navigation styling throughout the Quran module.
+Version 0.6.6.1 refines Classic Reading progress: reader and journey-page progress now represent the current surah, while overall Quran progress remains on Quran Home. Displayed percentages are rounded to whole numbers.

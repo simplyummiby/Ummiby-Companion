@@ -18,6 +18,13 @@
   }
   function saveState(){localStorage.setItem(STORAGE_KEY,JSON.stringify(state))}
   const state=readState();
+  if(window.QURAN_CLASSIC && window.QURAN_DATA){
+    const classicState=window.QURAN_CLASSIC.read();
+    const pos=classicState.position;
+    const surah=window.QURAN_DATA[pos.surah-1];
+    const pct=window.QURAN_CLASSIC.overallPercent(pos.surah,pos.ayah);
+    state.journeys.classic={...state.journeys.classic,title:'Classic Reading',location:`Surah ${surah.name} (${surah.number})`,range:`Ayah ${pos.ayah}`,detail:`Continue from Ayah ${pos.ayah}`,progress:pct,progressLabel:`Surah ${surah.number} · Ayah ${pos.ayah}`,href:`surah-reader.html?mode=classic&surah=${pos.surah}&ayah=${pos.ayah}`,week:window.QURAN_CLASSIC.weekDays(classicState)};
+  }
   const dialog=document.getElementById('journeyDialog');
   const choiceList=document.getElementById('journeyChoiceList');
   const progressGrid=document.getElementById('journeyProgressGrid');
@@ -25,6 +32,7 @@
   const dayNames=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
   function icon(name){return `<span data-ui-icon="${name}" aria-hidden="true"></span>`}
+  function wholePercent(value){return Math.round(Number(value)||0)}
   function hydrate(){window.UmmibyIcons?.hydrate(document)}
 
   function renderCurrent(){
@@ -35,17 +43,17 @@
     document.querySelector('[data-continue-location]').textContent=journey.location;
     document.querySelector('[data-continue-range]').textContent=journey.range;
     document.querySelector('[data-continue-detail]').textContent=journey.detail;
-    document.querySelector('[data-continue-percent]').textContent=`${journey.progress}%`;
+    document.querySelector('[data-continue-percent]').textContent=`${wholePercent(journey.progress)}%`;
     document.querySelector('[data-continue-progress]').style.width=`${journey.progress}%`;
     document.querySelector('[data-continue-link]').href=journey.href;
   }
 
   function renderProgress(){
-    progressGrid.innerHTML=Object.values(state.journeys).map(j=>`<article class="journey-progress-item"><div class="journey-progress-top"><span>${icon(j.icon)}</span><div><strong>${j.name}</strong><small>${j.progressLabel}</small></div></div><div class="progress-line"><span style="width:${j.progress}%"></span></div><div class="journey-progress-footer"><span>${j.progressLabel}</span><strong>${j.progress}%</strong></div></article>`).join('');
+    progressGrid.innerHTML=Object.values(state.journeys).map(j=>`<article class="journey-progress-item"><div class="journey-progress-top"><span>${icon(j.icon)}</span><div><strong>${j.name}</strong><small>${j.progressLabel}</small></div></div><div class="progress-line"><span style="width:${j.progress}%"></span></div><div class="journey-progress-footer"><span>${j.progressLabel}</span><strong>${wholePercent(j.progress)}%</strong></div></article>`).join('');
   }
 
   function renderChoices(){
-    choiceList.innerHTML=Object.values(state.journeys).map(j=>`<article class="journey-choice ${j.id===state.activeJourney?'active':''}"><span class="journey-choice-icon">${icon(j.icon)}</span><div><h3>${j.name}</h3><p>${j.description}</p><div class="journey-choice-progress"><strong>${j.progressLabel}</strong> · ${j.progress}% complete</div></div><div class="journey-choice-actions">${j.id===state.activeJourney?'<span class="current-badge">Current Journey</span>':''}<button class="button ${j.id===state.activeJourney?'outline':'primary'}" data-select-journey="${j.id}">${j.id===state.activeJourney?'Keep Reading':'Switch & Continue'}</button></div></article>`).join('');
+    choiceList.innerHTML=Object.values(state.journeys).map(j=>`<article class="journey-choice ${j.id===state.activeJourney?'active':''}"><span class="journey-choice-icon">${icon(j.icon)}</span><div><h3>${j.name}</h3><p>${j.description}</p><div class="journey-choice-progress"><strong>${j.progressLabel}</strong> · ${wholePercent(j.progress)}% complete</div></div><div class="journey-choice-actions">${j.id===state.activeJourney?'<span class="current-badge">Current Journey</span>':''}<button class="button ${j.id===state.activeJourney?'outline':'primary'}" data-select-journey="${j.id}">${j.id===state.activeJourney?'Keep Reading':'Switch & Continue'}</button></div></article>`).join('');
   }
 
   function renderWeek(id){

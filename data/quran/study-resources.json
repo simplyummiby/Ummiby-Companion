@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "description": "Shared Quran study resource library. Resources belong to Quran locations and can be reused by every reading experience.",
+  "resourceTypes": ["video", "audio", "article", "book", "pdf", "course", "playlist", "website"],
+  "statuses": ["draft", "needs-review", "verified", "published", "hidden"],
+  "resources": []
+}

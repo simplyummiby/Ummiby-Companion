@@ -12,7 +12,7 @@
     },
     quran: {
       label: "Qur’an data",
-      prefixes: ["ummibyQuran", "quran", "readingJourney", "ramadanJourney"],
+      prefixes: ["ummibyQuran", "ummiby.quran", "quran", "readingJourney", "ramadanJourney"],
       exact: ["ramadanJourneyStarted"]
     },
     app: {

@@ -1,3 +1,21 @@
+# v0.6.6.1 — Classic Reading Progress Polish
+
+- Rounded displayed journey percentages to whole numbers.
+- Changed the Classic Reading sticky reader progress to show progress through the current surah.
+- Changed the Classic Reading journey-page progress bar to show the current surah rather than the whole Quran.
+- Kept overall Quran progress on the Quran Home journey cards.
+
+# v0.6.6 — Classic Reading Journey
+
+- Added a real persistent Classic Reading state model.
+- Automatically remembers the latest visible ayah for resume.
+- Added Save Place & Exit to confirm sessions and weekly consistency.
+- Added a sticky green bottom reader bar with current location, surah progress, overall Quran progress, previous/next navigation, and a prepared Study Resources control.
+- Added a real 114-surah Classic Reading index with completed, current, and upcoming states.
+- Added deliberate surah completion and final journey completion behavior.
+- Added a shared empty study resource data structure at `data/quran/study-resources.json`.
+- Included the new Classic Reading state key in Quran backup and restore.
+
 # v0.6.5.2 — Qur’an Reader Navigation Polish
 
 - Added a left arrow to the Qur’an Home link on Quran reading pages.

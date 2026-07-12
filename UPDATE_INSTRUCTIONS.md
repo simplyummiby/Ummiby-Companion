@@ -1,40 +1,30 @@
-# Update Instructions — Ummiby Companion v0.6.5.2
+# Update Instructions — Ummiby Companion v0.6.6.1
 
-This package updates v0.6.5.1 to v0.6.5.2.
+This package updates v0.6.6 to v0.6.6.1.
 
 ## Install
 
-1. Extract the v0.6.5.2 ZIP.
-2. Copy all extracted files and folders into the local Ummiby Companion repository.
-3. Choose **Replace** for existing files.
-4. Review the changes in GitHub Desktop, commit, and push.
+1. Extract the v0.6.6.1 ZIP.
+2. Copy all files and folders into the existing project folder.
+3. Choose **Replace** when prompted for files with the same names.
+4. No existing files need to be deleted.
 
-## Files added
+## Added
 
-None.
+- Fully tracked Classic Reading Journey
+- Automatic resume-position detection
+- Save Place & Exit session confirmation
+- Weekly Classic Reading consistency
+- Sticky green reader bar with current-surah progress
+- Previous and next surah controls
+- Real Classic Reading surah index
+- Completed/current/not-started states
+- Deliberate surah completion and full-journey completion behavior
+- Shared empty Quran study-resource library structure
+- Classic Reading state included in Quran backup and restore
 
-## Files replaced
+## Refined in v0.6.6.1
 
-- `quran/surah-reader.html`
-- `quran/surahs.html`
-- `quran/classic-reading.html`
-- `css/quran-reader.css`
-- `css/quran-shell.css`
-- `js/quran-reader.js`
-- `js/app-config.js`
-- `README.md`
-- `docs/CHANGELOG.md`
-- `UPDATE_INSTRUCTIONS.md`
-
-## Files deleted
-
-None.
-
-## Test checklist
-
-- Confirm the top Qur’an Home link includes a left arrow on Browse by Surah, the Surah Reader, and Classic Reading.
-- Open a long surah and scroll down until the green Back to Top button appears.
-- Select the Back to Top button and confirm smooth scrolling returns to the beginning of the page.
-- Confirm the button remains hidden near the top of the reader.
-- Confirm the Quran sidebar and mobile menu use the green Quran theme.
-- Confirm Browse by Surah and Classic Reading continue to share the same reader behavior.
+- Rounded displayed percentages to whole numbers.
+- Classic Reading reader and journey-page progress now represent the current surah.
+- Overall Quran progress remains on Quran Home.
