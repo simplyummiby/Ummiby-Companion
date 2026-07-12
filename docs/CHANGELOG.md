@@ -1,5 +1,15 @@
 # Changelog
 
+## Version 0.6.11 — Ramadan Central Theme 1.0
+
+- Established Ramadan Central’s official deep-aubergine, warm-ivory, and antique-gold visual identity.
+- Added semantic Ramadan theme tokens for primary, accent, background, borders, progress, links, and headings.
+- Restyled Ramadan Central, Browse All Days, and the prayer-portion reader without changing their functionality.
+- Added a refined aubergine gradient hero with a subtle geometric texture and restrained gold crescent treatment.
+- Updated Ramadan progress bars, buttons, prayer statuses, cards, active sidebar state, breadcrumbs, and reader controls.
+- Kept the Qur’an Arabic and translation surfaces neutral for comfortable reading.
+- Preserved all Ramadan journey data, saved positions, completion tracking, navigation, and backup compatibility.
+
 ## Version 0.6.10 — Contextual Breadcrumbs
 
 - Replaced generic breadcrumb labels such as “Qur’an Reader,” “Duaa Collection,” and “Ramadan Reading” with the actual content context.

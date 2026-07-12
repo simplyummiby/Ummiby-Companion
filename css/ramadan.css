@@ -1,2 +1,143 @@
-.ramadan-page{width:min(1040px,calc(100% - 48px));margin:0 auto;padding:46px 0 72px}.ramadan-hero{padding:34px;border:1px solid #d9e3dc;border-radius:24px;background:linear-gradient(135deg,#f9fbf7,#eef5ed);box-shadow:var(--shadow);text-align:center}.ramadan-hero .moon-mark{display:grid;place-items:center;width:58px;height:58px;margin:0 auto 14px;border-radius:50%;background:var(--quran-dark);color:#fff}.ramadan-hero h1{margin:.2rem 0;font:700 clamp(2rem,4vw,3rem)/1.1 Georgia,serif;color:var(--quran-dark)}.ramadan-hero p{margin:.6rem auto 0;max-width:650px;color:var(--muted)}.ramadan-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:20px;margin-top:22px}.ramadan-card{padding:24px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 10px 30px rgba(31,55,46,.06)}.ramadan-card h2{margin:.2rem 0;color:var(--quran-dark);font-family:Georgia,serif}.ramadan-summary{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:16px}.ramadan-summary p{margin:.25rem 0;color:var(--muted)}.portion-list{border-top:1px solid var(--line)}.portion-row{display:grid;grid-template-columns:minmax(100px,.8fr) minmax(130px,1fr) auto;align-items:center;gap:14px;padding:15px 4px;border-bottom:1px solid var(--line);color:inherit;text-decoration:none;border-radius:10px}.portion-row:hover{background:#f5f9f5}.portion-row strong{color:var(--quran-dark)}.portion-range{color:var(--muted)}.portion-status{font-size:.82rem;font-weight:800;color:var(--quran)}.portion-row.complete .portion-status{color:#477b5a}.portion-row.complete strong{color:#526b5d}.progress-track{height:9px;overflow:hidden;border-radius:999px;background:#e6ece7}.progress-track span{display:block;height:100%;border-radius:inherit;background:var(--quran)}.ramadan-stats{display:grid;gap:16px}.stat-block{padding:17px;border-radius:15px;background:var(--quran-soft)}.stat-block strong{display:block;font-size:1.6rem;color:var(--quran-dark)}.stat-block span{color:var(--muted);font-size:.85rem}.ramadan-actions{display:grid;gap:10px;margin-top:18px}.ramadan-days{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:22px}.day-link{padding:14px 8px;border:1px solid var(--line);border-radius:13px;background:#fff;text-align:center;text-decoration:none}.day-link strong,.day-link small{display:block}.day-link small{color:var(--muted)}.day-link.current{border-color:var(--quran);background:var(--quran-soft)}.day-link.complete{background:#f3f8f3}.ramadan-reader-header{text-align:center;margin-bottom:22px}.ramadan-reader-header h1{margin:.2rem 0;color:var(--quran-dark);font-family:Georgia,serif}.reader-portion-meta{color:var(--muted)}.ramadan-reader-bar{position:fixed;left:250px;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:minmax(190px,.8fr) 1fr auto;align-items:center;gap:18px;padding:12px 24px;border-top:1px solid #c7d7cb;background:rgba(249,252,249,.98);box-shadow:0 -10px 28px rgba(31,55,46,.12)}.ramadan-reader-bar .bar-copy{display:grid}.ramadan-reader-bar .bar-copy span{color:var(--muted);font-size:.8rem}.ramadan-reader-actions{display:flex;gap:8px}.ramadan-reader-page{padding-bottom:150px}.ramadan-complete-note{margin:24px 0;padding:22px;border:1px solid #a9c8b0;border-radius:16px;background:#f0f8f2;text-align:center}.ramadan-complete-note[hidden]{display:none}@media(max-width:900px){.ramadan-grid{grid-template-columns:1fr}.ramadan-days{grid-template-columns:repeat(3,1fr)}.ramadan-reader-bar{left:0;grid-template-columns:1fr 1fr}.ramadan-reader-actions{grid-column:1/-1;justify-content:center}.ramadan-reader-page{padding-bottom:190px}}@media(max-width:680px){.ramadan-page{width:min(100% - 28px,1040px);padding-top:28px}.ramadan-hero{padding:26px 18px}.ramadan-summary{align-items:flex-start;flex-direction:column}.portion-row{grid-template-columns:90px 1fr}.portion-status{grid-column:2}.ramadan-days{grid-template-columns:repeat(2,1fr)}.ramadan-reader-bar{grid-template-columns:1fr;padding:10px 12px}.ramadan-reader-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}.ramadan-reader-page{padding-bottom:260px}}
-.ramadan-surah-divider{margin:28px 0 8px;text-align:center}.ramadan-surah-divider .surah-basmalah{margin-top:12px}
+/* Ramadan Central — Aubergine & Antique Gold theme */
+:root{
+  --ramadan:#6f456f;
+  --ramadan-dark:#492b4c;
+  --ramadan-deep:#321d38;
+  --ramadan-light:#9a7298;
+  --ramadan-soft:#f5eff6;
+  --ramadan-ivory:#fbf8f1;
+  --ramadan-gold:#c3a052;
+  --ramadan-gold-dark:#8b6a28;
+  --ramadan-gold-soft:#f6edcf;
+  --ramadan-border:#dfd1df;
+  --ramadan-shadow:0 16px 42px rgba(73,43,76,.12);
+
+  /* Ramadan pages reuse shared Qur'an UI components, so map those
+     component tokens to the Ramadan palette on Ramadan-only pages. */
+  --quran:var(--ramadan);
+  --quran-dark:var(--ramadan-dark);
+  --quran-soft:var(--ramadan-soft);
+  --gold:var(--ramadan-gold);
+  --page:var(--ramadan-ivory);
+  --line:var(--ramadan-border);
+  --shadow:var(--ramadan-shadow);
+
+  --module-primary:var(--ramadan);
+  --module-primary-dark:var(--ramadan-dark);
+  --module-primary-light:var(--ramadan-light);
+  --module-accent:var(--ramadan-gold);
+  --module-background:var(--ramadan-ivory);
+  --module-border:var(--ramadan-border);
+  --module-progress:var(--ramadan);
+  --module-link:var(--ramadan-dark);
+  --module-heading:var(--ramadan-dark);
+}
+
+body{background:var(--ramadan-ivory)}
+.sidebar{background:linear-gradient(180deg,var(--ramadan-deep),var(--ramadan-dark) 72%,#59365c)}
+.sidebar .brand{border-bottom-color:rgba(195,160,82,.34)}
+.sidebar .brand-mark{background:rgba(195,160,82,.17);color:#f2d98d;box-shadow:inset 0 0 0 1px rgba(242,217,141,.18)}
+.sidebar .brand-subtitle{color:#ddcfe0}
+.sidebar .nav-link.active,.sidebar .module-home-link.active,.sidebar .nav-submenu a.submenu-active{background:rgba(195,160,82,.18);color:#fff;box-shadow:inset 3px 0 0 var(--ramadan-gold)}
+.sidebar .nav-link:hover,.sidebar .nav-group summary:hover,.sidebar .nav-submenu a:hover{background:rgba(255,255,255,.10);color:#fff}
+.sidebar .nav-link.active [data-ui-icon],.sidebar .module-home-link.active [data-ui-icon]{color:#f2d98d}
+
+.topbar{border-bottom-color:var(--ramadan-border);background:rgba(251,248,241,.91)}
+.breadcrumbs a:hover{color:var(--ramadan-dark)}
+.breadcrumb-current{color:var(--ramadan-dark)}
+.menu-button{color:var(--ramadan-dark)}
+
+.ramadan-page{width:min(1040px,calc(100% - 48px));margin:0 auto;padding:46px 0 72px}
+.ramadan-hero{position:relative;overflow:hidden;padding:38px 34px;border:1px solid rgba(195,160,82,.45);border-radius:24px;background:
+  linear-gradient(135deg,rgba(255,255,255,.035) 25%,transparent 25%) 0 0/32px 32px,
+  linear-gradient(225deg,rgba(255,255,255,.028) 25%,transparent 25%) 0 0/32px 32px,
+  linear-gradient(315deg,rgba(195,160,82,.04) 25%,transparent 25%) 16px 16px/32px 32px,
+  linear-gradient(45deg,rgba(195,160,82,.035) 25%,transparent 25%) 16px 16px/32px 32px,
+  linear-gradient(135deg,var(--ramadan-deep),#634064 58%,#795376);
+  box-shadow:0 20px 48px rgba(50,29,56,.22);text-align:center;color:#fff}
+.ramadan-hero::after{content:"";position:absolute;right:-56px;top:-76px;width:205px;height:205px;border:1px solid rgba(242,217,141,.19);border-radius:50%;box-shadow:0 0 0 28px rgba(242,217,141,.025),0 0 0 56px rgba(242,217,141,.02);pointer-events:none}
+.ramadan-hero>*{position:relative;z-index:1}
+.ramadan-hero .moon-mark{display:grid;place-items:center;width:60px;height:60px;margin:0 auto 14px;border:1px solid rgba(242,217,141,.4);border-radius:50%;background:rgba(195,160,82,.14);color:#f2d98d;box-shadow:0 8px 24px rgba(25,13,29,.18)}
+.ramadan-hero .eyebrow{color:#f2d98d;letter-spacing:.12em}
+.ramadan-hero h1{margin:.2rem 0;font:700 clamp(2rem,4vw,3rem)/1.1 Georgia,serif;color:#fff}
+.ramadan-hero p{margin:.6rem auto 0;max-width:650px;color:#eee5ef}
+
+.ramadan-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:20px;margin-top:22px}
+.ramadan-card{padding:24px;border:1px solid var(--ramadan-border);border-radius:20px;background:#fff;box-shadow:0 10px 30px rgba(73,43,76,.075)}
+.ramadan-card h2{margin:.2rem 0;color:var(--ramadan-dark);font-family:Georgia,serif}
+.ramadan-card .eyebrow,.page-heading .eyebrow{color:var(--ramadan-gold-dark)}
+.ramadan-summary{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:16px}
+.ramadan-summary p{margin:.25rem 0;color:var(--muted)}
+
+.portion-list{border-top:1px solid var(--ramadan-border)}
+.portion-row{display:grid;grid-template-columns:minmax(100px,.8fr) minmax(130px,1fr) auto;align-items:center;gap:14px;padding:15px 10px;border-bottom:1px solid var(--ramadan-border);color:inherit;text-decoration:none;border-radius:10px;transition:background .16s ease,transform .16s ease,box-shadow .16s ease}
+.portion-row:hover{background:var(--ramadan-soft);transform:translateX(2px);box-shadow:inset 3px 0 0 var(--ramadan-gold)}
+.portion-row strong{color:var(--ramadan-dark)}
+.portion-range{color:var(--muted)}
+.portion-status{font-size:.82rem;font-weight:800;color:var(--ramadan-gold-dark)}
+.portion-row.complete .portion-status{color:var(--ramadan-dark)}
+.portion-row.complete strong{color:#6b5570}
+
+.progress-track{height:9px;overflow:hidden;border-radius:999px;background:#eadfeb;box-shadow:inset 0 1px 2px rgba(73,43,76,.08)}
+.progress-track span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--ramadan-dark),var(--ramadan),var(--ramadan-gold))}
+
+.ramadan-stats{display:grid;gap:16px}
+.stat-block{padding:17px;border:1px solid #e8dfe9;border-radius:15px;background:linear-gradient(135deg,var(--ramadan-soft),#fff)}
+.stat-block strong{display:block;font-size:1.6rem;color:var(--ramadan-dark)}
+.stat-block span{color:var(--muted);font-size:.85rem}
+.ramadan-actions{display:grid;gap:10px;margin-top:18px}
+
+.primary-button{background:var(--ramadan-dark)!important;border-color:var(--ramadan-dark)!important;color:#fff!important}
+.primary-button:hover{background:var(--ramadan)!important;border-color:var(--ramadan)!important}
+.secondary-button{border-color:#cdb9cf!important;color:var(--ramadan-dark)!important;background:#fff!important}
+.secondary-button:hover{border-color:var(--ramadan-gold)!important;background:var(--ramadan-gold-soft)!important}
+
+.ramadan-days{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:22px}
+.day-link{padding:14px 8px;border:1px solid var(--ramadan-border);border-radius:13px;background:#fff;text-align:center;text-decoration:none;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
+.day-link:hover{transform:translateY(-2px);border-color:var(--ramadan-gold);box-shadow:0 8px 20px rgba(73,43,76,.09)}
+.day-link strong,.day-link small{display:block}
+.day-link strong{color:var(--ramadan-dark)}
+.day-link small{color:var(--muted)}
+.day-link.current{border-color:var(--ramadan-gold);background:var(--ramadan-gold-soft);box-shadow:inset 0 0 0 1px rgba(195,160,82,.25)}
+.day-link.complete{background:var(--ramadan-soft);border-color:#cebace}
+
+.page-heading h1{color:var(--ramadan-dark)!important}
+.ramadan-reader-header{text-align:center;margin-bottom:22px}
+.ramadan-reader-header .eyebrow{color:var(--ramadan-gold-dark)}
+.ramadan-reader-header h1{margin:.2rem 0;color:var(--ramadan-dark);font-family:Georgia,serif}
+.reader-portion-meta{color:var(--muted)}
+.reader-controls .toggle-control{border-color:var(--ramadan-border)}
+
+/* Keep the sacred text surface neutral; theme only the surrounding controls. */
+.ramadan-reader-page .ayah-card,.ramadan-reader-page .ayah-list{--quran:#477b5a;--quran-dark:#2f5d42;--quran-soft:#edf4eb}
+
+.ramadan-reader-bar{position:fixed;left:250px;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:minmax(190px,.8fr) 1fr auto;align-items:center;gap:18px;padding:12px 24px;border-top:1px solid rgba(195,160,82,.55);background:rgba(251,248,241,.98);box-shadow:0 -10px 28px rgba(73,43,76,.15)}
+.ramadan-reader-bar .bar-copy{display:grid}
+.ramadan-reader-bar .bar-copy strong{color:var(--ramadan-dark)}
+.ramadan-reader-bar .bar-copy span{color:var(--muted);font-size:.8rem}
+.ramadan-reader-actions{display:flex;gap:8px}
+.ramadan-reader-page{padding-bottom:150px}
+.ramadan-complete-note{margin:24px 0;padding:22px;border:1px solid rgba(195,160,82,.55);border-radius:16px;background:linear-gradient(135deg,var(--ramadan-gold-soft),#fff);text-align:center}
+.ramadan-complete-note h2{color:var(--ramadan-dark)}
+.ramadan-complete-note[hidden]{display:none}
+.ramadan-surah-divider{margin:28px 0 8px;text-align:center}
+.ramadan-surah-divider .surah-basmalah{margin-top:12px}
+
+@media(max-width:900px){
+  .ramadan-grid{grid-template-columns:1fr}
+  .ramadan-days{grid-template-columns:repeat(3,1fr)}
+  .ramadan-reader-bar{left:0;grid-template-columns:1fr 1fr}
+  .ramadan-reader-actions{grid-column:1/-1;justify-content:center}
+  .ramadan-reader-page{padding-bottom:190px}
+}
+@media(max-width:680px){
+  .ramadan-page{width:min(100% - 28px,1040px);padding-top:28px}
+  .ramadan-hero{padding:30px 18px}
+  .ramadan-summary{align-items:flex-start;flex-direction:column}
+  .portion-row{grid-template-columns:90px 1fr;padding-inline:6px}
+  .portion-status{grid-column:2}
+  .ramadan-days{grid-template-columns:repeat(2,1fr)}
+  .ramadan-reader-bar{grid-template-columns:1fr;padding:10px 12px}
+  .ramadan-reader-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}
+  .ramadan-reader-page{padding-bottom:260px}
+}

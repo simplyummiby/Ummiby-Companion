@@ -194,3 +194,10 @@ Backup & Restore is app-wide and appears in the primary menu. Hero titles and ex
 - Keep full module-home labels: Qur’an Home, Duaa Home, and Ramadan Central.
 - Ramadan reading hierarchy is Ramadan Central → Ramadan Reading Journey → Day → Prayer Reading.
 - Retire “Reading Workspace” as a user-facing concept. Keep existing internal filenames temporarily until the unified Reading Experience is designed and implemented.
+
+## Ramadan Central Theme — v0.6.11
+
+- Ramadan Central uses deep aubergine as its primary identity and soft antique gold as a restrained accent.
+- The module keeps the shared Ummiby Companion structure rather than becoming a visually separate application.
+- Qur’an reading surfaces remain neutral even when launched from Ramadan Central.
+- Theme colors are represented through semantic module tokens wherever practical.

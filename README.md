@@ -17,8 +17,8 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.6.10 — Navigation & Information Architecture
+v0.6.11 — Ramadan Central Theme 1.0
 
 ## Current Release
 
-Version 0.6.10 adds app-wide breadcrumbs, simplifies the site-wide module menu, removes redundant header links, and establishes green, blue, and purple module theme variables.
+Version 0.6.11 gives Ramadan Central its official aubergine-and-antique-gold visual identity while preserving the shared navigation, reading flow, and saved progress introduced in earlier releases.
