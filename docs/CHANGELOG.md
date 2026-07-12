@@ -1,3 +1,18 @@
+# v0.6.8 — Unified Site Navigation
+
+Status: Complete
+
+### Changed
+
+- Replaced page-by-page sidebar markup with one shared navigation system.
+- Made **App Home** the consistent home destination on every page.
+- Made Qur’an, Duaa, and Ramadan available from every full menu.
+- Added module-aware navigation: the current module opens automatically and supplies the sidebar subtitle.
+- Kept module destinations explicitly named **Qur’an Home**, **Duaa Home**, and **Ramadan Central**.
+- Standardized Backup & Restore and Settings placement site-wide.
+- Added the shared sidebar and mobile menu to pages that previously had no navigation shell.
+- Standardized the top bar with App Home access and a clear current-module label.
+
 # v0.6.7 — Ramadan Central 1.0
 
 - Added Ramadan Central as its own Qur’an module destination after Read Without a Journey.

@@ -153,8 +153,153 @@
       .ui-icon{display:inline-block;width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.14em;flex:0 0 auto}
       [data-ui-icon]{display:inline-flex;align-items:center;justify-content:center}
       .inline-ui-icon{margin-inline:.18em}
+      .nav-group summary::after{content:"";width:16px;height:16px;background:currentColor;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m7 9 5 5 5-5' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .18s ease;flex:0 0 auto}
+      .nav-group[open] summary::after{transform:rotate(180deg)}
+      .nav-link.active{background:rgba(255,255,255,.16);color:#fff;font-weight:750}
+      .topbar-location{display:flex;align-items:center;gap:.65rem;color:var(--muted,#657785);font-size:.88rem}.topbar-location span{font-weight:750;color:var(--ink,#243746)}.topbar-location a,.app-home-link{display:inline-flex;align-items:center;gap:.35rem;text-decoration:none;color:var(--muted,#657785);font-size:.88rem}.app-home-link:hover,.topbar-location a:hover{color:var(--navy,#17324a)}
+      @media(max-width:620px){.topbar-location a{display:none}.topbar-location{margin-right:auto}.app-home-link{font-size:.82rem}}
     `;
     document.head.appendChild(style);
+  }
+
+
+
+  function getNavigationContext() {
+    const path = window.location.pathname.replace(/\\/g, "/");
+    const inQuran = path.includes("/quran/");
+    const inDuaa = path.includes("/duaa/");
+    const file = path.split("/").pop() || "index.html";
+    const inRamadan = inQuran && file.startsWith("ramadan-");
+    return {
+      path,
+      file,
+      prefix: inQuran || inDuaa ? "../" : "",
+      module: inRamadan ? "ramadan" : inQuran ? "quran" : inDuaa ? "duaa" : "app"
+    };
+  }
+
+  function ensureAppShell() {
+    if (document.querySelector(".app-shell")) return;
+    const main = document.querySelector("body > main");
+    if (!main) return;
+    const shell = document.createElement("div");
+    shell.className = "app-shell";
+    const sidebar = document.createElement("aside");
+    sidebar.className = "sidebar";
+    sidebar.id = "sidebar";
+    sidebar.setAttribute("aria-label", "Primary navigation");
+    const page = document.createElement("section");
+    page.className = "page";
+    const topbar = document.createElement("header");
+    topbar.className = "topbar";
+    page.append(topbar, main);
+    shell.append(sidebar, page);
+    document.body.insertBefore(shell, document.body.firstChild);
+  }
+
+  function navHref(prefix, href) {
+    return `${prefix}${href}`;
+  }
+
+  function isCurrent(href) {
+    const current = window.location.pathname.replace(/\\/g, "/");
+    const target = new URL(href, window.location.href).pathname.replace(/\\/g, "/");
+    return current === target;
+  }
+
+  function navItem(href, label, icon, extraClass = "") {
+    const active = isCurrent(href);
+    return `<a class="nav-link${active ? " active" : ""}${extraClass ? ` ${extraClass}` : ""}" href="${href}"${active ? ' aria-current="page"' : ""}><span data-ui-icon="${icon}" aria-hidden="true"></span>${label}</a>`;
+  }
+
+  function submenuItem(href, label) {
+    const active = isCurrent(href);
+    return `<a href="${href}"${active ? ' class="submenu-active" aria-current="page"' : ""}>${label}</a>`;
+  }
+
+  function renderSharedNavigation() {
+    ensureAppShell();
+    const sidebar = document.querySelector(".sidebar");
+    if (!sidebar) return;
+    const ctx = getNavigationContext();
+    const p = ctx.prefix;
+    const quranOpen = ctx.module === "quran";
+    const duaaOpen = ctx.module === "duaa";
+    const ramadanOpen = ctx.module === "ramadan";
+    const subtitle = ramadanOpen ? "Ramadan Central" : quranOpen ? "Qur’an Companion" : duaaOpen ? "Duaa Companion" : "Qur’an & Duaa";
+
+    sidebar.innerHTML = `
+      <div class="brand">
+        <span class="brand-mark" data-ui-icon="${ramadanOpen ? "moon" : "brand"}" aria-hidden="true"></span>
+        <div><p class="brand-name">Ummiby Companion</p><p class="brand-subtitle">${subtitle}</p></div>
+      </div>
+      <nav class="main-nav" aria-label="App navigation">
+        ${navItem(navHref(p, "index.html"), "App Home", "home")}
+        <details class="nav-group"${quranOpen ? " open" : ""}>
+          <summary><span><span data-ui-icon="book" aria-hidden="true"></span> Qur’an</span></summary>
+          <div class="nav-submenu">
+            ${submenuItem(navHref(p, "quran/index.html"), "Qur’an Home")}
+            ${submenuItem(navHref(p, "quran/reading-units.html"), "Reading Units")}
+            ${submenuItem(navHref(p, "quran/classic-reading.html"), "Classic Reading")}
+            ${submenuItem(navHref(p, "quran/reading-journeys.html"), "Journey Index")}
+            ${submenuItem(navHref(p, "quran/surahs.html"), "Browse by Surah")}
+            ${submenuItem(navHref(p, "quran/go-to-ayah.html"), "Jump to an Ayah")}
+          </div>
+        </details>
+        <details class="nav-group"${duaaOpen ? " open" : ""}>
+          <summary><span><span data-ui-icon="sparkle" aria-hidden="true"></span> Duaa</span></summary>
+          <div class="nav-submenu">
+            ${submenuItem(navHref(p, "duaa/index.html"), "Duaa Home")}
+            ${submenuItem(navHref(p, "duaa/collections.html"), "Find a Duaa")}
+            ${submenuItem(navHref(p, "duaa/progress.html"), "Duaa Progress")}
+          </div>
+        </details>
+        <details class="nav-group"${ramadanOpen ? " open" : ""}>
+          <summary><span><span data-ui-icon="moon" aria-hidden="true"></span> Ramadan</span></summary>
+          <div class="nav-submenu">
+            ${submenuItem(navHref(p, "quran/ramadan-journey.html"), "Ramadan Central")}
+            ${submenuItem(navHref(p, "quran/ramadan-days.html"), "Browse All Days")}
+          </div>
+        </details>
+        ${navItem(navHref(p, "backup-restore.html"), "Backup & Restore", "database")}
+        ${navItem(navHref(p, "settings.html"), "Settings", "settings")}
+      </nav>`;
+  }
+
+  function normalizeTopbar() {
+    const topbar = document.querySelector(".topbar");
+    if (!topbar) return;
+    const ctx = getNavigationContext();
+    const moduleLabel = ctx.module === "ramadan" ? "Ramadan Central" : ctx.module === "quran" ? "Qur’an Companion" : ctx.module === "duaa" ? "Duaa Companion" : "Ummiby Companion";
+    const moduleHref = ctx.module === "ramadan" ? "quran/ramadan-journey.html" : ctx.module === "quran" ? "quran/index.html" : ctx.module === "duaa" ? "duaa/index.html" : "index.html";
+    const prefix = ctx.prefix;
+    topbar.innerHTML = `
+      <button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false"><span class="sr-only">Open navigation</span><span data-ui-icon="menu" aria-hidden="true"></span></button>
+      <div class="topbar-location"><span>${moduleLabel}</span>${ctx.module !== "app" ? `<a href="${navHref(prefix, moduleHref)}">Open module</a>` : ""}</div>
+      <a class="app-home-link" href="${navHref(prefix, "index.html")}"><span data-ui-icon="home" aria-hidden="true"></span> App Home</a>`;
+  }
+
+  function wireSharedMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const button = document.getElementById("menuButton");
+    if (!sidebar || !button) return;
+    let backdrop = document.getElementById("sidebarBackdrop");
+    if (!backdrop) {
+      backdrop = document.createElement("div");
+      backdrop.id = "sidebarBackdrop";
+      backdrop.className = "sidebar-backdrop";
+      backdrop.hidden = true;
+      document.body.appendChild(backdrop);
+    }
+    const close = () => { sidebar.classList.remove("open"); button.setAttribute("aria-expanded", "false"); backdrop.hidden = true; };
+    button.addEventListener("click", () => {
+      const open = !sidebar.classList.contains("open");
+      sidebar.classList.toggle("open", open);
+      button.setAttribute("aria-expanded", String(open));
+      backdrop.hidden = !open;
+    });
+    backdrop.addEventListener("click", close);
+    sidebar.querySelectorAll("a").forEach((a) => a.addEventListener("click", close));
   }
 
   migrateLegacyDuaaPreferences();
@@ -176,7 +321,10 @@
 
   function initialize() {
     injectSharedStyles();
+    renderSharedNavigation();
+    normalizeTopbar();
     hydrateIcons();
+    wireSharedMenu();
     createFooter();
     document.querySelectorAll("[data-app-version]").forEach((element) => {
       element.textContent = config.version;

@@ -17,8 +17,8 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.6.7 — Classic Reading Journey
+v0.6.8 — Unified Site Navigation
 
 ## Current Release
 
-Version 0.6.7 turns Classic Reading into a dependable tracked journey with automatic resume, confirmed reading sessions, weekly consistency, surah completion, a real journey index, and a sticky green reader bar.
+Version 0.6.8 gives the full companion one consistent, module-aware navigation system while preserving Qur’an, Duaa, and Ramadan-specific context.

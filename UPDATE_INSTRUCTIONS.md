@@ -1,24 +1,13 @@
-# Update Instructions — Ummiby Companion v0.6.7
+# Update Instructions — Ummiby Companion v0.6.8
 
-This package updates v0.6.5.2 to v0.6.7.
+This package updates v0.6.7 to v0.6.8.
 
-## Install
+## Recommended update method
 
-1. Extract the v0.6.7 ZIP.
-2. Copy all files and folders into the existing project folder.
-3. Choose **Replace** when prompted for files with the same names.
-4. No existing files need to be deleted.
+1. Back up your current project folder.
+2. Extract the v0.6.8 ZIP.
+3. Replace the existing project files with the contents of this package.
+4. Because this is a site-wide navigation update, replace the full `js/app-shell.js` file and do not merge it manually.
+5. Open several pages from Qur’an, Duaa, Ramadan Central, Settings, and Backup & Restore to confirm the shared menu appears consistently.
 
-## Added
-
-- Fully tracked Classic Reading Journey
-- Automatic resume-position detection
-- Save Place & Exit session confirmation
-- Weekly Classic Reading consistency
-- Sticky green reader bar with surah and overall Quran progress
-- Previous and next surah controls
-- Real Classic Reading surah index
-- Completed/current/not-started states
-- Deliberate surah completion and full-journey completion behavior
-- Shared empty Quran study-resource library structure
-- Classic Reading state included in Quran backup and restore
+Your browser-saved reading and duaa progress remains in local storage and is not removed by replacing the project files.
