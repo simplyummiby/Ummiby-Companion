@@ -1,3 +1,9 @@
+
+## 0.6.6.3 — Quran navigation consistency
+- Applied the Quran Home sidebar design to every Quran page.
+- Standardized the dark green menu, gold section headings, icons, active states, and module switcher.
+- Added the shared mobile menu behavior to Quran placeholder, index, library, and reader pages.
+
 # v0.6.6.2 — Classic Reading Progress Polish
 
 - Rounded displayed journey percentages to whole numbers.

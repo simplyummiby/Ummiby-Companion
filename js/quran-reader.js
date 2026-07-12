@@ -1,7 +1,9 @@
+
+function syncReaderNavigation(mode){document.documentElement.dataset.quranReaderMode=mode;document.querySelectorAll('.quran-nav-link').forEach(link=>link.classList.remove('active'));const target=mode==='classic'?'classic-reading.html':'surahs.html';document.querySelector(`.quran-nav-link[href="${target}"]`)?.classList.add('active')}
 (function(){
  const data=window.QURAN_DATA||[];
  const p=new URLSearchParams(location.search);
- const mode=p.get('mode')==='classic'?'classic':'browse';
+ const mode=p.get('mode')==='classic'?'classic':'browse';syncReaderNavigation(mode);
  let surahNo=Math.min(114,Math.max(1,Number(p.get('surah'))||1));
  let startAyah=Math.max(1,Number(p.get('ayah'))||1);
  const surah=data[surahNo-1];

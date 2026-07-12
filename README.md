@@ -17,8 +17,8 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.6.6.2 — Classic Reading Progress Polish
+v0.6.6.3 — Classic Reading Progress Polish
 
 ## Current Release
 
-Version 0.6.6.2 refines Classic Reading progress: reader and journey-page progress now represent the current surah, while overall Quran progress remains on Quran Home. Displayed percentages are rounded to whole numbers.
+Version 0.6.6.3 refines Classic Reading progress: reader and journey-page progress now represent the current surah, while overall Quran progress remains on Quran Home. Displayed percentages are rounded to whole numbers.
