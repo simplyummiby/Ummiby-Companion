@@ -9,6 +9,7 @@
  const BASMALAH='بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
  const BASMALAH_VARIANT='بِّسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
  const arabicDigits=number=>String(number).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+ const backToTopButton=$('quranBackToTop');
 
  function displayArabic(ayah){
    if(surahNo===1 || surahNo===9 || ayah.ayah!==1) return ayah.arabic;
@@ -79,6 +80,14 @@
  $('next-surah').disabled=surahNo===114;
  $('previous-surah').addEventListener('click',()=>go(surahNo-1,data[surahNo-2].ayahCount));
  $('next-surah').addEventListener('click',()=>go(surahNo+1,1));
+
+ function updateBackToTopVisibility(){
+   if(!backToTopButton)return;
+   backToTopButton.classList.toggle('is-visible',window.scrollY>520);
+ }
+ backToTopButton?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+ window.addEventListener('scroll',updateBackToTopVisibility,{passive:true});
+ updateBackToTopVisibility();
 
  requestAnimationFrame(()=>{
    const el=$(`ayah-${Math.min(startAyah,surah.ayahCount)}`);

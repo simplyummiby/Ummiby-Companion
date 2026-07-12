@@ -17,8 +17,8 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.6.5.1.1 — Backup & Restore
+v0.6.5.2 — Qur’an Reader Navigation Polish
 
 ## Current Release
 
-Version 0.6.5.1 adds an app-wide Backup & Restore page with scoped Duaa, Qur’an, and full-app JSON exports. Validated imports replace only the data sections included in the backup, leaving other module data untouched.
+Version 0.6.5.2 adds the missing Qur’an Home back arrow, a floating green Back to Top control in the shared Quran reader, and consistent green navigation styling throughout the Quran module.

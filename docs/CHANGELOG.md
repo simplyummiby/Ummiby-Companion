@@ -1,3 +1,10 @@
+# v0.6.5.2 — Qur’an Reader Navigation Polish
+
+- Added a left arrow to the Qur’an Home link on Quran reading pages.
+- Added a floating green Back to Top button to the shared Quran reader.
+- Matched the Duaa collection behavior: hidden near the top, visible after scrolling, and smooth scroll on activation.
+- Changed Quran module sidebar and mobile menu styling to the Quran green theme.
+
 # v0.6.5.1 — Qur’an Reader Text Polish
 
 - Corrected opening basmalah display across all surahs.
