@@ -201,3 +201,11 @@ Backup & Restore is app-wide and appears in the primary menu. Hero titles and ex
 - The module keeps the shared Ummiby Companion structure rather than becoming a visually separate application.
 - Qur’an reading surfaces remain neutral even when launched from Ramadan Central.
 - Theme colors are represented through semantic module tokens wherever practical.
+
+
+## Ramadan Central Hero — v0.6.12
+
+- Ramadan Central uses a wide aubergine night-scene hero image with the title and description rendered as live site text.
+- The official hero title is **Ramadan Central**, not “Ramadan Reading Companion,” because reading is one feature within the broader Ramadan module.
+- The hero may surface direct feature links; unfinished features must be clearly marked Coming Soon.
+- Do not use a crescent moon with a star inside or paired as an Islamic emblem in future project graphics.

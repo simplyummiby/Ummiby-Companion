@@ -19,4 +19,11 @@
   document.getElementById('completedDays').textContent=`${completeDays} of 30`;
   document.getElementById('currentDayStat').textContent=`Day ${day}`;
   document.getElementById('journeyProgress').style.width=`${completeDays/30*100}%`;
+  document.querySelectorAll('[data-coming-soon]').forEach(link=>{
+    link.addEventListener('click',event=>{
+      event.preventDefault();
+      const feature=link.dataset.comingSoon;
+      document.getElementById('ramadanFeatureMessage').textContent=`${feature} is planned for a future Ramadan Central update.`;
+    });
+  });
 })();

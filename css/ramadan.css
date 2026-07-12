@@ -48,19 +48,18 @@ body{background:var(--ramadan-ivory)}
 .menu-button{color:var(--ramadan-dark)}
 
 .ramadan-page{width:min(1040px,calc(100% - 48px));margin:0 auto;padding:46px 0 72px}
-.ramadan-hero{position:relative;overflow:hidden;padding:38px 34px;border:1px solid rgba(195,160,82,.45);border-radius:24px;background:
-  linear-gradient(135deg,rgba(255,255,255,.035) 25%,transparent 25%) 0 0/32px 32px,
-  linear-gradient(225deg,rgba(255,255,255,.028) 25%,transparent 25%) 0 0/32px 32px,
-  linear-gradient(315deg,rgba(195,160,82,.04) 25%,transparent 25%) 16px 16px/32px 32px,
-  linear-gradient(45deg,rgba(195,160,82,.035) 25%,transparent 25%) 16px 16px/32px 32px,
-  linear-gradient(135deg,var(--ramadan-deep),#634064 58%,#795376);
-  box-shadow:0 20px 48px rgba(50,29,56,.22);text-align:center;color:#fff}
-.ramadan-hero::after{content:"";position:absolute;right:-56px;top:-76px;width:205px;height:205px;border:1px solid rgba(242,217,141,.19);border-radius:50%;box-shadow:0 0 0 28px rgba(242,217,141,.025),0 0 0 56px rgba(242,217,141,.02);pointer-events:none}
+.ramadan-hero{position:relative;overflow:hidden;min-height:390px;padding:48px 42px;border:1px solid rgba(195,160,82,.52);border-radius:24px;background-image:linear-gradient(90deg,rgba(32,14,38,.94) 0%,rgba(42,20,48,.86) 34%,rgba(50,23,56,.45) 58%,rgba(28,13,34,.13) 100%),url("../assets/images/ramadan-central-hero.webp");background-position:center;background-size:cover;box-shadow:0 20px 48px rgba(50,29,56,.24);color:#fff;display:flex;align-items:center}
+.ramadan-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(28,13,34,.22));pointer-events:none}
 .ramadan-hero>*{position:relative;z-index:1}
-.ramadan-hero .moon-mark{display:grid;place-items:center;width:60px;height:60px;margin:0 auto 14px;border:1px solid rgba(242,217,141,.4);border-radius:50%;background:rgba(195,160,82,.14);color:#f2d98d;box-shadow:0 8px 24px rgba(25,13,29,.18)}
-.ramadan-hero .eyebrow{color:#f2d98d;letter-spacing:.12em}
-.ramadan-hero h1{margin:.2rem 0;font:700 clamp(2rem,4vw,3rem)/1.1 Georgia,serif;color:#fff}
-.ramadan-hero p{margin:.6rem auto 0;max-width:650px;color:#eee5ef}
+.ramadan-hero-copy{width:min(650px,66%)}
+.ramadan-hero h1{margin:0;font:700 clamp(2.45rem,5vw,4.25rem)/1 Georgia,serif;color:#fff;text-shadow:0 3px 18px rgba(18,8,22,.48)}
+.ramadan-hero-copy>p{margin:1rem 0 0;max-width:610px;color:#f5eef5;font-size:1.02rem;line-height:1.7;text-shadow:0 2px 12px rgba(18,8,22,.5)}
+.ramadan-feature-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+.ramadan-feature-links a{min-width:105px;display:grid;justify-items:center;align-content:start;gap:5px;padding:12px 13px;border:1px solid rgba(242,217,141,.38);border-radius:13px;background:rgba(40,18,46,.56);backdrop-filter:blur(5px);color:#fff;text-align:center;text-decoration:none;font-size:.79rem;font-weight:800;transition:transform .16s ease,background .16s ease,border-color .16s ease}
+.ramadan-feature-links a:hover,.ramadan-feature-links a:focus-visible{transform:translateY(-2px);background:rgba(87,47,89,.82);border-color:var(--ramadan-gold);outline:none}
+.ramadan-feature-links [data-ui-icon]{color:#f2d98d;width:22px;height:22px}
+.ramadan-feature-links small{color:#e5ca82;font-size:.62rem;font-weight:700;letter-spacing:.03em}
+.ramadan-feature-message{min-height:1.35rem;margin:.75rem 0 0!important;color:#f2d98d!important;font-size:.78rem!important;font-weight:700}
 
 .ramadan-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:20px;margin-top:22px}
 .ramadan-card{padding:24px;border:1px solid var(--ramadan-border);border-radius:20px;background:#fff;box-shadow:0 10px 30px rgba(73,43,76,.075)}
@@ -132,7 +131,10 @@ body{background:var(--ramadan-ivory)}
 }
 @media(max-width:680px){
   .ramadan-page{width:min(100% - 28px,1040px);padding-top:28px}
-  .ramadan-hero{padding:30px 18px}
+  .ramadan-hero{min-height:430px;padding:30px 22px;background-image:linear-gradient(90deg,rgba(32,14,38,.94),rgba(42,20,48,.76) 62%,rgba(28,13,34,.28)),url("../assets/images/ramadan-central-hero.webp");background-position:62% center}
+  .ramadan-hero-copy{width:100%}
+  .ramadan-feature-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ramadan-feature-links a{min-width:0}
   .ramadan-summary{align-items:flex-start;flex-direction:column}
   .portion-row{grid-template-columns:90px 1fr;padding-inline:6px}
   .portion-status{grid-column:2}

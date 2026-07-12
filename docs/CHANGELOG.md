@@ -1,3 +1,11 @@
+## Version 0.6.12 — Ramadan Central Hero
+
+- Added a wide aubergine Ramadan hero image as a real site asset.
+- Changed the hero title to **Ramadan Central** and moved all wording into accessible live HTML text.
+- Added compact feature links for the Reading Journey, Browse Days, Fasting Tracker, Duaa Library, and Last Ten Nights.
+- Future feature links now provide an inline Coming Soon message rather than leading to missing pages.
+- Preserved the Ramadan journey, saved progress, and breadcrumb structure.
+
 # Changelog
 
 ## Version 0.6.11 — Ramadan Central Theme 1.0
