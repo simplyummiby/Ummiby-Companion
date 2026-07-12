@@ -1,10 +1,10 @@
-# Update Instructions — Ummiby Companion v0.6.6.1
+# Update Instructions — Ummiby Companion v0.6.6.2
 
-This package updates v0.6.6 to v0.6.6.1.
+This package updates v0.6.6 to v0.6.6.2.
 
 ## Install
 
-1. Extract the v0.6.6.1 ZIP.
+1. Extract the v0.6.6.2 ZIP.
 2. Copy all files and folders into the existing project folder.
 3. Choose **Replace** when prompted for files with the same names.
 4. No existing files need to be deleted.
@@ -23,7 +23,7 @@ This package updates v0.6.6 to v0.6.6.1.
 - Shared empty Quran study-resource library structure
 - Classic Reading state included in Quran backup and restore
 
-## Refined in v0.6.6.1
+## Refined in v0.6.6.2
 
 - Rounded displayed percentages to whole numbers.
 - Classic Reading reader and journey-page progress now represent the current surah.

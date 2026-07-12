@@ -108,12 +108,22 @@
 
  const lastAyahEl=$(`ayah-${surah.ayahCount}`);
  const completionObserver=new IntersectionObserver(entries=>{
-   if(mode==='classic'&&entries.some(e=>e.isIntersecting&&e.intersectionRatio>.65))showCompletion(surahNo===114);
+   const reachedLastAyah=entries.some(e=>e.isIntersecting&&e.intersectionRatio>.65);
+   if(mode==='classic'&&reachedLastAyah){
+     remember(surah.ayahCount);
+     showCompletion(surahNo===114);
+   }
  },{threshold:[.65]});
  if(lastAyahEl)completionObserver.observe(lastAyahEl);
 
+ function syncLastAyahAtPageEnd(){
+   if(mode!=='classic')return;
+   const distanceFromBottom=document.documentElement.scrollHeight-(window.scrollY+window.innerHeight);
+   if(distanceFromBottom<=24)remember(surah.ayahCount);
+ }
+
  function updateBackToTopVisibility(){if(backToTopButton)backToTopButton.classList.toggle('is-visible',window.scrollY>520);}
  backToTopButton?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
- window.addEventListener('scroll',updateBackToTopVisibility,{passive:true});updateBackToTopVisibility();
+ window.addEventListener('scroll',()=>{updateBackToTopVisibility();syncLastAyahAtPageEnd();},{passive:true});updateBackToTopVisibility();syncLastAyahAtPageEnd();
  requestAnimationFrame(()=>{const el=$(`ayah-${currentAyah}`);if(el&&currentAyah>1)el.scrollIntoView({block:'start'});setTimeout(()=>{observerReady=true;},350);});
 })();

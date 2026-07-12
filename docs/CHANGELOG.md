@@ -1,4 +1,4 @@
-# v0.6.6.1 — Classic Reading Progress Polish
+# v0.6.6.2 — Classic Reading Progress Polish
 
 - Rounded displayed journey percentages to whole numbers.
 - Changed the Classic Reading sticky reader progress to show progress through the current surah.
