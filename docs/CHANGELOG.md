@@ -1,3 +1,19 @@
+# v0.6.13 — Ramadan Fast Record Prototype
+
+### Added
+
+- Full Ramadan Fast Record calendar on Ramadan Central
+- Ramadan Settings modal with First Fast Day and optional menstruation status
+- Automatic Ramadan-day and Gregorian-date mapping from the First Fast Day
+- Dual Hijri-priority and Gregorian date display at the top of Ramadan Central
+- Per-day fasting statuses, optional notes, and make-up-fast counting
+- Make-up fast date recording that remains available after Ramadan
+- Shorter hero with separate Explore Ramadan tiles below the daily sections
+
+### Notes
+
+This is a testable UX prototype. It plans a 30-day reading journey without stating that every Ramadan must contain 30 fasting days. Fast Record data uses the Qur’an/Ramadan backup scope.
+
 ## Version 0.6.12 — Ramadan Central Hero
 
 - Added a wide aubergine Ramadan hero image as a real site asset.

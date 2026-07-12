@@ -17,8 +17,8 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.6.12 — Ramadan Central Hero
+v0.6.13 — Ramadan Central Hero
 
 ## Current Release
 
-Version 0.6.12 adds a full Ramadan Central hero image with live site text, feature navigation, and a clearer module-wide description while preserving reading flow and saved progress.
+Version 0.6.13 adds a full Ramadan Central hero image with live site text, feature navigation, and a clearer module-wide description while preserving reading flow and saved progress.

@@ -1,1 +1,124 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ramadan Central | Ummiby Companion</title><link rel="stylesheet" href="../css/quran-shell.css"><link rel="stylesheet" href="../css/ramadan.css"></head><body><div class="app-shell"><aside class="sidebar" id="sidebar"><div class="brand"><div class="brand-mark"><span data-ui-icon="moon" aria-hidden="true"></span></div><div><p class="brand-name">Ramadan Central</p><p class="brand-subtitle">Ummiby Companion</p></div></div><nav class="main-nav"><a class="nav-link submenu-active" href="ramadan-journey.html">Ramadan Home</a><a class="nav-link" href="ramadan-days.html">Browse Ramadan Days</a><a class="nav-link" href="index.html">Qur’an Home</a><details class="nav-group" open><summary>Reading Journeys</summary><div class="nav-submenu"><a href="reading-journey.html">Reading Units</a><a href="classic-reading.html">Classic Reading</a><a href="reading-journeys.html">Journey Index</a></div></details><details class="nav-group" open><summary>Read Without a Journey</summary><div class="nav-submenu"><a href="surahs.html">Browse by Surah</a><a href="go-to-ayah.html">Jump to an Ayah</a></div></details><a class="nav-link" href="../backup-restore.html">Backup &amp; Restore</a><a class="nav-link" href="../settings.html">Settings</a></nav></aside><section class="page"><header class="topbar"><button class="menu-button" id="menuButton"><span class="sr-only">Open navigation</span><span data-ui-icon="menu" aria-hidden="true"></span></button><a href="index.html"><span data-ui-icon="arrow-left" aria-hidden="true"></span> Qur’an Home</a></header><main class="ramadan-page"><section class="ramadan-hero" aria-labelledby="ramadanCentralTitle"><div class="ramadan-hero-copy"><h1 id="ramadanCentralTitle">Ramadan Central</h1><p>Your home for the Ramadan Reading Journey, a fasting tracker, Ramadan duaa library, last ten nights support, and more.</p><nav class="ramadan-feature-links" aria-label="Explore Ramadan Central"><a href="#ramadanReading"><span data-ui-icon="book" aria-hidden="true"></span><span>Reading Journey</span></a><a href="ramadan-days.html"><span data-ui-icon="journey" aria-hidden="true"></span><span>Browse Days</span></a><a href="#" data-coming-soon="Fasting Tracker"><span data-ui-icon="clock" aria-hidden="true"></span><span>Fasting Tracker</span><small>Coming Soon</small></a><a href="#" data-coming-soon="Ramadan Duaa Library"><span data-ui-icon="search" aria-hidden="true"></span><span>Duaa Library</span><small>Coming Soon</small></a><a href="#" data-coming-soon="Last Ten Nights"><span data-ui-icon="sparkle" aria-hidden="true"></span><span>Last Ten Nights</span><small>Coming Soon</small></a></nav><p class="ramadan-feature-message" id="ramadanFeatureMessage" role="status" aria-live="polite"></p></div></section><section class="ramadan-grid" id="ramadanReading"><article class="ramadan-card"><div class="ramadan-summary"><div><p class="eyebrow">Today’s Readings</p><h2 id="dayTitle">Ramadan Day 1 · Juz 1</h2><p id="daySummary">0 of 5 prayer portions completed</p></div><a class="primary-button" id="continueButton" href="#">Begin Reading</a></div><div class="progress-track" aria-hidden="true"><span id="dayProgress" style="width:0%"></span></div><div class="portion-list" id="portionList"></div></article><aside class="ramadan-card"><p class="eyebrow">Journey Progress</p><h2>Your Ramadan Journey</h2><div class="ramadan-stats"><div class="stat-block"><strong id="completedDays">0 of 30</strong><span>days completed</span></div><div class="stat-block"><strong id="currentDayStat">Day 1</strong><span>current reading day</span></div></div><div class="progress-track" aria-hidden="true" style="margin-top:18px"><span id="journeyProgress" style="width:0%"></span></div><div class="ramadan-actions"><a class="secondary-button" href="ramadan-days.html">Browse All Days</a></div></aside></section></main></section></div><div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div><script src="../js/app-config.js"></script><script src="../js/app-shell.js"></script><script src="../js/data/quran-data.js"></script><script src="../js/data/ramadan-journey-data.js"></script><script src="../js/ramadan-state.js"></script><script src="../js/ramadan-home.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ramadan Central | Ummiby Companion</title>
+  <link rel="stylesheet" href="../css/quran-shell.css">
+  <link rel="stylesheet" href="../css/ramadan.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <section class="page">
+    <header class="topbar">
+      <button class="menu-button" id="menuButton"><span class="sr-only">Open navigation</span><span data-ui-icon="menu" aria-hidden="true"></span></button>
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">App Home</a><span aria-hidden="true">›</span><span class="breadcrumb-current">Ramadan Central</span></nav>
+    </header>
+    <main class="ramadan-page">
+      <section class="ramadan-hero" aria-labelledby="ramadanCentralTitle">
+        <div class="ramadan-hero-copy">
+          <h1 id="ramadanCentralTitle">Ramadan Central</h1>
+          <p>Your companion for the Ramadan Reading Journey, fasting, duaa, and worship.</p>
+        </div>
+      </section>
+
+      <section class="ramadan-orientation" aria-label="Today in Ramadan">
+        <div>
+          <p class="eyebrow">Today in Ramadan</p>
+          <h2 id="ramadanDayHeading">Set your First Fast Day</h2>
+          <p class="hijri-date" id="hijriDate">Ramadan day and Hijri date will appear here.</p>
+          <p class="gregorian-date" id="gregorianDate"></p>
+        </div>
+        <button class="secondary-button ramadan-settings-button" id="openRamadanSettings" type="button"><span data-ui-icon="settings" aria-hidden="true"></span> Ramadan Settings</button>
+      </section>
+
+      <section class="ramadan-card" id="ramadanReading">
+        <div class="ramadan-summary">
+          <div>
+            <p class="eyebrow">Today’s Readings</p>
+            <h2 id="dayTitle">Ramadan Day 1 · Juz 1</h2>
+            <p id="daySummary">0 of 5 prayer portions completed</p>
+          </div>
+          <a class="primary-button" id="continueButton" href="#">Begin Reading</a>
+        </div>
+        <div class="progress-track" aria-hidden="true"><span id="dayProgress" style="width:0%"></span></div>
+        <div class="portion-list" id="portionList"></div>
+      </section>
+
+      <section class="ramadan-card fast-record-card" aria-labelledby="fastRecordTitle">
+        <div class="fast-record-heading">
+          <div>
+            <p class="eyebrow">Your Month</p>
+            <h2 id="fastRecordTitle">Ramadan Fast Record</h2>
+            <p id="fastRecordHelper">Set the First Fast Day in Ramadan Settings to place Gregorian dates on the record.</p>
+          </div>
+          <div class="makeup-summary" aria-live="polite"><strong id="makeupCount">0</strong><span>make-up fasts remaining</span></div>
+        </div>
+        <div class="fast-calendar" id="fastCalendar" aria-label="Ramadan Fast Record calendar"></div>
+        <div class="fast-record-footer">
+          <div>
+            <strong>Make-up fasts</strong>
+            <p id="makeupMessage">No make-up fasts are currently recorded.</p>
+          </div>
+          <button class="secondary-button" id="recordMakeupFast" type="button">Record Make-up Fast</button>
+        </div>
+        <div class="makeup-history" id="makeupHistory"></div>
+      </section>
+
+      <section class="explore-ramadan" aria-labelledby="exploreTitle">
+        <p class="eyebrow">Explore Ramadan</p>
+        <h2 id="exploreTitle">Go deeper when you’re ready</h2>
+        <div class="ramadan-feature-tiles">
+          <a href="ramadan-days.html"><span data-ui-icon="book" aria-hidden="true"></span><strong>Ramadan Reading Journey</strong><small>Browse all reading days</small></a>
+          <button type="button" data-coming-soon="Ramadan Duaa Library"><span data-ui-icon="search" aria-hidden="true"></span><strong>Ramadan Duaa Library</strong><small>Coming Soon</small></button>
+          <button type="button" data-coming-soon="Last Ten Nights"><span data-ui-icon="sparkle" aria-hidden="true"></span><strong>Last Ten Nights</strong><small>Coming Soon</small></button>
+        </div>
+        <p class="ramadan-feature-message" id="ramadanFeatureMessage" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+  </section>
+</div>
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<dialog class="ramadan-dialog settings-dialog" id="ramadanSettingsDialog">
+  <form method="dialog" class="dialog-panel" id="ramadanSettingsForm">
+    <div class="dialog-heading"><div><p class="eyebrow">Ramadan Central</p><h2>Ramadan Settings</h2></div><button class="dialog-close" value="cancel" aria-label="Close">×</button></div>
+    <label class="field-label" for="firstFastDay">First Fast Day</label>
+    <input type="date" id="firstFastDay" name="firstFastDay">
+    <p class="field-help">Set this when the first day of fasting is announced. It determines the Ramadan day and Gregorian dates shown throughout the Fast Record.</p>
+    <label class="switch-row"><input type="checkbox" id="showMenstruation"><span><strong>Show “Menstruation” as a fasting status</strong><small>Turn this off when the option does not apply to you.</small></span></label>
+    <div class="dialog-actions"><button class="secondary-button" value="cancel" type="button" data-close-dialog>Cancel</button><button class="primary-button" type="submit">Save Settings</button></div>
+  </form>
+</dialog>
+
+<dialog class="ramadan-dialog" id="fastDayDialog">
+  <form method="dialog" class="dialog-panel" id="fastDayForm">
+    <div class="dialog-heading"><div><p class="eyebrow" id="fastDayEyebrow">Ramadan Fast Record</p><h2 id="fastDayTitle">Ramadan Day</h2><p class="dialog-date" id="fastDayDate"></p></div><button class="dialog-close" value="cancel" aria-label="Close">×</button></div>
+    <fieldset class="status-options" id="statusOptions"><legend>Fasting status</legend></fieldset>
+    <label class="field-label" for="fastDayNotes">Notes <span>(optional)</span></label>
+    <textarea id="fastDayNotes" rows="3" placeholder="Add a brief note about this day."></textarea>
+    <div class="dialog-actions"><button class="secondary-button" type="button" id="clearFastDay">Clear Day</button><button class="primary-button" type="submit">Save Day</button></div>
+  </form>
+</dialog>
+
+<dialog class="ramadan-dialog" id="makeupDialog">
+  <form method="dialog" class="dialog-panel" id="makeupForm">
+    <div class="dialog-heading"><div><p class="eyebrow">Ramadan Fast Record</p><h2>Record Make-up Fast</h2></div><button class="dialog-close" value="cancel" aria-label="Close">×</button></div>
+    <label class="field-label" for="makeupDate">Date completed</label>
+    <input type="date" id="makeupDate" required>
+    <label class="field-label" for="makeupNotes">Notes <span>(optional)</span></label>
+    <textarea id="makeupNotes" rows="3" placeholder="Add a brief note."></textarea>
+    <div class="dialog-actions"><button class="secondary-button" type="button" data-close-dialog>Cancel</button><button class="primary-button" type="submit">Save Make-up Fast</button></div>
+  </form>
+</dialog>
+
+<script src="../js/app-config.js"></script>
+<script src="../js/app-shell.js"></script>
+<script src="../js/data/quran-data.js"></script>
+<script src="../js/data/ramadan-journey-data.js"></script>
+<script src="../js/ramadan-state.js"></script>
+<script src="../js/ramadan-fast-record.js"></script>
+<script src="../js/ramadan-home.js"></script>
+</body>
+</html>
