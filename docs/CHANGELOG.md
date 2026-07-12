@@ -1,3 +1,11 @@
+# v0.6.5.1 — Qur’an Reader Text Polish
+
+- Corrected opening basmalah display across all surahs.
+- Kept Al-Fatihah’s basmalah as Ayah 1.
+- Kept At-Tawbah without an opening basmalah.
+- Preserved the basmalah within An-Naml 27:30 as part of the ayah.
+- Added decorative Arabic ayah-number ornaments to the shared reader.
+
 ## v0.6.4 — Qur’an Reading Journeys Home
 
 ### Added

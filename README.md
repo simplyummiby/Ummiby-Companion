@@ -17,8 +17,8 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.6.5 — Backup & Restore
+v0.6.5.1.1 — Backup & Restore
 
 ## Current Release
 
-Version 0.6.5 adds an app-wide Backup & Restore page with scoped Duaa, Qur’an, and full-app JSON exports. Validated imports replace only the data sections included in the backup, leaving other module data untouched.
+Version 0.6.5.1 adds an app-wide Backup & Restore page with scoped Duaa, Qur’an, and full-app JSON exports. Validated imports replace only the data sections included in the backup, leaving other module data untouched.
