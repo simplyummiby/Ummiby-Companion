@@ -271,3 +271,10 @@ Use these exact labels in the sidebar, breadcrumbs, page titles, and documentati
 - `--module-soft`
 
 The current mappings are Qur’an green, Duaa blue, and Ramadan purple. New shared UI should use the module variables rather than hardcoding a module-specific accent.
+
+
+## Contextual breadcrumb standard (v0.6.10)
+
+Breadcrumbs describe the content the reader is using, not the underlying software page. Generic labels such as Reader, Viewer, Workspace, Details, and Module should not appear in user-facing breadcrumb trails. Dynamic pages derive breadcrumb labels from their URL context, including the selected duaa collection, surah, Ramadan day, and prayer portion. Ramadan reading belongs beneath Ramadan Central and Ramadan Reading Journey.
+
+The internal `workspace.html` filename is retained temporarily to avoid premature file-path changes, but the user-facing concept is transitioning from “Reading Workspace” to a unified **Reading Experience** in which the current passage is the identity of the page and study resources support the reading in context.

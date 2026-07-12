@@ -1,3 +1,14 @@
+# Changelog
+
+## Version 0.6.10 — Contextual Breadcrumbs
+
+- Replaced generic breadcrumb labels such as “Qur’an Reader,” “Duaa Collection,” and “Ramadan Reading” with the actual content context.
+- Duaa collection pages now name the selected collection; Focus Mode includes its parent collection.
+- Surah reading pages now identify the current surah and preserve whether the reader came from Browse by Surah or the Classic Reading Journey.
+- Ramadan reading breadcrumbs now follow: App Home › Ramadan Central › Ramadan Reading Journey › Day › Prayer Reading.
+- The unfinished Reading Workspace label is no longer exposed to users; its placeholder now presents the current Reading Unit and begins the transition toward a unified Reading Experience.
+- App Home remains the only page without breadcrumbs.
+
 # v0.6.9 — Navigation & Information Architecture
 
 Status: Complete

@@ -9,13 +9,25 @@
 
 - Qur’an Home
 - Reading Journey
-- Ramadan Reading Journey
 - Read by Surah
 - Go to an Ayah
-- Reading Workspace
+- Unified Reading Experience (in transition; internal workspace filename retained temporarily)
 - Reading Unit Index
 - Completed Journeys
 - Reading History
+
+## Ramadan Central
+
+- Ramadan Central Home
+- Ramadan Reading Journey
+  - 30 Ramadan Days
+  - Five prayer-based portions per day
+  - Browse All Days
+  - Contextual prayer-portion reading
+- Fasting Tracker (future)
+- Ramadan Duaa (future)
+- Last Ten Nights (future)
+- Ramadan Resources (future)
 
 ## Duaa
 

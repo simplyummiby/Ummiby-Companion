@@ -10,7 +10,7 @@
 
 ## Quran
 
-Reading and study belong together in the Reading Workspace.
+Reading and study belong together in a unified Reading Experience. The current surah, Reading Unit, or prayer portion remains the page identity; related resources support the reading without replacing it as the focus.
 
 ## Duaa
 

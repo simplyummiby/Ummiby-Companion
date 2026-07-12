@@ -1,4 +1,4 @@
 window.UmmibyAppConfig = Object.freeze({
   name: "Ummiby Companion",
-  version: "0.6.9"
+  version: "0.6.10"
 });

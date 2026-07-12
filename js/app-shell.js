@@ -229,22 +229,31 @@
     "quran/reading-units.html": "Reading Units",
     "quran/reading-journey.html": "Reading Journey",
     "quran/reading-journeys.html": "Journey Index",
-    "quran/classic-reading.html": "Classic Reading",
-    "quran/workspace.html": "Reading Workspace",
+    "quran/classic-reading.html": "Classic Reading Journey",
     "quran/completed-journeys.html": "Completed Journeys",
     "quran/history.html": "Reading History",
     "quran/surahs.html": "Browse by Surah",
-    "quran/surah-reader.html": "Qur’an Reader",
     "quran/go-to-ayah.html": "Jump to an Ayah",
     "quran/ramadan-journey.html": "Ramadan Central",
     "quran/ramadan-days.html": "Browse All Days",
-    "quran/ramadan-reader.html": "Ramadan Reading",
     "duaa/index.html": "Duaa Home",
     "duaa/collections.html": "Find a Duaa",
-    "duaa/collection.html": "Duaa Collection",
-    "duaa/focus-mode.html": "Focus Mode",
     "duaa/progress.html": "Duaa Progress"
   });
+
+  const duaaCollectionLabels = Object.freeze({
+    morning: "Morning Adhkār",
+    evening: "Evening Adhkār",
+    sleep: "Before Sleep",
+    travel: "Travel Duʿās",
+    weather: "Weather-Related Duʿās",
+    prayer: "Prayer Duʿās",
+    istikharah: "Istikhārah"
+  });
+
+  const surahNames = Object.freeze([
+    "Al-Fātiḥah","Al-Baqarah","Āl ʿImrān","An-Nisāʾ","Al-Māʾidah","Al-Anʿām","Al-Aʿrāf","Al-Anfāl","At-Tawbah","Yūnus","Hūd","Yūsuf","Ar-Raʿd","Ibrāhīm","Al-Ḥijr","An-Naḥl","Al-Isrāʾ","Al-Kahf","Maryam","Ṭā-Hā","Al-Anbiyāʾ","Al-Ḥajj","Al-Muʾminūn","An-Nūr","Al-Furqān","Ash-Shuʿarāʾ","An-Naml","Al-Qaṣaṣ","Al-ʿAnkabūt","Ar-Rūm","Luqmān","As-Sajdah","Al-Aḥzāb","Sabaʾ","Fāṭir","Yā-Sīn","Aṣ-Ṣāffāt","Ṣād","Az-Zumar","Ghāfir","Fuṣṣilat","Ash-Shūrā","Az-Zukhruf","Ad-Dukhān","Al-Jāthiyah","Al-Aḥqāf","Muḥammad","Al-Fatḥ","Al-Ḥujurāt","Qāf","Adh-Dhāriyāt","Aṭ-Ṭūr","An-Najm","Al-Qamar","Ar-Raḥmān","Al-Wāqiʿah","Al-Ḥadīd","Al-Mujādilah","Al-Ḥashr","Al-Mumtaḥanah","Aṣ-Ṣaff","Al-Jumuʿah","Al-Munāfiqūn","At-Taghābun","Aṭ-Ṭalāq","At-Taḥrīm","Al-Mulk","Al-Qalam","Al-Ḥāqqah","Al-Maʿārij","Nūḥ","Al-Jinn","Al-Muzzammil","Al-Muddaththir","Al-Qiyāmah","Al-Insān","Al-Mursalāt","An-Nabaʾ","An-Nāziʿāt","ʿAbasa","At-Takwīr","Al-Infiṭār","Al-Muṭaffifīn","Al-Inshiqāq","Al-Burūj","Aṭ-Ṭāriq","Al-Aʿlā","Al-Ghāshiyah","Al-Fajr","Al-Balad","Ash-Shams","Al-Layl","Aḍ-Ḍuḥā","Ash-Sharḥ","At-Tīn","Al-ʿAlaq","Al-Qadr","Al-Bayyinah","Az-Zalzalah","Al-ʿĀdiyāt","Al-Qāriʿah","At-Takāthur","Al-ʿAṣr","Al-Humazah","Al-Fīl","Quraysh","Al-Māʿūn","Al-Kawthar","Al-Kāfirūn","An-Naṣr","Al-Masad","Al-Ikhlāṣ","Al-Falaq","An-Nās"
+  ]);
 
   function relativeRoute() {
     const path = window.location.pathname.replace(/\\/g, "/");
@@ -256,11 +265,86 @@
     return parts[parts.length - 1] || "index.html";
   }
 
+  function queryParams() {
+    return new URLSearchParams(window.location.search);
+  }
+
+  function collectionLabel() {
+    return duaaCollectionLabels[queryParams().get("collection") || "morning"] || "Duaa Collection";
+  }
+
+  function surahLabel() {
+    const number = Math.min(114, Math.max(1, Number(queryParams().get("surah")) || 1));
+    return `Surah ${surahNames[number - 1] || number}`;
+  }
+
+  function ramadanReadingLabel() {
+    const raw = (queryParams().get("portion") || "fajr").toLowerCase();
+    const prayer = { fajr: "Fajr", dhuhr: "Dhuhr", asr: "ʿAsr", maghrib: "Maghrib", isha: "ʿIshāʾ" }[raw] || "Fajr";
+    return `${prayer} Reading`;
+  }
+
   function currentPageLabel() {
     const route = relativeRoute();
+    if (route === "duaa/collection.html") return collectionLabel();
+    if (route === "duaa/focus-mode.html") return "Focus Mode";
+    if (route === "quran/surah-reader.html") return surahLabel();
+    if (route === "quran/ramadan-reader.html") return ramadanReadingLabel();
+    if (route === "quran/workspace.html") return "Reading Unit 12";
     if (routeLabels[route]) return routeLabels[route];
     const title = (document.title || "").split("|")[0].trim();
     return title || "Current Page";
+  }
+
+  function breadcrumbTrail(ctx) {
+    const route = relativeRoute();
+    const p = ctx.prefix;
+    const appHome = { href: navHref(p, "index.html"), label: "App Home" };
+    if (route === "index.html" && ctx.module === "app") return [];
+
+    if (ctx.module === "duaa") {
+      const home = { href: navHref(p, "duaa/index.html"), label: "Duaa Home" };
+      if (route === "duaa/index.html") return [appHome, { label: home.label }];
+      if (route === "duaa/collection.html") return [appHome, home, { label: collectionLabel() }];
+      if (route === "duaa/focus-mode.html") {
+        return [
+          appHome,
+          home,
+          { href: `collection.html?collection=${encodeURIComponent(queryParams().get("collection") || "morning")}`, label: collectionLabel() },
+          { label: "Focus Mode" }
+        ];
+      }
+      return [appHome, home, { label: currentPageLabel() }];
+    }
+
+    if (ctx.module === "ramadan") {
+      const home = { href: navHref(p, "quran/ramadan-journey.html"), label: "Ramadan Central" };
+      const journey = { href: navHref(p, "quran/ramadan-journey.html#readingJourney"), label: "Ramadan Reading Journey" };
+      if (route === "quran/ramadan-journey.html") return [appHome, { label: home.label }];
+      if (route === "quran/ramadan-days.html") return [appHome, home, journey, { label: "Browse All Days" }];
+      if (route === "quran/ramadan-reader.html") {
+        const day = Math.max(1, Math.min(30, Number(queryParams().get("day")) || 1));
+        return [appHome, home, journey, { label: `Day ${day}` }, { label: ramadanReadingLabel() }];
+      }
+      return [appHome, home, { label: currentPageLabel() }];
+    }
+
+    if (ctx.module === "quran") {
+      const home = { href: navHref(p, "quran/index.html"), label: "Qur’an Home" };
+      if (route === "quran/index.html") return [appHome, { label: home.label }];
+      if (route === "quran/surah-reader.html") {
+        const classic = queryParams().get("mode") === "classic";
+        return classic
+          ? [appHome, home, { href: "classic-reading.html", label: "Classic Reading Journey" }, { label: surahLabel() }]
+          : [appHome, home, { href: "surahs.html", label: "Browse by Surah" }, { label: surahLabel() }];
+      }
+      if (route === "quran/workspace.html") {
+        return [appHome, home, { href: "reading-journey.html", label: "Reading Journey" }, { label: "Reading Unit 12" }];
+      }
+      return [appHome, home, { label: currentPageLabel() }];
+    }
+
+    return [appHome, { label: currentPageLabel() }];
   }
 
   function renderModuleSection({ active, homeHref, homeLabel, icon, links = [] }) {
@@ -318,33 +402,9 @@
   }
 
   function createBreadcrumb(ctx) {
-    const route = relativeRoute();
-    if (route === "index.html" && ctx.module === "app") return "";
-    const p = ctx.prefix;
-    const items = [breadcrumbItem(navHref(p, "index.html"), "App Home")];
-
-    if (ctx.module === "quran") {
-      if (route === "quran/index.html") items.push(breadcrumbItem("", "Qur’an Home", true));
-      else {
-        items.push(breadcrumbItem(navHref(p, "quran/index.html"), "Qur’an Home"));
-        items.push(breadcrumbItem("", currentPageLabel(), true));
-      }
-    } else if (ctx.module === "duaa") {
-      if (route === "duaa/index.html") items.push(breadcrumbItem("", "Duaa Home", true));
-      else {
-        items.push(breadcrumbItem(navHref(p, "duaa/index.html"), "Duaa Home"));
-        items.push(breadcrumbItem("", currentPageLabel(), true));
-      }
-    } else if (ctx.module === "ramadan") {
-      if (route === "quran/ramadan-journey.html") items.push(breadcrumbItem("", "Ramadan Central", true));
-      else {
-        items.push(breadcrumbItem(navHref(p, "quran/ramadan-journey.html"), "Ramadan Central"));
-        items.push(breadcrumbItem("", currentPageLabel(), true));
-      }
-    } else {
-      items.push(breadcrumbItem("", currentPageLabel(), true));
-    }
-
+    const trail = breadcrumbTrail(ctx);
+    if (!trail.length) return "";
+    const items = trail.map((item, index) => breadcrumbItem(item.href || "", item.label, index === trail.length - 1));
     return `<nav class="breadcrumbs" aria-label="Breadcrumb">${items.join('<span class="breadcrumb-separator" aria-hidden="true">›</span>')}</nav>`;
   }
 

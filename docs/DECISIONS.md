@@ -3,7 +3,7 @@
 - Shared Home introduces the workspaces; it is not a dashboard.
 - Quran and Duaa each have their own Home page.
 - Reading Units preserve the exact order and text of the Qur'an.
-- Quran study resources remain on the Reading Workspace.
+- Qur’an reading and related study resources belong together in a unified Reading Experience. The passage or reading context—not a generic workspace label—identifies the page.
 - Duaa Collections are for recitation.
 - Focus Mode is for study, reflection, and memorization.
 - Morning, Evening, and Before Sleep support gentle tracking.
@@ -186,3 +186,11 @@ Untracked collections do not merely hide the bottom daily-status panel; the rend
 Ummiby Companion provides reliable manual JSON export/import before introducing accounts or cloud synchronization. Users may export Duaa only, Qur’an only, or all recognized app data. Imports are replace-only within the backup scope, never an ambiguous merge. The app validates and summarizes a backup before requesting confirmation.
 
 Backup & Restore is app-wide and appears in the primary menu. Hero titles and explanatory copy must remain accessible HTML rather than text embedded in artwork.
+
+
+## v0.6.10 — Breadcrumbs and reading terminology
+
+- Breadcrumbs answer “Where am I?” using content-specific names.
+- Keep full module-home labels: Qur’an Home, Duaa Home, and Ramadan Central.
+- Ramadan reading hierarchy is Ramadan Central → Ramadan Reading Journey → Day → Prayer Reading.
+- Retire “Reading Workspace” as a user-facing concept. Keep existing internal filenames temporarily until the unified Reading Experience is designed and implemented.

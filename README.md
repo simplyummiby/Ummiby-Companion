@@ -17,8 +17,8 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.6.9 — Navigation & Information Architecture
+v0.6.10 — Navigation & Information Architecture
 
 ## Current Release
 
-Version 0.6.9 adds app-wide breadcrumbs, simplifies the site-wide module menu, removes redundant header links, and establishes green, blue, and purple module theme variables.
+Version 0.6.10 adds app-wide breadcrumbs, simplifies the site-wide module menu, removes redundant header links, and establishes green, blue, and purple module theme variables.
