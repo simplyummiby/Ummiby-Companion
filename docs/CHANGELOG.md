@@ -1,4 +1,12 @@
 
+
+## v0.6.6.4 — Stable Quran Navigation
+
+- Reserved fixed spaces for Quran sidebar icons before JavaScript renders them.
+- Stabilized sidebar width, link weight, and page scrollbar behavior across Quran pages.
+- Added a subtle same-module page transition while keeping the Quran sidebar and top bar anchored.
+- Reduced visible layout shifting when moving between Quran pages.
+
 ## 0.6.6.3 — Quran navigation consistency
 - Applied the Quran Home sidebar design to every Quran page.
 - Standardized the dark green menu, gold section headings, icons, active states, and module switcher.

@@ -11,3 +11,80 @@
 .module-switch{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;margin-top:14px;padding:14px;border:1px solid rgba(229,198,118,.34);border-radius:14px;background:rgba(255,255,255,.06);color:#fff;text-decoration:none}
 .module-switch:hover{background:rgba(255,255,255,.11)}.module-switch span:nth-child(2){display:grid}.module-switch small{color:#c5d9d3}
 .quran-page-main{width:min(1000px,calc(100% - 40px));margin:0 auto;padding:44px 0 72px}.quran-placeholder-card{padding:34px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow)}.quran-placeholder-card h1{margin:0 0 10px;color:var(--quran-dark);font-family:Georgia,serif}.quran-placeholder-card p{color:var(--muted)}
+
+/* v0.6.6.4 — keep the shared Quran shell visually stable between pages */
+html{
+  scrollbar-gutter:stable;
+  background:var(--quran-dark);
+}
+body{
+  background:var(--page);
+}
+.quran-sidebar{
+  width:var(--sidebar-width);
+  min-width:var(--sidebar-width);
+  view-transition-name:quran-sidebar;
+  contain:layout paint;
+}
+.topbar{
+  view-transition-name:quran-topbar;
+}
+.quran-nav-link > [data-ui-icon],
+.module-switch > [data-ui-icon]{
+  display:grid;
+  flex:0 0 20px;
+  width:20px;
+  height:20px;
+  place-items:center;
+}
+.quran-nav-link > [data-ui-icon] svg,
+.module-switch > [data-ui-icon] svg{
+  display:block;
+  width:18px;
+  height:18px;
+}
+.quran-nav-link{
+  font-weight:500;
+}
+.quran-nav-link.active{
+  font-weight:650;
+}
+.page{
+  min-height:100vh;
+  background:var(--page);
+}
+@view-transition{
+  navigation:auto;
+}
+::view-transition-old(quran-sidebar),
+::view-transition-new(quran-sidebar),
+::view-transition-old(quran-topbar),
+::view-transition-new(quran-topbar){
+  animation:none;
+}
+::view-transition-old(root){
+  animation:90ms ease both quran-page-out;
+}
+::view-transition-new(root){
+  animation:140ms ease both quran-page-in;
+}
+@keyframes quran-page-out{
+  to{opacity:.985}
+}
+@keyframes quran-page-in{
+  from{opacity:.985}
+  to{opacity:1}
+}
+@media(max-width:760px){
+  html{scrollbar-gutter:auto}
+  .quran-sidebar{
+    width:min(86vw,290px);
+    min-width:0;
+    view-transition-name:none;
+  }
+  .topbar{view-transition-name:none}
+}
+@media(prefers-reduced-motion:reduce){
+  ::view-transition-old(root),
+  ::view-transition-new(root){animation:none}
+}
