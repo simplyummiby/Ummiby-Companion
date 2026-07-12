@@ -1,9 +1,7 @@
-
-function syncReaderNavigation(mode){document.documentElement.dataset.quranReaderMode=mode;document.querySelectorAll('.quran-nav-link').forEach(link=>link.classList.remove('active'));const target=mode==='classic'?'classic-reading.html':'surahs.html';document.querySelector(`.quran-nav-link[href="${target}"]`)?.classList.add('active')}
 (function(){
  const data=window.QURAN_DATA||[];
  const p=new URLSearchParams(location.search);
- const mode=p.get('mode')==='classic'?'classic':'browse';syncReaderNavigation(mode);
+ const mode=p.get('mode')==='classic'?'classic':'browse';
  let surahNo=Math.min(114,Math.max(1,Number(p.get('surah'))||1));
  let startAyah=Math.max(1,Number(p.get('ayah'))||1);
  const surah=data[surahNo-1];
@@ -29,7 +27,8 @@ function syncReaderNavigation(mode){document.documentElement.dataset.quranReader
    const surahPct=(currentAyah/surah.ayahCount)*100;
    $('surah-progress-fill').style.width=`${surahPct}%`;
    $('surah-progress-label').textContent=`Ayah ${currentAyah} of ${surah.ayahCount}`;
-   $('overall-progress-label').textContent=`${Math.round(surahPct)}% of ${surah.name}`;
+   const overall=window.QURAN_CLASSIC.overallPercent(surahNo,currentAyah);
+   $('overall-progress-label').textContent=`${overall.toFixed(overall<10?1:0)}% through the Qur’an`;
  }
  function remember(ayah){
    currentAyah=ayah; sel.value=ayah; updateClassicBar();
@@ -110,22 +109,12 @@ function syncReaderNavigation(mode){document.documentElement.dataset.quranReader
 
  const lastAyahEl=$(`ayah-${surah.ayahCount}`);
  const completionObserver=new IntersectionObserver(entries=>{
-   const reachedLastAyah=entries.some(e=>e.isIntersecting&&e.intersectionRatio>.65);
-   if(mode==='classic'&&reachedLastAyah){
-     remember(surah.ayahCount);
-     showCompletion(surahNo===114);
-   }
+   if(mode==='classic'&&entries.some(e=>e.isIntersecting&&e.intersectionRatio>.65))showCompletion(surahNo===114);
  },{threshold:[.65]});
  if(lastAyahEl)completionObserver.observe(lastAyahEl);
 
- function syncLastAyahAtPageEnd(){
-   if(mode!=='classic')return;
-   const distanceFromBottom=document.documentElement.scrollHeight-(window.scrollY+window.innerHeight);
-   if(distanceFromBottom<=24)remember(surah.ayahCount);
- }
-
  function updateBackToTopVisibility(){if(backToTopButton)backToTopButton.classList.toggle('is-visible',window.scrollY>520);}
  backToTopButton?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
- window.addEventListener('scroll',()=>{updateBackToTopVisibility();syncLastAyahAtPageEnd();},{passive:true});updateBackToTopVisibility();syncLastAyahAtPageEnd();
+ window.addEventListener('scroll',updateBackToTopVisibility,{passive:true});updateBackToTopVisibility();
  requestAnimationFrame(()=>{const el=$(`ayah-${currentAyah}`);if(el&&currentAyah>1)el.scrollIntoView({block:'start'});setTimeout(()=>{observerReady=true;},350);});
 })();

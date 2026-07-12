@@ -5,11 +5,11 @@
  const pos=state.position;
  const surah=data[pos.surah-1]||data[0];
  const $=id=>document.getElementById(id);
- const surahPercent=(pos.ayah/surah.ayahCount)*100;
+ const overall=tracker.overallPercent(pos.surah,pos.ayah);
  $('classic-location').textContent=`${surah.name} · Ayah ${pos.ayah}`;
  $('classic-progress').textContent=pos.surah===1&&pos.ayah===1&&!state.startedAt?'Ready to begin your cover-to-cover reading.':`${state.completedSurahs.length} of 114 surahs completed.`;
- $('classic-overall-fill').style.width=`${surahPercent}%`;
- $('classic-overall-label').textContent=`${Math.round(surahPercent)}% through ${surah.name} · Ayah ${pos.ayah} of ${surah.ayahCount}`;
+ $('classic-overall-fill').style.width=`${overall}%`;
+ $('classic-overall-label').textContent=`${overall.toFixed(overall<10?1:0)}% through the Qur’an`;
  const a=$('continue-classic');a.href=`surah-reader.html?mode=classic&surah=${pos.surah}&ayah=${pos.ayah}`;a.textContent=state.startedAt?'Continue Classic Reading':'Begin Classic Reading';
  const params=new URLSearchParams(location.search);if(params.get('saved')==='1'||params.get('completed')==='1')$('classic-saved-message').hidden=false;
  $('reset-classic').addEventListener('click',()=>{if(confirm('Reset Classic Reading to Al-Fatihah, Ayah 1? This clears its saved position, completed surahs, and consistency history.')){tracker.reset();location.href='classic-reading.html';}});

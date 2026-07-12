@@ -3,7 +3,10 @@
 Home
 - Quran Home
   - Reading Journey
-  - Ramadan Reading Journey
+  - Ramadan Central
+    - Ramadan Home
+    - 30-day Ramadan Reading Journey
+    - Five prayer-based portions per day
   - Read by Surah
   - Go to Ayah
 - Duaa Home

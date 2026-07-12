@@ -52,7 +52,7 @@
 
 - Complete Duaa Focus Mode reading experience
 - Memorization system and memorized/unmemorized filtering
-- Ramadan Reading Journey
+- Ramadan Central 2.0: seasonal styling, last-ten-nights guidance, optional lunar display, and a gentle fasting tracker
 - Revisit reminders only when the app can support them honestly and reliably
 - Revisit Recently Viewed only when a purposeful interaction model is defined
 

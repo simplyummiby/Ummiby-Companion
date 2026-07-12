@@ -1,23 +1,14 @@
+# v0.6.7 — Ramadan Central 1.0
 
-
-## v0.6.6.4 — Stable Quran Navigation
-
-- Reserved fixed spaces for Quran sidebar icons before JavaScript renders them.
-- Stabilized sidebar width, link weight, and page scrollbar behavior across Quran pages.
-- Added a subtle same-module page transition while keeping the Quran sidebar and top bar anchored.
-- Reduced visible layout shifting when moving between Quran pages.
-
-## 0.6.6.3 — Quran navigation consistency
-- Applied the Quran Home sidebar design to every Quran page.
-- Standardized the dark green menu, gold section headings, icons, active states, and module switcher.
-- Added the shared mobile menu behavior to Quran placeholder, index, library, and reader pages.
-
-# v0.6.6.2 — Classic Reading Progress Polish
-
-- Rounded displayed journey percentages to whole numbers.
-- Changed the Classic Reading sticky reader progress to show progress through the current surah.
-- Changed the Classic Reading journey-page progress bar to show the current surah rather than the whole Quran.
-- Kept overall Quran progress on the Quran Home journey cards.
+- Added Ramadan Central as its own Qur’an module destination after Read Without a Journey.
+- Added a dedicated Ramadan home page rather than placing Ramadan inside the ordinary Journey selector.
+- Added a 30-day, one-juz-per-day Ramadan Reading Journey.
+- Divided every day into Fajr, Dhuhr, ʿAsr, Maghrib, and ʿIshāʾ reading portions using complete-ayah boundaries.
+- Added compact clickable prayer rows showing the ayah range and Complete, Continue, or Start status.
+- Added a Ramadan reading workspace that supports ranges crossing surah boundaries, translation visibility, automatic resume, previous/next portion navigation, and deliberate portion completion.
+- Added separate Ramadan progress storage and included it automatically in Qur’an backup and restore.
+- Added a Browse All Days page with independent progress for all 30 days.
+- Kept live prayer times, a special Ramadan theme, last-ten-nights notices, moon-phase features, and fasting tracking outside the 1.0 scope.
 
 # v0.6.6 — Classic Reading Journey
 
