@@ -1,9 +1,12 @@
+(function(){
+const { units: READING_UNITS } = window.QURAN_READING_LIBRARY;
+const { read: readJourneyState } = window.QURAN_READING_JOURNEY_STATE;
 (() => {
   const STORAGE_KEY = 'ummibyQuranJourneyState';
   const defaults = {
     activeJourney: 'units',
     journeys: {
-      units: { id:'units', name:'Reading Units', shortName:'Reading Units', description:'Balanced reading portions designed for steady progress.', icon:'journey', title:'Reading Unit 12', location:'Surah Al-An‘ām (6)', range:'Ayah 1–77', detail:'Continue from Ayah 42', progress:58, progressLabel:'Unit 12 of 294', href:'workspace.html', week:[1,1,1,1,1,0,0] },
+      units: { id:'units', name:'Reading Journey', shortName:'Reading Journey', description:'Read the Qur’an through 294 canonical Reading Units.', icon:'journey', title:'Reading Unit 1', location:'Al-Fātiḥah', range:'1:1–7', detail:'Continue your Reading Journey', progress:0, progressLabel:'Unit 1 of 294', href:'workspace.html?unit=P0001', week:[0,0,0,0,0,0,0] },
       classic: { id:'classic', name:'Classic Reading', shortName:'Classic', description:'Read continuously from Al-Fatihah to An-Nas, picking up where you left off.', icon:'book', title:'Classic Reading', location:'Surah Al-Baqarah (2)', range:'Ayah 142', detail:'Continue from Ayah 142', progress:4, progressLabel:'Surah 2 · Ayah 142', href:'classic-reading.html', week:[1,0,1,1,0,0,0] }
     }
   };
@@ -18,6 +21,10 @@
   }
   function saveState(){localStorage.setItem(STORAGE_KEY,JSON.stringify(state))}
   const state=readState();
+  const unitState=readJourneyState();
+  const currentUnit=READING_UNITS.find(unit=>unit.id===unitState.currentUnitId)||READING_UNITS[0];
+  const unitProgress=Math.round((unitState.completedUnitIds.length/READING_UNITS.length)*100);
+  state.journeys.units={...state.journeys.units,title:`Reading Unit ${currentUnit.order}`,location:currentUnit.surahName,range:currentUnit.reference,detail:`${currentUnit.title}`,progress:unitProgress,progressLabel:`Unit ${currentUnit.order} of ${READING_UNITS.length}`,href:`workspace.html?unit=${currentUnit.id}`};
   if(window.QURAN_CLASSIC && window.QURAN_DATA){
     const classicState=window.QURAN_CLASSIC.read();
     const pos=classicState.position;
@@ -79,4 +86,5 @@
   });
   document.querySelectorAll('.journey-tab').forEach(tab=>tab.addEventListener('click',()=>renderWeek(tab.dataset.journeyTab)));
   renderAll();
+})();
 })();

@@ -1,3 +1,21 @@
+# v0.7.2.2 — Reading Journey Runtime Fix
+
+- Fixed the global JavaScript name collision that stopped the Reading Workspace and Qur’an Home interactions before initialization.
+- Fixed the Reading Workspace remaining on “Loading…” without displaying Qur’an text.
+- Fixed the Switch Journey dialog on the Qur’an Home page.
+- Fixed the Reading Journey consistency tabs.
+- Isolated the canonical Reading Journey scripts so their internal constants cannot conflict across ordinary script tags.
+- Preserved the 294 canonical Reading Units and all saved journey progress.
+
+# v0.7.2.2 — Canonical Reading Journey
+
+- Added the frozen canonical library of 294 Qur’an Reading Units.
+- Built the complete Reading Journey index with search and saved progress.
+- Built the Reading Workspace with Before You Read above Arabic and English translation.
+- Added previous/next unit navigation, Mark Complete, and resume by canonical unit ID.
+- Updated Qur’an Home to use the real Reading Journey position and progress.
+- Updated release-wide version references to v0.7.2.2.
+
 # v0.7.1 — Home Artwork Integration
 
 - Added the approved warm scenic artwork to the App Home hero.

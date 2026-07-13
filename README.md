@@ -17,8 +17,12 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.7.1 — Home Artwork Integration
+v0.7.2.2 — Canonical Reading Journey
 
 ## Current Release
 
-Version 0.7.1 adds the approved Home hero and module artwork, keeps all Home wording as editable live text, and gives the three destination cards substantially taller image areas.
+Version 0.7.2.2 activates the Qur’an Reading Journey using the canonical library of 294 Reading Units, adds the complete Reading Unit index and workspace, and preserves the Before You Read → Arabic → English reading flow.
+
+### v0.7.2.2 Runtime Fix
+
+This maintenance release fixes local/static loading for the canonical Reading Journey, Reading Workspace, Switch Journey dialog, and consistency tabs. No Reading Unit boundaries or saved progress keys were changed.

@@ -1,3 +1,10 @@
+## Completed in v0.7.2.2
+
+- Canonical 294-unit Reading Journey source
+- Reading Journey index, search, progress, and resume
+- Reading Workspace with Before You Read, Arabic, and English translation
+- Reading Unit completion and previous/next navigation
+
 ## Completed in v0.7.1
 
 - Integrated the final Home hero artwork with live site text

@@ -14,7 +14,7 @@
     <nav class="quran-nav" aria-label="Qur’an navigation">
       <a class="quran-nav-link active" href="index.html"><span data-ui-icon="home" aria-hidden="true"></span>Home</a>
       <p class="quran-nav-label">Reading Journeys</p>
-      <a class="quran-nav-link" href="reading-journey.html"><span data-ui-icon="journey" aria-hidden="true"></span>Reading Units</a>
+      <a class="quran-nav-link" href="reading-journey.html"><span data-ui-icon="journey" aria-hidden="true"></span>Reading Journey</a>
       <a class="quran-nav-link" href="classic-reading.html"><span data-ui-icon="book" aria-hidden="true"></span>Classic Reading</a>
       <a class="quran-nav-link secondary-link" href="reading-journeys.html"><span data-ui-icon="progress" aria-hidden="true"></span>Journey Index</a>
       <p class="quran-nav-label">Read Without a Journey</p>
@@ -43,7 +43,7 @@
         <span class="journey-emblem" data-ui-icon="book" aria-hidden="true"></span>
         <div class="current-journey-copy">
           <p>Current Reading Journey</p>
-          <h2 id="currentJourneyHeading" data-current-journey-name>Reading Units</h2>
+          <h2 id="currentJourneyHeading" data-current-journey-name>Reading Journey</h2>
           <span data-current-journey-description>Balanced reading portions designed for steady progress.</span>
         </div>
         <button class="button outline" id="openJourneyDialog"><span data-ui-icon="journey" aria-hidden="true"></span>Switch Journey</button>
@@ -108,7 +108,11 @@
 </dialog>
 
 <script src="../js/quran-app.js"></script>
-<script src="../js/data/quran-data.js"></script><script src="../js/quran-classic-state.js"></script><script src="../js/quran-home.js"></script>
+<script src="../js/data/quran-data.js"></script>
+<script src="../js/data/readingLibrary.js"></script>
+<script src="../js/quran-reading-journey-state.js"></script>
+<script src="../js/quran-classic-state.js"></script>
+<script src="../js/quran-home.js"></script>
 <script src="../js/app-config.js"></script>
 <script src="../js/app-shell.js"></script>
 </body>

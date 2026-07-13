@@ -1,3 +1,65 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Reading Unit 12 | Ummiby Companion</title><link rel="stylesheet" href="../css/quran-shell.css"></head><body><main style="width:min(680px,calc(100% - 32px));margin:70px auto;padding:34px;border:1px solid #dfe6df;border-radius:22px;background:#fff"><h1 style="font-family:Georgia,serif;color:#2f5d42">Reading Unit 12</h1><p>The full Reading Experience for this unit will be built in a later version. The reading itself will remain central, with related study resources available in context.</p><p><a href="index.html"><span data-ui-icon="arrow-left" aria-hidden="true"></span> Return to Qur’an Home</a></p></main><script src="../js/app-config.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reading Workspace | Ummiby Companion</title>
+  <link rel="stylesheet" href="../css/quran-shell.css">
+  <link rel="stylesheet" href="../css/quran-journey.css">
+</head>
+<body>
+<div class="app-shell workspace-shell">
+  <aside class="sidebar quran-sidebar" id="sidebar">
+    <a class="quran-brand" href="index.html"><span class="quran-brand-mark" data-ui-icon="book" aria-hidden="true"></span><span>Qur’an</span></a>
+    <nav class="quran-nav" aria-label="Qur’an navigation">
+      <a class="quran-nav-link" href="index.html"><span data-ui-icon="home" aria-hidden="true"></span>Home</a>
+      <a class="quran-nav-link active" href="reading-journey.html"><span data-ui-icon="journey" aria-hidden="true"></span>Reading Journey</a>
+      <a class="quran-nav-link" href="surahs.html"><span data-ui-icon="book" aria-hidden="true"></span>Browse by Surah</a>
+    </nav>
+  </aside>
+  <div class="page">
+    <header class="topbar workspace-topbar"><button class="menu-button" id="menuButton"><span class="sr-only">Open navigation</span><span data-ui-icon="menu" aria-hidden="true"></span></button><a href="reading-journey.html"><span data-ui-icon="arrow-left" aria-hidden="true"></span> Reading Journey</a><span id="topUnitLabel"></span></header>
+    <main class="reading-workspace">
+      <section class="workspace-heading">
+        <p class="eyebrow" id="unitNumber">Reading Unit</p>
+        <h1 id="unitTitle">Loading…</h1>
+        <p class="workspace-reference" id="unitReference"></p>
+        <div class="workspace-progress"><span id="unitProgressText"></span><div><i id="unitProgressFill"></i></div></div>
+      </section>
+
+      <section class="before-you-read" aria-labelledby="beforeHeading">
+        <div class="before-icon"><span data-ui-icon="sparkle" aria-hidden="true"></span></div>
+        <div><p class="eyebrow">Prepare for the passage</p><h2 id="beforeHeading">Before You Read</h2><p id="beforeText"></p></div>
+      </section>
+
+      <section class="workspace-reading" aria-label="Qur’an reading">
+        <div class="reading-display-tools">
+          <h2>Read the Passage</h2>
+          <label><input type="checkbox" id="translationToggle" checked> Show English translation</label>
+        </div>
+        <div id="workspaceAyahs" class="workspace-ayahs"></div>
+      </section>
+
+      <section class="workspace-completion" id="completionCard" hidden>
+        <span data-ui-icon="check" aria-hidden="true"></span>
+        <div><h2>Reading Unit complete</h2><p>Your progress has been saved. Continue whenever you are ready.</p></div>
+      </section>
+    </main>
+
+    <footer class="workspace-footer">
+      <button id="previousUnit" class="workspace-nav-button"><span data-ui-icon="arrow-left" aria-hidden="true"></span><span><small>Previous</small><strong id="previousLabel">Reading Unit</strong></span></button>
+      <button id="completeUnit" class="button primary complete-button"><span data-ui-icon="check" aria-hidden="true"></span>Mark Complete</button>
+      <button id="nextUnit" class="workspace-nav-button next"><span><small>Next</small><strong id="nextLabel">Reading Unit</strong></span><span data-ui-icon="arrow-right" aria-hidden="true"></span></button>
+    </footer>
+  </div>
+</div>
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+<script src="../js/quran-app.js"></script>
+<script src="../js/data/quran-data.js"></script>
+<script src="../js/app-config.js"></script>
 <script src="../js/app-shell.js"></script>
-</body></html>
+<script src="../js/data/readingLibrary.js"></script>
+<script src="../js/quran-reading-journey-state.js"></script>
+<script src="../js/quran-workspace.js"></script>
+</body>
+</html>

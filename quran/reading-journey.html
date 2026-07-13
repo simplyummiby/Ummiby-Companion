@@ -1,3 +1,62 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Reading Journey | Ummiby Companion</title><link rel="stylesheet" href="../css/quran-shell.css"></head><body><main style="width:min(680px,calc(100% - 32px));margin:70px auto;padding:34px;border:1px solid #dfe6df;border-radius:22px;background:#fff"><h1 style="font-family:Georgia,serif;color:#2f5d42">Reading Journey</h1><p>This page will be built in a later version.</p><p><a href="index.html"><span data-ui-icon="arrow-left" aria-hidden="true"></span> Return to Qur’an Home</a></p></main><script src="../js/app-config.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reading Journey | Ummiby Companion</title>
+  <link rel="stylesheet" href="../css/quran-shell.css">
+  <link rel="stylesheet" href="../css/quran-journey.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar quran-sidebar" id="sidebar">
+    <a class="quran-brand" href="index.html"><span class="quran-brand-mark" data-ui-icon="book" aria-hidden="true"></span><span>Qur’an</span></a>
+    <nav class="quran-nav" aria-label="Qur’an navigation">
+      <a class="quran-nav-link" href="index.html"><span data-ui-icon="home" aria-hidden="true"></span>Home</a>
+      <p class="quran-nav-label">Reading Journey</p>
+      <a class="quran-nav-link active" href="reading-journey.html"><span data-ui-icon="journey" aria-hidden="true"></span>Reading Journey</a>
+      <a class="quran-nav-link" href="classic-reading.html"><span data-ui-icon="book" aria-hidden="true"></span>Classic Reading</a>
+      <p class="quran-nav-label">Read Without a Journey</p>
+      <a class="quran-nav-link" href="surahs.html"><span data-ui-icon="book" aria-hidden="true"></span>Browse by Surah</a>
+      <a class="quran-nav-link" href="go-to-ayah.html"><span data-ui-icon="search" aria-hidden="true"></span>Jump to an Ayah</a>
+    </nav>
+    <nav class="quran-nav quran-nav-bottom" aria-label="App navigation">
+      <a class="quran-nav-link" href="../backup-restore.html"><span data-ui-icon="database" aria-hidden="true"></span>Backup &amp; Restore</a>
+      <a class="quran-nav-link" href="../settings.html"><span data-ui-icon="settings" aria-hidden="true"></span>Settings</a>
+    </nav>
+  </aside>
+  <div class="page">
+    <header class="topbar"><button class="menu-button" id="menuButton"><span class="sr-only">Open navigation</span><span data-ui-icon="menu" aria-hidden="true"></span></button><a href="index.html"><span data-ui-icon="arrow-left" aria-hidden="true"></span> Qur’an Home</a></header>
+    <main class="journey-page">
+      <section class="journey-hero">
+        <p class="eyebrow">Canonical Reading Journey</p>
+        <h1>Your Reading Journey</h1>
+        <p>Read the Qur’an through 294 thoughtfully grouped Reading Units. Your place is saved gently as you continue.</p>
+        <div class="journey-overview">
+          <div><strong id="completedCount">0</strong><span>Completed</span></div>
+          <div><strong id="remainingCount">294</strong><span>Remaining</span></div>
+          <div><strong id="journeyPercent">0%</strong><span>Journey progress</span></div>
+        </div>
+        <div class="journey-progress-track"><span id="journeyProgressFill"></span></div>
+        <a class="button primary" id="continueJourney" href="workspace.html?unit=P0001"><span data-ui-icon="book" aria-hidden="true"></span>Continue Reading Journey</a>
+      </section>
+
+      <section class="journey-library" aria-labelledby="unitsHeading">
+        <div class="journey-library-heading">
+          <div><p class="eyebrow">All Reading Units</p><h2 id="unitsHeading">Journey from Al-Fātiḥah to An-Nās</h2></div>
+          <label class="journey-search">Find a unit<input id="unitSearch" type="search" placeholder="Search title, surah, or reference"></label>
+        </div>
+        <div class="unit-list" id="unitList"></div>
+      </section>
+    </main>
+  </div>
+</div>
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+<script src="../js/quran-app.js"></script>
+<script src="../js/app-config.js"></script>
 <script src="../js/app-shell.js"></script>
-</body></html>
+<script src="../js/data/readingLibrary.js"></script>
+<script src="../js/quran-reading-journey-state.js"></script>
+<script src="../js/quran-reading-journey.js"></script>
+</body>
+</html>
