@@ -23,10 +23,9 @@
  function positionLabel(){return `${surah.name} · Ayah ${currentAyah}`;}
  function updateClassicBar(){
    if(mode!=='classic')return;
-   $('classic-bar-position').textContent=positionLabel();
    const surahPct=(currentAyah/surah.ayahCount)*100;
    $('surah-progress-fill').style.width=`${surahPct}%`;
-   $('surah-progress-label').textContent=`Ayah ${currentAyah} of ${surah.ayahCount} · ${Math.round(surahPct)}%`;
+   $('surah-progress-label').textContent=`${surah.name} · Ayah ${currentAyah} of ${surah.ayahCount} · ${Math.round(surahPct)}%`;
  }
  function remember(ayah){
    currentAyah=ayah; sel.value=ayah; updateClassicBar();

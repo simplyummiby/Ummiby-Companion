@@ -1,3 +1,10 @@
+# v0.7.2.10 — Reader Footer and Ayah Selector Polish
+
+- Removed duplicate Classic footer location labels.
+- Added the surah name to the Classic footer progress label.
+- Removed duplicate Previous/Next Surah controls from Classic journey mode.
+- Added polished ayah selectors to Classic and Reading Unit readers.
+
 # v0.7.2.9 — Classic Journey Visual Alignment
 
 - Restyled the Classic Reading Journey index to match the Reading Unit Journey index.

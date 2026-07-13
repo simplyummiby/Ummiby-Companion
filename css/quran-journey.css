@@ -131,3 +131,13 @@
 .unit-completion-toggle:focus-visible{outline:3px solid rgba(47,93,66,.3);outline-offset:3px}
 .unit-completion-toggle[aria-pressed="true"] .unit-checkmark{border-color:var(--quran);background:var(--quran);color:#fff;box-shadow:0 6px 16px rgba(47,93,66,.25)}
 @media(max-width:720px){.reading-unit-card{grid-template-columns:46px minmax(0,1fr) 66px;padding:10px 10px 10px 13px}.unit-card-link{grid-template-columns:1fr}.unit-card-status{margin-top:5px}.unit-status-control{min-width:60px;padding-left:8px}.unit-completion-toggle{width:48px;height:48px}.unit-checkmark{width:39px;height:39px}}
+
+
+/* v0.7.2.10 polished Reading Unit ayah selector */
+.ayah-jump-control{display:grid;gap:7px;color:var(--muted);font-size:.82rem;font-weight:800}
+.select-shell{position:relative;display:inline-flex}
+.select-shell::after{content:"";position:absolute;right:15px;top:50%;width:7px;height:7px;border-right:2px solid var(--quran);border-bottom:2px solid var(--quran);transform:translateY(-65%) rotate(45deg);pointer-events:none}
+.ayah-jump-control select{appearance:none;-webkit-appearance:none;min-width:150px;padding:11px 42px 11px 14px;border:1px solid #b9cdbf;border-radius:999px;background:#f8fbf8;color:var(--quran-dark);font-weight:800;box-shadow:0 5px 14px rgba(31,55,46,.08);cursor:pointer}
+.ayah-jump-control select:hover{border-color:#8eae98;background:#fff}
+.ayah-jump-control select:focus-visible{outline:3px solid rgba(47,93,66,.24);outline-offset:2px}
+.workspace-ayah{scroll-margin-top:90px}

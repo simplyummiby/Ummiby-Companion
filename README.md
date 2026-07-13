@@ -17,6 +17,6 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.7.2.9 — Classic Journey Visual Alignment
+v0.7.2.10 — Reader Footer and Ayah Selector Polish
 
-Version 0.7.2.9 brings the Classic Reading Journey much closer to the Reading Unit Journey. It aligns the index cards, bilingual reading layout, translation toggle, breadcrumb, and fixed footer while preserving Classic Reading’s continuous surah-based progress.
+Version 0.7.2.10 brings the Classic Reading Journey much closer to the Reading Unit Journey. It aligns the index cards, bilingual reading layout, translation toggle, breadcrumb, and fixed footer while preserving Classic Reading’s continuous surah-based progress.

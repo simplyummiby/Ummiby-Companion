@@ -82,7 +82,15 @@ const surah = quran[unit.surahNumber - 1];
 const ayahs = surah?.ayahs?.filter(ayah => ayah.ayah >= unit.startAyah && ayah.ayah <= unit.endAyah) || [];
 const arabicDigits = number => String(number).replace(/\d/g, digit => '٠١٢٣٤٥٦٧٨٩'[digit]);
 
-document.getElementById('workspaceAyahs').innerHTML = ayahs.length ? ayahs.map(ayah => `<article class="workspace-ayah">
+const workspaceAyahSelect = document.getElementById('workspaceAyahSelect');
+if (workspaceAyahSelect) {
+  workspaceAyahSelect.innerHTML = ayahs.map(ayah => `<option value="${ayah.ayah}">Ayah ${ayah.ayah}</option>`).join('');
+  workspaceAyahSelect.addEventListener('change', () => {
+    document.getElementById(`workspace-ayah-${workspaceAyahSelect.value}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
+
+document.getElementById('workspaceAyahs').innerHTML = ayahs.length ? ayahs.map(ayah => `<article class="workspace-ayah" id="workspace-ayah-${ayah.ayah}">
   <div class="workspace-ayah-reference">${unit.surahNumber}:${ayah.ayah}</div>
   <div class="workspace-ayah-content">
     <div class="workspace-arabic-column">

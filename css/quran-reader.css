@@ -82,3 +82,11 @@
   .classic-hero-actions{align-items:stretch}
   .classic-surah-card{grid-template-columns:46px minmax(0,1fr) 66px}
 }
+
+
+/* v0.7.2.10 reader cleanup and polished ayah selectors */
+.browse-only-nav[hidden]{display:none!important}
+.reader-controls>label:first-child{display:grid;gap:7px;text-align:left}
+.reader-controls select,.jump-controls select{appearance:none;-webkit-appearance:none;min-width:150px;padding:11px 42px 11px 14px;border:1px solid #b9cdbf;border-radius:999px;background-color:#f8fbf8;background-image:linear-gradient(45deg,transparent 50%,var(--quran) 50%),linear-gradient(135deg,var(--quran) 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 12px) 50%;background-size:6px 6px,6px 6px;background-repeat:no-repeat;color:var(--quran-dark);font-weight:800;box-shadow:0 5px 14px rgba(31,55,46,.08);cursor:pointer}
+.reader-controls select:hover,.jump-controls select:hover{border-color:#8eae98;background-color:#fff}
+.reader-controls select:focus-visible,.jump-controls select:focus-visible{outline:3px solid rgba(47,93,66,.24);outline-offset:2px}
