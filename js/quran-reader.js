@@ -26,9 +26,7 @@
    $('classic-bar-position').textContent=positionLabel();
    const surahPct=(currentAyah/surah.ayahCount)*100;
    $('surah-progress-fill').style.width=`${surahPct}%`;
-   $('surah-progress-label').textContent=`Ayah ${currentAyah} of ${surah.ayahCount}`;
-   const overall=window.QURAN_CLASSIC.overallPercent(surahNo,currentAyah);
-   $('overall-progress-label').textContent=`${overall.toFixed(overall<10?1:0)}% through the Qur’an`;
+   $('surah-progress-label').textContent=`Ayah ${currentAyah} of ${surah.ayahCount} · ${Math.round(surahPct)}%`;
  }
  function remember(ayah){
    currentAyah=ayah; sel.value=ayah; updateClassicBar();
@@ -52,10 +50,12 @@
  surah.ayahs.forEach(a=>{const o=document.createElement('option');o.value=a.ayah;o.textContent=`Ayah ${a.ayah}`;sel.appendChild(o);});
  sel.value=currentAyah;
  $('ayah-list').innerHTML=surah.ayahs.map(a=>`
-   <article class="ayah" id="ayah-${a.ayah}" data-ayah="${a.ayah}">
+   <article class="ayah classic-ayah-card" id="ayah-${a.ayah}" data-ayah="${a.ayah}">
      <div class="ayah-label">${surah.number}:${a.ayah}</div>
-     <p class="arabic-text" lang="ar" dir="rtl"><span class="ayah-arabic-copy">${displayArabic(a)}</span><span class="ayah-ornament" aria-label="Ayah ${a.ayah}"><span class="ayah-ornament-symbol" aria-hidden="true">۝</span><span class="ayah-ornament-number">${arabicDigits(a.ayah)}</span></span></p>
-     <div class="translation-wrap"><p class="translation">${a.translation}</p>${a.footnotes?`<details class="footnotes"><summary>Translation notes</summary><p>${a.footnotes.replace(/\n/g,'<br>')}</p></details>`:''}</div>
+     <div class="classic-ayah-content">
+       <div class="translation-wrap classic-translation-column"><p class="translation">${a.translation}</p>${a.footnotes?`<details class="footnotes"><summary>Translation notes</summary><p>${a.footnotes.replace(/\n/g,'<br>')}</p></details>`:''}</div>
+       <div class="classic-arabic-column"><p class="arabic-text" lang="ar" dir="rtl"><span class="ayah-arabic-copy">${displayArabic(a)}</span><span class="ayah-ornament" aria-label="Ayah ${a.ayah}"><span class="ayah-ornament-symbol" aria-hidden="true">۝</span><span class="ayah-ornament-number">${arabicDigits(a.ayah)}</span></span></p></div>
+     </div>
    </article>`).join('');
 
  sel.addEventListener('change',()=>{const ayah=Number(sel.value);remember(ayah);$(`ayah-${ayah}`)?.scrollIntoView({behavior:'smooth',block:'start'});});
@@ -74,8 +74,9 @@
 
  if(mode==='classic'){
    $('classic-previous-surah').disabled=surahNo===1;
+   $('classic-previous-label').textContent=surahNo===1?'Beginning':data[surahNo-2].name;
    $('classic-previous-surah').addEventListener('click',()=>go(surahNo-1,data[surahNo-2].ayahCount));
-   $('classic-next-surah').textContent=surahNo===114?'Complete Journey':'Next →';
+   $('classic-next-label').textContent=surahNo===114?'Complete Journey':data[surahNo].name;
    $('classic-next-surah').addEventListener('click',()=>{
      if(currentAyah<surah.ayahCount){
        const ok=confirm(`You are currently at Ayah ${currentAyah}. Move to the next surah and mark ${surah.name} complete?`);

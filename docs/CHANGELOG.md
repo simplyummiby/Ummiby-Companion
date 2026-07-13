@@ -1,4 +1,13 @@
-# v0.7.2.8 — Reading Index Breadcrumb and Status Polish
+# v0.7.2.9 — Classic Journey Visual Alignment
+
+- Restyled the Classic Reading Journey index to match the Reading Unit Journey index.
+- Added the full breadcrumb path for the Classic Reading Journey Index.
+- Added bilingual side-by-side ayah cards with English on the left and Arabic on the right.
+- Matched the English translation toggle to the Reading Unit Journey.
+- Simplified the Classic footer to Previous, Surah Progress, Index, Save Place & Exit, and Next.
+- Corrected footer progress language so the bar describes the current surah only.
+
+# v0.7.2.9 — Reading Index Breadcrumb and Status Polish
 
 - Turned the Continue Reading pill on Qur’an Home into a concise link to the active journey index.
 - Polished the Switch Journey button so it feels like a deliberate primary navigation control.
