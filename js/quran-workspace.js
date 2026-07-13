@@ -10,6 +10,39 @@ const previous = READING_UNITS[index - 1] || null;
 const next = READING_UNITS[index + 1] || null;
 const quran = window.QURAN_DATA || [];
 
+const TOPICS_BY_UNIT = {
+  P0001: ["Praise and gratitude to Allah", "Allah's mercy and lordship", "Worship and reliance upon Allah", "Guidance to the Straight Path"],
+  P0002: ["The qualities of the believers", "The condition of those who reject faith", "The signs and behavior of the hypocrites"],
+  P0003: ["The call to worship Allah alone", "Allah's signs in creation", "The challenge concerning the Qur'an", "The consequences of belief and disbelief"],
+  P0004: ["The creation of Adam", "The command to the angels", "The refusal of Iblīs", "Life in Paradise", "Repentance and guidance"],
+  P0005: ["Allah's favors upon the Children of Israel", "The covenant and the call to faith", "Patience and prayer", "Lessons from their disobedience and deliverance"],
+  P0006: ["The command to sacrifice a cow", "The people's repeated questioning", "The murder that was concealed", "Allah bringing the truth to light", "The hardening of hearts after clear signs"],
+  P0007: ["Distorting and concealing revelation", "Breaking the covenant", "Selective obedience to Allah's commands", "The consequences of preferring worldly life"],
+  P0008: ["The sending of messengers and scripture", "Rejection driven by pride and envy", "Claims about exclusive salvation", "Longing for worldly life"],
+  P0009: ["Jibrīl and the revelation", "Repeated breaking of covenants", "Magic and the trial of Hārūt and Mārūt", "The harm of exchanging faith for false knowledge"],
+  P0010: ["Guidance for the believers", "The response of the People of the Book", "Allah's ownership of revelation and guidance", "The legacy and warnings of the Children of Israel"],
+  P0011: ["Ibrāhīm being tested", "The Kaʿbah as a place of worship", "The prayer for Makkah", "The raising of the House's foundations", "The supplication for a messenger"],
+  P0012: ["The religion of Ibrāhīm", "Submission to Allah", "The guidance given to his descendants", "The unity of the prophets' message"],
+  P0013: ["The change of the qiblah", "The purpose of the believing community", "Following the Messenger", "Remembering Allah with gratitude"],
+  P0014: ["Seeking help through patience and prayer", "Steadfastness during trials", "The reward of those who return to Allah"],
+  P0015: ["Ṣafā and Marwah among Allah's symbols", "Voluntary good deeds", "The warning against concealing revelation", "Repentance and correction"],
+  P0016: ["The oneness of Allah", "Signs throughout creation", "False objects of worship", "Regret on the Day of Judgment"],
+  P0017: ["Eating what is lawful and good", "Avoiding the footsteps of Shayṭān", "Blindly following tradition", "The meaning of true righteousness"],
+  P0018: ["Legal retribution", "Mercy and restraint", "The obligation of making a will", "Justice in carrying out a bequest"],
+  P0019: ["The obligation of fasting", "Ramadan and the revelation of the Qur'an", "Allah's nearness and answering supplication", "The limits and rulings of the fast"],
+  P0020: ["The new moons and sacred times", "Entering homes with righteousness", "Fighting within Allah's limits", "The rites and remembrance of Hajj"],
+  P0021: ["Sincere and deceptive speech", "Submitting fully to Islam", "Trials faced by earlier believers", "Spending and striving in Allah's cause"],
+  P0022: ["What and whom to spend upon", "Fighting when it is disliked", "Intoxicants and gambling", "Care for orphans"],
+  P0023: ["Marriage and family boundaries", "Menstruation and marital relations", "Oaths and separation", "Divorce and reconciliation", "Waiting periods, nursing, and care for widows"],
+  P0024: ["A people who fled from death", "Ṭālūt chosen as king", "The test at the river", "Faith and steadfastness before Jālūt", "Dāwūd's victory"],
+  P0025: ["The ranks of Allah's messengers", "Spending before the Day of Judgment", "Allah's complete life and authority in Āyat al-Kursī", "No compulsion in religion", "Allah as the protector of the believers"],
+  P0026: ["The dispute with Ibrāhīm about lordship", "The man shown a sign of resurrection", "Ibrāhīm asking how the dead are brought to life"],
+  P0027: ["The multiplied reward of charity", "Giving without reminders or harm", "Sincere and insincere spending", "Giving openly and secretly", "Seeking out those in quiet need"],
+  P0028: ["The prohibition of ribā", "The difference between trade and usury", "Repentance from unlawful gain", "Giving relief to a debtor", "Preparing for the final return to Allah"],
+  P0029: ["Writing and witnessing debts", "Fairness in contracts", "Responsibility when traveling", "Trust and honest testimony"],
+  P0030: ["Allah's ownership of all things", "Accountability for what hearts conceal", "Faith in Allah and His messengers", "The believers' closing supplication for mercy and help"]
+};
+
 setCurrentUnit(unit.id);
 
 document.title = `Reading Unit ${unit.order}: ${unit.title} | Ummiby Companion`;
@@ -29,15 +62,15 @@ const topicParts = unit.title
   .map(topic => topic.trim())
   .filter(Boolean);
 
-const topics = [...new Set(topicParts)];
-const beforeCard = document.querySelector('.before-you-read');
+const topics = TOPICS_BY_UNIT[unit.id] || [...new Set(topicParts)];
+const topicsCard = document.querySelector('.before-you-read');
 if (topics.length) {
   document.getElementById('beforeTopics').innerHTML = topics
-    .slice(0, 5)
+    .slice(0, 6)
     .map(topic => `<li>${topic}</li>`)
     .join('');
 } else {
-  beforeCard.hidden = true;
+  topicsCard.hidden = true;
 }
 
 const surah = quran[unit.surahNumber - 1];
@@ -71,9 +104,32 @@ document.getElementById('completeUnit').addEventListener('click', () => {
   completeUnit(unit.id, next?.id || unit.id);
   const card = document.getElementById('completionCard');
   card.hidden = false;
-  document.getElementById('completeUnit').textContent = 'Completed';
+  const completeButton = document.getElementById('completeUnit');
+  completeButton.classList.add('is-complete');
+  completeButton.querySelector('span:last-child').textContent = 'Completed';
   card.scrollIntoView({ behavior:'smooth', block:'center' });
 });
+
+const passageProgressFill = document.getElementById('passageProgressFill');
+const passageProgressText = document.getElementById('passageProgressText');
+const readingSection = document.querySelector('.workspace-reading');
+const backToTop = document.getElementById('quranBackToTop');
+
+function updatePassageProgress() {
+  if (!readingSection) return;
+  const start = readingSection.offsetTop;
+  const end = start + readingSection.offsetHeight - window.innerHeight;
+  const distance = Math.max(1, end - start);
+  const percent = Math.max(0, Math.min(100, ((window.scrollY - start) / distance) * 100));
+  passageProgressFill.style.width = `${percent}%`;
+  passageProgressText.textContent = `${Math.round(percent)}%`;
+  backToTop.classList.toggle('is-visible', window.scrollY > 420);
+}
+
+window.addEventListener('scroll', updatePassageProgress, { passive: true });
+window.addEventListener('resize', updatePassageProgress);
+backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+updatePassageProgress();
 
 window.UmmibyIcons?.hydrate(document);
 })();

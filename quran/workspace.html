@@ -28,7 +28,7 @@
       </section>
 
       <section class="before-you-read" aria-labelledby="beforeHeading">
-        <h2 id="beforeHeading"><span aria-hidden="true">✦</span> Before You Read</h2>
+        <h2 id="beforeHeading"><span aria-hidden="true">✦</span> Topics in This Unit</h2>
         <p class="before-intro">In this passage you'll read about:</p>
         <ul id="beforeTopics" class="before-topics"></ul>
       </section>
@@ -48,10 +48,20 @@
     </main>
 
     <footer class="workspace-footer">
-      <button id="previousUnit" class="workspace-nav-button"><span data-ui-icon="arrow-left" aria-hidden="true"></span><span><small>Previous</small><strong id="previousLabel">Reading Unit</strong></span></button>
-      <button id="completeUnit" class="button primary complete-button"><span data-ui-icon="check" aria-hidden="true"></span>Mark Complete</button>
-      <button id="nextUnit" class="workspace-nav-button next"><span><small>Next</small><strong id="nextLabel">Reading Unit</strong></span><span data-ui-icon="arrow-right" aria-hidden="true"></span></button>
+      <button id="previousUnit" class="workspace-nav-button workspace-footer-previous"><span data-ui-icon="arrow-left" aria-hidden="true"></span><span><small>Previous</small><strong id="previousLabel">Reading Unit</strong></span></button>
+      <div class="workspace-footer-center">
+        <div class="passage-progress" aria-label="Progress through this passage">
+          <div class="passage-progress-labels"><span>Passage progress</span><strong id="passageProgressText">0%</strong></div>
+          <div class="passage-progress-track"><i id="passageProgressFill"></i></div>
+        </div>
+        <div class="workspace-footer-actions">
+          <a class="workspace-index-link" href="reading-journey.html"><span data-ui-icon="journey" aria-hidden="true"></span>Index</a>
+          <button id="completeUnit" class="complete-button" type="button"><span data-ui-icon="check" aria-hidden="true"></span><span>Mark Complete</span></button>
+        </div>
+      </div>
+      <button id="nextUnit" class="workspace-nav-button next workspace-footer-next"><span><small>Next</small><strong id="nextLabel">Reading Unit</strong></span><span data-ui-icon="arrow-right" aria-hidden="true"></span></button>
     </footer>
+    <button class="quran-back-to-top workspace-back-to-top" id="quranBackToTop" type="button" aria-label="Back to top" title="Back to top"><span data-ui-icon="arrow-up" aria-hidden="true"></span></button>
   </div>
 </div>
 <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
