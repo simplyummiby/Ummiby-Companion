@@ -1,3 +1,13 @@
+# v0.7.1 — Home Artwork Integration
+
+- Added the approved warm scenic artwork to the App Home hero.
+- Kept “Ummiby Companion” and its tagline as accessible, editable live text rather than embedding words in the image.
+- Added dedicated green Qur’an, blue Duaa, and rich-aubergine Ramadan artwork to the three Home cards.
+- Increased card image height across desktop, tablet, and mobile layouts.
+- Organized the new files under `assets/images/home/` with consistent descriptive names.
+- Preserved all existing Home navigation and module functionality.
+- Updated release-wide version references to v0.7.1.
+
 # v0.7.0 — Unified Home Experience
 
 - Rebuilt App Home as a calm welcome space rather than a feature-heavy dashboard.

@@ -1,3 +1,10 @@
+## Completed in v0.7.1
+
+- Integrated the final Home hero artwork with live site text
+- Added dedicated artwork for Qur’an, Duaa, and Ramadan cards
+- Increased responsive card-image height
+- Standardized Home artwork filenames and storage
+
 ## Completed in v0.7.0
 
 - Unified App Home with compact Qur’an, Duaa, and Ramadan cards

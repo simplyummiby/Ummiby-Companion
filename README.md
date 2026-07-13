@@ -17,8 +17,8 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.7.0 — Unified Home Experience
+v0.7.1 — Home Artwork Integration
 
 ## Current Release
 
-Version 0.7.0 refreshes App Home as a calm, compact welcome space with three equal destinations for Qur’an, Duaa, and Ramadan, plus a dedicated warm-neutral Home theme.
+Version 0.7.1 adds the approved Home hero and module artwork, keeps all Home wording as editable live text, and gives the three destination cards substantially taller image areas.
