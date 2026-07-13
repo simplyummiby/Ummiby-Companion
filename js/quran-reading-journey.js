@@ -34,16 +34,18 @@ function render(query = '') {
   list.innerHTML = units.map(unit => {
     const status = unitStatus(unit);
     const isComplete = status === 'completed';
-    const statusText = status === 'current' ? 'Current unit' : `Unit ${unit.order}`;
     return `<article class="reading-unit-card ${status}">
       <span class="unit-order">${String(unit.order).padStart(3,'0')}</span>
-      <a class="unit-card-link" href="workspace.html?unit=${unit.id}">
+      <a class="unit-card-link" href="workspace.html?unit=${unit.id}" aria-label="Read Unit ${unit.order}: ${unit.title}">
         <span class="unit-card-copy"><small>${unit.surahName} · ${unit.reference}</small><strong>${unit.title}</strong><em>${unit.type}</em></span>
-        <span class="unit-card-status">${isComplete ? 'Completed' : statusText}<span data-ui-icon="arrow-right" aria-hidden="true"></span></span>
+        <span class="unit-card-status">Read Unit ${unit.order}<span data-ui-icon="arrow-right" aria-hidden="true"></span></span>
       </a>
-      <button class="unit-completion-toggle" type="button" data-unit-id="${unit.id}" aria-pressed="${isComplete}" aria-label="Mark Reading Unit ${unit.order} ${isComplete ? 'incomplete' : 'complete'}" title="${isComplete ? 'Mark incomplete' : 'Mark complete'}">
-        <span class="unit-checkmark" aria-hidden="true"><span data-ui-icon="check"></span></span>
-      </button>
+      <div class="unit-status-control">
+        <span class="unit-status-label">Status</span>
+        <button class="unit-completion-toggle" type="button" data-unit-id="${unit.id}" aria-pressed="${isComplete}" aria-label="Mark Reading Unit ${unit.order} ${isComplete ? 'incomplete' : 'complete'}" title="${isComplete ? 'Mark incomplete' : 'Mark complete'}">
+          <span class="unit-checkmark" aria-hidden="true"><span data-ui-icon="check"></span></span>
+        </button>
+      </div>
     </article>`;
   }).join('') || '<p class="empty-state">No Reading Units match that search.</p>';
   window.UmmibyIcons?.hydrate(document);

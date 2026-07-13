@@ -115,3 +115,19 @@
 .unit-completion-toggle:hover .unit-checkmark{border-color:var(--quran);background:#f2f8f3;color:#8ab09a}
 .unit-completion-toggle[aria-pressed="true"] .unit-checkmark{border-color:var(--quran);background:var(--quran);color:#fff;box-shadow:0 5px 14px rgba(47,93,66,.2)}
 @media(max-width:720px){.journey-hero-actions{align-items:stretch;flex-direction:column}.journey-reset-button{margin-left:0;align-self:flex-end}.reading-unit-card{grid-template-columns:46px minmax(0,1fr) 40px;padding:12px 10px 12px 13px}.unit-card-link{grid-template-columns:1fr}.unit-card-status{grid-column:auto}.unit-completion-toggle{width:38px;height:38px}}
+
+
+/* v0.7.2.8 breadcrumb hierarchy and safer index status controls */
+.reading-unit-card{grid-template-columns:58px minmax(0,1fr) 76px;align-items:stretch;padding:12px 14px 12px 18px}
+.reading-unit-card .unit-order{align-self:center}
+.unit-card-link{align-self:stretch;padding:4px 2px;min-height:68px}
+.unit-card-status{white-space:nowrap;color:var(--quran);font-weight:850}
+.unit-status-control{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-width:70px;border-left:1px solid var(--line);padding-left:12px}
+.unit-status-label{color:var(--muted);font-size:.68rem;font-weight:850;letter-spacing:.06em;text-transform:uppercase}
+.unit-completion-toggle{display:grid;place-items:center;width:52px;height:52px;padding:0;border:0;border-radius:50%;background:transparent;cursor:pointer;touch-action:manipulation}
+.unit-checkmark{display:grid;place-items:center;width:42px;height:42px;border:2px solid #aeb8b1;border-radius:50%;background:#f8faf8;color:#9aa59e;box-shadow:0 2px 7px rgba(31,55,46,.07);transition:.16s ease}
+.unit-checkmark .ui-icon{width:22px;height:22px;stroke-width:2.4}
+.unit-completion-toggle:hover .unit-checkmark{border-color:#789985;background:#eef5f0;color:#6d8f7a;transform:scale(1.03)}
+.unit-completion-toggle:focus-visible{outline:3px solid rgba(47,93,66,.3);outline-offset:3px}
+.unit-completion-toggle[aria-pressed="true"] .unit-checkmark{border-color:var(--quran);background:var(--quran);color:#fff;box-shadow:0 6px 16px rgba(47,93,66,.25)}
+@media(max-width:720px){.reading-unit-card{grid-template-columns:46px minmax(0,1fr) 66px;padding:10px 10px 10px 13px}.unit-card-link{grid-template-columns:1fr}.unit-card-status{margin-top:5px}.unit-status-control{min-width:60px;padding-left:8px}.unit-completion-toggle{width:48px;height:48px}.unit-checkmark{width:39px;height:39px}}

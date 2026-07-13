@@ -1,4 +1,4 @@
-# v0.7.2.7 — Journey Navigation and Progress Polish
+# v0.7.2.8 — Reading Index Breadcrumb and Status Polish
 
 - Turned the Continue Reading pill on Qur’an Home into a concise link to the active journey index.
 - Polished the Switch Journey button so it feels like a deliberate primary navigation control.

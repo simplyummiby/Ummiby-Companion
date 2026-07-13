@@ -17,8 +17,8 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.7.2.7 — Journey Navigation and Progress Polish
+v0.7.2.8 — Reading Index Breadcrumb and Status Polish
 
 ## Current Release
 
-Version 0.7.2.7 improves navigation and progress clarity across the Qur’an Reading Journeys. It adds explicit completion toggles to the Reading Unit Index, fixes reset progress reporting, strengthens breadcrumbs and journey links, and brings the Classic Reading footer closer to the Reading Unit footer pattern.
+Version 0.7.2.8 refines the Reading Unit index and breadcrumb hierarchy. It adds clearer App Home and Qur’an Home paths, a larger isolated Status control on every index card, and explicit “Read Unit” actions while preserving the existing card design.
