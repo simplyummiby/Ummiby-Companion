@@ -20,7 +20,25 @@ document.getElementById('topUnitLabel').textContent = `Unit ${unit.order} of ${R
 document.getElementById('unitProgressText').textContent = `${Math.round((unit.order / READING_UNITS.length) * 100)}% through the Reading Journey`;
 document.getElementById('unitProgressFill').style.width = `${(unit.order / READING_UNITS.length) * 100}%`;
 
-document.getElementById('beforeText').textContent = `This Reading Unit covers ${unit.title.toLowerCase()} in ${unit.surahName} (${unit.reference}). Read the ayat together as one complete ${unit.type.toLowerCase()} passage, taking time to notice how the ideas develop from the beginning to the end of the unit.`;
+const topicParts = unit.title
+  .replace(/^The Opening of /, '')
+  .replace(/^The Closing of /, '')
+  .replace(/^The Closing Supplication of /, 'The closing supplication of ')
+  .replace(/^The Whole Surah$/, unit.surahName)
+  .split(/,|\band\b|\bthrough\b/i)
+  .map(topic => topic.trim())
+  .filter(Boolean);
+
+const topics = [...new Set(topicParts)];
+const beforeCard = document.querySelector('.before-you-read');
+if (topics.length) {
+  document.getElementById('beforeTopics').innerHTML = topics
+    .slice(0, 5)
+    .map(topic => `<li>${topic}</li>`)
+    .join('');
+} else {
+  beforeCard.hidden = true;
+}
 
 const surah = quran[unit.surahNumber - 1];
 const ayahs = surah?.ayahs?.filter(ayah => ayah.ayah >= unit.startAyah && ayah.ayah <= unit.endAyah) || [];
@@ -28,8 +46,14 @@ const arabicDigits = number => String(number).replace(/\d/g, digit => '٠١٢٣�
 
 document.getElementById('workspaceAyahs').innerHTML = ayahs.length ? ayahs.map(ayah => `<article class="workspace-ayah">
   <div class="workspace-ayah-reference">${unit.surahNumber}:${ayah.ayah}</div>
-  <p class="workspace-arabic" lang="ar" dir="rtl">${ayah.arabic}<span class="workspace-ayah-marker">۝${arabicDigits(ayah.ayah)}</span></p>
-  <div class="workspace-translation"><p>${ayah.translation}</p>${ayah.footnotes ? `<details><summary>Translation notes</summary><p>${ayah.footnotes.replace(/\n/g,'<br>')}</p></details>` : ''}</div>
+  <div class="workspace-ayah-content">
+    <div class="workspace-arabic-column">
+      <p class="workspace-arabic" lang="ar" dir="rtl">${ayah.arabic}<span class="workspace-ayah-marker">۝${arabicDigits(ayah.ayah)}</span></p>
+    </div>
+    <div class="workspace-translation">
+      <p>${ayah.translation}</p>${ayah.footnotes ? `<details><summary>Translation notes</summary><p>${ayah.footnotes.replace(/\n/g,'<br>')}</p></details>` : ''}
+    </div>
+  </div>
 </article>`).join('') : '<p class="empty-state">The Qur’an text could not be loaded. Please refresh the page.</p>';
 
 document.getElementById('translationToggle').addEventListener('change', event => document.body.classList.toggle('hide-workspace-translation', !event.target.checked));

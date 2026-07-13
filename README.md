@@ -17,12 +17,12 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.7.2.2 — Canonical Reading Journey
+v0.7.2.4 — Canonical Reading Journey
 
 ## Current Release
 
-Version 0.7.2.2 activates the Qur’an Reading Journey using the canonical library of 294 Reading Units, adds the complete Reading Unit index and workspace, and preserves the Before You Read → Arabic → English reading flow.
+Version 0.7.2.4 keeps the canonical 294-unit Reading Journey and polishes the Reading Workspace with English on the left, Arabic on the right, and a restored topic-based Before You Read box.
 
-### v0.7.2.2 Runtime Fix
+### v0.7.2.4 Runtime Fix
 
 This maintenance release fixes local/static loading for the canonical Reading Journey, Reading Workspace, Switch Journey dialog, and consistency tabs. No Reading Unit boundaries or saved progress keys were changed.
