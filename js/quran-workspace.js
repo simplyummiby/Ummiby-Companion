@@ -1,6 +1,6 @@
 (function(){
 const { units: READING_UNITS, getById: getReadingUnitById } = window.QURAN_READING_LIBRARY;
-const { read: readJourneyState, setCurrent: setCurrentUnit, completeUnit } = window.QURAN_READING_JOURNEY_STATE;
+const { read: readJourneyState, setCurrent: setCurrentUnit, completeUnit, toggleUnit } = window.QURAN_READING_JOURNEY_STATE;
 
 const params = new URLSearchParams(location.search);
 const requestedId = params.get('unit') || readJourneyState().currentUnitId;
@@ -53,6 +53,8 @@ document.getElementById('topUnitLabel').textContent = `Unit ${unit.order} of ${R
 document.getElementById('unitProgressText').textContent = `${Math.round((unit.order / READING_UNITS.length) * 100)}% through the Reading Journey`;
 document.getElementById('unitProgressFill').style.width = `${(unit.order / READING_UNITS.length) * 100}%`;
 
+let isUnitComplete = readJourneyState().completedUnitIds.includes(unit.id);
+
 const topicParts = unit.title
   .replace(/^The Opening of /, '')
   .replace(/^The Closing of /, '')
@@ -100,14 +102,27 @@ document.getElementById('nextLabel').textContent = next ? `Unit ${next.order}` :
 previousButton.addEventListener('click', () => { if (previous) location.href = `workspace.html?unit=${previous.id}`; });
 nextButton.addEventListener('click', () => { if (next) location.href = `workspace.html?unit=${next.id}`; });
 
-document.getElementById('completeUnit').addEventListener('click', () => {
-  completeUnit(unit.id, next?.id || unit.id);
-  const card = document.getElementById('completionCard');
-  card.hidden = false;
-  const completeButton = document.getElementById('completeUnit');
-  completeButton.classList.add('is-complete');
-  completeButton.querySelector('span:last-child').textContent = 'Completed';
-  card.scrollIntoView({ behavior:'smooth', block:'center' });
+const completeButton = document.getElementById('completeUnit');
+function updateCompleteButton() {
+  completeButton.classList.toggle('is-complete', isUnitComplete);
+  completeButton.setAttribute('aria-pressed', String(isUnitComplete));
+  completeButton.querySelector('span:last-child').textContent = isUnitComplete ? 'Completed' : 'Mark Complete';
+}
+updateCompleteButton();
+
+completeButton.addEventListener('click', () => {
+  if (isUnitComplete) {
+    toggleUnit(unit.id);
+    isUnitComplete = false;
+    document.getElementById('completionCard').hidden = true;
+  } else {
+    completeUnit(unit.id, next?.id || unit.id);
+    isUnitComplete = true;
+    const card = document.getElementById('completionCard');
+    card.hidden = false;
+    card.scrollIntoView({ behavior:'smooth', block:'center' });
+  }
+  updateCompleteButton();
 });
 
 const passageProgressFill = document.getElementById('passageProgressFill');

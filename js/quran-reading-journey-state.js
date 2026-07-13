@@ -35,6 +35,23 @@ function completeUnit(id, nextId = null) {
   return saveJourneyState(state);
 }
 
+function toggleUnit(id) {
+  const state = readJourneyState();
+  const index = state.completedUnitIds.indexOf(id);
+  if (index >= 0) state.completedUnitIds.splice(index, 1);
+  else state.completedUnitIds.push(id);
+  state.lastReadAt = new Date().toISOString();
+  return saveJourneyState(state);
+}
+
+function resetProgress() {
+  const state = readJourneyState();
+  state.currentUnitId = 'P0001';
+  state.completedUnitIds = [];
+  state.lastReadAt = new Date().toISOString();
+  return saveJourneyState(state);
+}
+
 function restartJourney() {
   const state = readJourneyState();
   if (state.completedUnitIds.length === 294) state.completedJourneys += 1;
@@ -49,6 +66,8 @@ window.QURAN_READING_JOURNEY_STATE = Object.freeze({
   save: saveJourneyState,
   setCurrent: setCurrentUnit,
   completeUnit,
+  toggleUnit,
+  resetProgress,
   restart: restartJourney
 });
 })();

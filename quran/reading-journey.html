@@ -29,7 +29,7 @@
     <header class="topbar"><button class="menu-button" id="menuButton"><span class="sr-only">Open navigation</span><span data-ui-icon="menu" aria-hidden="true"></span></button><a href="index.html"><span data-ui-icon="arrow-left" aria-hidden="true"></span> Qur’an Home</a></header>
     <main class="journey-page">
       <section class="journey-hero">
-        <p class="eyebrow">Canonical Reading Journey</p>
+        <p class="eyebrow">294 Reading Units</p>
         <h1>Your Reading Journey</h1>
         <p>Read the Qur’an through 294 thoughtfully grouped Reading Units. Your place is saved gently as you continue.</p>
         <div class="journey-overview">
@@ -38,7 +38,10 @@
           <div><strong id="journeyPercent">0%</strong><span>Journey progress</span></div>
         </div>
         <div class="journey-progress-track"><span id="journeyProgressFill"></span></div>
-        <a class="button primary" id="continueJourney" href="workspace.html?unit=P0001"><span data-ui-icon="book" aria-hidden="true"></span>Continue Reading Journey</a>
+        <div class="journey-hero-actions">
+          <a class="button primary" id="continueJourney" href="workspace.html?unit=P0001"><span data-ui-icon="book" aria-hidden="true"></span>Continue Reading Journey</a>
+          <button class="journey-reset-button" id="resetJourneyProgress" type="button"><span data-ui-icon="history" aria-hidden="true"></span>Reset Reading Progress</button>
+        </div>
       </section>
 
       <section class="journey-library" aria-labelledby="unitsHeading">
@@ -51,6 +54,7 @@
     </main>
   </div>
 </div>
+<button class="quran-back-to-top journey-back-to-top" id="journeyBackToTop" type="button" aria-label="Back to top" title="Back to top"><span data-ui-icon="arrow-up" aria-hidden="true"></span></button>
 <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
 <script src="../js/quran-app.js"></script>
 <script src="../js/app-config.js"></script>
