@@ -1,3 +1,9 @@
+# v0.7.2.12 — Al-Fātiḥah Audio Resources
+
+- Added “The Foundation: Al-Fātiḥah and the Straight Path” from Germantown Masjid.
+- Added “Changing Our Lives Through Sūrah al-Fātiḥah” from Germantown Masjid.
+- Both resources are categorized as Audio and are available anywhere al-Fātiḥah appears through the shared Study Library.
+
 # v0.7.2.11 — Shared Qur’an Study Library Foundation
 
 - Added one passage-aware Study Library shared by Reading Units, Classic Reading, Read by Surah, Ramadan Reading, and future readers.

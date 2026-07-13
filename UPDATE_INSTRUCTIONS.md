@@ -1,11 +1,11 @@
-# Update Instructions — Ummiby Companion v0.7.2.11
+# Update Instructions — Ummiby Companion v0.7.2.12
 
-This package updates Ummiby Companion v0.7.2.10 to v0.7.2.11.
+This package updates Ummiby Companion v0.7.2.11 to v0.7.2.12.
 
 ## Recommended update method
 
 1. Back up your existing app data from **Backup & Restore**.
-2. Extract the v0.7.2.11 ZIP.
+2. Extract the v0.7.2.12 ZIP.
 3. Replace the existing project files with the complete contents of this package.
 4. Preserve any hosting configuration files that are not part of the app.
 5. Open Qur’an Home and confirm the Continue Reading index link and Switch Journey dialog work.
@@ -25,9 +25,12 @@ This package updates Ummiby Companion v0.7.2.10 to v0.7.2.11.
 
 This release does not change Reading Unit boundaries or stored-data keys. Existing progress remains compatible.
 
-## What changed in v0.7.2.11
+## What changed in v0.7.2.12
 
 - Added the shared Qur’an Study Library to Reading Units, Classic Reading, Read by Surah, and Ramadan Reading.
 - Added three curated al-Fātiḥah resources.
 - Added Expand All / Collapse All, predictable category counts, and clear “Open on Website” actions.
 - Added “Save My Resource” for personal links and notes tied to Qur’an locations.
+
+- Added two Germantown Masjid audio resources for Sūrah al-Fātiḥah.
+- The al-Fātiḥah Library now contains 5 curated resources: 2 Audio and 3 Reading.

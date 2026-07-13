@@ -37,6 +37,30 @@
         tags: ['Benefits', 'Tafsīr'],
         url: 'https://www.troid.org/exemplifying-benefits-from-surah-al-fatihah/',
         external: true
+      },
+      {
+        id: 'fatihah-audio-001',
+        origin: 'recommended',
+        category: 'audio',
+        target: { type: 'surah', surahNumber: 1 },
+        title: 'The Foundation: Al-Fātiḥah and the Straight Path',
+        source: 'Germantown Masjid',
+        description: 'Explores foundational lessons from Sūrah al-Fātiḥah and the meaning of the Straight Path.',
+        tags: ['Foundations', 'Guidance', 'Tafsīr'],
+        url: 'https://soundcloud.com/germantown-masjid/03-the-foundation-al-fatihah-and-the-straight-path',
+        external: true
+      },
+      {
+        id: 'fatihah-audio-002',
+        origin: 'recommended',
+        category: 'audio',
+        target: { type: 'surah', surahNumber: 1 },
+        title: 'Changing Our Lives Through Sūrah al-Fātiḥah',
+        source: 'Germantown Masjid',
+        description: 'Highlights practical lessons from Sūrah al-Fātiḥah and how its guidance can shape daily life and worship.',
+        tags: ['Reflection', 'Guidance', 'Worship'],
+        url: 'https://soundcloud.com/germantown-masjid/changing-our-lives-through-surah-al-fatihah',
+        external: true
       }
     ]
   };

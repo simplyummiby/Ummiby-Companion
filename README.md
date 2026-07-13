@@ -17,6 +17,6 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.7.2.11 — Shared Qur’an Study Library
+v0.7.2.12 — Al-Fātiḥah Audio Resources
 
-Version 0.7.2.11 introduces a shared, passage-aware Qur’an Study Library. Resources are stored once by Qur’an location and can appear across Reading Units, Classic Reading, Read by Surah, Ramadan Reading, and future journeys.
+Version 0.7.2.12 adds two curated Germantown Masjid audio resources to the shared al-Fātiḥah Study Library. The resources appear anywhere al-Fātiḥah is shown through the shared passage-aware library.
