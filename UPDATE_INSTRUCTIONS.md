@@ -1,42 +1,26 @@
-# Update Instructions — Ummiby Companion v0.7.2.6
+# Update Instructions — Ummiby Companion v0.7.2.7
 
-This package updates Ummiby Companion v0.7.1 to v0.7.2.6.
+This package updates Ummiby Companion v0.7.2.6 to v0.7.2.7.
 
 ## Recommended update method
 
 1. Back up your existing app data from **Backup & Restore**.
-2. Extract the v0.7.2.6 ZIP.
+2. Extract the v0.7.2.7 ZIP.
 3. Replace the existing project files with the complete contents of this package.
-4. Preserve your hosting configuration files if your host added any files that are not part of the app.
-5. Open App Home and confirm that the Qur’an, Duaa, and Ramadan cards each open the correct section.
-6. Confirm that your saved reading, duaa, and Ramadan data is still present.
+4. Preserve any hosting configuration files that are not part of the app.
+5. Open Qur’an Home and confirm the Continue Reading index link and Switch Journey dialog work.
+6. Open the Reading Unit Index and test a completion checkmark, reset progress, and Back to Top.
+7. Open both a Reading Unit and Classic Reading to verify their bottom navigation bars.
 
 ## What changed
 
-- Rebuilt App Home as a compact welcome page.
-- Added three equal module cards: Qur’an, Duaa, and Ramadan.
-- Added a dedicated warm-neutral Home theme and slate-green Home menu.
-- Removed the old feature-heavy Home cards.
-- Updated the app version and release documentation to v0.7.2.6.
+- Changed the Continue Reading pill into a concise link to the active journey index.
+- Polished the Switch Journey button.
+- Added visible checkmark toggles to every Reading Unit Index card.
+- Kept the established Reading Unit card style while separating navigation from completion.
+- Positioned Reset Reading Progress at the lower-right of the journey summary card.
+- Fixed workspace journey progress so reset progress displays 0%, even when viewing a later unit.
+- Added specific Qur’an Home › Reading Unit Index › Reading Unit breadcrumbs.
+- Standardized the Classic Reading bottom bar toward the Reading Unit footer pattern.
 
-This release does not intentionally change stored data formats.
-
-
-## v0.7.2.6 Canonical Reading Journey
-
-- Adds the approved main Home banner as a web-optimized site asset.
-- Keeps the site name and tagline as editable live HTML text over the banner.
-- Adds dedicated Qur’an, Duaa, and Ramadan card artwork.
-- Increases card artwork height on desktop, tablet, and mobile layouts.
-- Preserves all module routes, data, and functionality.
-
-
-### Qur’an Reading Journey
-- Added the canonical 294-unit Reading Journey source.
-- Replaced the placeholder Reading Journey and Workspace pages.
-- Added Reading Unit search, progress, completion, previous/next navigation, and resume behavior.
-- Preserved the workspace flow: Before You Read, Arabic text, then English translation.
-
-## Reading Journey Runtime Fix
-
-This release fixes the Reading Workspace loading screen, Switch Journey button, and consistency tabs. Existing canonical Reading Journey progress remains compatible.
+This release does not change Reading Unit boundaries or stored-data keys. Existing progress remains compatible.

@@ -17,12 +17,8 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.7.2.6 — Canonical Reading Journey
+v0.7.2.7 — Journey Navigation and Progress Polish
 
 ## Current Release
 
-Version 0.7.2.6 keeps the 294-unit Reading Journey and adds polished completion controls, reset capability, consistent Reading Unit terminology, and refined workspace controls.
-
-### v0.7.2.6 Runtime Fix
-
-This maintenance release fixes local/static loading for the canonical Reading Journey, Reading Workspace, Switch Journey dialog, and consistency tabs. No Reading Unit boundaries or saved progress keys were changed.
+Version 0.7.2.7 improves navigation and progress clarity across the Qur’an Reading Journeys. It adds explicit completion toggles to the Reading Unit Index, fixes reset progress reporting, strengthens breadcrumbs and journey links, and brings the Classic Reading footer closer to the Reading Unit footer pattern.

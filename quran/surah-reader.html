@@ -2,9 +2,13 @@
 <div class="classic-completion-card" id="classic-completion-card" hidden>
   <p class="eyebrow">Surah complete</p><h2 id="completion-title"></h2><p id="completion-message"></p><button class="primary-button" id="completion-action" type="button"></button>
 </div><footer class="source-note"><strong>Text sources:</strong> Tanzil Uthmani text with rubʿ al-hizb markers and the Hilali-Khan English translation from QuranEnc. Source notices are preserved in <code>data/quran</code>.</footer></main></section></div>
-<footer class="classic-reader-bar" id="classic-reader-bar" hidden>
-  <div class="classic-bar-location"><strong id="classic-bar-title">Classic Reading</strong><span id="classic-bar-position"></span></div>
-  <div class="classic-bar-progress"><div class="progress-track" aria-hidden="true"><span id="surah-progress-fill"></span></div><div class="progress-labels"><span id="surah-progress-label"></span><span id="overall-progress-label"></span></div></div>
-  <div class="classic-bar-actions"><button id="classic-previous-surah" class="bar-button" type="button">← Previous</button><button id="study-resources-button" class="bar-button" type="button" disabled title="Study resources will appear here as the library is added.">Study Resources</button><button id="save-exit-button" class="bar-button primary" type="button">Save Place & Exit</button><button id="classic-next-surah" class="bar-button" type="button">Next →</button></div>
+<footer class="classic-reader-bar standardized-reader-bar" id="classic-reader-bar" hidden>
+  <button id="classic-previous-surah" class="classic-edge-nav classic-edge-previous" type="button"><span aria-hidden="true">←</span><span><small>Previous</small><strong>Surah</strong></span></button>
+  <div class="classic-bar-center">
+    <div class="classic-bar-progress"><div class="progress-labels"><span id="surah-progress-label"></span><span id="overall-progress-label"></span></div><div class="progress-track" aria-hidden="true"><span id="surah-progress-fill"></span></div></div>
+    <div class="classic-center-actions"><a class="classic-index-link" href="classic-reading.html#classic-index">Index</a><button id="study-resources-button" class="classic-secondary-action" type="button" disabled title="Study resources will appear here as the library is added.">Study Resources</button><button id="save-exit-button" class="classic-primary-action" type="button">Save Place & Exit</button></div>
+  </div>
+  <button id="classic-next-surah" class="classic-edge-nav classic-edge-next" type="button"><span><small>Next</small><strong>Surah</strong></span><span aria-hidden="true">→</span></button>
+  <span class="sr-only" id="classic-bar-title">Classic Reading</span><span class="sr-only" id="classic-bar-position"></span>
 </footer>
 <button class="quran-back-to-top" id="quranBackToTop" type="button" aria-label="Back to top" title="Back to top"><span data-ui-icon="arrow-up" aria-hidden="true"></span></button><script src="../js/app-config.js"></script><script src="../js/app-shell.js"></script><script src="../js/data/quran-data.js"></script><script src="../js/quran-classic-state.js"></script><script src="../js/quran-reader.js"></script></body></html>

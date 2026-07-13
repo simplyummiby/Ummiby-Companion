@@ -52,6 +52,12 @@ const { read: readJourneyState } = window.QURAN_READING_JOURNEY_STATE;
     document.querySelector('[data-continue-percent]').textContent=`${journey.progress}%`;
     document.querySelector('[data-continue-progress]').style.width=`${journey.progress}%`;
     document.querySelector('[data-continue-link]').href=journey.href;
+    const indexLink=document.getElementById('journeyIndexLink');
+    if(indexLink){
+      const isUnits=journey.id==='units';
+      indexLink.href=isUnits?'reading-journey.html':'classic-reading.html#classic-index';
+      indexLink.textContent=isUnits?'Reading Unit Index':'Classic Index';
+    }
   }
 
   function generalJourneys(){return Object.values(state.journeys).filter(j=>j.id!=='ramadan')}

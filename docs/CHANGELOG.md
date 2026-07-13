@@ -1,3 +1,14 @@
+# v0.7.2.7 — Journey Navigation and Progress Polish
+
+- Turned the Continue Reading pill on Qur’an Home into a concise link to the active journey index.
+- Polished the Switch Journey button so it feels like a deliberate primary navigation control.
+- Added always-visible completion checkmark toggles to Reading Unit Index cards while preserving their existing design.
+- Moved Reset Reading Progress to the lower-right of the journey summary card.
+- Fixed Reading Workspace journey progress to use completed units rather than the number of the unit being viewed.
+- Added specific Reading Unit breadcrumbs: Qur’an Home › Reading Unit Index › Reading Unit.
+- Standardized the Classic Reading bottom bar toward the Reading Unit footer layout, including edge navigation, centered progress, an Index link, and a primary save action.
+- Preserved all 294 Reading Unit boundaries and existing progress storage keys.
+
 # v0.7.2.6 — Reading Journey Progress Controls
 
 - Added completion checkmarks to the Reading Journey index without changing the unit-card visual style.
@@ -11,7 +22,7 @@
 - Harmonized the Index and Mark Complete controls in the Reading Workspace footer.
 - Renamed the footer scroll indicator to Reading Unit progress.
 
-# v0.7.2.6 — Reading Workspace Navigation Polish
+# v0.7.2.5 — Reading Workspace Navigation Polish
 
 - Renamed “Before You Read” to “Topics in This Unit.”
 - Added richer curated topic lists for the opening 30 Reading Units, including a fuller outline for the Cow passage.
@@ -20,7 +31,7 @@
 - Added live passage-reading progress to the footer.
 - Moved Back to Top to a floating control on the right side of the page.
 
-# v0.7.2.6 — Reading Workspace Layout Polish
+# v0.7.2.4 — Reading Workspace Layout Polish
 
 - Restored the bilingual desktop and tablet layout with English on the left and Arabic on the right.
 - Kept Arabic above English on narrower screens.
@@ -29,7 +40,7 @@
 - Removed ayah references from Before You Read topics because the passage reference already appears in the workspace header.
 - Preserved all 294 canonical Reading Units, navigation, completion, and saved progress behavior.
 
-# v0.7.2.6 — Reading Journey Runtime Fix
+# v0.7.2.2 — Reading Journey Runtime Fix
 
 - Fixed the global JavaScript name collision that stopped the Reading Workspace and Qur’an Home interactions before initialization.
 - Fixed the Reading Workspace remaining on “Loading…” without displaying Qur’an text.
@@ -38,14 +49,14 @@
 - Isolated the canonical Reading Journey scripts so their internal constants cannot conflict across ordinary script tags.
 - Preserved the 294 canonical Reading Units and all saved journey progress.
 
-# v0.7.2.6 — Canonical Reading Journey
+# v0.7.2 — Canonical Reading Journey
 
 - Added the frozen canonical library of 294 Qur’an Reading Units.
 - Built the complete Reading Journey index with search and saved progress.
 - Built the Reading Workspace with Before You Read above Arabic and English translation.
 - Added previous/next unit navigation, Mark Complete, and resume by canonical unit ID.
 - Updated Qur’an Home to use the real Reading Journey position and progress.
-- Updated release-wide version references to v0.7.2.6.
+- Updated release-wide version references to v0.7.2.
 
 # v0.7.1 — Home Artwork Integration
 

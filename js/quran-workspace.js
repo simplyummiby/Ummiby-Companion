@@ -49,11 +49,14 @@ document.title = `Reading Unit ${unit.order}: ${unit.title} | Ummiby Companion`;
 document.getElementById('unitNumber').textContent = `Reading Unit ${unit.order} of ${READING_UNITS.length}`;
 document.getElementById('unitTitle').textContent = unit.title;
 document.getElementById('unitReference').textContent = `${unit.surahName} · ${unit.reference}`;
-document.getElementById('topUnitLabel').textContent = `Unit ${unit.order} of ${READING_UNITS.length}`;
-document.getElementById('unitProgressText').textContent = `${Math.round((unit.order / READING_UNITS.length) * 100)}% through the Reading Journey`;
-document.getElementById('unitProgressFill').style.width = `${(unit.order / READING_UNITS.length) * 100}%`;
+document.getElementById('topUnitLabel').textContent = `Reading Unit ${unit.order}`;
+const initialJourneyState = readJourneyState();
+const completedCount = initialJourneyState.completedUnitIds.length;
+const journeyPercent = Math.round((completedCount / READING_UNITS.length) * 100);
+document.getElementById('unitProgressText').textContent = `${completedCount} of ${READING_UNITS.length} Reading Units complete · ${journeyPercent}% through the Reading Journey`;
+document.getElementById('unitProgressFill').style.width = `${journeyPercent}%`;
 
-let isUnitComplete = readJourneyState().completedUnitIds.includes(unit.id);
+let isUnitComplete = initialJourneyState.completedUnitIds.includes(unit.id);
 
 const topicParts = unit.title
   .replace(/^The Opening of /, '')
@@ -123,6 +126,11 @@ completeButton.addEventListener('click', () => {
     card.scrollIntoView({ behavior:'smooth', block:'center' });
   }
   updateCompleteButton();
+  const updatedState = readJourneyState();
+  const updatedCount = updatedState.completedUnitIds.length;
+  const updatedPercent = Math.round((updatedCount / READING_UNITS.length) * 100);
+  document.getElementById('unitProgressText').textContent = `${updatedCount} of ${READING_UNITS.length} Reading Units complete · ${updatedPercent}% through the Reading Journey`;
+  document.getElementById('unitProgressFill').style.width = `${updatedPercent}%`;
 });
 
 const passageProgressFill = document.getElementById('passageProgressFill');

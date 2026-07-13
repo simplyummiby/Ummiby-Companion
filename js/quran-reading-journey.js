@@ -36,13 +36,14 @@ function render(query = '') {
     const isComplete = status === 'completed';
     const statusText = status === 'current' ? 'Current unit' : `Unit ${unit.order}`;
     return `<article class="reading-unit-card ${status}">
-      <button class="unit-completion-toggle" type="button" data-unit-id="${unit.id}" aria-pressed="${isComplete}" aria-label="${isComplete ? 'Mark' : 'Mark'} Reading Unit ${unit.order} ${isComplete ? 'incomplete' : 'complete'}">
-        <span class="unit-order">${isComplete ? '<span data-ui-icon="check" aria-hidden="true"></span>' : String(unit.order).padStart(3,'0')}</span>
-      </button>
+      <span class="unit-order">${String(unit.order).padStart(3,'0')}</span>
       <a class="unit-card-link" href="workspace.html?unit=${unit.id}">
         <span class="unit-card-copy"><small>${unit.surahName} · ${unit.reference}</small><strong>${unit.title}</strong><em>${unit.type}</em></span>
         <span class="unit-card-status">${isComplete ? 'Completed' : statusText}<span data-ui-icon="arrow-right" aria-hidden="true"></span></span>
       </a>
+      <button class="unit-completion-toggle" type="button" data-unit-id="${unit.id}" aria-pressed="${isComplete}" aria-label="Mark Reading Unit ${unit.order} ${isComplete ? 'incomplete' : 'complete'}" title="${isComplete ? 'Mark incomplete' : 'Mark complete'}">
+        <span class="unit-checkmark" aria-hidden="true"><span data-ui-icon="check"></span></span>
+      </button>
     </article>`;
   }).join('') || '<p class="empty-state">No Reading Units match that search.</p>';
   window.UmmibyIcons?.hydrate(document);
