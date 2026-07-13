@@ -40,7 +40,7 @@
             <h2 id="dayTitle">Ramadan Day 1 · Juz 1</h2>
             <p id="daySummary">0 of 5 prayer portions completed</p>
           </div>
-          <a class="primary-button" id="continueButton" href="#">Begin Reading</a>
+          <div class="reading-actions"><a class="primary-button" id="continueButton" href="#">Begin Reading</a><a class="text-action" href="ramadan-days.html">Browse All Days</a></div>
         </div>
         <div class="progress-track" aria-hidden="true"><span id="dayProgress" style="width:0%"></span></div>
         <div class="portion-list" id="portionList"></div>
@@ -61,18 +61,20 @@
             <strong>Make-up fasts</strong>
             <p id="makeupMessage">No make-up fasts are currently recorded.</p>
           </div>
-          <button class="secondary-button" id="recordMakeupFast" type="button">Record Make-up Fast</button>
+          <div class="fast-record-actions"><button class="secondary-button" id="recordMakeupFast" type="button">Record Make-up Fast</button><a class="secondary-button" href="ramadan-history.html">Ramadan History</a></div>
         </div>
         <div class="makeup-history" id="makeupHistory"></div>
       </section>
 
-      <section class="explore-ramadan" aria-labelledby="exploreTitle">
-        <p class="eyebrow">Explore Ramadan</p>
-        <h2 id="exploreTitle">Go deeper when you’re ready</h2>
-        <div class="ramadan-feature-tiles">
-          <a href="ramadan-days.html"><span data-ui-icon="book" aria-hidden="true"></span><strong>Ramadan Reading Journey</strong><small>Browse all reading days</small></a>
-          <button type="button" data-coming-soon="Ramadan Duaa Library"><span data-ui-icon="search" aria-hidden="true"></span><strong>Ramadan Duaa Library</strong><small>Coming Soon</small></button>
-          <button type="button" data-coming-soon="Last Ten Nights"><span data-ui-icon="sparkle" aria-hidden="true"></span><strong>Last Ten Nights</strong><small>Coming Soon</small></button>
+      <section class="ramadan-library" aria-labelledby="ramadanLibraryTitle">
+        <div class="library-heading">
+          <span class="round-library-heading" data-ui-icon="book" aria-hidden="true"></span>
+          <div><p class="eyebrow">Learn and Prepare</p><h2 id="ramadanLibraryTitle">Ramadan Library</h2><p>Gentle, authentic guidance for the special parts of the month.</p></div>
+        </div>
+        <div class="ramadan-library-grid">
+          <button class="ramadan-library-card" type="button" data-coming-soon="Ramadan Duaas"><span class="ramadan-library-icon"><span data-ui-icon="sparkle" aria-hidden="true"></span></span><h3>Ramadan Duaas</h3><p>Authentic duaās and adhkār connected to fasting and Ramadan.</p><span class="library-status">Coming Soon</span></button>
+          <button class="ramadan-library-card" type="button" data-coming-soon="Last Ten Nights"><span class="ramadan-library-icon"><span data-ui-icon="sparkle" aria-hidden="true"></span></span><h3>Last Ten Nights</h3><p>Guidance for Laylat al-Qadr and the final nights of Ramadan.</p><span class="library-status">Coming Soon</span></button>
+          <button class="ramadan-library-card" type="button" data-coming-soon="Eid"><span class="ramadan-library-icon"><span data-ui-icon="calendar" aria-hidden="true"></span></span><h3>Eid</h3><p>Preparing for Eid, its Sunnahs, etiquette, and reminders.</p><span class="library-status">Coming Soon</span></button>
         </div>
         <p class="ramadan-feature-message" id="ramadanFeatureMessage" role="status" aria-live="polite"></p>
       </section>

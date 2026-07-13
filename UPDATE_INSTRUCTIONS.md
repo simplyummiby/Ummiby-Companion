@@ -1,14 +1,22 @@
-# Update Instructions — Ummiby Companion v0.6.13
+# Update Instructions — Ummiby Companion v0.7.0
 
-This package updates v0.6.11 to v0.6.13.
+This package updates Ummiby Companion v0.6.14 to v0.7.0.
 
 ## Recommended update method
 
-1. Back up your current project folder.
-2. Extract the v0.6.13 ZIP.
-3. Replace the existing project files with the contents of this package.
-4. Replace the full `js/app-shell.js` file rather than merging it manually; this release changes the shared navigation and header architecture.
-5. Replace `css/styles.css`, `js/app-config.js`, and the documentation files included in the package.
-6. Open App Home, one Qur’an page, one Duaa page, Ramadan Central, Settings, and Backup & Restore to confirm the shared menu and breadcrumbs.
+1. Back up your existing app data from **Backup & Restore**.
+2. Extract the v0.7.0 ZIP.
+3. Replace the existing project files with the complete contents of this package.
+4. Preserve your hosting configuration files if your host added any files that are not part of the app.
+5. Open App Home and confirm that the Qur’an, Duaa, and Ramadan cards each open the correct section.
+6. Confirm that your saved reading, duaa, and Ramadan data is still present.
 
-Your browser-saved Qur’an, Ramadan, and duaa progress remains in local storage and is not removed by replacing the project files.
+## What changed
+
+- Rebuilt App Home as a compact welcome page.
+- Added three equal module cards: Qur’an, Duaa, and Ramadan.
+- Added a dedicated warm-neutral Home theme and slate-green Home menu.
+- Removed the old feature-heavy Home cards.
+- Updated the app version and release documentation to v0.7.0.
+
+This release does not intentionally change stored data formats.

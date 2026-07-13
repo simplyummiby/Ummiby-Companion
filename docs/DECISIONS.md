@@ -209,3 +209,6 @@ Backup & Restore is app-wide and appears in the primary menu. Hero titles and ex
 - The official hero title is **Ramadan Central**, not “Ramadan Reading Companion,” because reading is one feature within the broader Ramadan module.
 - The hero may surface direct feature links; unfinished features must be clearly marked Coming Soon.
 - Do not use a crescent moon with a star inside or paired as an Islamic emblem in future project graphics.
+
+- Ramadan Central uses a Ramadan Library for knowledge sections: Ramadan Duaas, Last Ten Nights, and Eid.
+- Ramadan Fast Records are archived by Ramadan rather than reset; Ramadan History is accessed from the Fast Record area.

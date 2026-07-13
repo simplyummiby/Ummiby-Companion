@@ -69,3 +69,9 @@ Daily Companion is a section of Duaa Home, not a separate page. Its Morning, Eve
 ## Shared Utility: Backup & Restore
 
 An app-wide utility available from the primary menu. It exports or restores recognized Duaa and Qur’an local data independently or together. It is not owned by either reading module.
+
+### Ramadan Central
+- Today’s Readings
+- Ramadan Fast Record
+- Ramadan History
+- Ramadan Library: Ramadan Duaas, Last Ten Nights, Eid

@@ -1,3 +1,10 @@
+## Completed in v0.7.0
+
+- Unified App Home with compact Qur’an, Duaa, and Ramadan cards
+- Dedicated Home theme and menu color
+- Updated three-module wording and navigation
+- Release-wide version consistency pass
+
 # Roadmap
 
 ## Completed Foundation

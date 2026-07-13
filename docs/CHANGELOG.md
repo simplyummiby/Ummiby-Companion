@@ -1,4 +1,25 @@
-# v0.6.13 — Ramadan Fast Record Prototype
+# v0.7.0 — Unified Home Experience
+
+- Rebuilt App Home as a calm welcome space rather than a feature-heavy dashboard.
+- Added three compact, equal destinations for Qur’an, Duaa, and Ramadan Central.
+- Preserved the approved wording: “Read the Qur’an in the way that fits your goal” and “Make authentic duaas part of your day.”
+- Added the Ramadan description: “Prepare for and experience Ramadan with purpose.”
+- Added a dedicated warm-neutral Home palette with a slate-green Home sidebar.
+- Replaced the old two-module heading and navigation language with the current three-module structure.
+- Preserved the existing Qur’an, Duaa, and Ramadan themes and functionality.
+- Updated visible and configuration version references to v0.7.0.
+
+
+## v0.6.14 — Ramadan Library & History
+
+- Replaced the lower Explore area with a softly styled Ramadan Library.
+- Added centered circular-icon cards for Ramadan Duaas, Last Ten Nights, and Eid.
+- Removed the duplicate Ramadan Reading Journey card; reading access now lives in Today’s Readings.
+- Added Browse All Days beside the primary reading action.
+- Added Ramadan History beside Record Make-up Fast.
+- Preserved each Ramadan Fast Record and added a safe Begin New Ramadan flow.
+- Migrated existing single-record fasting data into the multi-Ramadan history structure without discarding progress.
+# v0.6.14 — Ramadan Fast Record Prototype
 
 ### Added
 

@@ -1,10 +1,10 @@
 # Ummiby Companion
 
-A combined Qur’an and Duaa companion focused on authentic content, thoughtful reading experiences, and calm daily use.
+A unified Qur’an, Duaa, and Ramadan companion focused on authentic content, thoughtful reading experiences, and calm daily use.
 
 ## Main Areas
 
-- Shared Home
+- Shared Home with dedicated Qur’an, Duaa, and Ramadan entry points
 - Qur’an Home and reading experiences
 - Duaa Home, tracked Daily Companion collections, and reference collections
 - Shared app-wide Settings/About
@@ -17,8 +17,8 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.6.13 — Ramadan Central Hero
+v0.7.0 — Unified Home Experience
 
 ## Current Release
 
-Version 0.6.13 adds a full Ramadan Central hero image with live site text, feature navigation, and a clearer module-wide description while preserving reading flow and saved progress.
+Version 0.7.0 refreshes App Home as a calm, compact welcome space with three equal destinations for Qur’an, Duaa, and Ramadan, plus a dedicated warm-neutral Home theme.
