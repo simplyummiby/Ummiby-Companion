@@ -17,6 +17,6 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.7.2.10 — Reader Footer and Ayah Selector Polish
+v0.7.2.11 — Shared Qur’an Study Library
 
-Version 0.7.2.10 brings the Classic Reading Journey much closer to the Reading Unit Journey. It aligns the index cards, bilingual reading layout, translation toggle, breadcrumb, and fixed footer while preserving Classic Reading’s continuous surah-based progress.
+Version 0.7.2.11 introduces a shared, passage-aware Qur’an Study Library. Resources are stored once by Qur’an location and can appear across Reading Units, Classic Reading, Read by Surah, Ramadan Reading, and future journeys.

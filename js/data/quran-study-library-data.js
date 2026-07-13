@@ -1,0 +1,43 @@
+(() => {
+  window.QURAN_STUDY_LIBRARY_DATA = {
+    version: 1,
+    resources: [
+      {
+        id: 'fatihah-reading-001',
+        origin: 'recommended',
+        category: 'reading',
+        target: { type: 'surah', surahNumber: 1 },
+        title: 'Reciting Sūrah al-Fātiḥah Behind the Imām in Prayer',
+        source: 'Abu Khadeejah',
+        description: 'Explains the scholarly views and evidences concerning reciting al-Fātiḥah behind the imām in congregational prayer.',
+        tags: ['Fiqh', 'Prayer'],
+        url: 'https://abukhadeejah.com/reciting-surah-al-fatihah-behind-the-imam-in-prayer-salih-al-fawzan-and-al-albanee/',
+        external: true
+      },
+      {
+        id: 'fatihah-reading-002',
+        origin: 'recommended',
+        category: 'reading',
+        target: { type: 'surah', surahNumber: 1 },
+        title: 'Repeating al-Fātiḥah in the Prayer',
+        source: 'Wright Street Mosque',
+        description: 'Discusses repeating al-Fātiḥah because of forgetfulness or lack of contemplation, along with related rulings.',
+        tags: ['Fiqh', 'Prayer'],
+        url: 'https://www.wrightstreetmosque.com/repeating-al-faatihah-in-the-prayer-due-to-a-lack-of-contemplation-or-forgetfulness-and-other-rulings-pertaining-to-it/',
+        external: true
+      },
+      {
+        id: 'fatihah-reading-003',
+        origin: 'recommended',
+        category: 'reading',
+        target: { type: 'surah', surahNumber: 1 },
+        title: 'Exemplifying Benefits from Sūrah al-Fātiḥah',
+        source: 'TROID',
+        description: 'A collection of beneficial points and lessons drawn from Sūrah al-Fātiḥah.',
+        tags: ['Benefits', 'Tafsīr'],
+        url: 'https://www.troid.org/exemplifying-benefits-from-surah-al-fatihah/',
+        external: true
+      }
+    ]
+  };
+})();

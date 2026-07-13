@@ -278,3 +278,14 @@ The current mappings are Qur’an green, Duaa blue, and Ramadan purple. New shar
 Breadcrumbs describe the content the reader is using, not the underlying software page. Generic labels such as Reader, Viewer, Workspace, Details, and Module should not appear in user-facing breadcrumb trails. Dynamic pages derive breadcrumb labels from their URL context, including the selected duaa collection, surah, Ramadan day, and prayer portion. Ramadan reading belongs beneath Ramadan Central and Ramadan Reading Journey.
 
 The internal `workspace.html` filename is retained temporarily to avoid premature file-path changes, but the user-facing concept is transitioning from “Reading Workspace” to a unified **Reading Experience** in which the current passage is the identity of the page and study resources support the reading in context.
+
+## Shared Qur’an Study Library
+
+The Study Library is journey-independent. Curated resources are attached to canonical Qur’an locations (surah or ayah range), then resolved by a shared renderer in every reading experience.
+
+- `js/data/quran-study-library-data.js` — browser-ready curated resource data.
+- `data/quran/study-resources.json` — readable authoring mirror.
+- `js/quran-study-library.js` — matching, deduplication, personal storage, and shared UI.
+- `css/quran-study-library.css` — shared presentation.
+
+Any future reader can inherit the Library by supplying one or more `{ surahNumber, startAyah, endAyah }` ranges to `QURAN_STUDY_LIBRARY.render(...)`. Personal resources use the same Qur’an-location targeting and are included in Qur’an backups through the `ummiby.quran` storage prefix.

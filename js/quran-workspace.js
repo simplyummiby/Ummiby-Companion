@@ -162,5 +162,19 @@ window.addEventListener('resize', updatePassageProgress);
 backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 updatePassageProgress();
 
+window.QURAN_STUDY_LIBRARY?.render({
+  container: '#workspaceStudyLibrary',
+  shortcut: '#workspaceLibraryShortcut',
+  sectionId: 'workspaceStudyLibrary',
+  context: {
+    readingUnitId: unit.id,
+    surahNumber: unit.surahNumber,
+    startAyah: unit.startAyah,
+    endAyah: unit.endAyah,
+    fullSurah: unit.startAyah === 1 && unit.endAyah === surah?.ayahCount,
+    journey: 'reading-unit'
+  }
+});
+
 window.UmmibyIcons?.hydrate(document);
 })();

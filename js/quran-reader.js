@@ -107,6 +107,14 @@
    card.scrollIntoView({behavior:'smooth',block:'center'});
  }
 
+
+ window.QURAN_STUDY_LIBRARY?.render({
+   container: '#surahStudyLibrary',
+   shortcut: '#surahLibraryShortcut',
+   sectionId: 'surahStudyLibrary',
+   context: { surahNumber: surahNo, startAyah: 1, endAyah: surah.ayahCount, fullSurah: true, journey: mode }
+ });
+
  const lastAyahEl=$(`ayah-${surah.ayahCount}`);
  const completionObserver=new IntersectionObserver(entries=>{
    if(mode==='classic'&&entries.some(e=>e.isIntersecting&&e.intersectionRatio>.65))showCompletion(surahNo===114);

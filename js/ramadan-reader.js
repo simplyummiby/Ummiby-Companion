@@ -24,6 +24,20 @@
     const showBasmalah=showHeading&&v.ayah===1&&v.surah!==1&&v.surah!==9;
     return `${showHeading?`<div class="ramadan-surah-divider"><p class="eyebrow">Surah ${surah.name} (${surah.number})</p>${showBasmalah?`<div class="surah-basmalah" lang="ar" dir="rtl">${BASMALAH}</div>`:''}</div>`:''}<article class="ayah" id="ayah-${v.surah}-${v.ayah}" data-index="${index}" data-key="${key(v)}"><div class="ayah-label">${v.surah}:${v.ayah}</div><p class="arabic-text" lang="ar" dir="rtl"><span class="ayah-arabic-copy">${displayArabic(v)}</span><span class="ayah-ornament" aria-label="Ayah ${v.ayah}"><span class="ayah-ornament-symbol" aria-hidden="true">۝</span><span class="ayah-ornament-number">${arabicDigits(v.ayah)}</span></span></p><div class="translation-wrap"><p class="translation">${v.translation}</p>${v.footnotes?`<details class="footnotes"><summary>Translation notes</summary><p>${v.footnotes.replace(/\n/g,'<br>')}</p></details>`:''}</div></article>`;
   }).join('');
+  const libraryRanges = Object.values(portion.verses.reduce((groups, verse) => {
+    const key = String(verse.surah);
+    if (!groups[key]) groups[key] = { surahNumber: verse.surah, startAyah: verse.ayah, endAyah: verse.ayah };
+    groups[key].startAyah = Math.min(groups[key].startAyah, verse.ayah);
+    groups[key].endAyah = Math.max(groups[key].endAyah, verse.ayah);
+    return groups;
+  }, {}));
+  window.QURAN_STUDY_LIBRARY?.render({
+    container: '#ramadanStudyLibrary',
+    shortcut: '#ramadanLibraryShortcut',
+    sectionId: 'ramadanStudyLibrary',
+    context: { ranges: libraryRanges, journey: 'ramadan', day: dayNo, portion: portion.id }
+  });
+
   function remember(index){currentIndex=index;const verse=portion.verses[index];$('barPosition').textContent=`${key(verse)} · ${index+1} of ${portion.verses.length} ayat`;$('portionProgress').style.width=`${(index+1)/portion.verses.length*100}%`;if(observerReady)window.RAMADAN_STATE.savePosition(dayNo,portion.id,key(verse))}
   const observer=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(visible)remember(Number(visible.target.dataset.index))},{threshold:[.35,.6]});
   document.querySelectorAll('.ayah').forEach(el=>observer.observe(el));

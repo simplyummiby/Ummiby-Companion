@@ -1,7 +1,68 @@
 {
   "version": 1,
-  "description": "Shared Quran study resource library. Resources belong to Quran locations and can be reused by every reading experience.",
-  "resourceTypes": ["video", "audio", "article", "book", "pdf", "course", "playlist", "website"],
-  "statuses": ["draft", "needs-review", "verified", "published", "hidden"],
-  "resources": []
+  "description": "Authoring mirror for the shared passage-aware Qur’an Study Library. The browser-ready source is js/data/quran-study-library-data.js.",
+  "categories": [
+    "audio",
+    "video",
+    "reading",
+    "books",
+    "related",
+    "notes"
+  ],
+  "resources": [
+    {
+      "id": "fatihah-reading-001",
+      "origin": "recommended",
+      "category": "reading",
+      "target": {
+        "type": "surah",
+        "surahNumber": 1
+      },
+      "title": "Reciting Sūrah al-Fātiḥah Behind the Imām in Prayer",
+      "source": "Abu Khadeejah",
+      "description": "Explains the scholarly views and evidences concerning reciting al-Fātiḥah behind the imām in congregational prayer.",
+      "tags": [
+        "Fiqh",
+        "Prayer"
+      ],
+      "url": "https://abukhadeejah.com/reciting-surah-al-fatihah-behind-the-imam-in-prayer-salih-al-fawzan-and-al-albanee/",
+      "external": true
+    },
+    {
+      "id": "fatihah-reading-002",
+      "origin": "recommended",
+      "category": "reading",
+      "target": {
+        "type": "surah",
+        "surahNumber": 1
+      },
+      "title": "Repeating al-Fātiḥah in the Prayer",
+      "source": "Wright Street Mosque",
+      "description": "Discusses repeating al-Fātiḥah because of forgetfulness or lack of contemplation, along with related rulings.",
+      "tags": [
+        "Fiqh",
+        "Prayer"
+      ],
+      "url": "https://www.wrightstreetmosque.com/repeating-al-faatihah-in-the-prayer-due-to-a-lack-of-contemplation-or-forgetfulness-and-other-rulings-pertaining-to-it/",
+      "external": true
+    },
+    {
+      "id": "fatihah-reading-003",
+      "origin": "recommended",
+      "category": "reading",
+      "target": {
+        "type": "surah",
+        "surahNumber": 1
+      },
+      "title": "Exemplifying Benefits from Sūrah al-Fātiḥah",
+      "source": "TROID",
+      "description": "A collection of beneficial points and lessons drawn from Sūrah al-Fātiḥah.",
+      "tags": [
+        "Benefits",
+        "Tafsīr"
+      ],
+      "url": "https://www.troid.org/exemplifying-benefits-from-surah-al-fatihah/",
+      "external": true
+    }
+  ]
 }

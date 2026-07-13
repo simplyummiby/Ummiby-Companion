@@ -6,6 +6,7 @@
   <title>Reading Workspace | Ummiby Companion</title>
   <link rel="stylesheet" href="../css/quran-shell.css">
   <link rel="stylesheet" href="../css/quran-journey.css">
+  <link rel="stylesheet" href="../css/quran-study-library.css">
 </head>
 <body>
 <div class="app-shell workspace-shell">
@@ -30,6 +31,7 @@
       <section class="before-you-read" aria-labelledby="beforeHeading">
         <h2 id="beforeHeading"><span aria-hidden="true">✦</span> Topics in This Unit</h2>
         <ul id="beforeTopics" class="before-topics"></ul>
+        <a class="study-library-shortcut" id="workspaceLibraryShortcut" href="#workspaceStudyLibrary">📚 Library (0)</a>
       </section>
 
       <section class="workspace-reading" aria-label="Reading Unit text">
@@ -51,6 +53,8 @@
         <span data-ui-icon="check" aria-hidden="true"></span>
         <div><h2>Reading Unit complete</h2><p>Your progress has been saved. Continue whenever you are ready.</p></div>
       </section>
+
+      <section id="workspaceStudyLibrary"></section>
     </main>
 
     <footer class="workspace-footer">
@@ -77,6 +81,8 @@
 <script src="../js/app-shell.js"></script>
 <script src="../js/data/readingLibrary.js"></script>
 <script src="../js/quran-reading-journey-state.js"></script>
+<script src="../js/data/quran-study-library-data.js"></script>
+<script src="../js/quran-study-library.js"></script>
 <script src="../js/quran-workspace.js"></script>
 </body>
 </html>

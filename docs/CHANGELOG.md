@@ -1,3 +1,10 @@
+# v0.7.2.11 — Shared Qur’an Study Library Foundation
+
+- Added one passage-aware Study Library shared by Reading Units, Classic Reading, Read by Surah, Ramadan Reading, and future readers.
+- Added three curated al-Fātiḥah reading resources.
+- Added compact Library counts, Expand All / Collapse All, media categories, and clear external website actions.
+- Added personal resource saving tied to Qur’an locations and included through existing Qur’an backup prefixes.
+
 # v0.7.2.10 — Reader Footer and Ayah Selector Polish
 
 - Removed duplicate Classic footer location labels.
