@@ -1,6 +1,6 @@
 # Release QA Checklist
 
-## v0.7.5.1 — Memorization Status Tracking Fix
+## v0.7.5.2 — Memorization Status Tracking Fix
 
 - [x] Memorization page loads all 114 surah cards
 - [x] Search filters the Surah Library

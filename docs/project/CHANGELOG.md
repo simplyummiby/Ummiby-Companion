@@ -1,4 +1,12 @@
-# v0.7.5.1 — Surah Status Tracking
+# v0.7.5.2 — Memorization Interaction Hotfix
+
+- Fixed an invisible full-screen status modal backdrop that could remain interactive while hidden and block every click on the Memorization pages.
+- Added an explicit `[hidden]` CSS rule so the backdrop is removed from layout until the status modal is opened.
+- Reverified search, filter, card, detail-page, and status-modal click targets after the fix.
+
+---
+
+# v0.7.5.2 — Surah Status Tracking
 
 - Fixed the Memorization page initialization so the Surah Library and all controls load reliably.
 - Added a lightweight 114-surah metadata source for Memorization instead of loading the full Qur’an text dataset.
@@ -14,7 +22,7 @@
 - Populated Currently Memorizing and Needs Revision sections from saved statuses.
 - Included Memorization status data in Qur’an backup and restore.
 - Marked Memorization Roadmap Version 3 complete.
-- Updated release-wide version references to v0.7.5.1.
+- Updated release-wide version references to v0.7.5.2.
 
 # v0.7.4 — My Surahs Library
 
