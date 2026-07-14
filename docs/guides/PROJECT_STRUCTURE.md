@@ -11,32 +11,16 @@
 ├── quran/
 ├── duaa/
 └── docs/
-    ├── INDEX.md
-    ├── project/
-    ├── design/
-    ├── quran/
-    ├── duaa/
-    ├── home/
-    └── guides/
+    ├── guides/
+    └── project documentation
 ```
-
-## Documentation Structure
-
-- `docs/INDEX.md` — linked documentation homepage and starting point for development sessions
-- `docs/project/` — vision, architecture, decisions, modules, roadmap, changelog, and migration records
-- `docs/design/` — shared design philosophy and theme standards
-- `docs/quran/` — Qur’an feature roadmaps, guides, and historical release notes
-- `docs/duaa/` — Duaa feature guides and historical release notes
-- `docs/home/` — shared Home documentation
-- `docs/guides/` — app-wide operational guides that do not belong to one module
 
 ## Root Rule
 
-Keep only files needed to enter, configure, or explain the application in the project root. Detailed documentation belongs under `docs/` and should be linked from `docs/INDEX.md`.
+Keep only files needed to enter or configure the application in the project root.
 
-## Documentation Rule
+Feature notes and implementation guidance belong in `docs/guides/`.
 
-Working roadmaps belong in the folder for the feature they govern. Reference documents belong in `docs/project/` or `docs/design/`. When a document is moved, update links and repository guidance in the same change.
 
 ## Shared App Files
 
@@ -49,4 +33,29 @@ Every new HTML page should load `app-config.js` followed by `app-shell.js` so th
 
 ## Icon Standard
 
-Use SVG files for functional interface icons. Decorative artwork may use appropriate image assets, but Unicode characters should not substitute for interface icons.
+Use SVG for interface icons throughout Ummiby Companion. Do not add Unicode symbols as buttons, menu icons, status icons, or navigation icons. Pictures, banners, and decorative collection artwork are separate visual assets and are not governed by the interface-icon rule.
+
+
+## Collection Artwork
+
+```text
+assets/collections/
+├── fallback/
+│   ├── banner.svg
+│   └── icon.svg
+├── morning/
+│   ├── banner.webp
+│   └── icon.webp
+└── <other-collection-id>/
+    ├── banner.webp
+    └── icon.webp
+```
+
+Artwork paths are registered in `js/data/collection-registry.js` and rendered by `js/collection-artwork.js`.
+
+
+### Duaa history files
+
+- `duaa/progress.html` — monthly Duaa history page
+- `css/duaa-history.css` — monthly calendar layout and responsive styles
+- `js/duaa-history.js` — collection tabs, month navigation, active-day summaries, and calendar rendering

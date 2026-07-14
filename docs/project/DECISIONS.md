@@ -47,7 +47,7 @@
 ## Repository Cleanliness
 
 - Only the main project `README.md` remains in the repository root.
-- Feature-specific documentation belongs in its matching module folder under `docs/`; shared operational guides belong in `docs/guides/`.
+- Feature-specific guides belong in `docs/guides/`.
 - Obsolete redirect pages should not be retained in this new repository.
 - One-off files should be removed after a shared renderer replaces them.
 
