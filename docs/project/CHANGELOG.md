@@ -1,3 +1,16 @@
+# v0.7.5 — Surah Status Tracking
+
+- Added a polished status selection modal for all 114 surahs.
+- Added Not Started, In Progress, Memorized, and Needs Revision statuses.
+- Added quick status controls to the Surah Library and Surah Detail pages.
+- Added persistent status storage and migration from the earlier Needs Review and Mastered placeholders.
+- Added status colors throughout the Memorization experience.
+- Added live Memorized, In Progress, and Needs Revision dashboard totals.
+- Populated Currently Memorizing and Needs Revision sections from saved statuses.
+- Included Memorization status data in Qur’an backup and restore.
+- Marked Memorization Roadmap Version 3 complete.
+- Updated release-wide version references to v0.7.5.
+
 # v0.7.4 — My Surahs Library
 
 - Added all 114 surahs to the Memorization library.

@@ -1,6 +1,7 @@
 # Memorization Roadmap
 
-> **Status:** Version 2 complete — Version 3 next
+> **Status:** Version 3 Complete
+> **Current Version:** Version 4 — Surah Detail Page
 > **Module:** Qur'an
 > **Purpose:** Provide a gentle, encouraging way to track Qur'an memorization while laying the foundation for a future Memorization Center.
 
@@ -23,6 +24,16 @@ The experience should always feel peaceful, motivating, and welcoming—not like
 
 ---
 
+# Terminology
+
+- **Memorization:** Learning and committing new Qur’an to memory.
+- **Revision:** Focused work to strengthen memorization that has weakened.
+- **Maintenance:** Regular, intentional practice that keeps memorized surahs strong before they become weak.
+- **Status:** The current condition of a surah or ayah.
+- **Maintenance Schedule:** A user-defined recurring plan for maintaining memorized surahs.
+
+---
+
 # Version Roadmap
 
 ---
@@ -42,12 +53,12 @@ The experience should always feel peaceful, motivating, and welcoming—not like
   * [x] Total Surahs
   * [x] Memorized
   * [x] In Progress
-  * [x] Needs Review
+  * [x] Needs Revision
 * [x] Beautiful empty-state design
 * [x] Placeholder sections
 
   * [x] Currently Memorizing
-  * [x] Needs Review
+  * [x] Needs Revision
   * [x] My Surahs
 
 ---
@@ -74,14 +85,13 @@ The experience should always feel peaceful, motivating, and welcoming—not like
 
 ### Tasks
 
-* [ ] Beautiful status selection modal
-* [ ] Not Started
-* [ ] In Progress
-* [ ] Memorized
-* [ ] Needs Review
-* [ ] Mastered
-* [ ] Status colors throughout the library
-* [ ] Automatically update dashboard statistics
+* [x] Beautiful status selection modal
+* [x] Not Started
+* [x] In Progress
+* [x] Memorized
+* [x] Needs Revision
+* [x] Status colors throughout the library
+* [x] Automatically update dashboard statistics
 
 ---
 
@@ -99,7 +109,7 @@ The experience should always feel peaceful, motivating, and welcoming—not like
 * [ ] Ayah count
 * [ ] Memorization summary
 * [ ] Started date
-* [ ] Last reviewed
+* [ ] Maintenance Schedule (placeholder)
 * [ ] Personal notes section
 
 ---
@@ -118,7 +128,7 @@ The experience should always feel peaceful, motivating, and welcoming—not like
   * [ ] Not Started
   * [ ] Learning
   * [ ] Memorized
-  * [ ] Needs Review
+  * [ ] Needs Revision
 * [ ] Automatically calculate surah progress
 * [ ] Memorized / Remaining counters
 * [ ] Progress ring
@@ -133,7 +143,7 @@ The experience should always feel peaceful, motivating, and welcoming—not like
 
 * [ ] Filter ayahs by status
 * [ ] Jump to first Learning ayah
-* [ ] Jump to first Needs Review ayah
+* [ ] Jump to first Needs Revision ayah
 * [ ] Collapse / Expand long surahs
 * [ ] Improved scrolling for long surahs
 

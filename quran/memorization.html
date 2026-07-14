@@ -43,7 +43,7 @@
         <article><span class="stat-icon neutral" data-ui-icon="book"></span><div><strong>114</strong><span>Total Surahs</span></div></article>
         <article><span class="stat-icon memorized" data-ui-icon="check"></span><div><strong id="memorizedCount">0</strong><span>Memorized</span></div></article>
         <article><span class="stat-icon progress" data-ui-icon="progress"></span><div><strong id="progressCount">0</strong><span>In Progress</span></div></article>
-        <article><span class="stat-icon review" data-ui-icon="history"></span><div><strong id="reviewCount">0</strong><span>Needs Review</span></div></article>
+        <article><span class="stat-icon review" data-ui-icon="history"></span><div><strong id="reviewCount">0</strong><span>Needs Revision</span></div></article>
       </section>
 
       <section class="ayah-card" aria-labelledby="encouragementHeading">
@@ -55,12 +55,12 @@
 
       <section class="memorization-section" aria-labelledby="currentlyHeading">
         <div class="section-heading"><div><p class="section-kicker">Continue gently</p><h2 id="currentlyHeading">Currently Memorizing</h2></div></div>
-        <div class="empty-state compact"><span class="empty-icon" data-ui-icon="book"></span><div><h3>Your current surahs will appear here.</h3><p>When you begin tracking a surah, this space will help you return to it quickly.</p></div><span class="coming-pill">Coming in Version 2</span></div>
+        <div class="empty-state compact"><span class="empty-icon" data-ui-icon="book"></span><div><h3>Your current surahs will appear here.</h3><p>When you begin tracking a surah, this space will help you return to it quickly.</p></div></div>
       </section>
 
       <section class="memorization-section" aria-labelledby="reviewHeading">
-        <div class="section-heading"><div><p class="section-kicker">Keep it close</p><h2 id="reviewHeading">Needs Review</h2></div></div>
-        <div class="empty-state compact"><span class="empty-icon amber" data-ui-icon="history"></span><div><h3>Nothing needs review yet.</h3><p>Surahs you choose to strengthen will be gathered here without erasing what you have accomplished.</p></div><span class="coming-pill">Coming in Version 3</span></div>
+        <div class="section-heading"><div><p class="section-kicker">Keep it close</p><h2 id="reviewHeading">Needs Revision</h2></div></div>
+        <div class="empty-state compact"><span class="empty-icon amber" data-ui-icon="history"></span><div><h3>Nothing needs revision right now.</h3><p>Surahs whose memorization has weakened will be gathered here for focused strengthening.</p></div></div>
       </section>
 
       <section class="memorization-section my-surahs-section" id="my-surahs" aria-labelledby="mySurahsHeading">
@@ -79,8 +79,7 @@
               <button class="filter-chip" type="button" data-status="not-started">Not Started</button>
               <button class="filter-chip" type="button" data-status="in-progress">In Progress</button>
               <button class="filter-chip" type="button" data-status="memorized">Memorized</button>
-              <button class="filter-chip" type="button" data-status="needs-review">Needs Review</button>
-              <button class="filter-chip" type="button" data-status="mastered">Mastered</button>
+              <button class="filter-chip" type="button" data-status="needs-revision">Needs Revision</button>
             </div>
           </div>
 
@@ -106,6 +105,22 @@
   </div>
 </div>
 <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+<div class="status-modal-backdrop" id="statusModalBackdrop" hidden>
+  <section class="status-modal" id="statusModal" role="dialog" aria-modal="true" aria-labelledby="statusModalTitle">
+    <button class="status-modal-close" id="statusModalClose" type="button" aria-label="Close status selector">×</button>
+    <p class="section-kicker">Hifdh status</p>
+    <h2 id="statusModalTitle">Update Surah Status</h2>
+    <p class="status-modal-surah" id="statusModalSurah"></p>
+    <div class="status-options" role="radiogroup" aria-label="Choose memorization status">
+      <button type="button" class="status-option status-not-started" data-status-choice="not-started"><span class="status-option-mark"></span><span><strong>Not Started</strong><small>I have not begun memorizing this surah.</small></span></button>
+      <button type="button" class="status-option status-in-progress" data-status-choice="in-progress"><span class="status-option-mark"></span><span><strong>In Progress</strong><small>I am currently learning this surah.</small></span></button>
+      <button type="button" class="status-option status-memorized" data-status-choice="memorized"><span class="status-option-mark"></span><span><strong>Memorized</strong><small>I can recite the complete surah from memory.</small></span></button>
+      <button type="button" class="status-option status-needs-revision" data-status-choice="needs-revision"><span class="status-option-mark"></span><span><strong>Needs Revision</strong><small>I memorized it, but some of it now needs focused strengthening.</small></span></button>
+    </div>
+    <p class="status-modal-note">You can change this whenever your memorization changes.</p>
+  </section>
+</div>
+
 <script src="../js/app-config.js"></script>
 <script src="../js/app-shell.js"></script>
 <script src="../js/data/quran-data.js"></script>

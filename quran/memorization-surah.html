@@ -37,18 +37,34 @@
       <section class="surah-detail-hero" id="surahDetailHero">
         <div class="surah-number-large" id="detailNumber">1</div>
         <div class="surah-detail-copy"><p class="section-kicker">Surah memorization</p><p class="surah-detail-arabic" id="detailArabic" lang="ar" dir="rtl"></p><h1 id="detailName">Surah</h1><p id="detailMeta"></p></div>
-        <span class="status-badge status-not-started">Not Started</span>
+        <button class="status-badge status-not-started" id="detailStatusButton" type="button"><span class="status-dot" aria-hidden="true"></span><span id="detailStatusLabel">Not Started</span><small>Change status</small></button>
       </section>
       <section class="memorization-section detail-preview">
         <span class="empty-icon large" data-ui-icon="sparkle"></span>
         <h2>This surah page is ready for the next steps.</h2>
-        <p>Version 3 will add surah-level status tracking. Version 4 will expand this into the full detail page, followed by ayah-by-ayah memorization tracking.</p>
+        <p>Your surah-level status is now saved here and reflected throughout the Memorization library. Version 4 will expand this into the full detail page, followed by ayah-by-ayah tracking.</p>
         <div class="detail-actions"><a class="hero-action" id="readSurahLink" href="surah-reader.html">Read This Surah</a><a class="secondary-action" href="memorization.html#my-surahs">Choose Another Surah</a></div>
       </section>
     </main>
   </div>
 </div>
 <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+<div class="status-modal-backdrop" id="statusModalBackdrop" hidden>
+  <section class="status-modal" id="statusModal" role="dialog" aria-modal="true" aria-labelledby="statusModalTitle">
+    <button class="status-modal-close" id="statusModalClose" type="button" aria-label="Close status selector">×</button>
+    <p class="section-kicker">Hifdh status</p>
+    <h2 id="statusModalTitle">Update Surah Status</h2>
+    <p class="status-modal-surah" id="statusModalSurah"></p>
+    <div class="status-options" role="radiogroup" aria-label="Choose memorization status">
+      <button type="button" class="status-option status-not-started" data-status-choice="not-started"><span class="status-option-mark"></span><span><strong>Not Started</strong><small>I have not begun memorizing this surah.</small></span></button>
+      <button type="button" class="status-option status-in-progress" data-status-choice="in-progress"><span class="status-option-mark"></span><span><strong>In Progress</strong><small>I am currently learning this surah.</small></span></button>
+      <button type="button" class="status-option status-memorized" data-status-choice="memorized"><span class="status-option-mark"></span><span><strong>Memorized</strong><small>I can recite the complete surah from memory.</small></span></button>
+      <button type="button" class="status-option status-needs-revision" data-status-choice="needs-revision"><span class="status-option-mark"></span><span><strong>Needs Revision</strong><small>I memorized it, but some of it now needs focused strengthening.</small></span></button>
+    </div>
+    <p class="status-modal-note">You can change this whenever your memorization changes.</p>
+  </section>
+</div>
+
 <script src="../js/app-config.js"></script>
 <script src="../js/app-shell.js"></script>
 <script src="../js/data/quran-data.js"></script>
