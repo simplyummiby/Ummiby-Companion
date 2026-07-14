@@ -1,3 +1,16 @@
+# v0.7.7 — Ayah Memorization Tracking
+
+- Added Ayah Progress to each Surah Detail page with responsive numbered tiles for every ayah.
+- Added ayah statuses for Not Started, Learning, Memorized, and Needs Revision with symbols as well as status colors.
+- Added an accessible ayah status modal, suggested next ayah cue, first-use guidance, compact legend, and dismissible completion acknowledgement.
+- Expanded the Memorization Summary with a progress ring, memorized percentage, total ayah count, and all four status counters.
+- Added confirmed bulk actions for marking all ayat memorized, marking all not started, and clearing the current surah’s ayah progress.
+- Added optional automatic surah-status synchronization from ayah progress while preserving manual Needs Revision status.
+- Included ayah memorization data and the auto-sync preference in Qur’an and full backups.
+- Marked Memorization Roadmap Version 5 complete and updated release-wide version references to v0.7.7.
+
+---
+
 # v0.7.6.1 — Memorization Preview Counts
 
 - Kept the Currently Memorizing and Needs Revision home sections as compact four-card previews.

@@ -1,7 +1,7 @@
 # Memorization Roadmap
 
-> **Status:** Version 4 Complete
-> **Current Version:** Version 5 — Ayah Memorization Tracking
+> **Status:** Version 5 Complete
+> **Current Version:** Version 6 — Better Ayah Navigation
 > **Module:** Qur'an
 > **Purpose:** Provide a gentle, encouraging way to track Qur'an memorization while laying the foundation for a future Memorization Center.
 
@@ -120,22 +120,22 @@ The experience should always feel peaceful, motivating, and welcoming—not like
 
 ### Tasks
 
-* [ ] Display every ayah as numbered chips
-* [ ] Tap an ayah to update status
-* [ ] Ayah status modal
-* [ ] Ayah statuses
+* [x] Display every ayah as numbered chips
+* [x] Tap an ayah to update status
+* [x] Ayah status modal
+* [x] Ayah statuses
 
-  * [ ] Not Started
-  * [ ] Learning
-  * [ ] Memorized
-  * [ ] Needs Revision
-* [ ] Automatically calculate surah progress
-* [ ] Memorized / Remaining counters
-* [ ] Progress ring
+  * [x] Not Started
+  * [x] Learning
+  * [x] Memorized
+  * [x] Needs Revision
+* [x] Automatically calculate surah progress
+* [x] Memorized / Not Started counters
+* [x] Progress ring
 
 ---
 
-## ✅ Version 6 — Better Ayah Navigation
+## Version 6 — Better Ayah Navigation
 
 **Goal:** Make long surahs easy to manage.
 

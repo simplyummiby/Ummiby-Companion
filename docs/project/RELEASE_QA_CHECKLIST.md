@@ -1,3 +1,23 @@
+## v0.7.7 — Ayah Memorization Tracking
+
+- [x] Al-Fatihah renders 7 ayah tiles in code-level verification.
+- [x] Al-Mulk renders 30 ayah tiles in code-level verification.
+- [x] Al-Baqarah renders 286 ayah tiles in code-level verification.
+- [x] No horizontal-scrolling CSS was introduced for the ayah grid.
+- [x] Tile labels include ayah number, status, and suggested-next cue where applicable.
+- [x] Ayah status modal includes all four statuses and closes after save, backdrop click, or Escape.
+- [x] Dedicated localStorage keys are used for ayah statuses, auto-sync preference, and completion acknowledgements.
+- [x] Corrupt localStorage reads fail safely through guarded JSON parsing.
+- [x] Counters, progress ring, percentage, and suggested next ayah update from one render path after changes.
+- [x] Bulk actions require the custom confirmation modal and support cancel.
+- [x] Auto-sync preference is configurable and does not overwrite Needs Revision.
+- [x] Completion message is shown only at the moment a surah becomes fully memorized and can be dismissed.
+- [x] Qur’an/full backup scopes include the new ayah keys through the existing Memorization prefix.
+- [x] JavaScript syntax checks pass.
+- [ ] Full browser/device manual QA remains recommended before public distribution.
+
+---
+
 ## v0.7.6.1 — Memorization Preview Counts
 
 - [x] Currently Memorizing displays no more than four preview cards.

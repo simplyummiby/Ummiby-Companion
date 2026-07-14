@@ -1,31 +1,20 @@
-# Update Instructions — Ummiby Companion v0.7.6.1
+# Update Instructions — Ummiby Companion v0.7.7
 
-This package updates Ummiby Companion v0.7.4 to v0.7.6.1.
+This package updates Ummiby Companion to v0.7.7.
 
-## Recommended update method
+## What changed in v0.7.7
 
-Replace the existing project files with the contents of this ZIP, preserving deployment-specific files that are not part of the repository.
+- Added Ayah Progress to every Qur’an Memorization Surah Detail page.
+- Added tap-friendly ayah tiles with Not Started, Learning, Memorized, and Needs Revision statuses.
+- Added an accessible ayah status modal, compact legend, first-use note, suggested next ayah cue, and completion acknowledgement.
+- Expanded Memorization Summary with a CSS progress ring, counts, totals, and memorized percentage.
+- Added discreet bulk actions with confirmation modals.
+- Added optional automatic surah-status synchronization from ayah progress without overwriting Needs Revision.
+- Included ayah memorization and auto-sync preference data in Qur’an and full backups.
+- Marked Memorization Roadmap Version 5 complete and set the current roadmap target to Version 6.
 
-## What changed in v0.7.6.1
+## After updating
 
-- Added **View all X** to Currently Memorizing and Needs Revision when more than four surahs match.
-- The button opens the complete My Surahs library with the correct status filter already applied.
-
-- Added the full Surah Detail page.
-- Added memorization summary and automatic Started date.
-- Added Maintenance Schedule placeholder.
-- Added per-surah personal notes with automatic saving.
-
-- Added a down-arrow cue to Surah Library status selectors.
-- Made the Surah Detail status selector visually consistent.
-- Kept card navigation and quick status editing as separate actions.
-
-- Added a polished Surah Status selection modal.
-- Added Not Started, In Progress, Memorized, and Needs Revision statuses.
-- Added quick status changes from the Surah Library and Surah Detail pages.
-- Added persistent local storage for all surah statuses.
-- Added status colors throughout the Memorization experience.
-- Added automatically updating dashboard totals.
-- Populated Currently Memorizing and Needs Revision sections from saved statuses.
-- Added Memorization status data to Qur’an backup and restore.
-- Marked Memorization Roadmap Version 3 complete.
+1. Open `settings.html` and confirm the app shows v0.7.7.
+2. Open Qur’an → Memorization → any Surah Detail page and verify the Ayah Progress grid appears.
+3. Export a Qur’an backup if you want a fresh copy of ayah memorization data.
