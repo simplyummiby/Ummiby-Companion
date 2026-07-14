@@ -12,8 +12,7 @@ A unified Qur’an, Duaa, and Ramadan companion focused on authentic content, th
 
 ## Documentation
 
-Project documentation is located in `docs/`.
-Feature guides are located in `docs/guides/`.
+Start with the linked [Documentation Index](docs/INDEX.md). It connects the active roadmaps, project references, module guides, and design standards.
 
 ## Current Version
 
