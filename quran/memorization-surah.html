@@ -34,16 +34,93 @@
     <header class="topbar"><button class="menu-button" id="menuButton"><span class="sr-only">Open navigation</span><span data-ui-icon="menu" aria-hidden="true"></span></button><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">App Home</a><span class="breadcrumb-separator">/</span><a href="index.html">Qur’an Home</a><span class="breadcrumb-separator">/</span><a href="memorization.html">Memorization</a><span class="breadcrumb-separator">/</span><span class="breadcrumb-current" id="surahBreadcrumb">Surah</span></nav></header>
     <main class="memorization-home surah-detail-shell">
       <a class="back-to-library" href="memorization.html#my-surahs"><span data-ui-icon="arrow-left" aria-hidden="true"></span> Back to My Surahs</a>
+
       <section class="surah-detail-hero" id="surahDetailHero">
         <div class="surah-number-large" id="detailNumber">1</div>
-        <div class="surah-detail-copy"><p class="section-kicker">Surah memorization</p><p class="surah-detail-arabic" id="detailArabic" lang="ar" dir="rtl"></p><h1 id="detailName">Surah</h1><p id="detailMeta"></p></div>
-        <button class="status-badge status-not-started" id="detailStatusButton" type="button"><span class="status-dot" aria-hidden="true"></span><span id="detailStatusLabel">Not Started</span><span class="status-chevron" aria-hidden="true">▼</span><small>Change status</small></button>
+        <div class="surah-detail-copy">
+          <p class="section-kicker">Surah memorization</p>
+          <p class="surah-detail-arabic" id="detailArabic" lang="ar" dir="rtl"></p>
+          <h1 id="detailName">Surah</h1>
+          <div class="surah-facts" aria-label="Surah information">
+            <span class="surah-fact" id="detailRevelation">Makki</span>
+            <span class="surah-fact" id="detailAyahCount">0 ayat</span>
+            <span class="surah-fact">Surah <span id="detailNumberInline">1</span></span>
+          </div>
+        </div>
+        <button class="status-badge status-not-started" id="detailStatusButton" type="button">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span id="detailStatusLabel">Not Started</span>
+          <span class="status-chevron" aria-hidden="true">▼</span>
+          <small>Change status</small>
+        </button>
       </section>
-      <section class="memorization-section detail-preview">
-        <span class="empty-icon large" data-ui-icon="sparkle"></span>
-        <h2>This surah page is ready for the next steps.</h2>
-        <p>Your surah-level status is now saved here and reflected throughout the Memorization library. Version 4 will expand this into the full detail page, followed by ayah-by-ayah tracking.</p>
-        <div class="detail-actions"><a class="hero-action" id="readSurahLink" href="surah-reader.html">Read This Surah</a><a class="secondary-action" href="memorization.html#my-surahs">Choose Another Surah</a></div>
+
+      <section class="surah-detail-grid" aria-label="Memorization details">
+        <article class="detail-card detail-summary-card">
+          <div class="detail-card-heading">
+            <div>
+              <p class="section-kicker">At a glance</p>
+              <h2>Memorization Summary</h2>
+            </div>
+            <span class="summary-icon" data-ui-icon="sparkle" aria-hidden="true"></span>
+          </div>
+          <div class="summary-status-row">
+            <span>Current status</span>
+            <strong id="summaryStatus">Not Started</strong>
+          </div>
+          <div class="summary-progress">
+            <div class="summary-progress-copy">
+              <strong id="summaryAyahCount">0 ayat tracked</strong>
+              <span>Ayah-by-ayah tracking begins in Version 5.</span>
+            </div>
+            <div class="summary-progress-bar" aria-hidden="true"><span id="summaryProgressFill"></span></div>
+          </div>
+          <div class="detail-actions">
+            <a class="hero-action" id="readSurahLink" href="surah-reader.html">Read This Surah</a>
+            <a class="secondary-action" href="memorization.html#my-surahs">Choose Another Surah</a>
+          </div>
+        </article>
+
+        <article class="detail-card">
+          <div class="detail-card-heading">
+            <div>
+              <p class="section-kicker">Journey detail</p>
+              <h2>Started</h2>
+            </div>
+            <span class="summary-icon" data-ui-icon="calendar" aria-hidden="true"></span>
+          </div>
+          <p class="detail-value" id="startedDateValue">Not started yet</p>
+          <p class="detail-help" id="startedDateHelp">The date will be added when this surah first moves into In Progress, Memorized, or Needs Revision.</p>
+        </article>
+
+        <article class="detail-card">
+          <div class="detail-card-heading">
+            <div>
+              <p class="section-kicker">Keep it strong</p>
+              <h2>Maintenance Schedule</h2>
+            </div>
+            <span class="summary-icon" data-ui-icon="progress" aria-hidden="true"></span>
+          </div>
+          <p class="detail-value">Not configured</p>
+          <p class="detail-help">Personalized maintenance schedules are planned for a future release.</p>
+          <button class="placeholder-button" type="button" disabled>Coming Later</button>
+        </article>
+
+        <article class="detail-card detail-notes-card">
+          <div class="detail-card-heading">
+            <div>
+              <p class="section-kicker">Your space</p>
+              <h2>Personal Notes</h2>
+            </div>
+            <span class="summary-icon" data-ui-icon="edit" aria-hidden="true"></span>
+          </div>
+          <label class="sr-only" for="surahNotes">Personal notes for this surah</label>
+          <textarea id="surahNotes" rows="7" maxlength="3000" placeholder="Add reminders, reflections, difficult portions, or anything you want to remember about this surah."></textarea>
+          <div class="notes-footer">
+            <span id="notesStatus" aria-live="polite">Notes save automatically.</span>
+            <span id="notesCount">0 / 3000</span>
+          </div>
+        </article>
       </section>
     </main>
   </div>

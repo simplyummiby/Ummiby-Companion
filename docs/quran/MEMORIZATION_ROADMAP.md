@@ -1,7 +1,7 @@
 # Memorization Roadmap
 
-> **Status:** Version 3 Complete
-> **Current Version:** Version 4 — Surah Detail Page
+> **Status:** Version 4 Complete
+> **Current Version:** Version 5 — Ayah Memorization Tracking
 > **Module:** Qur'an
 > **Purpose:** Provide a gentle, encouraging way to track Qur'an memorization while laying the foundation for a future Memorization Center.
 
@@ -101,16 +101,16 @@ The experience should always feel peaceful, motivating, and welcoming—not like
 
 ### Tasks
 
-* [ ] Beautiful header
-* [ ] Arabic name
-* [ ] English name
-* [ ] Surah number
-* [ ] Makki / Madani
-* [ ] Ayah count
-* [ ] Memorization summary
-* [ ] Started date
-* [ ] Maintenance Schedule (placeholder)
-* [ ] Personal notes section
+* [x] Beautiful header
+* [x] Arabic name
+* [x] English name
+* [x] Surah number
+* [x] Makki / Madani
+* [x] Ayah count
+* [x] Memorization summary
+* [x] Started date
+* [x] Maintenance Schedule (placeholder)
+* [x] Personal notes section
 
 ---
 

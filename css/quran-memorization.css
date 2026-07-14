@@ -95,3 +95,254 @@ body.modal-open{overflow:hidden}
   align-self: center;
 }
 
+/* v0.7.6 — Full Surah Detail page */
+.surah-detail-shell {
+  max-width: 1180px;
+}
+
+.surah-detail-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 38px;
+  background:
+    radial-gradient(circle at 90% 15%, rgba(183, 151, 87, .14), transparent 24%),
+    linear-gradient(132deg, #fffdf8 0%, #f2f7f1 55%, #e9f2ec 100%);
+}
+
+.surah-detail-hero::after {
+  content: "";
+  position: absolute;
+  right: -48px;
+  bottom: -58px;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(47, 107, 82, .08);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 24px rgba(47, 107, 82, .035),
+    0 0 0 50px rgba(47, 107, 82, .02);
+  pointer-events: none;
+}
+
+.surah-detail-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.surah-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.surah-fact {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 5px 10px;
+  border: 1px solid #d9e4da;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .68);
+  color: #566a60;
+  font-size: .76rem;
+  font-weight: 800;
+}
+
+.surah-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.detail-card {
+  padding: 24px;
+  border: 1px solid #dde6dd;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 9px 24px rgba(31, 69, 53, .055);
+}
+
+.detail-summary-card {
+  grid-column: 1 / -1;
+  background: linear-gradient(140deg, #fff, #fbfcf8);
+}
+
+.detail-notes-card {
+  grid-column: 1 / -1;
+}
+
+.detail-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.detail-card-heading h2 {
+  margin: 2px 0 0;
+  color: #234b3b;
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+}
+
+.summary-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 13px;
+  background: #eef5ee;
+  color: #356a55;
+}
+
+.summary-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 15px 0;
+  border-top: 1px solid #edf1ed;
+  border-bottom: 1px solid #edf1ed;
+  color: #687870;
+}
+
+.summary-status-row strong {
+  font-size: .9rem;
+}
+
+.status-text-not-started { color: #68736d; }
+.status-text-in-progress { color: var(--mem-blue); }
+.status-text-memorized { color: #267150; }
+.status-text-needs-revision { color: var(--mem-amber); }
+
+.summary-progress {
+  margin-top: 20px;
+}
+
+.summary-progress-copy {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.summary-progress-copy strong {
+  color: #2d5142;
+}
+
+.summary-progress-copy span {
+  color: #74827a;
+  font-size: .78rem;
+}
+
+.summary-progress-bar {
+  height: 9px;
+  margin-top: 11px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #edf1ed;
+}
+
+.summary-progress-bar span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #4b846b, #7ea68e);
+  transition: width .25s ease;
+}
+
+.detail-value {
+  margin: 0;
+  color: #2a4c3e;
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.detail-help {
+  margin: 8px 0 0;
+  color: #738078;
+  font-size: .86rem;
+  line-height: 1.55;
+}
+
+.placeholder-button {
+  margin-top: 18px;
+  padding: 9px 12px;
+  border: 1px dashed #cfdacf;
+  border-radius: 11px;
+  background: #fafbf9;
+  color: #879189;
+  font-weight: 800;
+}
+
+.detail-notes-card textarea {
+  width: 100%;
+  min-height: 170px;
+  resize: vertical;
+  box-sizing: border-box;
+  padding: 15px 16px;
+  border: 1px solid #d7e1d8;
+  border-radius: 14px;
+  background: #fcfdfb;
+  color: #31483e;
+  font: inherit;
+  line-height: 1.6;
+}
+
+.detail-notes-card textarea:focus {
+  border-color: #7fa18e;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(47, 107, 82, .11);
+}
+
+.notes-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 9px;
+  color: #7a867f;
+  font-size: .75rem;
+}
+
+@media (max-width: 760px) {
+  .surah-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-summary-card,
+  .detail-notes-card {
+    grid-column: auto;
+  }
+
+  .summary-progress-copy {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 620px) {
+  .surah-detail-hero {
+    padding: 28px 20px;
+  }
+
+  .surah-facts {
+    justify-content: center;
+  }
+
+  .detail-card {
+    padding: 20px;
+  }
+
+  .notes-footer {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+

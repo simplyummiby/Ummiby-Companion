@@ -1,3 +1,21 @@
+## v0.7.6 — Surah Detail Page
+
+- [x] Every Surah Library card opens its matching detail page.
+- [x] Header displays the correct Arabic and English names.
+- [x] Header displays surah number, Makki/Madani, and ayah count.
+- [x] Status selector still opens and saves.
+- [x] Memorization summary reflects the saved status.
+- [x] Started date is created only after leaving Not Started.
+- [x] Started date remains stable after later status changes.
+- [x] Maintenance Schedule placeholder is visible.
+- [x] Personal notes save separately for each surah.
+- [x] Notes character count updates.
+- [x] Read This Surah opens the correct surah.
+- [x] JavaScript syntax check passes.
+- [x] Mobile layout rules are present.
+
+---
+
 ## v0.7.5.3 — Memorization Status Selector UX
 
 - [x] Surah card itself still opens the Surah Detail page.

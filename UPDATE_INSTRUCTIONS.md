@@ -1,12 +1,17 @@
-# Update Instructions — Ummiby Companion v0.7.5.3
+# Update Instructions — Ummiby Companion v0.7.6
 
-This package updates Ummiby Companion v0.7.4 to v0.7.5.3.
+This package updates Ummiby Companion v0.7.4 to v0.7.6.
 
 ## Recommended update method
 
 Replace the existing project files with the contents of this ZIP, preserving deployment-specific files that are not part of the repository.
 
-## What changed in v0.7.5.3
+## What changed in v0.7.6
+
+- Added the full Surah Detail page.
+- Added memorization summary and automatic Started date.
+- Added Maintenance Schedule placeholder.
+- Added per-surah personal notes with automatic saving.
 
 - Added a down-arrow cue to Surah Library status selectors.
 - Made the Surah Detail status selector visually consistent.

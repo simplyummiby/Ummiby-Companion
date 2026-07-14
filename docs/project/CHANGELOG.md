@@ -1,3 +1,17 @@
+# v0.7.6 — Surah Detail Page
+
+- Replaced the placeholder Surah Detail screen with a complete, polished page.
+- Added a decorative header with Arabic and English surah names, surah number, revelation type, and ayah count.
+- Added a memorization summary linked to the saved surah status.
+- Added an automatic Started date when a surah first moves beyond Not Started.
+- Added a Maintenance Schedule placeholder for the planned maintenance system.
+- Added personal notes that save automatically for each surah.
+- Preserved the working status selector and direct link to the Surah Reader.
+- Marked Memorization Roadmap Version 4 complete.
+- Updated release-wide version references to v0.7.6.
+
+---
+
 # v0.7.5.3 — Memorization Status Selector Polish
 
 - Added a visible down-arrow cue to every Surah Library status selector.

@@ -2,7 +2,7 @@
 
 ## Current Release
 
-**v0.7.5.3 — Surah Status Tracking**
+**v0.7.6 — Surah Status Tracking**
 
 Adds a polished status selector for all 114 surahs, saves each surah as Not Started, In Progress, Memorized, or Needs Revision, and updates the Memorization dashboard automatically.
 
@@ -23,6 +23,6 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.7.5.3 — Surah Status Tracking
+v0.7.6 — Surah Status Tracking
 
-Version 0.7.5.3 adds persistent surah-level memorization statuses, status colors, live dashboard totals, and quick status changes from both the Surah Library and each surah detail page.
+Version 0.7.6 adds persistent surah-level memorization statuses, status colors, live dashboard totals, and quick status changes from both the Surah Library and each surah detail page.
