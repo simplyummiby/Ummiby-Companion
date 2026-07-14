@@ -1,7 +1,7 @@
 # Memorization Roadmap
 
-> **Status:** Version 5 Complete
-> **Current Version:** Version 6 — Better Ayah Navigation
+> **Status:** Version 6 Complete
+> **Current Version:** Version 7 — Resources & Study
 > **Module:** Qur'an
 > **Purpose:** Provide a gentle, encouraging way to track Qur'an memorization while laying the foundation for a future Memorization Center.
 
@@ -135,21 +135,26 @@ The experience should always feel peaceful, motivating, and welcoming—not like
 
 ---
 
-## Version 6 — Better Ayah Navigation
+## ✅ Version 6 — Ayah Workspace
 
-**Goal:** Make long surahs easy to manage.
+**Goal:** Make long surahs easy and comfortable to work through.
 
 ### Tasks
 
-* [ ] Filter ayahs by status
-* [ ] Jump to first Learning ayah
-* [ ] Jump to first Needs Revision ayah
-* [ ] Collapse / Expand long surahs
-* [ ] Improved scrolling for long surahs
+* [x] Filter ayahs by status
+* [x] Jump to first Learning ayah
+* [x] Jump to first Needs Revision ayah
+* [x] Jump to next Not Started ayah
+* [x] Hide Memorized ayahs
+* [x] Sticky Ayah Workspace toolbar
+* [x] Go to a specific ayah number
+* [x] Remember the user’s place in long surahs
+* [x] Highlight the current or suggested working ayah
+* [x] Improved scrolling for long surahs
 
 ---
 
-## ✅ Version 7 — Resources & Study
+## Version 7 — Resources & Study
 
 **Goal:** Make each surah a study hub.
 
