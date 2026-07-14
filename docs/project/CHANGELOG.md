@@ -1,3 +1,13 @@
+# v0.7.3 — Memorization Home
+
+- Added Memorization to the Qur’an navigation.
+- Created the first Memorization landing page with a calm, inviting hero.
+- Added Qur’an 54:17 in Arabic with the Hilali & Khan translation.
+- Added overview cards for all 114 surahs, Memorized, In Progress, and Needs Review.
+- Added gentle empty states and placeholders for Currently Memorizing, Needs Review, and My Surahs.
+- Prepared the page to receive stored memorization totals in later versions.
+- Updated release-wide version references to v0.7.3.
+
 # v0.7.2.12 — Al-Fātiḥah Audio Resources
 
 - Added “The Foundation: Al-Fātiḥah and the Straight Path” from Germantown Masjid.

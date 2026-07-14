@@ -1,6 +1,6 @@
 # Memorization Roadmap
 
-> **Status:** Planning
+> **Status:** Version 1 complete — Version 2 next
 > **Module:** Qur'an
 > **Purpose:** Provide a gentle, encouraging way to track Qur'an memorization while laying the foundation for a future Memorization Center.
 
@@ -31,22 +31,22 @@ The experience should always feel peaceful, motivating, and welcoming—not like
 
 ### Tasks
 
-* [ ] Add **Memorization** to the Qur'an menu
-* [ ] Create Memorization landing page
-* [ ] Hero banner
-* [ ] Encouraging Qur'an ayah
-* [ ] Overview cards
+* [x] Add **Memorization** to the Qur'an menu
+* [x] Create Memorization landing page
+* [x] Hero banner
+* [x] Encouraging Qur'an ayah
+* [x] Overview cards
 
-  * [ ] Total Surahs
-  * [ ] Memorized
-  * [ ] In Progress
-  * [ ] Needs Review
-* [ ] Beautiful empty-state design
-* [ ] Placeholder sections
+  * [x] Total Surahs
+  * [x] Memorized
+  * [x] In Progress
+  * [x] Needs Review
+* [x] Beautiful empty-state design
+* [x] Placeholder sections
 
-  * [ ] Currently Memorizing
-  * [ ] Needs Review
-  * [ ] My Surahs
+  * [x] Currently Memorizing
+  * [x] Needs Review
+  * [x] My Surahs
 
 ---
 

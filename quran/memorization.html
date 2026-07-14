@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-app-module="quran">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memorization | Ummiby Companion</title>
+  <link rel="stylesheet" href="../css/quran-shell.css">
+  <link rel="stylesheet" href="../css/quran-memorization.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar quran-sidebar" id="sidebar">
+    <a class="quran-brand" href="index.html"><span class="quran-brand-mark" data-ui-icon="book" aria-hidden="true"></span><span>Qur’an</span></a>
+    <nav class="quran-nav" aria-label="Qur’an navigation">
+      <a class="quran-nav-link" href="index.html"><span data-ui-icon="home" aria-hidden="true"></span>Home</a>
+      <p class="quran-nav-label">Reading Journeys</p>
+      <a class="quran-nav-link" href="reading-journey.html"><span data-ui-icon="journey" aria-hidden="true"></span>Reading Journey</a>
+      <a class="quran-nav-link" href="classic-reading.html"><span data-ui-icon="book" aria-hidden="true"></span>Classic Reading</a>
+      <a class="quran-nav-link secondary-link" href="reading-journeys.html"><span data-ui-icon="progress" aria-hidden="true"></span>Journey Index</a>
+      <p class="quran-nav-label">Read Without a Journey</p>
+      <a class="quran-nav-link" href="surahs.html"><span data-ui-icon="book" aria-hidden="true"></span>Browse by Surah</a>
+      <a class="quran-nav-link" href="go-to-ayah.html"><span data-ui-icon="search" aria-hidden="true"></span>Jump to an Ayah</a>
+      <p class="quran-nav-label">Memorization</p>
+      <a class="quran-nav-link active" href="memorization.html"><span data-ui-icon="sparkle" aria-hidden="true"></span>Memorization</a>
+      <p class="quran-nav-label">Ramadan</p>
+      <a class="quran-nav-link" href="ramadan-journey.html"><span data-ui-icon="moon" aria-hidden="true"></span>Ramadan Central</a>
+    </nav>
+    <nav class="quran-nav quran-nav-bottom" aria-label="App navigation">
+      <a class="quran-nav-link" href="../backup-restore.html"><span data-ui-icon="database" aria-hidden="true"></span>Backup &amp; Restore</a>
+      <a class="quran-nav-link" href="../settings.html"><span data-ui-icon="settings" aria-hidden="true"></span>Settings</a>
+      <a class="module-switch" href="../duaa/index.html"><span data-ui-icon="moon" aria-hidden="true"></span><span><strong>Go to Duaa</strong><small>Daily adhkar &amp; duas</small></span><span data-ui-icon="arrow-right" aria-hidden="true"></span></a>
+    </nav>
+  </aside>
+  <div class="page">
+    <header class="topbar"><button class="menu-button" id="menuButton"><span class="sr-only">Open navigation</span><span data-ui-icon="menu" aria-hidden="true"></span></button><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">App Home</a><span class="breadcrumb-separator">/</span><a href="index.html">Qur’an Home</a><span class="breadcrumb-separator">/</span><span class="breadcrumb-current">Memorization</span></nav></header>
+    <main class="memorization-home">
+      <section class="memorization-hero">
+        <div class="hero-copy"><p class="eyebrow">Your hifdh journey</p><h1>Memorization</h1><p class="hero-lead">Build your relationship with the Book of Allah, one surah and one ayah at a time.</p><a class="hero-action" href="#my-surahs">View My Surahs <span data-ui-icon="arrow-right" aria-hidden="true"></span></a></div>
+        <div class="hero-art" aria-hidden="true"><div class="arch arch-back"></div><div class="arch arch-front"><span data-ui-icon="book"></span></div><div class="leaf leaf-one"></div><div class="leaf leaf-two"></div><div class="gold-star">✦</div></div>
+      </section>
+
+      <section class="memorization-stats" aria-label="Memorization overview">
+        <article><span class="stat-icon neutral" data-ui-icon="book"></span><div><strong>114</strong><span>Total Surahs</span></div></article>
+        <article><span class="stat-icon memorized" data-ui-icon="check"></span><div><strong id="memorizedCount">0</strong><span>Memorized</span></div></article>
+        <article><span class="stat-icon progress" data-ui-icon="progress"></span><div><strong id="progressCount">0</strong><span>In Progress</span></div></article>
+        <article><span class="stat-icon review" data-ui-icon="history"></span><div><strong id="reviewCount">0</strong><span>Needs Review</span></div></article>
+      </section>
+
+      <section class="ayah-card" aria-labelledby="encouragementHeading">
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <p class="arabic" lang="ar" dir="rtl">وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِنْ مُدَّكِرٍ</p>
+        <h2 id="encouragementHeading">“And We have indeed made the Qur’ân easy to understand and remember; then is there any one who will remember?”</h2>
+        <p class="ayah-reference">Al-Qamar 54:17 · Hilali &amp; Khan</p>
+      </section>
+
+      <section class="memorization-section" aria-labelledby="currentlyHeading">
+        <div class="section-heading"><div><p class="section-kicker">Continue gently</p><h2 id="currentlyHeading">Currently Memorizing</h2></div></div>
+        <div class="empty-state compact"><span class="empty-icon" data-ui-icon="book"></span><div><h3>Your current surahs will appear here.</h3><p>When you begin tracking a surah, this space will help you return to it quickly.</p></div><span class="coming-pill">Coming in Version 2</span></div>
+      </section>
+
+      <section class="memorization-section" aria-labelledby="reviewHeading">
+        <div class="section-heading"><div><p class="section-kicker">Keep it close</p><h2 id="reviewHeading">Needs Review</h2></div></div>
+        <div class="empty-state compact"><span class="empty-icon amber" data-ui-icon="history"></span><div><h3>Nothing needs review yet.</h3><p>Surahs you choose to strengthen will be gathered here without erasing what you have accomplished.</p></div><span class="coming-pill">Coming in Version 3</span></div>
+      </section>
+
+      <section class="memorization-section my-surahs-section" id="my-surahs" aria-labelledby="mySurahsHeading">
+        <div class="section-heading"><div><p class="section-kicker">All 114 surahs</p><h2 id="mySurahsHeading">My Surahs</h2><p>One welcoming place to see, search, and organize your memorization.</p></div></div>
+        <div class="library-preview" aria-hidden="true"><div class="preview-card"><span>1</span><strong>Al-Fatihah</strong><small>Not started</small></div><div class="preview-card"><span>36</span><strong>Ya-Sin</strong><small>Not started</small></div><div class="preview-card"><span>67</span><strong>Al-Mulk</strong><small>Not started</small></div></div>
+        <div class="empty-state library-empty"><span class="empty-icon large" data-ui-icon="sparkle"></span><h3>Your Surah Library is being prepared.</h3><p>Version 2 will bring all 114 surahs, beautiful cards, search, and filters for every memorization status.</p><span class="coming-pill">Next: My Surahs Library</span></div>
+      </section>
+    </main>
+  </div>
+</div>
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+<script src="../js/app-config.js"></script>
+<script src="../js/app-shell.js"></script>
+<script src="../js/quran-memorization.js"></script>
+</body>
+</html>

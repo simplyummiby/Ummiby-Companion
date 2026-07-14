@@ -17,6 +17,6 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.7.2.12 — Al-Fātiḥah Audio Resources
+v0.7.3 — Memorization Home
 
-Version 0.7.2.12 adds two curated Germantown Masjid audio resources to the shared al-Fātiḥah Study Library. The resources appear anywhere al-Fātiḥah is shown through the shared passage-aware library.
+Version 0.7.3 introduces a beautiful Memorization landing page with an encouraging Qur’an ayah, overview statistics, thoughtful empty states, and placeholders for Currently Memorizing, Needs Review, and My Surahs.

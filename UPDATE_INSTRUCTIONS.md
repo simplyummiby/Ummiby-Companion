@@ -1,36 +1,21 @@
-# Update Instructions — Ummiby Companion v0.7.2.12
+# Update Instructions — Ummiby Companion v0.7.3
 
-This package updates Ummiby Companion v0.7.2.11 to v0.7.2.12.
+This package updates Ummiby Companion v0.7.2.12 to v0.7.3.
 
-## Recommended update method
+## Installation
 
-1. Back up your existing app data from **Backup & Restore**.
-2. Extract the v0.7.2.12 ZIP.
-3. Replace the existing project files with the complete contents of this package.
-4. Preserve any hosting configuration files that are not part of the app.
-5. Open Qur’an Home and confirm the Continue Reading index link and Switch Journey dialog work.
-6. Open the Reading Unit Index and test a completion checkmark, reset progress, and Back to Top.
-7. Open both a Reading Unit and Classic Reading to verify their bottom navigation bars.
+1. Back up the current project folder.
+2. Extract the v0.7.3 ZIP.
+3. Replace the existing project files with the extracted files.
+4. When using Git, review the changed and newly added files before committing.
+5. Open the app and visit **Qur’an → Memorization**.
 
-## What changed
+## What changed in v0.7.3
 
-- Changed the Continue Reading pill into a concise link to the active journey index.
-- Polished the Switch Journey button.
-- Added visible checkmark toggles to every Reading Unit Index card.
-- Kept the established Reading Unit card style while separating navigation from completion.
-- Positioned Reset Reading Progress at the lower-right of the journey summary card.
-- Fixed workspace journey progress so reset progress displays 0%, even when viewing a later unit.
-- Added specific Qur’an Home › Reading Unit Index › Reading Unit breadcrumbs.
-- Standardized the Classic Reading bottom bar toward the Reading Unit footer pattern.
-
-This release does not change Reading Unit boundaries or stored-data keys. Existing progress remains compatible.
-
-## What changed in v0.7.2.12
-
-- Added the shared Qur’an Study Library to Reading Units, Classic Reading, Read by Surah, and Ramadan Reading.
-- Added three curated al-Fātiḥah resources.
-- Added Expand All / Collapse All, predictable category counts, and clear “Open on Website” actions.
-- Added “Save My Resource” for personal links and notes tied to Qur’an locations.
-
-- Added two Germantown Masjid audio resources for Sūrah al-Fātiḥah.
-- The al-Fātiḥah Library now contains 5 curated resources: 2 Audio and 3 Reading.
+- Added Memorization to the Qur’an navigation.
+- Added the new Memorization landing page.
+- Added a peaceful hero banner and Qur’an 54:17 encouragement card.
+- Added overview cards for Total Surahs, Memorized, In Progress, and Needs Review.
+- Added gentle empty states for Currently Memorizing and Needs Review.
+- Added the My Surahs preview and Version 2 placeholder.
+- Updated the Memorization roadmap checklist.
