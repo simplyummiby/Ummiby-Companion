@@ -18,10 +18,12 @@ The current hero artwork is temporary. Page title and supporting text are HTML a
 
 ## Qur’an memorization ayah tracking data
 
-As of v0.7.7, Qur’an and full backups include ayah-by-ayah memorization records through the existing `ummibyMemorization` backup prefix. The included keys are:
+As of v0.7.8, Qur’an and full backups include ayah-by-ayah memorization records and Ayah Workspace state through the existing `ummibyMemorization` backup prefix. The included keys are:
 
 - `ummibyMemorizationAyahStatuses`
 - `ummibyMemorizationAutoSurahStatus`
 - `ummibyMemorizationAyahCompletionAcknowledgements`
+- `ummibyMemorizationHideMemorized`
+- `ummibyMemorizationAyahWorkspacePosition`
 
-Older backups that do not contain these keys still restore safely; missing ayah data is treated as empty progress.
+Older backups that do not contain these keys still restore safely; missing ayah data is treated as empty progress and missing workspace state simply hides the Resume action.

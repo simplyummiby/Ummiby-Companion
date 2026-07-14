@@ -389,3 +389,36 @@ body.modal-open{overflow:hidden}
 @media (min-width: 980px){.ayah-grid{grid-template-columns:repeat(10,minmax(0,1fr))}}
 @media (max-width: 900px){.ayah-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.ayah-summary-progress{grid-template-columns:1fr}.ayah-progress-ring{margin:auto}}
 @media (max-width: 620px){.ayah-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.ayah-tile{min-height:52px;border-radius:12px}.ayah-progress-heading{flex-direction:column}.bulk-actions-wrap,.bulk-actions-button{width:100%}.bulk-actions-menu{left:0;right:auto;width:100%;box-sizing:border-box}.auto-sync-setting{align-items:flex-start;flex-direction:column}.dialog-actions{flex-direction:column-reverse}.dialog-actions .secondary-action,.dialog-actions .hero-action{justify-content:center;width:100%;box-sizing:border-box}.ayah-progress-ring{width:100px;height:100px}}
+
+/* v0.7.8 — Ayah Workspace */
+.ayah-workspace-toolbar{position:sticky;top:12px;z-index:6;display:grid;gap:14px;margin:16px 0;padding:16px;border:1px solid #dfe7df;border-radius:18px;background:rgba(255,255,255,.96);box-shadow:0 12px 26px rgba(31,55,46,.08);backdrop-filter:blur(10px)}
+.ayah-workspace-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.ayah-workspace-heading h3{margin:2px 0 0;color:#234b3b;font-family:Georgia,serif;font-size:1.22rem}
+.workspace-progress{display:inline-flex;align-items:center;min-height:34px;padding:6px 11px;border-radius:999px;background:#edf5ee;color:#1f6048;font-size:.82rem;font-weight:900;white-space:nowrap}
+.workspace-resume{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:10px 12px;border:1px dashed #d7e1d8;border-radius:14px;background:#fbfcfa;color:#52675d;font-weight:800}
+.workspace-resume-button{margin:0;padding:8px 12px;background:#fff;cursor:pointer;font:inherit;font-size:.82rem}
+.workspace-controls{display:flex;flex-wrap:wrap;align-items:flex-end;gap:13px 16px}
+.workspace-control-group{display:grid;gap:7px;min-width:min(100%,240px)}
+.workspace-control-group p,.workspace-go-form>label{margin:0;color:#62756c;font-size:.72rem;font-weight:850;letter-spacing:.05em;text-transform:uppercase}
+.workspace-filter-chips,.workspace-jump-actions{display:flex;flex-wrap:wrap;gap:8px}
+.workspace-filter-chip{min-height:40px}
+.workspace-filter-chip[aria-pressed="true"]{border-color:var(--mem-green);background:var(--mem-green);color:#fff}
+.workspace-action{min-height:40px;padding:8px 12px;border:1px solid #d8e1d8;border-radius:12px;background:#fff;color:#315e4b;font:inherit;font-size:.82rem;font-weight:850;cursor:pointer}
+.workspace-action:hover,.workspace-action:focus-visible{border-color:#92ad9a;background:#f5f9f5;outline:3px solid rgba(47,107,82,.16);outline-offset:1px}
+.workspace-action:disabled{border-color:#e2e7e2;background:#f3f5f3;color:#9aa59f;cursor:not-allowed;box-shadow:none}
+.workspace-hide-toggle{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:8px 11px;border:1px solid #dfe6df;border-radius:12px;background:#fbfcfa;color:#315044;font-size:.86rem;font-weight:850}
+.workspace-hide-toggle input{width:18px;height:18px;accent-color:var(--mem-green)}
+.workspace-go-form{display:grid;gap:7px}
+.workspace-go-form>div{display:flex;gap:8px}
+.workspace-go-form input{width:92px;min-height:40px;box-sizing:border-box;border:1px solid #d5ded5;border-radius:12px;padding:7px 10px;color:#263f35;font:inherit;font-weight:850}
+.workspace-go-form input:focus{border-color:#6b9a80;outline:3px solid rgba(47,107,82,.12)}
+.workspace-message{min-height:1.2em;margin:0;color:#60746a;font-size:.84rem;font-weight:800}
+.ayah-workspace-empty{display:grid;justify-items:center;gap:12px;margin-top:14px;padding:28px 18px;border:1px dashed #cbd8cc;border-radius:16px;background:#f9fbf8;text-align:center;color:#617169}
+.ayah-workspace-empty p{margin:0;color:#617169;font-weight:800}
+.ayah-tile{scroll-margin-top:190px}
+.ayah-tile.current-working{border-color:#8aa98e;box-shadow:0 0 0 3px rgba(47,107,82,.18),0 8px 18px rgba(31,55,46,.05)}
+.ayah-tile.current-working::before{content:"Working";position:absolute;left:5px;top:4px;padding:2px 5px;border-radius:999px;background:#fffdf7;color:#8a682d;font-size:.56rem;font-weight:900;letter-spacing:.02em}
+.ayah-tile.target-highlight{animation:ayahTargetPulse 2.2s ease;box-shadow:0 0 0 4px rgba(196,154,72,.38),0 12px 24px rgba(31,55,46,.12)}
+@keyframes ayahTargetPulse{0%,100%{transform:translateY(0)}35%{transform:translateY(-2px)}}
+@media (max-width: 900px){.ayah-workspace-toolbar{top:8px}.ayah-workspace-heading{flex-direction:column}.workspace-progress{white-space:normal}.ayah-tile{scroll-margin-top:240px}}
+@media (max-width: 620px){.ayah-workspace-toolbar{position:relative;top:auto;padding:14px}.workspace-controls,.workspace-control-group,.workspace-go-form,.workspace-go-form>div,.workspace-action,.workspace-hide-toggle{width:100%;box-sizing:border-box}.workspace-action,.workspace-hide-toggle{justify-content:center;min-height:44px}.workspace-go-form input{width:100%;min-height:44px}.workspace-filter-chip{flex:1 1 calc(50% - 8px);min-height:44px}.ayah-tile{scroll-margin-top:24px}.ayah-tile.current-working::before{font-size:.5rem}}

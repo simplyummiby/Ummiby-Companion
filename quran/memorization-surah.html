@@ -84,7 +84,51 @@
         </fieldset>
         <p class="ayah-first-use" id="ayahFirstUse">Your memorization journey begins one ayah at a time. Tap any ayah to begin.</p>
         <div class="ayah-status-legend" id="ayahStatusLegend" aria-label="Ayah status legend"></div>
+
+        <div class="ayah-workspace-toolbar" id="ayahWorkspaceToolbar" aria-labelledby="ayahWorkspaceTitle">
+          <div class="ayah-workspace-heading">
+            <div>
+              <p class="section-kicker">Ayah Workspace</p>
+              <h3 id="ayahWorkspaceTitle">Navigate this surah gently</h3>
+            </div>
+            <div class="workspace-progress" id="workspaceProgress" aria-live="polite">0 / 0 Memorized</div>
+          </div>
+          <div class="workspace-resume" id="workspaceResume" hidden>
+            <span id="workspaceResumeText">Resume near Ayah 1</span>
+            <button class="secondary-action workspace-resume-button" id="workspaceResumeButton" type="button">Resume</button>
+          </div>
+          <div class="workspace-controls">
+            <div class="workspace-control-group">
+              <p>Status filter</p>
+              <div class="workspace-filter-chips" id="workspaceFilterChips" aria-label="Filter ayahs by status"></div>
+            </div>
+            <div class="workspace-control-group">
+              <p>Jump to</p>
+              <div class="workspace-jump-actions">
+                <button class="workspace-action" type="button" id="jumpNextAyah">Next Ayah</button>
+                <button class="workspace-action" type="button" id="jumpLearningAyah">First Learning</button>
+                <button class="workspace-action" type="button" id="jumpRevisionAyah">First Needs Revision</button>
+              </div>
+            </div>
+            <label class="workspace-hide-toggle" for="hideMemorizedToggle">
+              <input id="hideMemorizedToggle" type="checkbox">
+              <span>Hide Memorized</span>
+            </label>
+            <form class="workspace-go-form" id="goToAyahForm" novalidate>
+              <label for="goToAyahInput">Go to ayah</label>
+              <div>
+                <input id="goToAyahInput" type="number" inputmode="numeric" min="1" step="1">
+                <button class="workspace-action" type="submit">Go</button>
+              </div>
+            </form>
+          </div>
+          <p class="workspace-message" id="workspaceMessage" role="status" aria-live="polite"></p>
+        </div>
         <div class="ayah-grid" id="ayahGrid" aria-label="Ayah memorization statuses"></div>
+        <div class="ayah-workspace-empty" id="ayahWorkspaceEmpty" hidden>
+          <p>No ayahs currently match this filter.</p>
+          <button class="secondary-action" id="clearWorkspaceFilter" type="button">Show All Ayahs</button>
+        </div>
       </section>
 
       <section class="surah-detail-grid" aria-label="Memorization details">

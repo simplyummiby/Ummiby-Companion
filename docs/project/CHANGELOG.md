@@ -1,3 +1,11 @@
+# v0.7.8 — Ayah Workspace
+
+- Added a sticky Ayah Workspace toolbar on Surah Detail pages with status filters, jump controls, Hide Memorized, Go to Ayah, and compact memorized progress.
+- Added smooth jump-and-focus behavior, temporary target highlights, and a separate current-working ayah cue for long surahs.
+- Added per-surah workspace resume storage with safe localStorage reads and no automatic force-scroll on page load.
+- Persisted the Hide Memorized view preference and included workspace resume data in Qur’an/full backups through the existing Memorization backup prefix.
+- Updated release-wide version references to v0.7.8 and marked Memorization Roadmap Version 6 complete after QA.
+
 # v0.7.7 — Ayah Memorization Tracking
 
 - Added Ayah Progress to each Surah Detail page with responsive numbered tiles for every ayah.
