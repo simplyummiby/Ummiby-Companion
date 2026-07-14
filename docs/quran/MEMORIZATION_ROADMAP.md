@@ -1,6 +1,6 @@
 # Memorization Roadmap
 
-> **Status:** Version 1 complete — Version 2 next
+> **Status:** Version 2 complete — Version 3 next
 > **Module:** Qur'an
 > **Purpose:** Provide a gentle, encouraging way to track Qur'an memorization while laying the foundation for a future Memorization Center.
 
@@ -58,13 +58,13 @@ The experience should always feel peaceful, motivating, and welcoming—not like
 
 ### Tasks
 
-* [ ] Beautiful Surah Library
-* [ ] All 114 Surahs
-* [ ] Elegant Surah Cards
-* [ ] Search
-* [ ] Status Filter Chips
-* [ ] Makki / Madani Filter
-* [ ] Open Surah Detail Page
+* [x] Beautiful Surah Library
+* [x] All 114 Surahs
+* [x] Elegant Surah Cards
+* [x] Search
+* [x] Status Filter Chips
+* [x] Makki / Madani Filter
+* [x] Open Surah Detail Page
 
 ---
 

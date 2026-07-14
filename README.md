@@ -1,5 +1,12 @@
 # Ummiby Companion
 
+## Current Release
+
+**v0.7.4 — My Surahs Library**
+
+Adds a complete, searchable and filterable 114-surah library to Memorization, with elegant cards and a dedicated route for every surah.
+
+
 A unified Qur’an, Duaa, and Ramadan companion focused on authentic content, thoughtful reading experiences, and calm daily use.
 
 ## Main Areas
@@ -17,6 +24,6 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.7.3.1 — Memorization Access
+v0.7.4 — Memorization Access
 
-Version 0.7.3.1 makes the Memorization experience easy to find from both the Qur’an sidebar and a dedicated card on Qur’an Home. The Memorization landing page remains the gentle starting point for future surah and ayah tracking.
+Version 0.7.4 makes the Memorization experience easy to find from both the Qur’an sidebar and a dedicated card on Qur’an Home. The Memorization landing page remains the gentle starting point for future surah and ayah tracking.

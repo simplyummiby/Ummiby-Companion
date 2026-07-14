@@ -1,3 +1,13 @@
+# v0.7.4 — My Surahs Library
+
+- Added all 114 surahs to the Memorization library.
+- Added elegant responsive surah cards with Arabic names, ayah counts, revelation classification, and status indicators.
+- Added search and status filter chips.
+- Added Makki and Madani filters.
+- Added a working Surah Memorization detail route for every surah.
+- Marked Memorization Roadmap Version 2 complete.
+- Updated release-wide version references to v0.7.4.
+
 # v0.7.3.1 — Memorization Access
 
 - Added a visible Memorization card to Qur’an Home.

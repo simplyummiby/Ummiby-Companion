@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-app-module="quran">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surah Memorization | Ummiby Companion</title>
+  <link rel="stylesheet" href="../css/quran-shell.css">
+  <link rel="stylesheet" href="../css/quran-memorization.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar quran-sidebar" id="sidebar">
+    <a class="quran-brand" href="index.html"><span class="quran-brand-mark" data-ui-icon="book" aria-hidden="true"></span><span>Qur’an</span></a>
+    <nav class="quran-nav" aria-label="Qur’an navigation">
+      <a class="quran-nav-link" href="index.html"><span data-ui-icon="home" aria-hidden="true"></span>Home</a>
+      <p class="quran-nav-label">Reading Journeys</p>
+      <a class="quran-nav-link" href="reading-journey.html"><span data-ui-icon="journey" aria-hidden="true"></span>Reading Journey</a>
+      <a class="quran-nav-link" href="classic-reading.html"><span data-ui-icon="book" aria-hidden="true"></span>Classic Reading</a>
+      <a class="quran-nav-link secondary-link" href="reading-journeys.html"><span data-ui-icon="progress" aria-hidden="true"></span>Journey Index</a>
+      <p class="quran-nav-label">Read Without a Journey</p>
+      <a class="quran-nav-link" href="surahs.html"><span data-ui-icon="book" aria-hidden="true"></span>Browse by Surah</a>
+      <a class="quran-nav-link" href="go-to-ayah.html"><span data-ui-icon="search" aria-hidden="true"></span>Jump to an Ayah</a>
+      <p class="quran-nav-label">Memorization</p>
+      <a class="quran-nav-link active" href="memorization.html"><span data-ui-icon="sparkle" aria-hidden="true"></span>Memorization</a>
+      <p class="quran-nav-label">Ramadan</p>
+      <a class="quran-nav-link" href="ramadan-journey.html"><span data-ui-icon="moon" aria-hidden="true"></span>Ramadan Central</a>
+    </nav>
+    <nav class="quran-nav quran-nav-bottom" aria-label="App navigation">
+      <a class="quran-nav-link" href="../backup-restore.html"><span data-ui-icon="database" aria-hidden="true"></span>Backup &amp; Restore</a>
+      <a class="quran-nav-link" href="../settings.html"><span data-ui-icon="settings" aria-hidden="true"></span>Settings</a>
+    </nav>
+  </aside>
+  <div class="page">
+    <header class="topbar"><button class="menu-button" id="menuButton"><span class="sr-only">Open navigation</span><span data-ui-icon="menu" aria-hidden="true"></span></button><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">App Home</a><span class="breadcrumb-separator">/</span><a href="index.html">Qur’an Home</a><span class="breadcrumb-separator">/</span><a href="memorization.html">Memorization</a><span class="breadcrumb-separator">/</span><span class="breadcrumb-current" id="surahBreadcrumb">Surah</span></nav></header>
+    <main class="memorization-home surah-detail-shell">
+      <a class="back-to-library" href="memorization.html#my-surahs"><span data-ui-icon="arrow-left" aria-hidden="true"></span> Back to My Surahs</a>
+      <section class="surah-detail-hero" id="surahDetailHero">
+        <div class="surah-number-large" id="detailNumber">1</div>
+        <div class="surah-detail-copy"><p class="section-kicker">Surah memorization</p><p class="surah-detail-arabic" id="detailArabic" lang="ar" dir="rtl"></p><h1 id="detailName">Surah</h1><p id="detailMeta"></p></div>
+        <span class="status-badge status-not-started">Not Started</span>
+      </section>
+      <section class="memorization-section detail-preview">
+        <span class="empty-icon large" data-ui-icon="sparkle"></span>
+        <h2>This surah page is ready for the next steps.</h2>
+        <p>Version 3 will add surah-level status tracking. Version 4 will expand this into the full detail page, followed by ayah-by-ayah memorization tracking.</p>
+        <div class="detail-actions"><a class="hero-action" id="readSurahLink" href="surah-reader.html">Read This Surah</a><a class="secondary-action" href="memorization.html#my-surahs">Choose Another Surah</a></div>
+      </section>
+    </main>
+  </div>
+</div>
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+<script src="../js/app-config.js"></script>
+<script src="../js/app-shell.js"></script>
+<script src="../js/data/quran-data.js"></script>
+<script src="../js/quran-memorization-surah.js"></script>
+</body>
+</html>

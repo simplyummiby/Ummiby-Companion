@@ -64,9 +64,43 @@
       </section>
 
       <section class="memorization-section my-surahs-section" id="my-surahs" aria-labelledby="mySurahsHeading">
-        <div class="section-heading"><div><p class="section-kicker">All 114 surahs</p><h2 id="mySurahsHeading">My Surahs</h2><p>One welcoming place to see, search, and organize your memorization.</p></div></div>
-        <div class="library-preview" aria-hidden="true"><div class="preview-card"><span>1</span><strong>Al-Fatihah</strong><small>Not started</small></div><div class="preview-card"><span>36</span><strong>Ya-Sin</strong><small>Not started</small></div><div class="preview-card"><span>67</span><strong>Al-Mulk</strong><small>Not started</small></div></div>
-        <div class="empty-state library-empty"><span class="empty-icon large" data-ui-icon="sparkle"></span><h3>Your Surah Library is being prepared.</h3><p>Version 2 will bring all 114 surahs, beautiful cards, search, and filters for every memorization status.</p><span class="coming-pill">Next: My Surahs Library</span></div>
+        <div class="section-heading library-heading">
+          <div><p class="section-kicker">All 114 surahs</p><h2 id="mySurahsHeading">My Surahs</h2><p>Search the complete Qur’an and open any surah’s memorization page.</p></div>
+          <span class="library-count" id="libraryCount">114 surahs</span>
+        </div>
+
+        <div class="library-tools">
+          <label class="surah-search"><span data-ui-icon="search" aria-hidden="true"></span><span class="sr-only">Search surahs</span><input id="memorizationSearch" type="search" placeholder="Search by surah name or number…" autocomplete="off"></label>
+
+          <div class="filter-group" aria-labelledby="statusFilterLabel">
+            <p id="statusFilterLabel">Hifdh status</p>
+            <div class="filter-chips" id="statusFilters">
+              <button class="filter-chip active" type="button" data-status="all">All</button>
+              <button class="filter-chip" type="button" data-status="not-started">Not Started</button>
+              <button class="filter-chip" type="button" data-status="in-progress">In Progress</button>
+              <button class="filter-chip" type="button" data-status="memorized">Memorized</button>
+              <button class="filter-chip" type="button" data-status="needs-review">Needs Review</button>
+              <button class="filter-chip" type="button" data-status="mastered">Mastered</button>
+            </div>
+          </div>
+
+          <div class="filter-group" aria-labelledby="revelationFilterLabel">
+            <p id="revelationFilterLabel">Revelation</p>
+            <div class="filter-chips compact-chips" id="revelationFilters">
+              <button class="filter-chip active" type="button" data-revelation="all">All</button>
+              <button class="filter-chip" type="button" data-revelation="makki">Makki</button>
+              <button class="filter-chip" type="button" data-revelation="madani">Madani</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="surah-library-grid" id="memorizationLibrary" aria-live="polite"></div>
+        <div class="library-no-results" id="libraryNoResults" hidden>
+          <span class="empty-icon" data-ui-icon="search"></span>
+          <h3>No surahs match these filters.</h3>
+          <p>Try another search or return to the All filters.</p>
+          <button type="button" id="clearLibraryFilters">Clear filters</button>
+        </div>
       </section>
     </main>
   </div>
@@ -74,6 +108,7 @@
 <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
 <script src="../js/app-config.js"></script>
 <script src="../js/app-shell.js"></script>
+<script src="../js/data/quran-data.js"></script>
 <script src="../js/quran-memorization.js"></script>
 </body>
 </html>
