@@ -45,3 +45,53 @@ body.modal-open{overflow:hidden}
 .status-option small{color:#62726a!important}
 .status-modal-note{margin:17px 0 0;color:#74827b;font-size:.78rem;text-align:center}
 @media(max-width:760px){.focus-surah-list{grid-template-columns:1fr}.memorization-surah-card{grid-template-columns:1fr}.memorization-surah-card>.library-status{justify-self:start;margin:0 18px 16px 80px}.surah-card-main{grid-template-columns:auto minmax(0,1fr) auto}.status-modal{padding:24px 20px}.status-modal h2{font-size:1.5rem}}
+
+/* v0.7.5.3 — Consistent, discoverable status selectors */
+.library-status,
+.status-badge {
+  transition: filter .16s ease, box-shadow .16s ease, transform .16s ease;
+}
+
+.library-status .status-chevron,
+.status-badge .status-chevron {
+  margin-left: 2px;
+  color: currentColor;
+  font-size: .62rem;
+  line-height: 1;
+  opacity: .72;
+  transform: translateY(1px);
+}
+
+.memorization-surah-card > .library-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.memorization-surah-card > .library-status:hover,
+.memorization-surah-card > .library-status:focus-visible,
+.status-badge:hover,
+.status-badge:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(47,107,82,.12);
+  outline: none;
+}
+
+.status-badge {
+  grid-template-columns: auto minmax(0,1fr) auto;
+}
+
+.status-badge .status-dot {
+  grid-row: 1 / 3;
+}
+
+.status-badge > small {
+  grid-column: 2 / 4;
+}
+
+.status-badge .status-chevron {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: center;
+}
+

@@ -1,3 +1,13 @@
+# v0.7.5.3 — Memorization Status Selector Polish
+
+- Added a visible down-arrow cue to every Surah Library status selector.
+- Updated the Surah Detail status selector to use the same down-arrow pattern.
+- Preserved separate interactions: the card opens the surah page, while the status selector opens the status modal.
+- Added consistent hover and keyboard-focus feedback to both controls.
+- Updated release-wide version references to v0.7.5.3.
+
+---
+
 # v0.7.5.2 — Memorization Interaction Hotfix
 
 - Fixed an invisible full-screen status modal backdrop that could remain interactive while hidden and block every click on the Memorization pages.

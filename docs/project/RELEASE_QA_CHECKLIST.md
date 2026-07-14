@@ -1,3 +1,15 @@
+## v0.7.5.3 — Memorization Status Selector UX
+
+- [x] Surah card itself still opens the Surah Detail page.
+- [x] Status control remains a separate button.
+- [x] Library status button includes a visible down arrow.
+- [x] Detail-page status button includes the same down arrow.
+- [x] Both status controls retain accessible labels.
+- [x] Hover and keyboard-focus states are visible.
+- [x] JavaScript syntax checks pass.
+
+---
+
 # Release QA Checklist
 
 ## v0.7.5.2 — Memorization Status Tracking Fix
