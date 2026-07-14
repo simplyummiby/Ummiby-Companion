@@ -7,7 +7,8 @@
     "needs-revision": "Needs Revision"
   };
   const number = Math.min(114, Math.max(1, Number(new URLSearchParams(location.search).get("surah")) || 1));
-  const surah = (window.QURAN_DATA || []).find(item => item.number === number);
+  const surahSource = Array.isArray(window.QURAN_SURAHS) ? window.QURAN_SURAHS : (Array.isArray(window.QURAN_DATA) ? window.QURAN_DATA : []);
+  const surah = surahSource.find(item => Number(item.number) === number);
   if (!surah) return;
   const MADANI_SURAHS = new Set([2,3,4,5,8,9,13,22,24,33,47,48,49,55,57,58,59,60,61,62,63,64,65,66,76,98,99,110]);
 
@@ -68,7 +69,7 @@
   statusButton.addEventListener("click", openModal);
   statusOptions.forEach(option => option.addEventListener("click", () => {
     statuses[number] = option.dataset.statusChoice;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(statuses));
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(statuses)); } catch {}
     renderStatus();
     closeModal();
   }));
@@ -76,6 +77,6 @@
   modalBackdrop.addEventListener("click", event => { if (event.target === modalBackdrop) closeModal(); });
   document.addEventListener("keydown", event => { if (!modalBackdrop.hidden && event.key === "Escape") closeModal(); });
 
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(statuses));
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(statuses)); } catch {}
   renderStatus();
 })();

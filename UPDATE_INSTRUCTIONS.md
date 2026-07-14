@@ -1,12 +1,12 @@
-# Update Instructions — Ummiby Companion v0.7.5
+# Update Instructions — Ummiby Companion v0.7.5.1
 
-This package updates Ummiby Companion v0.7.4 to v0.7.5.
+This package updates Ummiby Companion v0.7.4 to v0.7.5.1.
 
 ## Recommended update method
 
 Replace the existing project files with the contents of this ZIP, preserving deployment-specific files that are not part of the repository.
 
-## What changed in v0.7.5
+## What changed in v0.7.5.1
 
 - Added a polished Surah Status selection modal.
 - Added Not Started, In Progress, Memorized, and Needs Revision statuses.
