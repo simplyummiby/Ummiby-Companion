@@ -17,6 +17,6 @@ Feature guides are located in `docs/guides/`.
 
 ## Current Version
 
-v0.7.3 — Memorization Home
+v0.7.3.1 — Memorization Access
 
-Version 0.7.3 introduces a beautiful Memorization landing page with an encouraging Qur’an ayah, overview statistics, thoughtful empty states, and placeholders for Currently Memorizing, Needs Review, and My Surahs.
+Version 0.7.3.1 makes the Memorization experience easy to find from both the Qur’an sidebar and a dedicated card on Qur’an Home. The Memorization landing page remains the gentle starting point for future surah and ayah tracking.

@@ -1,3 +1,12 @@
+# v0.7.3.1 — Memorization Access
+
+- Added a visible Memorization card to Qur’an Home.
+- Added Memorization to Qur’an navigation menus throughout the module.
+- Improved discoverability of the existing Memorization landing page.
+- Updated release-wide version references to v0.7.3.1.
+
+---
+
 # v0.7.3 — Memorization Home
 
 - Added Memorization to the Qur’an navigation.

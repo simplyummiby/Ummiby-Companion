@@ -4,6 +4,8 @@
 > **Module:** Qur'an
 > **Purpose:** Provide a gentle, encouraging way to track Qur'an memorization while laying the foundation for a future Memorization Center.
 
+> **Navigation follow-up completed in app v0.7.3.1:** Memorization is now directly accessible from Qur’an Home and Qur’an navigation menus.
+
 ---
 
 # Philosophy
