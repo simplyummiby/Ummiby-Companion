@@ -1,3 +1,16 @@
+## v0.7.6.1 — Memorization Preview Counts
+
+- [x] Currently Memorizing displays no more than four preview cards.
+- [x] Needs Revision displays no more than four preview cards.
+- [x] View all button appears only when more than four surahs match.
+- [x] View all button includes the complete matching count.
+- [x] View all applies the correct status filter.
+- [x] View all scrolls to My Surahs.
+- [x] Empty states remain unchanged when no surahs match.
+- [x] JavaScript syntax check passes.
+
+---
+
 ## v0.7.6 — Surah Detail Page
 
 - [x] Every Surah Library card opens its matching detail page.

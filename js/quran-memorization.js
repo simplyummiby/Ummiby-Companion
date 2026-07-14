@@ -20,15 +20,52 @@
     const normalize=v=>String(v||"").toLowerCase().replace(/[’'\-]/g," ").replace(/\s+/g," ").trim();
     function hydrate(root){window.UmmibyAppShell?.hydrateIcons?.(root);}
     function renderFocusSection(headingId,status,emptyTitle,emptyText){
-      const section=document.getElementById(headingId)?.closest(".memorization-section"),body=section?.querySelector(".empty-state, .focus-surah-list"); if(!body)return;
-      const matches=surahs.filter(s=>getStatus(s.number)===status).slice(0,4);
-      if(!matches.length){body.className="empty-state compact";body.innerHTML=`<span class="empty-icon${status==="needs-revision"?" amber":""}" data-ui-icon="${status==="needs-revision"?"history":"book"}"></span><div><h3>${emptyTitle}</h3><p>${emptyText}</p></div>`;hydrate(body);return;}
-      body.className="focus-surah-list";body.innerHTML=matches.map(s=>`<a href="memorization-surah.html?surah=${s.number}" class="focus-surah-card"><span class="focus-surah-number">${s.number}</span><span><strong>${s.name}</strong><small>${s.ayahCount} ayat · ${s.revelation==="makki"?"Makki":"Madani"}</small></span><span class="library-status status-${status}"><i aria-hidden="true"></i>${labels[status]}</span></a>`).join("");
+      const section=document.getElementById(headingId)?.closest(".memorization-section");
+      const body=section?.querySelector(".empty-state, .focus-surah-list");
+      const heading=section?.querySelector(".section-heading");
+      if(!body||!heading)return;
+
+      heading.querySelector(".focus-section-action")?.remove();
+
+      const allMatches=surahs.filter(s=>getStatus(s.number)===status);
+      const matches=allMatches.slice(0,4);
+
+      if(!matches.length){
+        body.className="empty-state compact";
+        body.innerHTML=`<span class="empty-icon${status==="needs-revision"?" amber":""}" data-ui-icon="${status==="needs-revision"?"history":"book"}"></span><div><h3>${emptyTitle}</h3><p>${emptyText}</p></div>`;
+        hydrate(body);
+        return;
+      }
+
+      if(allMatches.length>4){
+        const action=document.createElement("button");
+        action.type="button";
+        action.className="focus-section-action";
+        action.dataset.viewStatus=status;
+        action.textContent=`View all ${allMatches.length}`;
+        action.setAttribute("aria-label",`View all ${allMatches.length} surahs marked ${labels[status]}`);
+        heading.appendChild(action);
+      }
+
+      body.className="focus-surah-list";
+      body.innerHTML=matches.map(s=>`<a href="memorization-surah.html?surah=${s.number}" class="focus-surah-card"><span class="focus-surah-number">${s.number}</span><span><strong>${s.name}</strong><small>${s.ayahCount} ayat · ${s.revelation==="makki"?"Makki":"Madani"}</small></span><span class="library-status status-${status}"><i aria-hidden="true"></i>${labels[status]}</span></a>`).join("");
     }
     function updateDashboard(){const v=surahs.map(s=>getStatus(s.number));document.getElementById("memorizedCount").textContent=v.filter(x=>x==="memorized").length;document.getElementById("progressCount").textContent=v.filter(x=>x==="in-progress").length;document.getElementById("reviewCount").textContent=v.filter(x=>x==="needs-revision").length;renderFocusSection("currentlyHeading","in-progress","Your current surahs will appear here.","When you begin tracking a surah, this space will help you return to it quickly.");renderFocusSection("reviewHeading","needs-revision","Nothing needs revision right now.","Surahs whose memorization has weakened will be gathered here for focused strengthening.");}
     function render(){const q=normalize(search?.value);const filtered=surahs.filter(s=>{const st=getStatus(s.number);return(!q||String(s.number)===q||normalize(s.name).includes(q)||normalize(s.arabicName).includes(q))&&(activeStatus==="all"||st===activeStatus)&&(activeRevelation==="all"||s.revelation===activeRevelation);});count.textContent=`${filtered.length} surah${filtered.length===1?"":"s"}`;library.innerHTML=filtered.map(s=>{const st=getStatus(s.number);return `<article class="memorization-surah-card"><a class="surah-card-main" href="memorization-surah.html?surah=${s.number}" aria-label="Open ${s.name} memorization page"><span class="library-surah-number">${s.number}</span><span class="library-surah-copy"><span class="library-surah-arabic" lang="ar" dir="rtl">${s.arabicName}</span><strong>${s.name}</strong><small>${s.ayahCount} ayat · ${s.revelation==="makki"?"Makki":"Madani"}</small></span><span class="card-arrow" data-ui-icon="arrow-right" aria-hidden="true"></span></a><button class="library-status status-${st}" type="button" data-change-status="${s.number}" aria-label="Change ${s.name} status, currently ${labels[st]}"><i aria-hidden="true"></i><span>${labels[st]}</span><span class="status-chevron" aria-hidden="true">▼</span></button></article>`;}).join("");hydrate(library);noResults.hidden=filtered.length!==0;}
     function openModal(number,trigger){const s=surahs.find(x=>x.number===number);if(!s)return;selectedSurahNumber=number;lastFocusedElement=trigger||document.activeElement;modalSurah.textContent=`${s.arabicName} · ${s.name}`;const current=getStatus(number);statusOptions.forEach(o=>{const yes=o.dataset.statusChoice===current;o.classList.toggle("selected",yes);o.setAttribute("aria-checked",String(yes));});modalBackdrop.hidden=false;document.body.classList.add("modal-open");requestAnimationFrame(()=>modalBackdrop.classList.add("open"));(statusOptions.find(o=>o.dataset.statusChoice===current)||statusOptions[0])?.focus();}
     function closeModal(){modalBackdrop.classList.remove("open");document.body.classList.remove("modal-open");setTimeout(()=>{modalBackdrop.hidden=true;},150);lastFocusedElement?.focus?.();}
+    document.addEventListener("click",e=>{
+      const viewButton=e.target.closest("[data-view-status]");
+      if(!viewButton)return;
+      const requestedStatus=viewButton.dataset.viewStatus;
+      activeStatus=requestedStatus;
+      if(search)search.value="";
+      document.querySelectorAll("#statusFilters .filter-chip").forEach(chip=>{
+        chip.classList.toggle("active",chip.dataset.status===requestedStatus);
+      });
+      render();
+      document.getElementById("my-surahs")?.scrollIntoView({behavior:"smooth",block:"start"});
+    });
     library.addEventListener("click",e=>{const b=e.target.closest("[data-change-status]");if(b){e.preventDefault();e.stopPropagation();openModal(Number(b.dataset.changeStatus),b);}});
     statusOptions.forEach(o=>o.addEventListener("click",()=>{if(!selectedSurahNumber)return;statuses[selectedSurahNumber]=o.dataset.statusChoice;safeWrite(statuses);render();updateDashboard();closeModal();}));
     modalClose?.addEventListener("click",closeModal);modalBackdrop?.addEventListener("click",e=>{if(e.target===modalBackdrop)closeModal();});document.addEventListener("keydown",e=>{if(modalBackdrop&&!modalBackdrop.hidden&&e.key==="Escape")closeModal();});

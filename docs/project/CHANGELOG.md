@@ -1,3 +1,13 @@
+# v0.7.6.1 — Memorization Preview Counts
+
+- Kept the Currently Memorizing and Needs Revision home sections as compact four-card previews.
+- Added a clear **View all X** button whenever more than four matching surahs exist.
+- Made the button apply the matching status filter in My Surahs and scroll directly to the complete filtered library.
+- Preserved the uncluttered landing-page layout while making it clear that no surahs are missing.
+- Updated release-wide version references to v0.7.6.1.
+
+---
+
 # v0.7.6 — Surah Detail Page
 
 - Replaced the placeholder Surah Detail screen with a complete, polished page.

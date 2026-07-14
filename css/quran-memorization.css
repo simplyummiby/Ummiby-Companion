@@ -346,3 +346,40 @@ body.modal-open{overflow:hidden}
   }
 }
 
+/* v0.7.6.1 — Focus section preview counts */
+.memorization-section > .section-heading {
+  align-items: center;
+}
+
+.focus-section-action {
+  flex: 0 0 auto;
+  padding: 8px 12px;
+  border: 1px solid #d7e2d8;
+  border-radius: 999px;
+  background: #f7faf7;
+  color: #315e4b;
+  font: inherit;
+  font-size: .78rem;
+  font-weight: 850;
+  cursor: pointer;
+  transition: background .16s ease, border-color .16s ease, transform .16s ease;
+}
+
+.focus-section-action:hover,
+.focus-section-action:focus-visible {
+  border-color: #9db7a7;
+  background: #edf5ee;
+  outline: none;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 620px) {
+  .memorization-section > .section-heading {
+    align-items: flex-start;
+  }
+
+  .focus-section-action {
+    margin-top: 2px;
+  }
+}
+
