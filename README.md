@@ -1,28 +1,17 @@
 # Ummiby Companion
 
-## Current Release
+**v0.7.7 — Ayah Memorization Tracking**
 
-**v0.7.6.1 — Surah Status Tracking**
+Adds ayah-by-ayah memorization tracking on each Surah Detail page, including status tiles, progress summaries, bulk actions, optional surah-status sync, and backup support for ayah progress.
 
-Adds a polished status selector for all 114 surahs, saves each surah as Not Started, In Progress, Memorized, or Needs Revision, and updates the Memorization dashboard automatically.
+---
 
-A unified Qur’an, Duaa, and Ramadan companion focused on authentic content, thoughtful reading experiences, and calm daily use.
+## What is Ummiby Companion?
 
-## Main Areas
-
-- Shared Home with dedicated Qur’an, Duaa, and Ramadan entry points
-- Qur’an Home and reading experiences
-- Duaa Home, tracked Daily Companion collections, and reference collections
-- Shared app-wide Settings/About
-- Contextual module reading settings
-
-## Documentation
-
-Project documentation is located in `docs/`.
-Feature guides are located in `docs/guides/`.
+Ummiby Companion is a local-first Islamic companion app for Qur’an reading journeys, Duaa tracking, Ramadan planning, settings, and backup/restore.
 
 ## Current Version
 
-v0.7.6.1 — Surah Status Tracking
+v0.7.7 — Ayah Memorization Tracking
 
-Version 0.7.6.1 adds persistent surah-level memorization statuses, status colors, live dashboard totals, and quick status changes from both the Surah Library and each surah detail page.
+Version 0.7.7 lets users track memorization one ayah at a time from each Surah Detail page. Ayah status data is stored separately from existing surah statuses and notes, included in Qur’an/full backups, and summarized with a progress ring and counters.

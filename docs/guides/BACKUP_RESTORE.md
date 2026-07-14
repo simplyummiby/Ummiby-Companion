@@ -15,3 +15,13 @@ The app identifies and validates the file before enabling import. Import is repl
 ## Artwork
 
 The current hero artwork is temporary. Page title and supporting text are HTML and must not be embedded into replacement artwork. Interface controls use shared SVG icons.
+
+## Qur’an memorization ayah tracking data
+
+As of v0.7.7, Qur’an and full backups include ayah-by-ayah memorization records through the existing `ummibyMemorization` backup prefix. The included keys are:
+
+- `ummibyMemorizationAyahStatuses`
+- `ummibyMemorizationAutoSurahStatus`
+- `ummibyMemorizationAyahCompletionAcknowledgements`
+
+Older backups that do not contain these keys still restore safely; missing ayah data is treated as empty progress.

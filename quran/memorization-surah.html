@@ -55,6 +55,38 @@
         </button>
       </section>
 
+
+
+      <section class="memorization-section ayah-progress-section" aria-labelledby="ayahProgressTitle">
+        <div class="section-heading ayah-progress-heading">
+          <div>
+            <p class="section-kicker">One ayah at a time</p>
+            <h2 id="ayahProgressTitle">Ayah Progress</h2>
+            <p>Tap an ayah to update its memorization status.</p>
+          </div>
+          <div class="bulk-actions-wrap">
+            <button class="focus-section-action bulk-actions-button" id="bulkActionsButton" type="button" aria-expanded="false" aria-controls="bulkActionsMenu">Bulk Actions</button>
+            <div class="bulk-actions-menu" id="bulkActionsMenu" hidden>
+              <button type="button" data-bulk-action="memorized">Mark All Memorized</button>
+              <button type="button" data-bulk-action="not-started">Mark All Not Started</button>
+              <button type="button" data-bulk-action="clear">Clear Ayah Progress</button>
+            </div>
+          </div>
+        </div>
+        <div class="completion-message" id="completionMessage" hidden role="status" aria-live="polite">
+          <span id="completionText"></span>
+          <button type="button" id="completionDismiss" aria-label="Dismiss completion message">×</button>
+        </div>
+        <fieldset class="auto-sync-setting" id="autoSyncSetting">
+          <legend>Automatically update this surah’s status from ayah progress?</legend>
+          <label><input type="radio" name="autoSyncStatus" value="yes"> Yes</label>
+          <label><input type="radio" name="autoSyncStatus" value="no"> No</label>
+        </fieldset>
+        <p class="ayah-first-use" id="ayahFirstUse">Your memorization journey begins one ayah at a time. Tap any ayah to begin.</p>
+        <div class="ayah-status-legend" id="ayahStatusLegend" aria-label="Ayah status legend"></div>
+        <div class="ayah-grid" id="ayahGrid" aria-label="Ayah memorization statuses"></div>
+      </section>
+
       <section class="surah-detail-grid" aria-label="Memorization details">
         <article class="detail-card detail-summary-card">
           <div class="detail-card-heading">
@@ -68,12 +100,14 @@
             <span>Current status</span>
             <strong id="summaryStatus">Not Started</strong>
           </div>
-          <div class="summary-progress">
+          <div class="summary-progress ayah-summary-progress">
+            <div class="ayah-progress-ring" id="ayahProgressRing" role="img" aria-label="0 of 0 ayat memorized"><span id="ringMemorized">0</span><small id="ringTotal">of 0</small></div>
             <div class="summary-progress-copy">
-              <strong id="summaryAyahCount">0 ayat tracked</strong>
-              <span>Ayah-by-ayah tracking begins in Version 5.</span>
+              <strong id="summaryAyahCount">0 of 0 ayat tracked</strong>
+              <span id="summaryPercentText">0% Memorized</span>
             </div>
             <div class="summary-progress-bar" aria-hidden="true"><span id="summaryProgressFill"></span></div>
+            <div class="ayah-summary-counts" id="ayahSummaryCounts"></div>
           </div>
           <div class="detail-actions">
             <a class="hero-action" id="readSurahLink" href="surah-reader.html">Read This Surah</a>
@@ -139,6 +173,28 @@
       <button type="button" class="status-option status-needs-revision" data-status-choice="needs-revision"><span class="status-option-mark"></span><span><strong>Needs Revision</strong><small>I memorized it, but some of it now needs focused strengthening.</small></span></button>
     </div>
     <p class="status-modal-note">You can change this whenever your memorization changes.</p>
+  </section>
+</div>
+
+<div class="status-modal-backdrop" id="ayahModalBackdrop" hidden>
+  <section class="status-modal ayah-status-modal" id="ayahStatusModal" role="dialog" aria-modal="true" aria-labelledby="ayahModalTitle" aria-describedby="ayahModalSubtitle">
+    <button class="status-modal-close" id="ayahModalClose" type="button" aria-label="Close ayah status selector">×</button>
+    <p class="section-kicker">Ayah status</p>
+    <h2 id="ayahModalTitle">Ayah</h2>
+    <p class="status-modal-surah" id="ayahModalSubtitle">Select Memorization Status</p>
+    <div class="status-options" id="ayahStatusOptions" role="radiogroup" aria-label="Choose ayah memorization status"></div>
+  </section>
+</div>
+<div class="status-modal-backdrop" id="bulkConfirmBackdrop" hidden>
+  <section class="status-modal bulk-confirm-modal" role="dialog" aria-modal="true" aria-labelledby="bulkConfirmTitle">
+    <button class="status-modal-close" id="bulkConfirmClose" type="button" aria-label="Cancel bulk action">×</button>
+    <p class="section-kicker">Bulk action</p>
+    <h2 id="bulkConfirmTitle">Confirm change</h2>
+    <p class="status-modal-surah" id="bulkConfirmText"></p>
+    <div class="dialog-actions">
+      <button class="secondary-action" id="bulkCancel" type="button">Cancel</button>
+      <button class="hero-action confirm-action" id="bulkConfirm" type="button">Confirm</button>
+    </div>
   </section>
 </div>
 
