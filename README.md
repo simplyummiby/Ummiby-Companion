@@ -1,8 +1,8 @@
 # Ummiby Companion
 
-**v0.7.8 — Ayah Workspace**
+**v0.7.8.1 — Basmalah Rendering Patch**
 
-Adds a gentle Ayah Workspace to Surah Detail pages so long surahs are easier to navigate without changing the calm memorization experience.
+Unifies Qur’an Basmalah rendering so Reading Journey units match Browse by Surah without duplicated opening text.
 
 ## What is Ummiby Companion?
 
@@ -10,9 +10,9 @@ Ummiby Companion is a local-first Islamic companion app for Qur’an reading jou
 
 ## Current release
 
-v0.7.8 — Ayah Workspace
+v0.7.8.1 — Basmalah Rendering Patch
 
-Version 0.7.8 adds status filters, jump controls, a Hide Memorized preference, direct Go to Ayah navigation, resume-position storage, current-working ayah highlighting, and compact workspace progress on the Surah Detail page. Qur’an/full backups continue to include memorization data through the existing `ummibyMemorization` backup prefix, including the new workspace position key.
+Version 0.7.8.1 unifies Basmalah rendering between Browse by Surah and Reading Journey readers so standalone Basmalah display, Surah 9 handling, and first-ayah text cleanup use one canonical helper.
 
 ## Updating
 

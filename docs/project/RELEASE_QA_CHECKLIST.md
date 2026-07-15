@@ -1,3 +1,24 @@
+## v0.7.8.1 — Basmalah Rendering Patch
+
+### BASMALAH RENDERING
+
+- [x] Browse by Surah still displays standalone Basmalah for normal surah openings.
+- [x] Browse by Surah still keeps Surah 1 ayah 1 unchanged.
+- [x] Browse by Surah still suppresses standalone Basmalah for Surah 9.
+- [x] Reading Unit entirely within one surah renders without extra Basmalah insertion.
+- [x] Reading Unit beginning at Surah 1 keeps the inline Basmalah in ayah 1.
+- [x] Reading Unit entering a new normal surah displays one standalone Basmalah and strips the duplicated opening text from ayah 1.
+- [x] Reading Unit entering Surah 9 follows the Browse by Surah exception.
+- [x] Reading Unit including Surah 27 ayah 30 preserves the in-ayah Basmalah because only opening ayah 1 is normalized.
+- [x] Ramadan reading portions now use the same canonical helper and retain existing transition behavior.
+
+### REGRESSION
+
+- [x] Reading progress logic unchanged.
+- [x] Bookmarks, notes, memorization features, reading unit calculations, translation rendering, and navigation were not changed.
+- [x] JavaScript syntax checks pass.
+- [x] Basmalah helper regression test passes.
+
 ## v0.7.8 — Ayah Workspace
 
 ### AYAH FILTERS
