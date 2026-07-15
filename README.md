@@ -1,8 +1,8 @@
 # Ummiby Companion
 
-**v0.7.8.2 — Basmalah Rendering Patch**
+**v0.7.8.3 — Bulk Actions Menu Patch**
 
-Unifies Qur’an Basmalah rendering so Reading Journey units match Browse by Surah without duplicated opening text.
+Fixes the Memorization Surah Detail Bulk Actions dropdown so it starts hidden and only opens when requested.
 
 ## What is Ummiby Companion?
 
@@ -10,9 +10,9 @@ Ummiby Companion is a local-first Islamic companion app for Qur’an reading jou
 
 ## Current release
 
-v0.7.8.2 — Basmalah Rendering Patch
+v0.7.8.3 — Bulk Actions Menu Patch
 
-Version 0.7.8.2 unifies Basmalah rendering between Browse by Surah and Reading Journey readers so standalone Basmalah display, Surah 9 handling, and first-ayah text cleanup use one canonical helper.
+Version 0.7.8.3 restores reliable closed-state behavior for the Memorization Surah Detail Bulk Actions menu while preserving the existing bulk action confirmation flow and memorization tracking behavior.
 
 ## Updating
 

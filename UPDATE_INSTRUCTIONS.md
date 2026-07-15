@@ -1,17 +1,17 @@
-# Update Instructions — Ummiby Companion v0.7.8.2
+# Update Instructions — Ummiby Companion v0.7.8.3
 
-This package updates Ummiby Companion to v0.7.8.2.
+This package updates Ummiby Companion to v0.7.8.3.
 
-## What changed in v0.7.8.2
+## What changed in v0.7.8.3
 
-- Added one canonical Basmalah rendering helper shared by Browse by Surah, Reading Journey units, and Ramadan readers.
-- Updated Reading Units so surah openings display the standalone Basmalah only when Browse by Surah would, while first ayah text no longer duplicates it.
-- Preserved Surah 1, Surah 9, and Surah 27 ayah 30 handling.
+- Fixed the Memorization Surah Detail Bulk Actions menu so it is hidden by default.
+- Preserved the existing Bulk Actions confirmation dialogs and ayah memorization behavior.
 - Updated documentation, version references, and the release QA checklist.
 
 ## After updating
 
-1. Open `settings.html` and confirm the app shows v0.7.8.2.
-2. Open `quran/surah-reader.html?surah=2` and confirm the standalone Basmalah appears once and ayah 1 does not duplicate it.
-3. Open Reading Units that begin at Surah 1, enter a normal surah opening, enter Surah 9, and include Surah 27 ayah 30 to confirm canonical Basmalah behavior.
-4. Export a backup from `backup-restore.html` only if you want a fresh copy after updating; this patch does not change saved reading data.
+1. Open `settings.html` and confirm the app shows v0.7.8.3.
+2. Open `quran/memorization-surah.html?surah=1` and confirm the Bulk Actions menu is hidden on load.
+3. Click Bulk Actions to confirm the menu opens, then click it again, click outside, and press Escape to confirm it closes.
+4. Select each bulk action and confirm the menu closes while the confirmation dialog still opens.
+5. Export a backup from `backup-restore.html` only if you want a fresh copy after updating; this patch does not change saved app data.

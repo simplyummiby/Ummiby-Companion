@@ -1,3 +1,9 @@
+# v0.7.8.3 — Bulk Actions Menu Patch
+
+- Fixed the Memorization Surah Detail Bulk Actions dropdown so its `hidden` attribute is respected by CSS on initial page load, refresh, and return navigation.
+- Preserved the existing Bulk Actions button toggle, outside-click close, Escape close, action confirmation dialogs, and memorization progress behavior.
+- Updated release-wide version references, update instructions, and release QA checklist for v0.7.8.3.
+
 # v0.7.8.2 — Canonical Basmalah Styling Patch
 
 - Added a single canonical `prepareAyahForDisplay` Basmalah renderer for Browse by Surah and Reading Journey readers.
