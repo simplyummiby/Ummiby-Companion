@@ -1,3 +1,26 @@
+## v0.7.8.2 — Canonical Basmalah Styling Patch
+
+### BASMALAH ARCHITECTURE
+
+- [x] Browse by Surah and Reading Journey use the shared `QURAN_BASMALAH.prepareAyahForDisplay` renderer.
+- [x] Duplicate standalone Basmalah decisions and first-ayah cleanup logic were removed from the readers where practical.
+- [x] Shared helper comments document the Surah 1, Surah 9, and Surah 27:30 rules.
+
+### VISUAL AND RESPONSIVE
+
+- [x] Reading Journey standalone Basmalah uses the same `.surah-basmalah` markup and shell-level CSS as Browse by Surah.
+- [x] Desktop, tablet, and mobile responsive Basmalah spacing comes from the canonical shared style.
+- [x] No small right-aligned Reading Journey Basmalah styling remains.
+
+### READING REGRESSION
+
+- [x] Reading Unit beginning at Surah 1 keeps Al-Fatihah ayah 1 intact.
+- [x] Reading Unit beginning at another surah displays one standalone Basmalah and cleans ayah 1.
+- [x] Reading Unit transitions use the same helper for normal surahs and Surah 9.
+- [x] Surah 27 ayah 30 remains protected because only standalone-rendered opening ayah 1 text is cleaned.
+- [x] Browse by Surah still behaves correctly.
+- [x] JavaScript syntax checks pass.
+
 ## v0.7.8.1 — Basmalah Rendering Patch
 
 ### BASMALAH RENDERING

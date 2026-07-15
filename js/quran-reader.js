@@ -12,7 +12,7 @@
  let currentAyah=Math.min(startAyah,surah.ayahCount);
  let observerReady=false;
 
- function displayArabic(ayah){return basmalah.displayArabic(ayah,surahNo);}
+ function prepareAyah(ayah){return basmalah.prepareAyahForDisplay({surahNumber:surahNo,ayahNumber:ayah.ayah,arabicText:ayah.arabic});}
  function go(n,ayah=1){location.href=`surah-reader.html?${mode==='classic'?'mode=classic&':''}surah=${n}&ayah=${ayah}`;}
  function positionLabel(){return `${surah.name} · Ayah ${currentAyah}`;}
  function updateClassicBar(){
@@ -38,7 +38,7 @@
  document.body.classList.toggle('classic-mode',mode==='classic');
 
  const basmalahBlock=$('surah-basmalah');
- basmalahBlock.hidden=!basmalah.shouldShowStandaloneBasmalah(surahNo);
+ basmalahBlock.hidden=!basmalah.prepareAyahForDisplay({surahNumber:surahNo,ayahNumber:1,arabicText:surah.ayahs[0]?.arabic}).showStandaloneBasmalah;
  const sel=$('ayah-select');
  surah.ayahs.forEach(a=>{const o=document.createElement('option');o.value=a.ayah;o.textContent=`Ayah ${a.ayah}`;sel.appendChild(o);});
  sel.value=currentAyah;
@@ -47,7 +47,7 @@
      <div class="ayah-label">${surah.number}:${a.ayah}</div>
      <div class="classic-ayah-content">
        <div class="translation-wrap classic-translation-column"><p class="translation">${a.translation}</p>${a.footnotes?`<details class="footnotes"><summary>Translation notes</summary><p>${a.footnotes.replace(/\n/g,'<br>')}</p></details>`:''}</div>
-       <div class="classic-arabic-column"><p class="arabic-text" lang="ar" dir="rtl"><span class="ayah-arabic-copy">${displayArabic(a)}</span><span class="ayah-ornament" aria-label="Ayah ${a.ayah}"><span class="ayah-ornament-symbol" aria-hidden="true">۝</span><span class="ayah-ornament-number">${arabicDigits(a.ayah)}</span></span></p></div>
+       <div class="classic-arabic-column"><p class="arabic-text" lang="ar" dir="rtl"><span class="ayah-arabic-copy">${prepareAyah(a).cleanedArabicText}</span><span class="ayah-ornament" aria-label="Ayah ${a.ayah}"><span class="ayah-ornament-symbol" aria-hidden="true">۝</span><span class="ayah-ornament-number">${arabicDigits(a.ayah)}</span></span></p></div>
      </div>
    </article>`).join('');
 

@@ -10,7 +10,7 @@
   }
 
   function normalizeAyahNumber(ayah) {
-    return Number(ayah?.ayah ?? ayah?.number ?? ayah?.ayahNumber) || 0;
+    return Number(ayah?.ayah ?? ayah?.number ?? ayah?.ayahNumber ?? ayah) || 0;
   }
 
   function shouldShowStandaloneBasmalah(surahNumber) {
@@ -24,14 +24,32 @@
     return variant ? text.slice(variant.length).trimStart() : text;
   }
 
-  function displayArabic(ayah, surahNumber) {
-    const number = normalizeSurahNumber(surahNumber ?? ayah?.surah ?? ayah?.surahNumber);
-    if (normalizeAyahNumber(ayah) !== 1 || !shouldShowStandaloneBasmalah(number)) return ayah?.arabic || '';
-    return stripOpeningBasmalah(ayah.arabic);
-  }
-
   function standaloneBasmalahHtml(className = 'surah-basmalah') {
     return `<div class="${className}" lang="ar" dir="rtl">${BASMALAH}</div>`;
+  }
+
+  function prepareAyahForDisplay({ surahNumber, ayahNumber, arabicText, startsNewSurah = true } = {}) {
+    const normalizedSurah = normalizeSurahNumber(surahNumber);
+    const normalizedAyah = normalizeAyahNumber(ayahNumber);
+    const isOpeningAyah = normalizedAyah === 1;
+    // Basmalah is shown once before each normal surah opening; Al-Fatihah keeps it as ayah 1 and At-Tawbah has no opening Basmalah.
+    const showStandaloneBasmalah = Boolean(startsNewSurah && isOpeningAyah && shouldShowStandaloneBasmalah(normalizedSurah));
+    // Only strip an opening Basmalah when a standalone one is rendered, which preserves the Qur'anic Basmalah inside An-Naml 27:30.
+    const cleanedArabicText = showStandaloneBasmalah ? stripOpeningBasmalah(arabicText) : String(arabicText || '');
+    return {
+      showStandaloneBasmalah,
+      cleanedArabicText,
+      standaloneBasmalahHtml: showStandaloneBasmalah ? standaloneBasmalahHtml() : ''
+    };
+  }
+
+  function displayArabic(ayah, surahNumber) {
+    return prepareAyahForDisplay({
+      surahNumber: surahNumber ?? ayah?.surah ?? ayah?.surahNumber,
+      ayahNumber: ayah,
+      arabicText: ayah?.arabic,
+      startsNewSurah: true
+    }).cleanedArabicText;
   }
 
   window.QURAN_BASMALAH = Object.freeze({
@@ -39,6 +57,7 @@
     shouldShowStandaloneBasmalah,
     stripOpeningBasmalah,
     displayArabic,
-    standaloneBasmalahHtml
+    standaloneBasmalahHtml,
+    prepareAyahForDisplay
   });
 })();
