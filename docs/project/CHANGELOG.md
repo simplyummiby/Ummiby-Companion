@@ -1,3 +1,10 @@
+# v0.7.8.2 — Canonical Basmalah Styling Patch
+
+- Added a single canonical `prepareAyahForDisplay` Basmalah renderer for Browse by Surah and Reading Journey readers.
+- Moved the shared `.surah-basmalah` style into the Qur’an shell stylesheet so Reading Journey uses the exact Browse by Surah Basmalah appearance.
+- Preserved Surah 1, Surah 9, and Surah 27:30 handling while keeping Reading Unit calculations, progress, translations, and navigation unchanged.
+- Updated release-wide version references, update instructions, and release QA checklist for v0.7.8.2.
+
 # v0.7.8.1 — Basmalah Rendering Patch
 
 - Added a canonical Qur’an Basmalah helper shared by Browse by Surah, Reading Journey workspace rendering, and Ramadan reading portions.

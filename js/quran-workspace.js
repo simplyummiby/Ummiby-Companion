@@ -92,13 +92,20 @@ if (workspaceAyahSelect) {
 }
 
 document.getElementById('workspaceAyahs').innerHTML = ayahs.length ? ayahs.map((ayah, ayahIndex) => {
-  const startsNewSurah = ayahIndex === 0 || ayahs[ayahIndex - 1]?.surah !== ayah.surah;
-  const shouldShowBasmalah = startsNewSurah && ayah.ayah === 1 && basmalah.shouldShowStandaloneBasmalah(unit.surahNumber);
-  return `${shouldShowBasmalah ? basmalah.standaloneBasmalahHtml() : ''}<article class="workspace-ayah" id="workspace-ayah-${ayah.ayah}">
-  <div class="workspace-ayah-reference">${unit.surahNumber}:${ayah.ayah}</div>
+  const ayahSurahNumber = Number(ayah.surah ?? ayah.surahNumber ?? unit.surahNumber);
+  const previousSurahNumber = Number(ayahs[ayahIndex - 1]?.surah ?? ayahs[ayahIndex - 1]?.surahNumber ?? unit.surahNumber);
+  const startsNewSurah = ayahIndex === 0 || previousSurahNumber !== ayahSurahNumber;
+  const preparedAyah = basmalah.prepareAyahForDisplay({
+    surahNumber: ayahSurahNumber,
+    ayahNumber: ayah.ayah,
+    arabicText: ayah.arabic,
+    startsNewSurah
+  });
+  return `${preparedAyah.standaloneBasmalahHtml}<article class="workspace-ayah" id="workspace-ayah-${ayah.ayah}">
+  <div class="workspace-ayah-reference">${ayahSurahNumber}:${ayah.ayah}</div>
   <div class="workspace-ayah-content">
     <div class="workspace-arabic-column">
-      <p class="workspace-arabic" lang="ar" dir="rtl">${basmalah.displayArabic(ayah, unit.surahNumber)}<span class="workspace-ayah-marker">۝${arabicDigits(ayah.ayah)}</span></p>
+      <p class="workspace-arabic" lang="ar" dir="rtl">${preparedAyah.cleanedArabicText}<span class="workspace-ayah-marker">۝${arabicDigits(ayah.ayah)}</span></p>
     </div>
     <div class="workspace-translation">
       <p>${ayah.translation}</p>${ayah.footnotes ? `<details><summary>Translation notes</summary><p>${ayah.footnotes.replace(/\n/g,'<br>')}</p></details>` : ''}
