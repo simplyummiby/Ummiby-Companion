@@ -1,3 +1,10 @@
+# v0.7.8.1 — Basmalah Rendering Patch
+
+- Added a canonical Qur’an Basmalah helper shared by Browse by Surah, Reading Journey workspace rendering, and Ramadan reading portions.
+- Updated Reading Units to display standalone Basmalah at surah openings using the same rules as Browse by Surah, including the Surah 9 exception.
+- Normalized first ayah Arabic rendering so duplicated opening Basmalah text is stripped only when a standalone Basmalah is displayed, without affecting Surah 1 or Surah 27 ayah 30.
+- Updated release-wide version references, update instructions, and the release QA checklist for v0.7.8.1.
+
 # v0.7.8 — Ayah Workspace
 
 - Added a sticky Ayah Workspace toolbar on Surah Detail pages with status filters, jump controls, Hide Memorized, Go to Ayah, and compact memorized progress.

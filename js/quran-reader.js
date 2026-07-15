@@ -6,19 +6,13 @@
  let startAyah=Math.max(1,Number(p.get('ayah'))||1);
  const surah=data[surahNo-1];
  const $=id=>document.getElementById(id);
- const BASMALAH='بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
- const BASMALAH_VARIANT='بِّسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
+ const basmalah=window.QURAN_BASMALAH;
  const arabicDigits=number=>String(number).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
  const backToTopButton=$('quranBackToTop');
  let currentAyah=Math.min(startAyah,surah.ayahCount);
  let observerReady=false;
 
- function displayArabic(ayah){
-   if(surahNo===1 || surahNo===9 || ayah.ayah!==1) return ayah.arabic;
-   if(ayah.arabic.startsWith(BASMALAH)) return ayah.arabic.slice(BASMALAH.length).trimStart();
-   if(ayah.arabic.startsWith(BASMALAH_VARIANT)) return ayah.arabic.slice(BASMALAH_VARIANT.length).trimStart();
-   return ayah.arabic;
- }
+ function displayArabic(ayah){return basmalah.displayArabic(ayah,surahNo);}
  function go(n,ayah=1){location.href=`surah-reader.html?${mode==='classic'?'mode=classic&':''}surah=${n}&ayah=${ayah}`;}
  function positionLabel(){return `${surah.name} · Ayah ${currentAyah}`;}
  function updateClassicBar(){
@@ -44,7 +38,7 @@
  document.body.classList.toggle('classic-mode',mode==='classic');
 
  const basmalahBlock=$('surah-basmalah');
- basmalahBlock.hidden=surahNo===1 || surahNo===9;
+ basmalahBlock.hidden=!basmalah.shouldShowStandaloneBasmalah(surahNo);
  const sel=$('ayah-select');
  surah.ayahs.forEach(a=>{const o=document.createElement('option');o.value=a.ayah;o.textContent=`Ayah ${a.ayah}`;sel.appendChild(o);});
  sel.value=currentAyah;

@@ -7,11 +7,10 @@
   const saved=window.RAMADAN_STATE.getPortion(dayNo,portion.id);
   const $=id=>document.getElementById(id);
   const arabicDigits=number=>String(number).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
-  const BASMALAH='بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
-  const BASMALAH_VARIANT='بِّسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
+  const basmalah=window.QURAN_BASMALAH;
   let currentIndex=0;
   let observerReady=false;
-  function displayArabic(v){if(v.surah===1||v.surah===9||v.ayah!==1)return v.arabic;if(v.arabic.startsWith(BASMALAH))return v.arabic.slice(BASMALAH.length).trimStart();if(v.arabic.startsWith(BASMALAH_VARIANT))return v.arabic.slice(BASMALAH_VARIANT.length).trimStart();return v.arabic}
+  function displayArabic(v){return basmalah.displayArabic(v,v.surah)}
   function key(v){return `${v.surah}:${v.ayah}`}
   function href(targetDay,targetPortion){return `ramadan-reader.html?day=${targetDay}&portion=${targetPortion}`}
   $('readerEyebrow').textContent=`Ramadan Day ${dayNo} · Juz ${day.juz} · Portion ${portion.index} of 5`;
@@ -21,8 +20,8 @@
   $('ayah-list').innerHTML=portion.verses.map((v,index)=>{
     const surah=window.QURAN_DATA[v.surah-1];
     const showHeading=index===0||portion.verses[index-1].surah!==v.surah;
-    const showBasmalah=showHeading&&v.ayah===1&&v.surah!==1&&v.surah!==9;
-    return `${showHeading?`<div class="ramadan-surah-divider"><p class="eyebrow">Surah ${surah.name} (${surah.number})</p>${showBasmalah?`<div class="surah-basmalah" lang="ar" dir="rtl">${BASMALAH}</div>`:''}</div>`:''}<article class="ayah" id="ayah-${v.surah}-${v.ayah}" data-index="${index}" data-key="${key(v)}"><div class="ayah-label">${v.surah}:${v.ayah}</div><p class="arabic-text" lang="ar" dir="rtl"><span class="ayah-arabic-copy">${displayArabic(v)}</span><span class="ayah-ornament" aria-label="Ayah ${v.ayah}"><span class="ayah-ornament-symbol" aria-hidden="true">۝</span><span class="ayah-ornament-number">${arabicDigits(v.ayah)}</span></span></p><div class="translation-wrap"><p class="translation">${v.translation}</p>${v.footnotes?`<details class="footnotes"><summary>Translation notes</summary><p>${v.footnotes.replace(/\n/g,'<br>')}</p></details>`:''}</div></article>`;
+    const showBasmalah=showHeading&&v.ayah===1&&basmalah.shouldShowStandaloneBasmalah(v.surah);
+    return `${showHeading?`<div class="ramadan-surah-divider"><p class="eyebrow">Surah ${surah.name} (${surah.number})</p>${showBasmalah?basmalah.standaloneBasmalahHtml():''}</div>`:''}<article class="ayah" id="ayah-${v.surah}-${v.ayah}" data-index="${index}" data-key="${key(v)}"><div class="ayah-label">${v.surah}:${v.ayah}</div><p class="arabic-text" lang="ar" dir="rtl"><span class="ayah-arabic-copy">${displayArabic(v)}</span><span class="ayah-ornament" aria-label="Ayah ${v.ayah}"><span class="ayah-ornament-symbol" aria-hidden="true">۝</span><span class="ayah-ornament-number">${arabicDigits(v.ayah)}</span></span></p><div class="translation-wrap"><p class="translation">${v.translation}</p>${v.footnotes?`<details class="footnotes"><summary>Translation notes</summary><p>${v.footnotes.replace(/\n/g,'<br>')}</p></details>`:''}</div></article>`;
   }).join('');
   const libraryRanges = Object.values(portion.verses.reduce((groups, verse) => {
     const key = String(verse.surah);

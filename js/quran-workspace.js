@@ -81,6 +81,7 @@ if (topics.length) {
 const surah = quran[unit.surahNumber - 1];
 const ayahs = surah?.ayahs?.filter(ayah => ayah.ayah >= unit.startAyah && ayah.ayah <= unit.endAyah) || [];
 const arabicDigits = number => String(number).replace(/\d/g, digit => '٠١٢٣٤٥٦٧٨٩'[digit]);
+const basmalah = window.QURAN_BASMALAH;
 
 const workspaceAyahSelect = document.getElementById('workspaceAyahSelect');
 if (workspaceAyahSelect) {
@@ -90,17 +91,21 @@ if (workspaceAyahSelect) {
   });
 }
 
-document.getElementById('workspaceAyahs').innerHTML = ayahs.length ? ayahs.map(ayah => `<article class="workspace-ayah" id="workspace-ayah-${ayah.ayah}">
+document.getElementById('workspaceAyahs').innerHTML = ayahs.length ? ayahs.map((ayah, ayahIndex) => {
+  const startsNewSurah = ayahIndex === 0 || ayahs[ayahIndex - 1]?.surah !== ayah.surah;
+  const shouldShowBasmalah = startsNewSurah && ayah.ayah === 1 && basmalah.shouldShowStandaloneBasmalah(unit.surahNumber);
+  return `${shouldShowBasmalah ? basmalah.standaloneBasmalahHtml() : ''}<article class="workspace-ayah" id="workspace-ayah-${ayah.ayah}">
   <div class="workspace-ayah-reference">${unit.surahNumber}:${ayah.ayah}</div>
   <div class="workspace-ayah-content">
     <div class="workspace-arabic-column">
-      <p class="workspace-arabic" lang="ar" dir="rtl">${ayah.arabic}<span class="workspace-ayah-marker">۝${arabicDigits(ayah.ayah)}</span></p>
+      <p class="workspace-arabic" lang="ar" dir="rtl">${basmalah.displayArabic(ayah, unit.surahNumber)}<span class="workspace-ayah-marker">۝${arabicDigits(ayah.ayah)}</span></p>
     </div>
     <div class="workspace-translation">
       <p>${ayah.translation}</p>${ayah.footnotes ? `<details><summary>Translation notes</summary><p>${ayah.footnotes.replace(/\n/g,'<br>')}</p></details>` : ''}
     </div>
   </div>
-</article>`).join('') : '<p class="empty-state">The Qur’an text could not be loaded. Please refresh the page.</p>';
+</article>`;
+}).join('') : '<p class="empty-state">The Qur’an text could not be loaded. Please refresh the page.</p>';
 
 document.getElementById('translationToggle').addEventListener('change', event => document.body.classList.toggle('hide-workspace-translation', !event.target.checked));
 
