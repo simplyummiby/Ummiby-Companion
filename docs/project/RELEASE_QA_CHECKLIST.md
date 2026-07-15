@@ -1,3 +1,25 @@
+## v0.7.8.3 — Bulk Actions Menu Patch
+
+### BULK ACTIONS MENU VISIBILITY
+
+- [x] Menu is hidden on first Surah Detail page load.
+- [x] Menu remains hidden after refresh.
+- [x] Menu starts hidden after leaving and returning to a Surah Detail page.
+- [x] Clicking Bulk Actions opens the menu and sets `aria-expanded` to `true`.
+- [x] Clicking Bulk Actions again closes the menu and sets `aria-expanded` to `false`.
+- [x] Clicking outside closes the menu.
+- [x] Escape closes the menu.
+
+### BULK ACTIONS REGRESSION
+
+- [x] Selecting Mark All Memorized closes the menu before confirmation.
+- [x] Selecting Mark All Not Started closes the menu before confirmation.
+- [x] Selecting Clear Ayah Progress closes the menu before confirmation.
+- [x] Confirmation dialog behavior remains unchanged.
+- [x] Hidden menu controls are not keyboard reachable or announced while hidden.
+- [x] Ayah tracking, counters, progress ring, notes, and Surah status controls were not changed.
+- [x] JavaScript syntax checks pass.
+
 ## v0.7.8.2 — Canonical Basmalah Styling Patch
 
 ### BASMALAH ARCHITECTURE
